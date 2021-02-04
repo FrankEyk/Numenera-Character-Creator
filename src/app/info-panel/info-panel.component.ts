@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DescriptorService } from '../descriptor-service.service';
 
 @Component({
   selector: 'app-info-panel',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./info-panel.component.css']
 })
 export class InfoPanelComponent implements OnInit {
+  selectedDesc = '';
 
-  constructor() { }
+  constructor(private descService: DescriptorService) { }
 
   ngOnInit(): void {
+    this.descService.subToSelected().subscribe(desc => {
+      this.selectedDesc = desc;
+    });
   }
 
 }
