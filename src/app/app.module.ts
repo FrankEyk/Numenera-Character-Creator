@@ -8,11 +8,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import {MatFormFieldModule} from '@angular/material/form-field'; 
 import {MatInputModule} from '@angular/material/input'; 
-import {MatSelectModule} from '@angular/material/select'; 
+import {MatSelectModule} from '@angular/material/select';
+import { MainPanelComponent } from './main-panel/main-panel.component'; 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MainPanelComponent
   ],
   imports: [
     BrowserModule,
