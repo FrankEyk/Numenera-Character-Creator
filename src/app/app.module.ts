@@ -11,13 +11,17 @@ import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import { MainPanelComponent } from './main-panel/main-panel.component';
 import { InfoPanelComponent } from './info-panel/info-panel.component'; 
-import {MatGridListModule} from '@angular/material/grid-list'; 
+import {MatGridListModule} from '@angular/material/grid-list';
+import { StatsPanelComponent } from './stats-panel/stats-panel.component';
+import { SkillsPanelComponent } from './skills-panel/skills-panel.component'; 
 
 @NgModule({
   declarations: [
     AppComponent,
     MainPanelComponent,
-    InfoPanelComponent
+    InfoPanelComponent,
+    StatsPanelComponent,
+    SkillsPanelComponent
   ],
   imports: [
     BrowserModule,
