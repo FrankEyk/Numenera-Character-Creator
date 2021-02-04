@@ -11,6 +11,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import { MainPanelComponent } from './main-panel/main-panel.component';
 import { InfoPanelComponent } from './info-panel/info-panel.component'; 
+import {MatGridListModule} from '@angular/material/grid-list'; 
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { InfoPanelComponent } from './info-panel/info-panel.component';
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
+    MatGridListModule,
     FormsModule,
   ],
   providers: [],

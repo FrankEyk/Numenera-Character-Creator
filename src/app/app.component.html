@@ -1,6 +1,12 @@
-<div style="display: inline-block;">
-  <app-main-panel></app-main-panel>
-</div>
-<div style="display: inline-block;">
-  <app-info-panel></app-info-panel>
-</div>
+<mat-grid-list cols="4">
+  <mat-grid-tile colspan=3 style="background-color: bisque;">
+    <app-main-panel></app-main-panel>
+  </mat-grid-tile>
+  <mat-grid-tile rowspan=2 style="background-color: blueviolet;">
+    <app-info-panel></app-info-panel>
+  </mat-grid-tile>
+  <mat-grid-tile>
+  </mat-grid-tile>
+  <mat-grid-tile>
+  </mat-grid-tile>
+</mat-grid-list>
