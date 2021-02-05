@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DescriptorService } from '../descriptor-service.service';
+import { DescriptorService } from '../services/descriptor-service.service';
 import { Descriptor } from '../model/description.model';
 
 @Component({
