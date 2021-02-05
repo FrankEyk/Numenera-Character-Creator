@@ -9,9 +9,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatFormFieldModule} from '@angular/material/form-field'; 
 import {MatInputModule} from '@angular/material/input'; 
 import {MatSelectModule} from '@angular/material/select';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatIconModule} from '@angular/material/icon'; 
+import {MatDividerModule} from '@angular/material/divider'; 
 import { MainPanelComponent } from './main-panel/main-panel.component';
 import { InfoPanelComponent } from './info-panel/info-panel.component'; 
-import {MatGridListModule} from '@angular/material/grid-list';
 import { StatsPanelComponent } from './stats-panel/stats-panel.component';
 import { SkillsPanelComponent } from './skills-panel/skills-panel.component'; 
 
@@ -31,6 +33,8 @@ import { SkillsPanelComponent } from './skills-panel/skills-panel.component';
     MatInputModule,
     MatSelectModule,
     MatGridListModule,
+    MatIconModule,
+    MatDividerModule,
     FormsModule,
   ],
   providers: [],
