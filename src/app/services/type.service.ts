@@ -80,7 +80,7 @@ export class TypeService {
   'artists, skalds, rogues, scouts, and experts in a ' +
   'variety of fields.';
 
-  descriptors: Type[] = [
+  types: Type[] = [
     {
       name: 'Glaive',
       description: this.glaiveDesc
@@ -101,11 +101,11 @@ export class TypeService {
   }
 
   /**
-   * Set the selected Descriptor.
-   * @param selectedDesc The Descriptor which is the new selected.
+   * Set the selected Type.
+   * @param selectedType The Type which is the new selected.
    */
-  setSelected(selectedDesc: Type){
-    this.selected.next(selectedDesc);
+  setSelected(selectedType: Type){
+    this.selected.next(selectedType);
   }
 
 }

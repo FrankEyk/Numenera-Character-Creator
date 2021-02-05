@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { TypeService } from '../services/type.service';
 import { Type } from '../model/type.model';
+import { DescriptorService } from '../services/descriptor.service';
+import { Descriptor } from '../model/descriptor.model';
 
 @Component({
   selector: 'app-main-panel',
@@ -9,7 +11,8 @@ import { Type } from '../model/type.model';
 })
 export class MainPanelComponent implements OnInit {
   charName = '';
-  descriptors: Type[] = [];
+  types: Type[] = [];
+  descriptors: Descriptor[] = [];
 
   foci = ['Bears a Halo of Fire',
   'Commands Mental Powers',
@@ -40,18 +43,19 @@ export class MainPanelComponent implements OnInit {
   'Works Miracles',
   ]
 
-  constructor(private descriptorService: TypeService) { }
+  constructor(private typeService: TypeService, private descService: DescriptorService) { }
 
   ngOnInit(): void {
-    this.descriptors = this.descriptorService.descriptors;
+    this.types = this.typeService.types;
+    this.descriptors = this.descService.descriptors;
   }
 
   onChangeType(e: any) {
-    this.descriptorService.setSelected(e.value);
+    this.typeService.setSelected(e.value);
   }
 
-  onChangeDesc() {
-    
+  onChangeDesc(e: any) {
+    this.descService.setSelected(e.value);
   }
 
 }

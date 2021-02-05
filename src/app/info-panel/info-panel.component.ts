@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TypeService } from '../services/type.service';
 import { Type } from '../model/type.model';
+import { DescriptorService } from '../services/descriptor.service';
 
 @Component({
   selector: 'app-info-panel',
@@ -8,16 +9,21 @@ import { Type } from '../model/type.model';
   styleUrls: ['./info-panel.component.css']
 })
 export class InfoPanelComponent implements OnInit {
+  selectedName = '';
   selectedDesc = '';
-  selectedDescDesc = '';
 
-  constructor(private descService: TypeService) { }
+  constructor(private typeService: TypeService,
+    private descService: DescriptorService) { }
 
   ngOnInit(): void {
+    this.typeService.subToSelected().subscribe(type => {      
+      this.selectedName = type.name;
+      this.selectedDesc = type.description;
+    });
+
     this.descService.subToSelected().subscribe(desc => {
-      
-      this.selectedDesc = desc.name;
-      this.selectedDescDesc = desc.description;
+      this.selectedName = desc.name;
+      this.selectedDesc = desc.description;
     });
   }
 
