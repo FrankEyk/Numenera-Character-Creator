@@ -1,4 +1,4 @@
-export class Descriptor {
+export class Type {
 
   public name: string;
   public description: string;

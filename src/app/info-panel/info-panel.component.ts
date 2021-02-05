@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { DescriptorService } from '../services/descriptor-service.service';
-import { Descriptor } from '../model/description.model';
+import { TypeService } from '../services/type.service';
+import { Type } from '../model/type.model';
 
 @Component({
   selector: 'app-info-panel',
@@ -11,7 +11,7 @@ export class InfoPanelComponent implements OnInit {
   selectedDesc = '';
   selectedDescDesc = '';
 
-  constructor(private descService: DescriptorService) { }
+  constructor(private descService: TypeService) { }
 
   ngOnInit(): void {
     this.descService.subToSelected().subscribe(desc => {

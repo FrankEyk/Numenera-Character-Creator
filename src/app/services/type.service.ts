@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
-import { Descriptor } from '../model/description.model';
+import { Type } from '../model/type.model';
 
 @Injectable({
   providedIn: 'root'
 })
-export class DescriptorService {
+export class TypeService {
 
   private glaiveDesc = 'Glaives are the elite warriors of the Ninth World, ' +
   'using weapons and armor to fight their enemies. ' +
@@ -80,7 +80,7 @@ export class DescriptorService {
   'artists, skalds, rogues, scouts, and experts in a ' +
   'variety of fields.';
 
-  descriptors: Descriptor[] = [
+  descriptors: Type[] = [
     {
       name: 'Glaive',
       description: this.glaiveDesc
@@ -94,9 +94,9 @@ export class DescriptorService {
       description: this.jackDesc      
     }];
 
-  private selected = new Subject<Descriptor>();
+  private selected = new Subject<Type>();
 
-  subToSelected(): Observable<Descriptor> {
+  subToSelected(): Observable<Type> {
     return this.selected.asObservable();
   }
 
@@ -104,7 +104,7 @@ export class DescriptorService {
    * Set the selected Descriptor.
    * @param selectedDesc The Descriptor which is the new selected.
    */
-  setSelected(selectedDesc: Descriptor){
+  setSelected(selectedDesc: Type){
     this.selected.next(selectedDesc);
   }
 
