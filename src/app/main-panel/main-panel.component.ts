@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DescriptorService } from '../descriptor-service.service';
+import { Descriptor } from '../model/description.model';
 
 @Component({
   selector: 'app-main-panel',
@@ -8,7 +9,8 @@ import { DescriptorService } from '../descriptor-service.service';
 })
 export class MainPanelComponent implements OnInit {
   charName = '';
-  descriptors: string[] = [];
+  descriptors: Descriptor[] = [];
+
   foci = ['Bears a Halo of Fire',
   'Commands Mental Powers',
   'Controls Beasts',
@@ -45,12 +47,7 @@ export class MainPanelComponent implements OnInit {
   }
 
   onChangeDesc(e: any) {
-    console.log(e.value);
     this.descriptorService.setSelected(e.value);
-  }
-
-  onDescChange() {
-
   }
 
 }
