@@ -15,7 +15,8 @@ import {MatDividerModule} from '@angular/material/divider';
 import { MainPanelComponent } from './main-panel/main-panel.component';
 import { InfoPanelComponent } from './info-panel/info-panel.component'; 
 import { StatsPanelComponent } from './stats-panel/stats-panel.component';
-import { SkillsPanelComponent } from './skills-panel/skills-panel.component'; 
+import { SkillsPanelComponent } from './skills-panel/skills-panel.component';
+import { StatComponent } from './stats-panel/stat/stat.component'; 
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { SkillsPanelComponent } from './skills-panel/skills-panel.component';
     MainPanelComponent,
     InfoPanelComponent,
     StatsPanelComponent,
-    SkillsPanelComponent
+    SkillsPanelComponent,
+    StatComponent
   ],
   imports: [
     BrowserModule,

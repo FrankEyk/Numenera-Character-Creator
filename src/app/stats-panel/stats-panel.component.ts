@@ -6,6 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./stats-panel.component.css']
 })
 export class StatsPanelComponent implements OnInit {
+  headerMight = 'Might';
+  headerSpeed = 'Speed';
+  headerInt = 'Intellect';
+
   might = 0;
   speed = 0;
   intellect = 0;
