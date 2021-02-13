@@ -12,11 +12,11 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatIconModule} from '@angular/material/icon'; 
 import {MatDividerModule} from '@angular/material/divider'; 
-import { MainPanelComponent } from './main-panel/main-panel.component';
-import { InfoPanelComponent } from './info-panel/info-panel.component'; 
-import { StatsPanelComponent } from './stats-panel/stats-panel.component';
-import { SkillsPanelComponent } from './skills-panel/skills-panel.component';
-import { StatComponent } from './stats-panel/stat/stat.component'; 
+import { MainPanelComponent } from './components/main-panel/main-panel.component';
+import { InfoPanelComponent } from './components/info-panel/info-panel.component'; 
+import { StatsPanelComponent } from './components/stats-panel/stats-panel.component';
+import { SkillsPanelComponent } from './components/skills-panel/skills-panel.component';
+import { StatComponent } from './components/stats-panel/stat/stat.component'; 
 
 @NgModule({
   declarations: [

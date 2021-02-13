@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { TypeService } from '../services/type.service';
-import { Type } from '../model/type.model';
-import { DescriptorService } from '../services/descriptor.service';
-import { Benefit } from '../model/benefit.model';
-import { FocusService } from '../services/focus.service';
+import { TypeService } from '../../services/type.service';
+import { DescriptorService } from '../../services/descriptor.service';
+import { Benefit } from '../../model/benefit.model';
+import { FocusService } from '../../services/focus.service';
 
 @Component({
   selector: 'app-info-panel',
