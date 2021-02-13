@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { TypeService } from '../services/type.service';
-import { Type } from '../model/type.model';
-import { DescriptorService } from '../services/descriptor.service';
-import { Descriptor } from '../model/descriptor.model';
-import { Focus } from '../model/focus.model';
-import { FocusService } from '../services/focus.service';
+import { TypeService } from '../../services/type.service';
+import { Type } from '../../model/type.model';
+import { DescriptorService } from '../../services/descriptor.service';
+import { Descriptor } from '../../model/descriptor.model';
+import { Focus } from '../../model/focus.model';
+import { FocusService } from '../../services/focus.service';
 
 @Component({
   selector: 'app-main-panel',
