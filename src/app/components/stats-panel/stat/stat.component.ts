@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-stat',
@@ -9,9 +9,23 @@ export class StatComponent implements OnInit {
   @Input() header: string = '';
   @Input() value: number = 0;
 
-  constructor() { }
+  @Output() addClicked: EventEmitter<string>;
+  @Output() removeClicked: EventEmitter<string>;
+
+  constructor() { 
+    this.addClicked = new EventEmitter()
+    this.removeClicked = new EventEmitter()
+  }
 
   ngOnInit(): void {
+  }
+
+  add() {
+    this.addClicked.emit();
+  }
+
+  remove() {
+    this.removeClicked.emit();
   }
 
 }

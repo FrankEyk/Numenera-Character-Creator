@@ -1,17 +1,17 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
 
-<div class="stats">
-  <h1>Pool</h1>
-  <app-stat [value]="might" [header]="headerMight"></app-stat>
-  <app-stat [value]="speed" [header]="headerSpeed"></app-stat>
-  <app-stat [value]="intellect" [header]="headerInt"></app-stat>
-
-<mat-divider></mat-divider>
-
-<div class="pools">
-  <h1>Edge</h1>
-  <app-stat [value]="mightEdge" [header]="headerMight"></app-stat>
-  <app-stat [value]="speedEdge" [header]="headerSpeed"></app-stat>
-  <app-stat [value]="intellectEdge" [header]="headerInt"></app-stat>
-</div>
+  <div class="stats">
+    <h1>Pool</h1>
+    <app-stat [value]="might" [header]="headerMight" (removeClicked)="poolMightRemove()" (addClicked)="poolMightAdd()"></app-stat>
+    <app-stat [value]="speed" [header]="headerSpeed" (removeClicked)="poolSpeedRemove()" (addClicked)="poolSpeedAdd()"></app-stat>
+    <app-stat [value]="intellect" [header]="headerInt" (removeClicked)="poolIntRemove()" (addClicked)="poolIntAdd()"></app-stat>
+  
+  <mat-divider></mat-divider>
+  
+  <div class="pools">
+    <h1>Edge</h1>
+    <app-stat [value]="mightEdge" [header]="headerMight" (removeClicked)="edgeMightRemove()" (addClicked)="edgeMightAdd()"></app-stat>
+    <app-stat [value]="speedEdge" [header]="headerSpeed" (removeClicked)="edgeSpeedRemove()" (addClicked)="edgeSpeedAdd()"></app-stat>
+    <app-stat [value]="intellectEdge" [header]="headerInt" (removeClicked)="edgeIntRemove()" (addClicked)="edgeIntAdd()"></app-stat>
+  </div>

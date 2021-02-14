@@ -1,10 +1,10 @@
 <div class="stat">
   <h4>{{header}}</h4>
   <button>
-    <mat-icon>add</mat-icon>
+    <mat-icon (click)="add()">add</mat-icon>
   </button>
   <button>
-    <mat-icon>remove</mat-icon>
+    <mat-icon (click)="remove()">remove</mat-icon>
   </button>
   <div class="might">{{value}}</div>
 </div>

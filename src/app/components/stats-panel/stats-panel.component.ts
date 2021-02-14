@@ -23,4 +23,54 @@ export class StatsPanelComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  poolMightAdd() {
+    this.might++;
+  }
+
+  poolMightRemove() {
+    this.might--;
+  }
+
+  poolSpeedAdd() {
+    this.speed++;
+  }
+
+  poolSpeedRemove() {
+    this.speed--;
+  }
+
+  poolIntAdd() {
+    this.intellect++;
+  }
+
+  poolIntRemove() {
+    this.intellect--;
+  }
+
+  /** */
+
+  edgeMightAdd() {
+    this.mightEdge++;
+  }
+
+  edgeMightRemove() {
+    this.mightEdge--;
+  }
+
+  edgeSpeedAdd() {
+    this.speedEdge++;
+  }
+
+  edgeSpeedRemove() {
+    this.speedEdge--;
+  }
+
+  edgeIntAdd() {
+    this.intellectEdge++;
+  }
+
+  edgeIntRemove() {
+    this.intellectEdge--;
+  }
+
 }
