@@ -1,6 +1,6 @@
 /** Enumeration of Class Type. */
 export enum ClassType {
-  GLAVIE = 0,
+  GLAIVE = 0,
   NANO = 1,
   JACKS = 2,
 }
@@ -17,8 +17,8 @@ export interface Type {
 /** Character Type Database. */
 export const TYPES: Type[] = [
   {
-    name: 'Claive',
-    classType: ClassType.GLAVIE,
+    name: 'Glaive',
+    classType: ClassType.GLAIVE,
     description: 'Glaives are the elite warriors of the Ninth World, ' +
       'using weapons and armor to fight their enemies. ' +
       'Hunters, guardians, and soldiers could be ' +
