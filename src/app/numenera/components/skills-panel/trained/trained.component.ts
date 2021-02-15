@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Descriptor } from 'src/app/model/descriptor.model';
-import { DescriptorService } from 'src/app/services/descriptor.service';
+import { Descriptor } from 'src/app/numenera/model/descriptor.model';
+import { DescriptorService } from 'src/app/numenera/services/descriptor.service';
 
 @Component({
   selector: 'app-trained',
@@ -26,7 +26,7 @@ export class TrainedComponent implements OnInit {
     });
   }
 
-  calculateSkills() {
+  calculateSkills(): void {
     this.skills = [];
 
     if (this.selectedDesc) {

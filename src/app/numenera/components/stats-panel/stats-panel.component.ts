@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-stats-panel',
@@ -6,8 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./stats-panel.component.css']
 })
 export class StatsPanelComponent implements OnInit {
+  
+  @Input()
   headerMight = 'Might';
+  @Input()
   headerSpeed = 'Speed';
+  @Input()
   headerInt = 'Intellect';
 
   might = 0;
@@ -23,53 +27,53 @@ export class StatsPanelComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  poolMightAdd() {
+  poolMightAdd(): void {
     this.might++;
   }
 
-  poolMightRemove() {
+  poolMightRemove(): void {
     this.might--;
   }
 
-  poolSpeedAdd() {
+  poolSpeedAdd(): void {
     this.speed++;
   }
 
-  poolSpeedRemove() {
+  poolSpeedRemove(): void {
     this.speed--;
   }
 
-  poolIntAdd() {
+  poolIntAdd(): void {
     this.intellect++;
   }
 
-  poolIntRemove() {
+  poolIntRemove(): void {
     this.intellect--;
   }
 
   /** */
 
-  edgeMightAdd() {
+  edgeMightAdd(): void {
     this.mightEdge++;
   }
 
-  edgeMightRemove() {
+  edgeMightRemove(): void {
     this.mightEdge--;
   }
 
-  edgeSpeedAdd() {
+  edgeSpeedAdd(): void {
     this.speedEdge++;
   }
 
-  edgeSpeedRemove() {
+  edgeSpeedRemove(): void {
     this.speedEdge--;
   }
 
-  edgeIntAdd() {
+  edgeIntAdd(): void {
     this.intellectEdge++;
   }
 
-  edgeIntRemove() {
+  edgeIntRemove(): void {
     this.intellectEdge--;
   }
 
