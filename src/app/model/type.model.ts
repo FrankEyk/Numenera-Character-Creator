@@ -1,3 +1,5 @@
+import { Upgrade } from './upgrade.model';
+
 /** Enumeration of Class Type. */
 export enum ClassType {
   GLAIVE = 0,
@@ -11,7 +13,7 @@ export interface Type {
   name: string;
   classType: ClassType;
   description: string;
-
+  upgrades: Upgrade[];
 }
 
 /** Character Type Database. */
@@ -41,7 +43,23 @@ export const TYPES: Type[] = [
       'don’t rely on weapons at all, preferring to ' +
       'use their bodies in hand-to-hand combat— ' +
       'punching, kicking, grabbing, throwing, and ' +
-      'so on.'
+      'so on.',
+      upgrades: [ {
+        type: 'edge',
+        effect: 'might'
+      },{
+        type: 'edge',
+        effect: 'speed'
+      },{
+        type: 'inability',
+        effect: 'Crafting numenera'
+      },{
+        type: 'inability',
+        effect: 'Salvaging numenera'
+      },{
+        type: 'inability',
+        effect: 'Understanding numenera'
+      },]
   },
   {
     name: 'Nano',
@@ -80,7 +98,8 @@ export const TYPES: Type[] = [
       'themselves to the numenera and other ' +
       'esoterica rather than to purely physical pursuits. ' +
       'As a result, they’re often well versed in the ' +
-      'artifacts and leftovers of the previous worlds.'
+      'artifacts and leftovers of the previous worlds.',
+      upgrades: []
   },
   {
     name: 'Jacks',
@@ -96,6 +115,7 @@ export const TYPES: Type[] = [
       'or anything else might help them. They are ' +
       'hunters (particularly treasure hunters), con ' +
       'artists, skalds, rogues, scouts, and experts in a ' +
-      'variety of fields.'
+      'variety of fields.',
+      upgrades: []
   },
 ];

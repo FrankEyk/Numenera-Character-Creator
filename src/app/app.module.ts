@@ -17,6 +17,9 @@ import { InfoPanelComponent } from './components/info-panel/info-panel.component
 import { StatsPanelComponent } from './components/stats-panel/stats-panel.component';
 import { SkillsPanelComponent } from './components/skills-panel/skills-panel.component';
 import { StatComponent } from './components/stats-panel/stat/stat.component';
+import { SpecializedComponent } from './components/skills-panel/specialized/specialized.component';
+import { TrainedComponent } from './components/skills-panel/trained/trained.component';
+import { InabilityComponent } from './components/skills-panel/inability/inability.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +28,10 @@ import { StatComponent } from './components/stats-panel/stat/stat.component';
     InfoPanelComponent,
     StatsPanelComponent,
     SkillsPanelComponent,
-    StatComponent
+    StatComponent,
+    SpecializedComponent,
+    TrainedComponent,
+    InabilityComponent
   ],
   imports: [
     BrowserModule,
