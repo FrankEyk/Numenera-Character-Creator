@@ -1,9 +1,9 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { Descriptor } from 'src/app/model/descriptor.model';
-import { ClassType, Type } from 'src/app/model/type.model';
-import { DescriptorService } from 'src/app/services/descriptor.service';
-import { TypeService } from 'src/app/services/type.service';
+import { Descriptor } from 'src/app/numenera/model/descriptor.model';
+import { ClassType, Type } from 'src/app/numenera/model/type.model';
+import { DescriptorService } from 'src/app/numenera/services/descriptor.service';
+import { TypeService } from 'src/app/numenera/services/type.service';
 
 @Component({
   selector: 'app-inability',
@@ -29,10 +29,11 @@ export class InabilityComponent implements OnInit, OnDestroy {
     upgrades: []
   };
 
-  constructor(private descriptorService: DescriptorService,
+  constructor(
+    private descriptorService: DescriptorService,
     private typeService: TypeService) { }
 
-  ngOnDestroy() {
+  ngOnDestroy(): void {
     this.subs.forEach(sub => sub.unsubscribe());
   }
 
