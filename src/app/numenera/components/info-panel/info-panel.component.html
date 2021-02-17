@@ -1,18 +1,20 @@
-<div>
-  <h1>{{ selectedName }}</h1>
-</div>
-<div>
-  {{ selectedDesc }}
-</div>
-<div *ngIf="benefits">
-  <ul>
-    <li *ngFor="let benefit of benefits">
-      <div>
-        <b>{{ benefit.name }}</b>
-      </div>
-      <div>
-        {{benefit.description}}
-      </div>
-    </li>
-  </ul>
+<div class="info">
+  <div>
+    <h1>{{ selectedName }}</h1>
+  </div>
+  <div>
+    {{ selectedDesc }}
+  </div>
+  <div *ngIf="benefits">
+    <ul>
+      <li *ngFor="let benefit of benefits">
+        <div>
+          <b>{{ benefit.name }}</b>
+        </div>
+        <div>
+          {{benefit.description}}
+        </div>
+      </li>
+    </ul>
+  </div>
 </div>
