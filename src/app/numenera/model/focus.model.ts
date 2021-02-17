@@ -1,16 +1,18 @@
+import { Ability, SHROUD_OF_FLAME, FIRE_POWERS, MENTAL_ESOTERIES, TELEPATHIC } from './ability.model';
+
 /** Character Focus. */
 export interface Focus {
-
   name: string;
   description: string;
-
+  abilities: Ability[];
 }
 
 /** Character Focus Database. */
 export const FOCUS: Array<Focus> = [
   {
     name: 'Commands Mental Powers',
-    description: 'You have always had special abilities that ' +
+    description:
+      'You have always had special abilities that ' +
       'others didn’t seem to share. Through practice ' +
       'and devotion, you have honed this unique ' +
       'talent so that you can harness the power of ' +
@@ -26,11 +28,13 @@ export const FOCUS: Array<Focus> = [
       'folks—are secretive and a little paranoid. ' +
       'Although Nanos frequently command ' +
       'mental powers, psionic characters of every ' +
-      'other type are not uncommon.'
+      'other type are not uncommon.',
+    abilities: [MENTAL_ESOTERIES, TELEPATHIC],
   },
   {
     name: 'Bears a Halo of Fire',
-    description: 'You can create a sheath of flames around your ' +
+    description:
+      'You can create a sheath of flames around your ' +
       'body. You leave scorch marks wherever you ' +
       'go, and you can’t handle combustible objects ' +
       'without first dousing your inherent flames. Your ' +
@@ -43,6 +47,7 @@ export const FOCUS: Array<Focus> = [
       'perhaps black. ' +
       'Although most of those who take up this ' +
       'mantle are Nanos, flame-wielding Glaives and ' +
-      'Jacks are fearsome indeed.'
+      'Jacks are fearsome indeed.',
+    abilities: [FIRE_POWERS, SHROUD_OF_FLAME],
   },
 ];

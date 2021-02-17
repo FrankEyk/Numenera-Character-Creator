@@ -1,0 +1,9 @@
+<h1>{{header}}</h1>
+<mat-divider></mat-divider>
+<mat-form-field>
+  <mat-chip-list>
+    <mat-chip *ngFor="let ability of abilities">
+      {{ability.name}}
+    </mat-chip>
+  </mat-chip-list>
+</mat-form-field>

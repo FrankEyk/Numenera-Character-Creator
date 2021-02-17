@@ -19,9 +19,10 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
+import {MatChipsModule} from '@angular/material/chips'; 
 import { FormsModule } from '@angular/forms';
 import { AbilitiesPanelComponent } from './components/abilities-panel/abilities-panel.component';
-import { AbilitiesComponent } from './components/abilities-panel/abilities/abilities.component';
+import { FixedAbilitiesComponent } from './components/abilities-panel/fixed-abilities/fixed-abilities.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,7 @@ import { AbilitiesComponent } from './components/abilities-panel/abilities/abili
     TrainedComponent,
     InabilityComponent,
     AbilitiesPanelComponent,
-    AbilitiesComponent
+    FixedAbilitiesComponent
   ],
   imports: [
     CommonModule,
@@ -46,6 +47,7 @@ import { AbilitiesComponent } from './components/abilities-panel/abilities/abili
     MatGridListModule,
     MatIconModule,
     MatDividerModule,
+    MatChipsModule,
     FormsModule,
   ],
   exports: [
