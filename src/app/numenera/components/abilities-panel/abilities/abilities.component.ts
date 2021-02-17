@@ -1,0 +1,16 @@
+import { Component, Input, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-abilities',
+  templateUrl: './abilities.component.html',
+  styleUrls: ['./abilities.component.css']
+})
+export class AbilitiesComponent implements OnInit {
+  @Input() header: string = '';
+
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
+}

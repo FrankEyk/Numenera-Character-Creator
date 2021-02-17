@@ -20,6 +20,8 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
 import { FormsModule } from '@angular/forms';
+import { AbilitiesPanelComponent } from './components/abilities-panel/abilities-panel.component';
+import { AbilitiesComponent } from './components/abilities-panel/abilities/abilities.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { FormsModule } from '@angular/forms';
     StatComponent,
     SpecializedComponent,
     TrainedComponent,
-    InabilityComponent
+    InabilityComponent,
+    AbilitiesPanelComponent,
+    AbilitiesComponent
   ],
   imports: [
     CommonModule,
