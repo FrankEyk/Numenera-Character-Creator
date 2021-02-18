@@ -2,6 +2,7 @@ import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { Ability } from 'src/app/numenera/model/ability.model';
 import { FocusService } from 'src/app/numenera/services/focus.service';
+import { AbilityService } from 'src/app/numenera/services/ability.service';
 import { TypeService } from 'src/app/numenera/services/type.service';
 
 @Component({
@@ -17,7 +18,8 @@ export class FixedAbilitiesComponent implements OnInit, OnDestroy {
 
   constructor(
     private focusService: FocusService,
-    private typeService: TypeService
+    private typeService: TypeService,
+    private abilityService: AbilityService
   ) {}
 
   ngOnInit(): void {
@@ -42,5 +44,9 @@ export class FixedAbilitiesComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.subs.forEach((sub) => sub.unsubscribe());
+  }
+
+  showInfo(ability: Ability) {
+    this.abilityService.setSelected(ability);
   }
 }

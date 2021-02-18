@@ -2,10 +2,10 @@
 <mat-divider></mat-divider>
 <mat-form-field>
   <mat-chip-list>
-    <mat-chip *ngFor="let ability of abilities">
+    <mat-chip *ngFor="let ability of abilities" (click)="showInfo(ability)">
       {{ability.name}}
     </mat-chip>
-    <mat-chip *ngFor="let ability of typeAbilities">
+    <mat-chip *ngFor="let ability of typeAbilities" (click)="showInfo(ability)">
       {{ability.name}}
     </mat-chip>
   </mat-chip-list>
