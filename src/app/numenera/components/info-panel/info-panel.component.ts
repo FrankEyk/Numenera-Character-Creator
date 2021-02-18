@@ -49,6 +49,7 @@ export class InfoPanelComponent implements OnInit, OnDestroy {
     this.subs.push(this.abilityService.subToSelected().subscribe(ability => {
       this.selectedName = ability.name;
       this.selectedDesc = ability.description;
+      this.benefits = [];
     }));
   }
 
