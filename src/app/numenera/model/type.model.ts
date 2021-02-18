@@ -1,3 +1,4 @@
+import { Ability } from './ability.model';
 import { Upgrade } from './upgrade.model';
 
 /** Enumeration of Class Type. */
@@ -14,6 +15,7 @@ export interface Type {
   classType: ClassType;
   description: string;
   upgrades: Upgrade[];
+  abilities: Ability[];
 }
 
 /** Character Type Database. */
@@ -59,7 +61,23 @@ export const TYPES: Type[] = [
       },{
         type: 'inability',
         effect: 'Understanding numenera'
-      },]
+      },],
+      abilities: [
+        {
+          name: 'Combat Prowess',
+          description: 'You add +1 damage to one ' +
+          'type of attack of your choice: melee attacks or ' +
+          'ranged attacks. Enabler.'
+        },
+        {
+          name: 'Trained in Armor',
+          description: 'You can wear armor for ' +
+          'long periods of time without tiring and can ' +
+          'compensate for slowed reactions from wearing ' +
+          'armor. You reduce the Speed Effort cost for ' +
+          'wearing armor by 1. Enabler'
+        }
+      ]
   },
   {
     name: 'Nano',
@@ -99,7 +117,8 @@ export const TYPES: Type[] = [
       'esoterica rather than to purely physical pursuits. ' +
       'As a result, they’re often well versed in the ' +
       'artifacts and leftovers of the previous worlds.',
-      upgrades: []
+      upgrades: [],
+      abilities: []
   },
   {
     name: 'Jacks',
@@ -116,6 +135,7 @@ export const TYPES: Type[] = [
       'hunters (particularly treasure hunters), con ' +
       'artists, skalds, rogues, scouts, and experts in a ' +
       'variety of fields.',
-      upgrades: []
+      upgrades: [],
+      abilities: []
   },
 ];

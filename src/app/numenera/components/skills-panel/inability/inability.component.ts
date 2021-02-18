@@ -26,7 +26,8 @@ export class InabilityComponent implements OnInit, OnDestroy {
     name: '',
     description: '',
     classType: ClassType.GLAIVE,
-    upgrades: []
+    upgrades: [],
+    abilities: []
   };
 
   constructor(
@@ -47,7 +48,6 @@ export class InabilityComponent implements OnInit, OnDestroy {
       this.selectedType = type;
       this.calculateSkills();
     }));
-
   }
 
   calculateSkills() {
