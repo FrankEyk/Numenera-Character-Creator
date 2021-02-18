@@ -10,8 +10,7 @@ import { FocusService } from 'src/app/numenera/services/focus.service';
 })
 export class FixedAbilitiesComponent implements OnInit, OnDestroy {
   private subs: Subscription[] = [];
-  @Input() header: string = '';
-
+  header: string = 'Fixed Abilites';
   abilities: Ability[] = [];
 
   constructor(private focusService: FocusService) { }

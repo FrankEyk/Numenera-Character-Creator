@@ -23,6 +23,7 @@ import {MatChipsModule} from '@angular/material/chips';
 import { FormsModule } from '@angular/forms';
 import { AbilitiesPanelComponent } from './components/abilities-panel/abilities-panel.component';
 import { FixedAbilitiesComponent } from './components/abilities-panel/fixed-abilities/fixed-abilities.component';
+import { ChoiceAbilitiesComponent } from './components/abilities-panel/choice-abilities/choice-abilities.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { FixedAbilitiesComponent } from './components/abilities-panel/fixed-abil
     TrainedComponent,
     InabilityComponent,
     AbilitiesPanelComponent,
-    FixedAbilitiesComponent
+    FixedAbilitiesComponent,
+    ChoiceAbilitiesComponent
   ],
   imports: [
     CommonModule,
