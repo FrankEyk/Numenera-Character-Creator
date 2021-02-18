@@ -11,10 +11,9 @@ import { TypeService } from 'src/app/numenera/services/type.service';
   styleUrls: ['./inability.component.css']
 })
 export class InabilityComponent implements OnInit, OnDestroy {
+  private subs: Subscription[] = [];
 
   skills: string[] = [];
-
-  subs: Subscription[] = [];
 
   selectedDesc: Descriptor = {
     name: '',
@@ -27,7 +26,9 @@ export class InabilityComponent implements OnInit, OnDestroy {
     description: '',
     classType: ClassType.GLAIVE,
     upgrades: [],
-    abilities: []
+    abilities: [],
+    choiceAbilities: [],
+    numberOfAbilitiesToChoose: 2
   };
 
   constructor(

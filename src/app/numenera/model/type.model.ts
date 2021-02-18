@@ -1,4 +1,14 @@
-import { Ability } from './ability.model';
+import {
+  Ability,
+  AGGRESSION,
+  COMBAT_PROWESS,
+  FLEET_OF_FOOT,
+  IMPRESSIVE_DISPLAY,
+  MISDIRECT,
+  NO_NEED_FOR_WEAPONS,
+  TRAINED_IN_ARMOR,
+  TRAINED_WITHOUT_ARMOR,
+} from './ability.model';
 import { Upgrade } from './upgrade.model';
 
 /** Enumeration of Class Type. */
@@ -10,12 +20,13 @@ export enum ClassType {
 
 /** Character Type Description. */
 export interface Type {
-
   name: string;
   classType: ClassType;
   description: string;
   upgrades: Upgrade[];
   abilities: Ability[];
+  choiceAbilities: Ability[];
+  numberOfAbilitiesToChoose: number;
 }
 
 /** Character Type Database. */
@@ -23,7 +34,8 @@ export const TYPES: Type[] = [
   {
     name: 'Glaive',
     classType: ClassType.GLAIVE,
-    description: 'Glaives are the elite warriors of the Ninth World, ' +
+    description:
+      'Glaives are the elite warriors of the Ninth World, ' +
       'using weapons and armor to fight their enemies. ' +
       'Hunters, guardians, and soldiers could be ' +
       'Glaives. Sometimes scouts, warlords, bandits, ' +
@@ -46,43 +58,44 @@ export const TYPES: Type[] = [
       'use their bodies in hand-to-hand combat— ' +
       'punching, kicking, grabbing, throwing, and ' +
       'so on.',
-      upgrades: [ {
+    upgrades: [
+      {
         type: 'edge',
-        effect: 'might'
-      },{
+        effect: 'might',
+      },
+      {
         type: 'edge',
-        effect: 'speed'
-      },{
+        effect: 'speed',
+      },
+      {
         type: 'inability',
-        effect: 'Crafting numenera'
-      },{
+        effect: 'Crafting numenera',
+      },
+      {
         type: 'inability',
-        effect: 'Salvaging numenera'
-      },{
+        effect: 'Salvaging numenera',
+      },
+      {
         type: 'inability',
-        effect: 'Understanding numenera'
-      },],
-      abilities: [
-        {
-          name: 'Combat Prowess',
-          description: 'You add +1 damage to one ' +
-          'type of attack of your choice: melee attacks or ' +
-          'ranged attacks. Enabler.'
-        },
-        {
-          name: 'Trained in Armor',
-          description: 'You can wear armor for ' +
-          'long periods of time without tiring and can ' +
-          'compensate for slowed reactions from wearing ' +
-          'armor. You reduce the Speed Effort cost for ' +
-          'wearing armor by 1. Enabler'
-        }
-      ]
+        effect: 'Understanding numenera',
+      },
+    ],
+    abilities: [COMBAT_PROWESS, TRAINED_IN_ARMOR],
+    choiceAbilities: [
+      AGGRESSION,
+      FLEET_OF_FOOT,
+      IMPRESSIVE_DISPLAY,
+      MISDIRECT,
+      NO_NEED_FOR_WEAPONS,
+      TRAINED_WITHOUT_ARMOR,
+    ],
+    numberOfAbilitiesToChoose: 2,
   },
   {
     name: 'Nano',
     classType: ClassType.NANO,
-    description: 'Nanos are sometimes called mages, wizards, ' +
+    description:
+      'Nanos are sometimes called mages, wizards, ' +
       'sorcerers, or witches by the people of the ' +
       'Ninth World. Nano-sorcerer is also a common ' +
       'term, with their abilities referred to as nanosorcery. ' +
@@ -117,13 +130,16 @@ export const TYPES: Type[] = [
       'esoterica rather than to purely physical pursuits. ' +
       'As a result, they’re often well versed in the ' +
       'artifacts and leftovers of the previous worlds.',
-      upgrades: [],
-      abilities: []
+    upgrades: [],
+    abilities: [],
+    choiceAbilities: [],
+    numberOfAbilitiesToChoose: 2,
   },
   {
     name: 'Jacks',
-    classType: ClassType.JACKS, 
-    description: 'Jacks are intrepid explorers. They are jacks of all ' +
+    classType: ClassType.JACKS,
+    description:
+      'Jacks are intrepid explorers. They are jacks of all ' +
       'trades—hence the name—although the word also ' +
       'hearkens back to fables involving a wily, resourceful ' +
       'hero who always seems to be named Jack. Used as ' +
@@ -135,7 +151,9 @@ export const TYPES: Type[] = [
       'hunters (particularly treasure hunters), con ' +
       'artists, skalds, rogues, scouts, and experts in a ' +
       'variety of fields.',
-      upgrades: [],
-      abilities: []
+    upgrades: [],
+    abilities: [],
+    choiceAbilities: [],
+    numberOfAbilitiesToChoose: 2,
   },
 ];

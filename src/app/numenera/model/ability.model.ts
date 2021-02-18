@@ -69,3 +69,92 @@ export const TELEPATHIC: Ability = {
     'Action to establish contact.',
 };
 
+export const COMBAT_PROWESS: Ability = {
+  name: 'Combat Prowess',
+  description:
+  'You add +1 damage to one ' +
+  'type of attack of your choice: melee attacks or ' +
+  'ranged attacks. Enabler.'
+};
+
+export const TRAINED_IN_ARMOR: Ability = {
+  name: 'Trained in Armor',
+  description:
+  'You can wear armor for ' +
+  'long periods of time without tiring and can ' +
+  'compensate for slowed reactions from wearing ' +
+  'armor. You reduce the Speed Effort cost for ' +
+  'wearing armor by 1. Enabler'
+};
+
+export const AGGRESSION: Ability = {
+  name: 'Aggression',
+  description:
+  '(2 Might points): You focus on ' +
+  'making attacks to such an extent that you ' +
+  'leave yourself vulnerable to your opponents. ' +
+  'While this ability is active, you gain an ' +
+  'asset on your melee attacks, and your Speed ' +
+  'defense rolls against melee and ranged attacks ' +
+  'are hindered. This effect lasts for as long as' +
+  'you wish, but it ends if no combat is taking ' +
+  'place within range of your senses. Enabler.'
+};
+
+export const FLEET_OF_FOOT: Ability = {
+  name: 'Fleet of Foot',
+  description:
+  '(1+ Speed points): You can ' +
+  'move a short distance as part of another ' +
+  'action. You can move a long distance as ' +
+  'your entire action for a turn. If you apply a ' +
+  'level of Effort to this ability, you can move ' +
+  'a long distance and make an attack as your ' +
+  'entire action for a turn, but the attack is ' +
+  'hindered. Enabler.'
+};
+
+export const IMPRESSIVE_DISPLAY: Ability = {
+  name: 'Impressive Display',
+  description:
+  '(2 Might points): ' +
+  'You perform a feat of strength, speed, ' +
+  'or combat, impressing those nearby. For ' +
+  'the next minute you gain an asset in all ' +
+  'interaction tasks with people who saw you ' +
+  'use this ability. Action.'
+};
+
+export const MISDIRECT: Ability = {
+  name: 'Misdirect',
+  description:
+  '(3 Speed points): When an ' +
+  'opponent misses you, you can redirect ' +
+  'their attack to another target (a creature ' +
+  'or object) of your choosing that’s within ' +
+  'immediate range of you. Make an ' +
+  'unmodified attack roll against the new ' +
+  'target (do not use any of your or the ' +
+  'opponent’s modifiers to the attack roll, but ' +
+  'you can apply Effort for accuracy). If the ' +
+  'attack hits, the target takes damage from ' +
+  'your opponent’s attack. Enabler.'
+};
+
+export const NO_NEED_FOR_WEAPONS: Ability = {
+  name: 'No Need for Weapons',
+  description:
+  'When you make an ' +
+  'unarmed attack (such as a punch or kick), ' +
+  'it counts as a medium weapon instead of a ' +
+  'light weapon. Enabler.'
+};
+
+export const TRAINED_WITHOUT_ARMOR: Ability = {
+  name: 'Trained Without Armor',
+  description:
+  'You are trained in ' +
+  'Speed defense actions when not wearing ' +
+  'armor. Enabler.'
+};
+
