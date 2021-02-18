@@ -1,18 +1,23 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit, Type } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { ClassType } from '../../model/type.model';
+import { PLUS_TWO_INT } from '../../model/upgrade.model';
+import { DescriptorService } from '../../services/descriptor.service';
+import { TypeService } from '../../services/type.service';
 
 @Component({
   selector: 'app-stats-panel',
   templateUrl: './stats-panel.component.html',
   styleUrls: ['./stats-panel.component.css']
 })
-export class StatsPanelComponent implements OnInit {
+export class StatsPanelComponent implements OnInit, OnDestroy {
+  private subs: Subscription[] = [];
   
-  @Input()
   headerMight = 'Might';
-  @Input()
   headerSpeed = 'Speed';
-  @Input()
   headerInt = 'Intellect';
+
+  pointsToSpend = 6;
 
   might = 0;
   speed = 0;
@@ -22,9 +27,43 @@ export class StatsPanelComponent implements OnInit {
   speedEdge = 0;
   intellectEdge = 0;
 
-  constructor() { }
-
+  constructor(private typeservice: TypeService,
+    private descService: DescriptorService) { }  
+  
   ngOnInit(): void {
+    this.subs.push(this.typeservice.subToSelected().subscribe(type => {
+      this.setStats(0, 0, 0, 0, 0, 0);
+      this.pointsToSpend = 6;
+
+      if (type.name !== '') {
+        if (type.classType === ClassType.GLAIVE) {
+          this.setStats(11, 1, 10, 1, 7, 0);
+        }
+      }
+    }));
+
+    this.subs.push(this.descService.subToSelected().subscribe(desc => {
+      if (desc.name !== '') {
+        desc.benefits.forEach(benefit => {
+          if (benefit.upgrade === PLUS_TWO_INT) {
+            this.intellect = this.intellect +2;
+          }
+        })
+      }
+    }));
+  }
+
+  ngOnDestroy(): void {
+    this.subs.forEach((sub) => sub.unsubscribe());
+  }
+
+  setStats(m: number, me: number, s: number, se: number, i: number, ie:number): void {
+    this.might = m;
+    this.mightEdge = me;
+    this.speed = s;
+    this.speedEdge = se;
+    this.intellect = i;
+    this.intellectEdge = ie;
   }
 
   poolMightAdd(): void {

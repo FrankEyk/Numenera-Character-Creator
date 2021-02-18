@@ -3,15 +3,16 @@
 
   <div class="stats">
     <h1>Pool</h1>
-    <app-stat [value]="might" [header]="headerMight" (removeClicked)="poolMightRemove()" (addClicked)="poolMightAdd()"></app-stat>
-    <app-stat [value]="speed" [header]="headerSpeed" (removeClicked)="poolSpeedRemove()" (addClicked)="poolSpeedAdd()"></app-stat>
-    <app-stat [value]="intellect" [header]="headerInt" (removeClicked)="poolIntRemove()" (addClicked)="poolIntAdd()"></app-stat>
-  
+    <app-stat [disable]="might === 0" [value]="might" [header]="headerMight" (removeClicked)="poolMightRemove()" (addClicked)="poolMightAdd()"></app-stat>
+    <app-stat [disable]="speed === 0" [value]="speed" [header]="headerSpeed" (removeClicked)="poolSpeedRemove()" (addClicked)="poolSpeedAdd()"></app-stat>
+    <app-stat [disable]="intellect === 0" [value]="intellect" [header]="headerInt" (removeClicked)="poolIntRemove()" (addClicked)="poolIntAdd()"></app-stat>
+  </div>
+
   <mat-divider></mat-divider>
   
   <div class="pools">
     <h1>Edge</h1>
-    <app-stat [value]="mightEdge" [header]="headerMight" (removeClicked)="edgeMightRemove()" (addClicked)="edgeMightAdd()"></app-stat>
-    <app-stat [value]="speedEdge" [header]="headerSpeed" (removeClicked)="edgeSpeedRemove()" (addClicked)="edgeSpeedAdd()"></app-stat>
-    <app-stat [value]="intellectEdge" [header]="headerInt" (removeClicked)="edgeIntRemove()" (addClicked)="edgeIntAdd()"></app-stat>
+    <app-stat [disable]="mightEdge === 0" [value]="mightEdge" [header]="headerMight" (removeClicked)="edgeMightRemove()" (addClicked)="edgeMightAdd()"></app-stat>
+    <app-stat [disable]="speedEdge === 0" [value]="speedEdge" [header]="headerSpeed" (removeClicked)="edgeSpeedRemove()" (addClicked)="edgeSpeedAdd()"></app-stat>
+    <app-stat [disable]="intellectEdge === 0" [value]="intellectEdge" [header]="headerInt" (removeClicked)="edgeIntRemove()" (addClicked)="edgeIntAdd()"></app-stat>
   </div>

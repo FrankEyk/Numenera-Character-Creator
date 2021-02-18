@@ -8,6 +8,7 @@ import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 export class StatComponent implements OnInit {
   @Input() header: string = '';
   @Input() value: number = 0;
+  @Input() disable: boolean = false;
 
   @Output() addClicked: EventEmitter<string>;
   @Output() removeClicked: EventEmitter<string>;
@@ -21,11 +22,13 @@ export class StatComponent implements OnInit {
   }
 
   add() {
-    this.addClicked.emit();
+    if (!this.disable)
+      this.addClicked.emit();
   }
 
   remove() {
-    this.removeClicked.emit();
+    if (!this.disable)
+      this.removeClicked.emit();
   }
 
 }
