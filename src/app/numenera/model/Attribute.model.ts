@@ -1,3 +1,4 @@
+import { StringMap } from "@angular/compiler/src/compiler_facade_interface";
 
 export enum AttributeType {
     MIGHT = 0,
@@ -6,6 +7,12 @@ export enum AttributeType {
 }
 
 export interface Attribute {
+    type: AttributeType;
+    name: string;
+    value: number;
+}
+
+export interface Edge {
     type: AttributeType;
     name: string;
     value: number;
