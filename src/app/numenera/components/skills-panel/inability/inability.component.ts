@@ -26,6 +26,7 @@ export class InabilityComponent implements OnInit, OnDestroy {
     description: '',
     classType: ClassType.GLAIVE,
     attributes: [],
+    edge: [],
     upgrades: [],
     abilities: [],
     choiceAbilities: [],
