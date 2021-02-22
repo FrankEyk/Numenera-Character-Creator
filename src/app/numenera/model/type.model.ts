@@ -9,6 +9,7 @@ import {
   TRAINED_IN_ARMOR,
   TRAINED_WITHOUT_ARMOR,
 } from './ability.model';
+import { Attribute } from './Attribute.model';
 import { Upgrade } from './upgrade.model';
 
 /** Enumeration of Class Type. */
@@ -22,6 +23,7 @@ export enum ClassType {
 export interface Type {
   name: string;
   classType: ClassType;
+  attributes: Array<Attribute>;
   description: string;
   upgrades: Upgrade[];
   abilities: Ability[];
@@ -34,6 +36,7 @@ export const TYPES: Type[] = [
   {
     name: 'Glaive',
     classType: ClassType.GLAIVE,
+    attributes: [],
     description:
       'Glaives are the elite warriors of the Ninth World, ' +
       'using weapons and armor to fight their enemies. ' +
@@ -94,6 +97,7 @@ export const TYPES: Type[] = [
   {
     name: 'Nano',
     classType: ClassType.NANO,
+    attributes: [],
     description:
       'Nanos are sometimes called mages, wizards, ' +
       'sorcerers, or witches by the people of the ' +
@@ -138,6 +142,7 @@ export const TYPES: Type[] = [
   {
     name: 'Jacks',
     classType: ClassType.JACKS,
+    attributes: [],
     description:
       'Jacks are intrepid explorers. They are jacks of all ' +
       'trades—hence the name—although the word also ' +
