@@ -1,7 +1,6 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { Ability } from 'src/app/numenera/model/ability.model';
-import { FocusService } from 'src/app/numenera/services/focus.service';
 import { AbilityService } from 'src/app/numenera/services/ability.service';
 import { NumeneraCharacterService } from 'src/app/numenera/services/NumeneraCharacter.service';
 @Component({
@@ -16,20 +15,18 @@ export class FixedAbilitiesComponent implements OnInit, OnDestroy {
   typeAbilities: Ability[] = [];
 
   constructor(
-    private readonly service: NumeneraCharacterService,
-    private focusService: FocusService,
+    private readonly service: NumeneraCharacterService,    
     private abilityService: AbilityService
   ) { }
 
   ngOnInit(): void {
     this.subs.push(
-      this.focusService.subToSelected().subscribe((focus) => {
+      this.service.focus$.subscribe(focus => {
         this.abilities = [];
         if (focus.name !== '') {
-          focus.abilities.forEach((ability) => this.abilities.push(ability));
+          focus.abilities.forEach(ability => this.abilities.push(ability));
         }
-      })
-    );
+      }));
 
     this.service.type$.subscribe(type => {
       this.typeAbilities = [];
