@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Type, TYPES } from '../../model/type.model';
-import { DescriptorService } from '../../services/descriptor.service';
-import { Descriptor } from '../../model/descriptor.model';
+import { DESCRIPTIONS, Descriptor } from '../../model/descriptor.model';
 import { FOCUS, Focus } from '../../model/focus.model';
 import { NumeneraCharacterService } from '../../services/NumeneraCharacter.service';
 import { MatSelectChange } from '@angular/material/select';
@@ -13,26 +12,21 @@ import { MatSelectChange } from '@angular/material/select';
 })
 export class MainPanelComponent implements OnInit {
   charName = '';
-  types: Type[] = TYPES;
-  descriptors: Descriptor[] = [];
 
+  types: Type[] = TYPES;
+  descriptors: Descriptor[] = DESCRIPTIONS;
   foci: Focus[] = FOCUS;
 
-  constructor(
-    private readonly service: NumeneraCharacterService,
-    private descService: DescriptorService,
-  ) { }
+  constructor(private readonly service: NumeneraCharacterService) { }
 
-  ngOnInit(): void {
-    this.descriptors = this.descService.descriptors;
-  }
+  ngOnInit(): void { }
 
   onChangeType(event: MatSelectChange): void {
     this.service.type$.next(event.value);
   }
 
   onChangeDesc(event: MatSelectChange): void {
-    this.descService.setSelected(event.value);
+    this.service.descriptor$.next(event.value);
   }
 
   onChangeFocus(event: MatSelectChange): void {
