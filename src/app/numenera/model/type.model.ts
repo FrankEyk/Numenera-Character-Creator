@@ -8,7 +8,7 @@ import {
   NO_NEED_FOR_WEAPONS,
   TRAINED_IN_ARMOR,
   TRAINED_WITHOUT_ARMOR,
-} from './ability.model';
+} from './Ability.model';
 import { Attribute, AttributeType, Edge } from './Attribute.model';
 import { Upgrade } from './Upgrade.model';
 
