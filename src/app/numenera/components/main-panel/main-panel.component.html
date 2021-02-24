@@ -7,7 +7,7 @@
   <mat-form-field appearance="fill">
     <mat-label>Who is a</mat-label>
     <mat-select (selectionChange)="onChangeDesc($event)">
-      <mat-option *ngFor="let desc of masterdata.descriptors | async" [value]="desc">
+      <mat-option *ngFor="let desc of masterdata?.descriptors | async" [value]="desc">
         {{desc.name}}
       </mat-option>
     </mat-select>
@@ -16,7 +16,7 @@
   <mat-form-field appearance="fill">
     <mat-label>Type</mat-label>
     <mat-select (selectionChange)="onChangeType($event)">
-      <mat-option *ngFor="let type of masterdata.types | async" [value]="type">
+      <mat-option *ngFor="let type of masterdata?.types | async" [value]="type">
         {{type.name}}
       </mat-option>
     </mat-select>
@@ -25,7 +25,7 @@
   <mat-form-field appearance="fill">
     <mat-label>Who</mat-label>
     <mat-select (selectionChange)="onChangeFocus($event)">
-      <mat-option *ngFor="let focus of masterdata.focus | async" [value]="focus">
+      <mat-option *ngFor="let focus of masterdata?.focus | async" [value]="focus">
         {{focus.name}}
       </mat-option>
     </mat-select>
