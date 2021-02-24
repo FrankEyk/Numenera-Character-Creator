@@ -1,4 +1,4 @@
-import { Ability, SHROUD_OF_FLAME, FIRE_POWERS, MENTAL_ESOTERIES, TELEPATHIC } from './ability.model';
+import { Ability, SHROUD_OF_FLAME, FIRE_POWERS, MENTAL_ESOTERIES, TELEPATHIC } from './Ability.model';
 
 /** Character Focus. */
 export interface Focus {

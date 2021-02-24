@@ -8,8 +8,9 @@ import {
   NO_NEED_FOR_WEAPONS,
   TRAINED_IN_ARMOR,
   TRAINED_WITHOUT_ARMOR,
-} from './ability.model';
-import { Upgrade } from './upgrade.model';
+} from './Ability.model';
+import { Attribute, AttributeType, Edge } from './Attribute.model';
+import { Upgrade } from './Upgrade.model';
 
 /** Enumeration of Class Type. */
 export enum ClassType {
@@ -22,6 +23,8 @@ export enum ClassType {
 export interface Type {
   name: string;
   classType: ClassType;
+  attributes: Array<Attribute>;
+  edge: Array<Edge>;
   description: string;
   upgrades: Upgrade[];
   abilities: Ability[];
@@ -34,6 +37,16 @@ export const TYPES: Type[] = [
   {
     name: 'Glaive',
     classType: ClassType.GLAIVE,
+    attributes: [
+      { name: 'Might', type: AttributeType.MIGHT, value: 11 },
+      { name: 'Speed', type: AttributeType.SPEED, value: 10 },
+      { name: 'Intellect', type: AttributeType.INTELLECT, value: 7 }
+    ],
+    edge: [
+      { name: 'Might', type: AttributeType.MIGHT, value: 1 },
+      { name: 'Speed', type: AttributeType.SPEED, value: 1 },
+      { name: 'Intellect', type: AttributeType.INTELLECT, value: 0 }
+    ],
     description:
       'Glaives are the elite warriors of the Ninth World, ' +
       'using weapons and armor to fight their enemies. ' +
@@ -94,6 +107,8 @@ export const TYPES: Type[] = [
   {
     name: 'Nano',
     classType: ClassType.NANO,
+    attributes: [],
+    edge: [],
     description:
       'Nanos are sometimes called mages, wizards, ' +
       'sorcerers, or witches by the people of the ' +
@@ -138,6 +153,8 @@ export const TYPES: Type[] = [
   {
     name: 'Jacks',
     classType: ClassType.JACKS,
+    attributes: [],
+    edge: [],
     description:
       'Jacks are intrepid explorers. They are jacks of all ' +
       'trades—hence the name—although the word also ' +

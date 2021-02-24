@@ -1,10 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { Descriptor } from 'src/app/numenera/model/descriptor.model';
-import { ClassType, Type } from 'src/app/numenera/model/type.model';
-import { DescriptorService } from 'src/app/numenera/services/descriptor.service';
-import { TypeService } from 'src/app/numenera/services/type.service';
-
+import { Descriptor } from 'src/app/numenera/model/Descriptor.model';
+import { ClassType, Type } from 'src/app/numenera/model/Type.model';
+import { NumeneraCharacterService } from 'src/app/numenera/services/NumeneraCharacter.service';
 @Component({
   selector: 'app-inability',
   templateUrl: './inability.component.html',
@@ -25,48 +23,48 @@ export class InabilityComponent implements OnInit, OnDestroy {
     name: '',
     description: '',
     classType: ClassType.GLAIVE,
+    attributes: [],
+    edge: [],
     upgrades: [],
     abilities: [],
     choiceAbilities: [],
     numberOfAbilitiesToChoose: 2
   };
 
-  constructor(
-    private descriptorService: DescriptorService,
-    private typeService: TypeService) { }
+  constructor(private readonly service: NumeneraCharacterService) { }
 
   ngOnDestroy(): void {
     this.subs.forEach(sub => sub.unsubscribe());
   }
 
   ngOnInit(): void {
-    this.subs.push( this.descriptorService.subToSelected().subscribe( desc => {
+    this.subs.push(this.service.descriptor$.subscribe(desc => {
       this.selectedDesc = desc;
       this.calculateSkills();
     }));
 
-    this.subs.push( this.typeService.subToSelected().subscribe( type => {
+    this.service.type$.subscribe(type => {
       this.selectedType = type;
       this.calculateSkills();
-    }));
+    });
   }
 
-  calculateSkills() {
+  calculateSkills(): void {
     this.skills = [];
 
-    if (this.selectedDesc.name != '') {
+    if (this.selectedDesc.name !== '') {
       this.selectedDesc.benefits.forEach(benefit => {
         if (benefit.upgrade.type === 'inability') {
           this.skills.push(benefit.upgrade.effect);
-        };
-      })
+        }
+      });
     }
 
     if (this.selectedType.name !== '') {
-      this.selectedType.upgrades.forEach( upgrade => {
+      this.selectedType.upgrades.forEach(upgrade => {
         if (upgrade.type === 'inability') {
           this.skills.push(upgrade.effect);
-        };
+        }
       });
     }
   }

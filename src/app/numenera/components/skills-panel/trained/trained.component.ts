@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Descriptor } from 'src/app/numenera/model/descriptor.model';
-import { DescriptorService } from 'src/app/numenera/services/descriptor.service';
+import { Descriptor } from 'src/app/numenera/model/Descriptor.model';
+import { NumeneraCharacterService } from 'src/app/numenera/services/NumeneraCharacter.service';
 
 @Component({
   selector: 'app-trained',
@@ -17,10 +17,10 @@ export class TrainedComponent implements OnInit {
     benefits: []
   };
 
-  constructor(private descriptorService: DescriptorService) { }
+  constructor(private readonly service: NumeneraCharacterService) { }
 
   ngOnInit(): void {
-    this.descriptorService.subToSelected().subscribe( desc => {
+    this.service.descriptor$.subscribe(desc => {
       this.selectedDesc = desc;
       this.calculateSkills();
     });
@@ -33,8 +33,8 @@ export class TrainedComponent implements OnInit {
       this.selectedDesc.benefits.forEach(benefit => {
         if (benefit.upgrade.type === 'trained') {
           this.skills.push(benefit.upgrade.effect);
-        };
-      })
+        }
+      });
     }
   }
 

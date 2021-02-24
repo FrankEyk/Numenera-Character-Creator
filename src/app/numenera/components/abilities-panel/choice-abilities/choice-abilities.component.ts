@@ -1,8 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { Ability } from 'src/app/numenera/model/ability.model';
-import { AbilityService } from 'src/app/numenera/services/ability.service';
-import { TypeService } from 'src/app/numenera/services/type.service';
+import { Ability } from 'src/app/numenera/model/Ability.model';
+import { NumeneraCharacterService } from 'src/app/numenera/services/NumeneraCharacter.service';
 
 @Component({
   selector: 'app-choice-abilities',
@@ -13,29 +12,22 @@ export class ChoiceAbilitiesComponent implements OnInit, OnDestroy {
   abilities: Ability[] = [];
   private subs: Subscription[] = [];
 
-  constructor(
-    private typeService: TypeService,
-    private abilityService: AbilityService
-  ) {}
+  constructor(private readonly service: NumeneraCharacterService) {}
 
   ngOnInit(): void {
-    this.subs.push(
-      this.typeService.subToSelected().subscribe((type) => {
-        this.abilities = [];
-        if (type.name !== '') {
-          type.choiceAbilities.forEach((ability) =>
-            this.abilities.push(ability)
-          );
-        }
-      })
-    );
+    this.subs.push(this.service.type$.subscribe(type => {
+      this.abilities = [];
+      if (type.name !== '') {
+        type.choiceAbilities.forEach(ability => this.abilities.push(ability));
+      }
+    }));
   }
 
   ngOnDestroy(): void {
     this.subs.forEach((sub) => sub.unsubscribe());
   }
 
-  showInfo(ability: Ability) {
-    this.abilityService.setSelected(ability);
+  showInfo(ability: Ability): void {
+    this.service.ability$.next(ability);    
   }
 }
