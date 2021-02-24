@@ -5,6 +5,7 @@ import { Descriptor } from '../../model/descriptor.model';
 import { Focus } from '../../model/focus.model';
 import { FocusService } from '../../services/focus.service';
 import { NumeneraCharacterService } from '../../services/NumeneraCharacter.service';
+import { MatSelectChange } from '@angular/material/select';
 
 @Component({
   selector: 'app-main-panel',
@@ -29,15 +30,15 @@ export class MainPanelComponent implements OnInit {
     this.foci = this.focusService.foci;
   }
 
-  onChangeType(e: any) {
-    this.service.type$.next(e.value);
+  onChangeType(event: MatSelectChange): void {
+    this.service.type$.next(event.value);
   }
 
-  onChangeDesc(e: any) {
-    this.descService.setSelected(e.value);
+  onChangeDesc(event: MatSelectChange): void {
+    this.descService.setSelected(event.value);
   }
 
-  onChangeFocus(e: any) {
-    this.focusService.setSelected(e.value);
+  onChangeFocus(event: MatSelectChange): void {
+    this.focusService.setSelected(event.value);
   }
 }
