@@ -1,7 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { DescriptorService } from '../../services/descriptor.service';
 import { Benefit } from '../../model/benefit.model';
-import { FocusService } from '../../services/focus.service';
 import { Subscription } from 'rxjs';
 import { AbilityService } from '../../services/ability.service';
 import { NumeneraCharacterService } from '../../services/NumeneraCharacter.service';
@@ -21,7 +20,6 @@ export class InfoPanelComponent implements OnInit, OnDestroy {
   constructor(
     private readonly service: NumeneraCharacterService,
     private descService: DescriptorService,
-    private focusService: FocusService,
     private abilityService: AbilityService) { }
 
   ngOnDestroy(): void {
@@ -41,7 +39,7 @@ export class InfoPanelComponent implements OnInit, OnDestroy {
       this.benefits = desc.benefits;
     }));
 
-    this.subs.push(this.focusService.subToSelected().subscribe(focus => {
+    this.subs.push(this.service.focus$.subscribe(focus => {
       this.selectedName = focus.name;
       this.selectedDesc = focus.description;
       this.benefits = [];
