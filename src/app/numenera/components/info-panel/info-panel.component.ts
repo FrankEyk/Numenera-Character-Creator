@@ -1,10 +1,10 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { TypeService } from '../../services/type.service';
 import { DescriptorService } from '../../services/descriptor.service';
 import { Benefit } from '../../model/benefit.model';
 import { FocusService } from '../../services/focus.service';
 import { Subscription } from 'rxjs';
 import { AbilityService } from '../../services/ability.service';
+import { NumeneraCharacterService } from '../../services/NumeneraCharacter.service';
 
 @Component({
   selector: 'app-info-panel',
@@ -18,7 +18,8 @@ export class InfoPanelComponent implements OnInit, OnDestroy {
 
   private subs: Subscription[] = [];
 
-  constructor(private typeService: TypeService,
+  constructor(
+    private readonly service: NumeneraCharacterService,
     private descService: DescriptorService,
     private focusService: FocusService,
     private abilityService: AbilityService) { }
@@ -28,7 +29,7 @@ export class InfoPanelComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.subs.push(this.typeService.subToSelected().subscribe(type => {
+    this.subs.push(this.service.type$.subscribe(type => {
       this.selectedName = type.name;
       this.selectedDesc = type.description;
       this.benefits = [];

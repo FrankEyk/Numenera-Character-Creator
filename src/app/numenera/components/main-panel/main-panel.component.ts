@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { TypeService } from '../../services/type.service';
-import { Type } from '../../model/type.model';
+import { Type, TYPES } from '../../model/type.model';
 import { DescriptorService } from '../../services/descriptor.service';
 import { Descriptor } from '../../model/descriptor.model';
 import { Focus } from '../../model/focus.model';
 import { FocusService } from '../../services/focus.service';
+import { NumeneraCharacterService } from '../../services/NumeneraCharacter.service';
 
 @Component({
   selector: 'app-main-panel',
@@ -13,25 +13,24 @@ import { FocusService } from '../../services/focus.service';
 })
 export class MainPanelComponent implements OnInit {
   charName = '';
-  types: Type[] = [];
+  types: Type[] = TYPES;
   descriptors: Descriptor[] = [];
 
   foci: Focus[] = [];
 
   constructor(
-    private typeService: TypeService,
+    private readonly service: NumeneraCharacterService,
     private descService: DescriptorService,
     private focusService: FocusService
-  ) {}
+  ) { }
 
   ngOnInit(): void {
-    this.types = this.typeService.types;
     this.descriptors = this.descService.descriptors;
     this.foci = this.focusService.foci;
   }
 
   onChangeType(e: any) {
-    this.typeService.setSelected(e.value);
+    this.service.type$.next(e.value);
   }
 
   onChangeDesc(e: any) {
