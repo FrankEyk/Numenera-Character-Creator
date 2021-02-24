@@ -1,7 +1,6 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { Ability } from 'src/app/numenera/model/ability.model';
-import { AbilityService } from 'src/app/numenera/services/ability.service';
 import { NumeneraCharacterService } from 'src/app/numenera/services/NumeneraCharacter.service';
 @Component({
   selector: 'app-fixed-abilities',
@@ -10,14 +9,11 @@ import { NumeneraCharacterService } from 'src/app/numenera/services/NumeneraChar
 })
 export class FixedAbilitiesComponent implements OnInit, OnDestroy {
   private subs: Subscription[] = [];
-  header: string = 'Fixed Abilites';
+  header = 'Fixed Abilites';
   abilities: Ability[] = [];
   typeAbilities: Ability[] = [];
 
-  constructor(
-    private readonly service: NumeneraCharacterService,    
-    private abilityService: AbilityService
-  ) { }
+  constructor(private readonly service: NumeneraCharacterService) { }
 
   ngOnInit(): void {
     this.subs.push(
@@ -40,7 +36,7 @@ export class FixedAbilitiesComponent implements OnInit, OnDestroy {
     this.subs.forEach((sub) => sub.unsubscribe());
   }
 
-  showInfo(ability: Ability) {
-    this.abilityService.setSelected(ability);
+  showInfo(ability: Ability): void {
+    this.service.ability$.next(ability);
   }
 }

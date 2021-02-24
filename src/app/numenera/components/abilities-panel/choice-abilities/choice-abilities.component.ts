@@ -1,7 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { Ability } from 'src/app/numenera/model/ability.model';
-import { AbilityService } from 'src/app/numenera/services/ability.service';
 import { NumeneraCharacterService } from 'src/app/numenera/services/NumeneraCharacter.service';
 
 @Component({
@@ -13,10 +12,7 @@ export class ChoiceAbilitiesComponent implements OnInit, OnDestroy {
   abilities: Ability[] = [];
   private subs: Subscription[] = [];
 
-  constructor(
-    private readonly service: NumeneraCharacterService,
-    private abilityService: AbilityService
-  ) {}
+  constructor(private readonly service: NumeneraCharacterService) {}
 
   ngOnInit(): void {
     this.subs.push(this.service.type$.subscribe(type => {
@@ -31,7 +27,7 @@ export class ChoiceAbilitiesComponent implements OnInit, OnDestroy {
     this.subs.forEach((sub) => sub.unsubscribe());
   }
 
-  showInfo(ability: Ability) {
-    this.abilityService.setSelected(ability);
+  showInfo(ability: Ability): void {
+    this.service.ability$.next(ability);    
   }
 }

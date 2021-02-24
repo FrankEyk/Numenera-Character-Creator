@@ -1,7 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Benefit } from '../../model/benefit.model';
 import { Subscription } from 'rxjs';
-import { AbilityService } from '../../services/ability.service';
 import { NumeneraCharacterService } from '../../services/NumeneraCharacter.service';
 
 @Component({
@@ -16,9 +15,7 @@ export class InfoPanelComponent implements OnInit, OnDestroy {
 
   private subs: Subscription[] = [];
 
-  constructor(
-    private readonly service: NumeneraCharacterService,
-    private abilityService: AbilityService) { }
+  constructor(private readonly service: NumeneraCharacterService) { }
 
   ngOnDestroy(): void {
     this.subs.forEach(subscription => subscription.unsubscribe());
@@ -43,7 +40,7 @@ export class InfoPanelComponent implements OnInit, OnDestroy {
       this.benefits = [];
     }));
 
-    this.subs.push(this.abilityService.subToSelected().subscribe(ability => {
+    this.subs.push(this.service.ability$.subscribe(ability => {
       this.selectedName = ability.name;
       this.selectedDesc = ability.description;
       this.benefits = [];
