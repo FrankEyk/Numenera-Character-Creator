@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Descriptor } from 'src/app/numenera/model/descriptor.model';
-import { DescriptorService } from 'src/app/numenera/services/descriptor.service';
+import { NumeneraCharacterService } from 'src/app/numenera/services/NumeneraCharacter.service';
 
 @Component({
   selector: 'app-specialized',
@@ -17,10 +17,10 @@ export class SpecializedComponent implements OnInit {
     benefits: []
   };
 
-  constructor(private descriptorService: DescriptorService) { }
+  constructor(private readonly service: NumeneraCharacterService) { }
 
   ngOnInit(): void {
-    this.descriptorService.subToSelected().subscribe( desc => {
+    this.service.descriptor$.subscribe( desc => {
       this.selectedDesc = desc;
       this.calculateSkills();
     });

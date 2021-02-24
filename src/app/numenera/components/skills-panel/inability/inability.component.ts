@@ -2,7 +2,6 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { Descriptor } from 'src/app/numenera/model/descriptor.model';
 import { ClassType, Type } from 'src/app/numenera/model/type.model';
-import { DescriptorService } from 'src/app/numenera/services/descriptor.service';
 import { NumeneraCharacterService } from 'src/app/numenera/services/NumeneraCharacter.service';
 @Component({
   selector: 'app-inability',
@@ -32,16 +31,14 @@ export class InabilityComponent implements OnInit, OnDestroy {
     numberOfAbilitiesToChoose: 2
   };
 
-  constructor(
-    private descriptorService: DescriptorService,
-    private readonly service: NumeneraCharacterService) { }
+  constructor(private readonly service: NumeneraCharacterService) { }
 
   ngOnDestroy(): void {
     this.subs.forEach(sub => sub.unsubscribe());
   }
 
   ngOnInit(): void {
-    this.subs.push(this.descriptorService.subToSelected().subscribe(desc => {
+    this.subs.push(this.service.descriptor$.subscribe(desc => {
       this.selectedDesc = desc;
       this.calculateSkills();
     }));

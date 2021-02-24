@@ -2,7 +2,6 @@ import { Component, Input, OnDestroy, OnInit, Type } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { ClassType } from '../../model/type.model';
 import { PLUS_TWO_INT } from '../../model/upgrade.model';
-import { DescriptorService } from '../../services/descriptor.service';
 import { NumeneraCharacterService } from '../../services/NumeneraCharacter.service';
 
 @Component({
@@ -28,9 +27,7 @@ export class StatsPanelComponent implements OnInit, OnDestroy {
   speedEdge = 0;
   intellectEdge = 0;
 
-  constructor(
-    private readonly service: NumeneraCharacterService,
-    private descService: DescriptorService) { }
+  constructor(private readonly service: NumeneraCharacterService) { }
 
   ngOnInit(): void {
     this.subs.push(this.service.type$.subscribe(type => {
@@ -45,7 +42,7 @@ export class StatsPanelComponent implements OnInit, OnDestroy {
 
     }));
 
-    this.subs.push(this.descService.subToSelected().subscribe(desc => {
+    this.subs.push(this.service.descriptor$.subscribe(desc => {
       if (desc.name !== '') {
         desc.benefits.forEach(benefit => {
           if (benefit.upgrade === PLUS_TWO_INT) {
