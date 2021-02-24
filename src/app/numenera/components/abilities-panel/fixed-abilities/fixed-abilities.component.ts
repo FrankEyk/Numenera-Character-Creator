@@ -3,8 +3,7 @@ import { Subscription } from 'rxjs';
 import { Ability } from 'src/app/numenera/model/ability.model';
 import { FocusService } from 'src/app/numenera/services/focus.service';
 import { AbilityService } from 'src/app/numenera/services/ability.service';
-import { TypeService } from 'src/app/numenera/services/type.service';
-
+import { NumeneraCharacterService } from 'src/app/numenera/services/NumeneraCharacter.service';
 @Component({
   selector: 'app-fixed-abilities',
   templateUrl: './fixed-abilities.component.html',
@@ -17,10 +16,10 @@ export class FixedAbilitiesComponent implements OnInit, OnDestroy {
   typeAbilities: Ability[] = [];
 
   constructor(
+    private readonly service: NumeneraCharacterService,
     private focusService: FocusService,
-    private typeService: TypeService,
     private abilityService: AbilityService
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.subs.push(
@@ -32,14 +31,12 @@ export class FixedAbilitiesComponent implements OnInit, OnDestroy {
       })
     );
 
-    this.subs.push(
-      this.typeService.subToSelected().subscribe((type) => {
-        this.typeAbilities = [];
-        if (type.name !== '') {
-          type.abilities.forEach((ability) => this.typeAbilities.push(ability));
-        }
-      })
-    );
+    this.service.type$.subscribe(type => {
+      this.typeAbilities = [];
+      if (type.name !== '') {
+        type.abilities.forEach((ability) => this.typeAbilities.push(ability));
+      }
+    });
   }
 
   ngOnDestroy(): void {

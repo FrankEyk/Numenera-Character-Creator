@@ -3,8 +3,7 @@ import { Subscription } from 'rxjs';
 import { Descriptor } from 'src/app/numenera/model/descriptor.model';
 import { ClassType, Type } from 'src/app/numenera/model/type.model';
 import { DescriptorService } from 'src/app/numenera/services/descriptor.service';
-import { TypeService } from 'src/app/numenera/services/type.service';
-
+import { NumeneraCharacterService } from 'src/app/numenera/services/NumeneraCharacter.service';
 @Component({
   selector: 'app-inability',
   templateUrl: './inability.component.html',
@@ -35,22 +34,22 @@ export class InabilityComponent implements OnInit, OnDestroy {
 
   constructor(
     private descriptorService: DescriptorService,
-    private typeService: TypeService) { }
+    private readonly service: NumeneraCharacterService) { }
 
   ngOnDestroy(): void {
     this.subs.forEach(sub => sub.unsubscribe());
   }
 
   ngOnInit(): void {
-    this.subs.push( this.descriptorService.subToSelected().subscribe( desc => {
+    this.subs.push(this.descriptorService.subToSelected().subscribe(desc => {
       this.selectedDesc = desc;
       this.calculateSkills();
     }));
 
-    this.subs.push( this.typeService.subToSelected().subscribe( type => {
+    this.service.type$.subscribe(type => {
       this.selectedType = type;
       this.calculateSkills();
-    }));
+    });
   }
 
   calculateSkills() {
@@ -65,7 +64,7 @@ export class InabilityComponent implements OnInit, OnDestroy {
     }
 
     if (this.selectedType.name !== '') {
-      this.selectedType.upgrades.forEach( upgrade => {
+      this.selectedType.upgrades.forEach(upgrade => {
         if (upgrade.type === 'inability') {
           this.skills.push(upgrade.effect);
         };

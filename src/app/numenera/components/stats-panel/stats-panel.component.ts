@@ -3,7 +3,7 @@ import { Subscription } from 'rxjs';
 import { ClassType } from '../../model/type.model';
 import { PLUS_TWO_INT } from '../../model/upgrade.model';
 import { DescriptorService } from '../../services/descriptor.service';
-import { TypeService } from '../../services/type.service';
+import { NumeneraCharacterService } from '../../services/NumeneraCharacter.service';
 
 @Component({
   selector: 'app-stats-panel',
@@ -11,8 +11,9 @@ import { TypeService } from '../../services/type.service';
   styleUrls: ['./stats-panel.component.css']
 })
 export class StatsPanelComponent implements OnInit, OnDestroy {
+
   private subs: Subscription[] = [];
-  
+
   headerMight = 'Might';
   headerSpeed = 'Speed';
   headerInt = 'Intellect';
@@ -27,11 +28,12 @@ export class StatsPanelComponent implements OnInit, OnDestroy {
   speedEdge = 0;
   intellectEdge = 0;
 
-  constructor(private typeservice: TypeService,
-    private descService: DescriptorService) { }  
-  
+  constructor(
+    private readonly service: NumeneraCharacterService,
+    private descService: DescriptorService) { }
+
   ngOnInit(): void {
-    this.subs.push(this.typeservice.subToSelected().subscribe(type => {
+    this.subs.push(this.service.type$.subscribe(type => {
       this.setStats(0, 0, 0, 0, 0, 0);
       this.pointsToSpend = 6;
 
@@ -40,13 +42,14 @@ export class StatsPanelComponent implements OnInit, OnDestroy {
           this.setStats(11, 1, 10, 1, 7, 0);
         }
       }
+
     }));
 
     this.subs.push(this.descService.subToSelected().subscribe(desc => {
       if (desc.name !== '') {
         desc.benefits.forEach(benefit => {
           if (benefit.upgrade === PLUS_TWO_INT) {
-            this.intellect = this.intellect +2;
+            this.intellect = this.intellect + 2;
           }
         })
       }
@@ -57,7 +60,7 @@ export class StatsPanelComponent implements OnInit, OnDestroy {
     this.subs.forEach((sub) => sub.unsubscribe());
   }
 
-  setStats(m: number, me: number, s: number, se: number, i: number, ie:number): void {
+  setStats(m: number, me: number, s: number, se: number, i: number, ie: number): void {
     this.might = m;
     this.mightEdge = me;
     this.speed = s;

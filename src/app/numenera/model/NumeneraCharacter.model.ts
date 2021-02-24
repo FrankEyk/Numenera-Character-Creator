@@ -49,7 +49,7 @@ export class NumeneraCharacter {
 
     set focus(focus: Focus) {
         this._focus = focus;
-        this.abilities = this.abilities;
+        this.abilities = focus.abilities;
     }
 
 }
