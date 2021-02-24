@@ -10,7 +10,7 @@ import {
   TRAINED_WITHOUT_ARMOR,
 } from './ability.model';
 import { Attribute, AttributeType, Edge } from './Attribute.model';
-import { Upgrade } from './upgrade.model';
+import { Upgrade } from './Upgrade.model';
 
 /** Enumeration of Class Type. */
 export enum ClassType {

@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
-import { Ability } from '../model/ability.model';
-import { Descriptor } from '../model/descriptor.model';
-import { Focus } from '../model/focus.model';
-import { Type } from '../model/type.model';
+import { Ability } from '../model/Ability.model';
+import { Descriptor } from '../model/Descriptor.model';
+import { Focus } from '../model/Focus.model';
+import { Type } from '../model/Type.model';
 
 @Injectable({
   providedIn: 'root'

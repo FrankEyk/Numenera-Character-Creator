@@ -1,9 +1,9 @@
-import { Ability } from './ability.model';
+import { Ability } from './Ability.model';
 import { Attribute, AttributeType, Edge } from './Attribute.model';
-import { Descriptor } from './descriptor.model';
-import { Focus } from './focus.model';
-import { Type } from './type.model';
-import { PLUS_TWO_INT } from './upgrade.model';
+import { Descriptor } from './Descriptor.model';
+import { Focus } from './Focus.model';
+import { Type } from './Type.model';
+import { PLUS_TWO_INT } from './Upgrade.model';
 
 /**
  * Domain Aggregate.

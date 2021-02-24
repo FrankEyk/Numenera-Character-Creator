@@ -6,7 +6,7 @@ import {
   TRAINED_INFLUENCING_OTHERS_MINDS,
   CONTACT_INFLUENTIAL_POSITION,
   INABLITY_RESIST_MENTAL_ATTACK,
-} from './upgrade.model';
+} from './Upgrade.model';
 
 /** Character Benefit. */
 export interface Benefit {

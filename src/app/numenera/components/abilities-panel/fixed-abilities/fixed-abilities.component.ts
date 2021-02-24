@@ -1,6 +1,6 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { Ability } from 'src/app/numenera/model/ability.model';
+import { Ability } from 'src/app/numenera/model/Ability.model';
 import { NumeneraCharacterService } from 'src/app/numenera/services/NumeneraCharacter.service';
 @Component({
   selector: 'app-fixed-abilities',
