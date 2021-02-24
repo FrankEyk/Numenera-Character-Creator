@@ -20,7 +20,7 @@ export class TrainedComponent implements OnInit {
   constructor(private readonly service: NumeneraCharacterService) { }
 
   ngOnInit(): void {
-    this.service.descriptor$.subscribe( desc => {
+    this.service.descriptor$.subscribe(desc => {
       this.selectedDesc = desc;
       this.calculateSkills();
     });
@@ -33,8 +33,8 @@ export class TrainedComponent implements OnInit {
       this.selectedDesc.benefits.forEach(benefit => {
         if (benefit.upgrade.type === 'trained') {
           this.skills.push(benefit.upgrade.effect);
-        };
-      })
+        }
+      });
     }
   }
 

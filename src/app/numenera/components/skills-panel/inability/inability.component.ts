@@ -49,22 +49,22 @@ export class InabilityComponent implements OnInit, OnDestroy {
     });
   }
 
-  calculateSkills() {
+  calculateSkills(): void {
     this.skills = [];
 
-    if (this.selectedDesc.name != '') {
+    if (this.selectedDesc.name !== '') {
       this.selectedDesc.benefits.forEach(benefit => {
         if (benefit.upgrade.type === 'inability') {
           this.skills.push(benefit.upgrade.effect);
-        };
-      })
+        }
+      });
     }
 
     if (this.selectedType.name !== '') {
       this.selectedType.upgrades.forEach(upgrade => {
         if (upgrade.type === 'inability') {
           this.skills.push(upgrade.effect);
-        };
+        }
       });
     }
   }
