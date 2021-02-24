@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Type, TYPES } from '../../model/Type.model';
-import { DESCRIPTIONS, Descriptor } from '../../model/Descriptor.model';
-import { FOCUS, Focus } from '../../model/Focus.model';
 import { NumeneraCharacterService } from '../../services/NumeneraCharacter.service';
 import { MatSelectChange } from '@angular/material/select';
+import { MasterdataService } from '../../services/Masterdata.service';
 
 @Component({
   selector: 'app-main-panel',
@@ -11,15 +9,18 @@ import { MatSelectChange } from '@angular/material/select';
   styleUrls: ['./main-panel.component.css'],
 })
 export class MainPanelComponent implements OnInit {
-  charName = '';
 
-  types: Type[] = TYPES;
-  descriptors: Descriptor[] = DESCRIPTIONS;
-  foci: Focus[] = FOCUS;
+  name = '';
 
-  constructor(private readonly service: NumeneraCharacterService) { }
+  constructor(
+    readonly service: NumeneraCharacterService,
+    readonly masterdata: MasterdataService) { }
 
   ngOnInit(): void { }
+
+  onChangeName(name: string): void {
+    this.service.name$.next(name);
+  }
 
   onChangeType(event: MatSelectChange): void {
     this.service.type$.next(event.value);

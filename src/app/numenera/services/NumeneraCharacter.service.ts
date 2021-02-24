@@ -10,6 +10,7 @@ import { Type } from '../model/Type.model';
 })
 export class NumeneraCharacterService {
 
+  readonly name$ = new Subject<string>();
   readonly type$ = new Subject<Type>();
   readonly focus$ = new Subject<Focus>();
   readonly descriptor$ = new Subject<Descriptor>();
