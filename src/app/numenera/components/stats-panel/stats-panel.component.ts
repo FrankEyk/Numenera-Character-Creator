@@ -1,7 +1,7 @@
 import { Component, Input, OnDestroy, OnInit, Type } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { ClassType } from '../../model/type.model';
-import { PLUS_TWO_INT } from '../../model/upgrade.model';
+import { ClassType } from '../../model/Type.model';
+import { PLUS_TWO_INT } from '../../model/Upgrade.model';
 import { NumeneraCharacterService } from '../../services/NumeneraCharacter.service';
 
 @Component({

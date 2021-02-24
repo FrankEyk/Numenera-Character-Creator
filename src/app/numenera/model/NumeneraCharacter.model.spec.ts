@@ -1,6 +1,6 @@
-import { FOCUS } from './focus.model';
+import { FOCUS } from './Focus.model';
 import { NumeneraCharacter } from './NumeneraCharacter.model';
-import { TYPES } from './type.model';
+import { TYPES } from './Type.model';
 
 
 describe('Numenera Character Aggregate', () => {

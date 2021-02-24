@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Type, TYPES } from '../../model/type.model';
-import { DESCRIPTIONS, Descriptor } from '../../model/descriptor.model';
-import { FOCUS, Focus } from '../../model/focus.model';
+import { Type, TYPES } from '../../model/Type.model';
+import { DESCRIPTIONS, Descriptor } from '../../model/Descriptor.model';
+import { FOCUS, Focus } from '../../model/Focus.model';
 import { NumeneraCharacterService } from '../../services/NumeneraCharacter.service';
 import { MatSelectChange } from '@angular/material/select';
 

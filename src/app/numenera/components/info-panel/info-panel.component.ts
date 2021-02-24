@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Benefit } from '../../model/benefit.model';
+import { Benefit } from '../../model/Benefit.model';
 import { Subscription } from 'rxjs';
 import { NumeneraCharacterService } from '../../services/NumeneraCharacter.service';
 

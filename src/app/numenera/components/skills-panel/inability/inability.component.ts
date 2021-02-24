@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { Descriptor } from 'src/app/numenera/model/descriptor.model';
-import { ClassType, Type } from 'src/app/numenera/model/type.model';
+import { Descriptor } from 'src/app/numenera/model/Descriptor.model';
+import { ClassType, Type } from 'src/app/numenera/model/Type.model';
 import { NumeneraCharacterService } from 'src/app/numenera/services/NumeneraCharacter.service';
 @Component({
   selector: 'app-inability',

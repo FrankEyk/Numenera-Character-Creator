@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Descriptor } from 'src/app/numenera/model/descriptor.model';
+import { Descriptor } from 'src/app/numenera/model/Descriptor.model';
 import { NumeneraCharacterService } from 'src/app/numenera/services/NumeneraCharacter.service';
 
 @Component({

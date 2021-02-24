@@ -1,4 +1,4 @@
-import { Benefit, CHARMING, CLEVER } from './benefit.model';
+import { Benefit, CHARMING, CLEVER } from './Benefit.model';
 /** Character Descriptor. */
 export interface Descriptor {
 
