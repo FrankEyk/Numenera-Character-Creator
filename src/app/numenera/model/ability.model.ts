@@ -7,6 +7,7 @@ export interface Ability {
   description: string;
 }
 
+// Data
 export const SHROUD_OF_FLAME: Ability = {
   name: 'Shroud of Flame',
   description:

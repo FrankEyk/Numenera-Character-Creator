@@ -15,6 +15,7 @@ export interface Benefit {
   upgrade: Upgrade;
 }
 
+//DATA
 /** Charming benefit definition. */
 export const CHARMING: Array<Benefit> = [
   {

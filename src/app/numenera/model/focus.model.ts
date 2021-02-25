@@ -7,6 +7,7 @@ export interface Focus {
   abilities: Ability[];
 }
 
+// DATA
 /** Character Focus Database. */
 export const FOCUS: Array<Focus> = [
   {

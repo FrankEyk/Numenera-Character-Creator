@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NumeneraCharacterService } from '../../services/NumeneraCharacter.service';
 import { MatSelectChange } from '@angular/material/select';
 import { MasterdataService } from '../../services/Masterdata.service';
+import { Type } from '../../model/Type.model';
 
 @Component({
   selector: 'app-main-panel',
@@ -11,6 +12,7 @@ import { MasterdataService } from '../../services/Masterdata.service';
 export class MainPanelComponent implements OnInit {
 
   name = '';
+  type!: Type;
 
   constructor(
     readonly service: NumeneraCharacterService,
@@ -23,7 +25,9 @@ export class MainPanelComponent implements OnInit {
   }
 
   onChangeType(event: MatSelectChange): void {
-    this.service.type$.next(event.value);
+    this.type = event.value;
+    this.service.type$.next(this.type);
+
   }
 
   onChangeDesc(event: MatSelectChange): void {

@@ -7,6 +7,7 @@ export interface Descriptor {
   benefits: Benefit[];
 }
 
+//DATA
 /** Descripttor Database. */
 export const DESCRIPTIONS: Array<Descriptor> = [
   {

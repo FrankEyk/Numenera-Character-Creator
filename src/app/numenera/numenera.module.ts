@@ -10,6 +10,9 @@ import { StatComponent } from './components/stats-panel/stat/stat.component';
 import { SpecializedComponent } from './components/skills-panel/specialized/specialized.component';
 import { TrainedComponent } from './components/skills-panel/trained/trained.component';
 import { InabilityComponent } from './components/skills-panel/inability/inability.component';
+import { AbilitiesPanelComponent } from './components/abilities-panel/abilities-panel.component';
+import { FixedAbilitiesComponent } from './components/abilities-panel/fixed-abilities/fixed-abilities.component';
+import { ChoiceAbilitiesComponent } from './components/abilities-panel/choice-abilities/choice-abilities.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -19,11 +22,9 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
-import {MatChipsModule} from '@angular/material/chips'; 
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatChipsModule } from '@angular/material/chips';
 import { FormsModule } from '@angular/forms';
-import { AbilitiesPanelComponent } from './components/abilities-panel/abilities-panel.component';
-import { FixedAbilitiesComponent } from './components/abilities-panel/fixed-abilities/fixed-abilities.component';
-import { ChoiceAbilitiesComponent } from './components/abilities-panel/choice-abilities/choice-abilities.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import { ChoiceAbilitiesComponent } from './components/abilities-panel/choice-ab
     MatIconModule,
     MatDividerModule,
     MatChipsModule,
+    MatExpansionModule,
     FormsModule,
   ],
   exports: [

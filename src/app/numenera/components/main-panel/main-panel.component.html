@@ -14,7 +14,7 @@
   </mat-form-field>
 
   <mat-form-field appearance="fill">
-    <mat-label>Type</mat-label>
+    <mat-label *ngIf="!type">Type</mat-label>
     <mat-select (selectionChange)="onChangeType($event)">
       <mat-option *ngFor="let type of masterdata?.types | async" [value]="type">
         {{type.name}}
