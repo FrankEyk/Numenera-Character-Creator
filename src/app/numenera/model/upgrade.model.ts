@@ -8,6 +8,7 @@ export interface Upgrade {
   effect: string;
 }
 
+// DATA
 export const PLUS_TWO_INT: Upgrade = {
   type : 'pool',
   effect : 'intellect +2'

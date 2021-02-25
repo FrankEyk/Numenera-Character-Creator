@@ -1,6 +1,35 @@
-<div class="info">
-  <div>
-    <h1>{{ selectedName }}</h1>
+<h1>My name is {{name}}</h1>
+<mat-accordion>
+
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>Who is a {{descriptor?.name}}</mat-panel-title>
+    </mat-expansion-panel-header>
+    <p>{{descriptor?.description}}</p>
+  </mat-expansion-panel>
+
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>{{type?.name || "nobody"}}</mat-panel-title>
+    </mat-expansion-panel-header>
+    <p>{{type?.description}}</p>
+  </mat-expansion-panel>
+
+
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>Who {{focus?.name || "can do nothing"}}</mat-panel-title>
+    </mat-expansion-panel-header>
+    <p>{{focus?.description}}</p>
+  </mat-expansion-panel>
+
+</mat-accordion>
+
+<!--
+
+  <div class="info">
+    <div>
+      <h1>{{ selectedName }}</h1>
   </div>
   <div>
     {{ selectedDesc }}
@@ -18,3 +47,4 @@
     </ul>
   </div>
 </div>
+-->

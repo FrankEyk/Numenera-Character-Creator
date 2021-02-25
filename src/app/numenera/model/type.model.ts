@@ -32,6 +32,7 @@ export interface Type {
   numberOfAbilitiesToChoose: number;
 }
 
+// DATA
 /** Character Type Database. */
 export const TYPES: Type[] = [
   {

@@ -2,6 +2,10 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Benefit } from '../../model/Benefit.model';
 import { Subscription } from 'rxjs';
 import { NumeneraCharacterService } from '../../services/NumeneraCharacter.service';
+import { Type } from '../../model/Type.model';
+import { Descriptor } from '../../model/Descriptor.model';
+import { Focus } from '../../model/Focus.model';
+import { Ability } from '../../model/Ability.model';
 
 @Component({
   selector: 'app-info-panel',
@@ -9,6 +13,13 @@ import { NumeneraCharacterService } from '../../services/NumeneraCharacter.servi
   styleUrls: ['./info-panel.component.css']
 })
 export class InfoPanelComponent implements OnInit, OnDestroy {
+
+  name = 'Doe';
+  type!: Type;
+  descriptor!: Descriptor;
+  focus!: Focus;
+  ability!: Ability;
+
   selectedName = '';
   selectedDesc = '';
   benefits: Benefit[] = [];
@@ -22,29 +33,11 @@ export class InfoPanelComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.subs.push(this.service.type$.subscribe(type => {
-      this.selectedName = type.name;
-      this.selectedDesc = type.description;
-      this.benefits = [];
-    }));
-
-    this.subs.push(this.service.descriptor$.subscribe(desc => {
-      this.selectedName = desc.name;
-      this.selectedDesc = desc.description;
-      this.benefits = desc.benefits;
-    }));
-
-    this.subs.push(this.service.focus$.subscribe(focus => {
-      this.selectedName = focus.name;
-      this.selectedDesc = focus.description;
-      this.benefits = [];
-    }));
-
-    this.subs.push(this.service.ability$.subscribe(ability => {
-      this.selectedName = ability.name;
-      this.selectedDesc = ability.description;
-      this.benefits = [];
-    }));
+    this.subs.push(this.service.type$.subscribe(type => this.type = type));
+    this.subs.push(this.service.name$.subscribe(name => this.name = name));
+    this.subs.push(this.service.descriptor$.subscribe(descriptor => this.descriptor = descriptor));
+    this.subs.push(this.service.focus$.subscribe(focus => this.focus = focus));
+    this.subs.push(this.service.ability$.subscribe(ability => this.ability = ability));
   }
 
 }
