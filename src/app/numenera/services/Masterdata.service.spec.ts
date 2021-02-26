@@ -16,9 +16,9 @@ describe('MasterdataService', () => {
     expect(service).toBeTruthy();
   });
 
-  it('should contain all known descriptors', done => {    
+  it('should contain all known descriptors', done => {
     service.descriptors.subscribe(descriptors => {
-      expect(descriptors).toEqual(DESCRIPTIONS);       
+      expect(descriptors).toEqual(DESCRIPTIONS);
       done();
     });
   });
@@ -34,7 +34,7 @@ describe('MasterdataService', () => {
     service.focus.subscribe(focus => {
       expect(focus).toEqual(FOCUS);
       done();
-    })
+    });
   });
 
 });

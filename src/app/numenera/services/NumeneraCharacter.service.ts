@@ -31,10 +31,11 @@ export class NumeneraCharacterService {
 
   /**
    * Updates Properties of NumeneraCharacter and notifies all subscriber.
+   *
    * @param property property to update.
    * @param value the new value to assign.
    */
-  private update<Key extends keyof NumeneraCharacter>(property: Key, value: any): void {
+  private update<Key extends keyof NumeneraCharacter>(property: Key, value: unknown): void {
     this.character[property] = value;
     this.character$.next(this.character);
   }

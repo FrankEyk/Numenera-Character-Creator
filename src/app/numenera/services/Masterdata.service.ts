@@ -9,8 +9,6 @@ import { Type, TYPES } from '../model/Type.model';
 })
 export class MasterdataService {
 
-  constructor() { }
-
   /**
    * Returns available descriptors.
    */
