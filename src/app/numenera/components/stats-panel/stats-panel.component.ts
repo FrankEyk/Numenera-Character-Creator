@@ -48,7 +48,7 @@ export class StatsPanelComponent implements OnInit, OnDestroy {
           if (benefit.upgrade === PLUS_TWO_INT) {
             this.intellect = this.intellect + 2;
           }
-        })
+        });
       }
     }));
   }

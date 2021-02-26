@@ -28,6 +28,6 @@ export class ChoiceAbilitiesComponent implements OnInit, OnDestroy {
   }
 
   showInfo(ability: Ability): void {
-    this.service.ability$.next(ability);    
+    this.service.ability$.next(ability);
   }
 }

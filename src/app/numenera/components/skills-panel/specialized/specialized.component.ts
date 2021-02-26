@@ -33,8 +33,8 @@ export class SpecializedComponent implements OnInit {
       this.selectedDesc.benefits.forEach(benefit => {
         if (benefit.upgrade.type === 'specialized') {
           this.skills.push(benefit.upgrade.effect);
-        };
-      })
+        }
+      });
     }
   }
 
