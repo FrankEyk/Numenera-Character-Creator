@@ -5,7 +5,7 @@ import { NumeneraCharacterService } from 'src/app/numenera/services/NumeneraChar
 @Component({
   selector: 'app-specialized',
   templateUrl: './specialized.component.html',
-  styleUrls: ['./specialized.component.css']
+  styleUrls: ['./specialized.component.scss']
 })
 export class SpecializedComponent implements OnInit {
 

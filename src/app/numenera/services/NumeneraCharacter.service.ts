@@ -27,6 +27,8 @@ export class NumeneraCharacterService {
     this.type$.subscribe(type => this.update('type', type));
     this.focus$.subscribe(focus => this.update('focus', focus));
     this.descriptor$.subscribe(descriptor => this.update('descriptor', descriptor));
+
+    this.character$.subscribe(character => console.log(character));
   }
 
   /**
@@ -35,7 +37,7 @@ export class NumeneraCharacterService {
    * @param property property to update.
    * @param value the new value to assign.
    */
-  private update<Key extends keyof NumeneraCharacter>(property: Key, value: unknown): void {
+  private update<Key extends keyof NumeneraCharacter>(property: Key, value: any): void {
     this.character[property] = value;
     this.character$.next(this.character);
   }

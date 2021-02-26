@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-numenera',
   templateUrl: './numenera.component.html',
-  styleUrls: ['./numenera.component.css']
+  styleUrls: ['./numenera.component.scss']
 })
 export class NumeneraComponent implements OnInit {
 

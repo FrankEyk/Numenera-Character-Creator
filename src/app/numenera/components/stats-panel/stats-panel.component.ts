@@ -7,7 +7,7 @@ import { NumeneraCharacterService } from '../../services/NumeneraCharacter.servi
 @Component({
   selector: 'app-stats-panel',
   templateUrl: './stats-panel.component.html',
-  styleUrls: ['./stats-panel.component.css']
+  styleUrls: ['./stats-panel.component.scss']
 })
 export class StatsPanelComponent implements OnInit, OnDestroy {
 
