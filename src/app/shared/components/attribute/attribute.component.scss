@@ -1,0 +1,12 @@
+section > * {
+    display: block;
+}
+span {
+    width: 40px;
+    min-width: 0;
+    height: 40px;
+    flex-shrink: 0;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;   
+}
