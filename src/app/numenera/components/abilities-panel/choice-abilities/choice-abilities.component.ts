@@ -6,7 +6,7 @@ import { NumeneraCharacterService } from 'src/app/numenera/services/NumeneraChar
 @Component({
   selector: 'app-choice-abilities',
   templateUrl: './choice-abilities.component.html',
-  styleUrls: ['./choice-abilities.component.css'],
+  styleUrls: ['./choice-abilities.component.scss'],
 })
 export class ChoiceAbilitiesComponent implements OnInit, OnDestroy {
   abilities: Ability[] = [];

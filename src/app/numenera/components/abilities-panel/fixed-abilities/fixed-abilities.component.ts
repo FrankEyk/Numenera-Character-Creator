@@ -6,7 +6,7 @@ import { NumeneraCharacterService } from 'src/app/numenera/services/NumeneraChar
 @Component({
   selector: 'app-fixed-abilities',
   templateUrl: './fixed-abilities.component.html',
-  styleUrls: ['./fixed-abilities.component.css'],
+  styleUrls: ['./fixed-abilities.component.scss'],
 })
 export class FixedAbilitiesComponent implements OnInit, OnDestroy {
   private subs: Subscription[] = [];

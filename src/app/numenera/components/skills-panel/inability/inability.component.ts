@@ -6,7 +6,7 @@ import { NumeneraCharacterService } from 'src/app/numenera/services/NumeneraChar
 @Component({
   selector: 'app-inability',
   templateUrl: './inability.component.html',
-  styleUrls: ['./inability.component.css']
+  styleUrls: ['./inability.component.scss']
 })
 export class InabilityComponent implements OnInit, OnDestroy {
   private subs: Subscription[] = [];
