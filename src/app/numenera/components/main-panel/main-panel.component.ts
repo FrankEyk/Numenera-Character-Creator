@@ -27,7 +27,6 @@ export class MainPanelComponent implements OnInit {
   onChangeType(event: MatSelectChange): void {
     this.type = event.value;
     this.service.type$.next(this.type);
-
   }
 
   onChangeDesc(event: MatSelectChange): void {
