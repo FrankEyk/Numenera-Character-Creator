@@ -1,56 +1,55 @@
 import { Ability } from './Ability.model';
-import { Attribute, AttributeType, Edge } from './Attribute.model';
+import { Attribute, Edge } from './Attribute.model';
+import { Contact } from './Contact.model';
 import { Descriptor } from './Descriptor.model';
 import { Focus } from './Focus.model';
+import { Skill } from './Skill.model';
 import { Type } from './Type.model';
-import { PLUS_TWO_INT } from './Upgrade.model';
 
 /**
  * Domain Aggregate.
  */
 export class NumeneraCharacter {
+  public name = '';
+  public attributes: Array<Attribute> = [];
+  public edge: Array<Edge> = [];
 
-    public name = '';
-    public attributes: Array<Attribute> = [ ];
-    public edge: Array<Edge> = [];
+  public abilities: Array<Ability> = [];
+  public skills: Array<Skill> = [];
+  public contacts: Array<Contact> = [];
 
-    public abilities: Array<Ability> = [];
+  private _type!: Type;
+  private _focus!: Focus;
+  private _descriptor!: Descriptor;
 
-    private _type!: Type;
-    private _focus!: Focus;
-    private _descriptor!: Descriptor;
+  get type(): Type {
+    return this._type;
+  }
 
-    get type(): Type {
-        return this._type;
+  set type(type: Type) {
+    this._type = type;
+    this.attributes = type.attributes;
+    this.edge = type.edge;
+  }
+
+  get descriptor(): Descriptor {
+    return this._descriptor;
+  }
+
+  set descriptor(descriptor: Descriptor) {
+    this._descriptor = descriptor;
+
+    for (const benefit of descriptor.benefits) {
+      benefit.upgrade.upgrade(this);
     }
+  }
 
-    set type(type: Type) {
-        this._type = type;
-        this.attributes = type.attributes;
-        this.edge = type.edge;
-    }
+  get focus(): Focus {
+    return this._focus;
+  }
 
-    get descriptor(): Descriptor {
-        return this._descriptor;
-    }
-
-    set descriptor(descriptor: Descriptor) {
-        this._descriptor = descriptor;
-
-        for (const benefit of descriptor.benefits) {
-            if (benefit.upgrade === PLUS_TWO_INT) {
-                this.attributes.filter(a => a.type === AttributeType.INTELLECT).map(a => a.value + 2);
-            }
-        }
-    }
-
-    get focus(): Focus {
-        return this._focus;
-    }
-
-    set focus(focus: Focus) {
-        this._focus = focus;
-        this.abilities = focus.abilities;
-    }
-
+  set focus(focus: Focus) {
+    this._focus = focus;
+    this.abilities = focus.abilities;
+  }
 }

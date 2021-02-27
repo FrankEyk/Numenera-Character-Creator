@@ -3,10 +3,9 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 @Component({
   selector: 'app-attribute',
   templateUrl: './attribute.component.html',
-  styleUrls: ['./attribute.component.scss']
+  styleUrls: ['./attribute.component.scss'],
 })
 export class AttributeComponent implements OnInit {
-
   @Input()
   label?: string;
 
@@ -36,7 +35,6 @@ export class AttributeComponent implements OnInit {
    * Will Increase current value and emit the value.
    */
   onClickAdd(): void {
-
     if (this.max != undefined) {
       if (this.value + 1 > this.max) {
         return;
@@ -52,7 +50,6 @@ export class AttributeComponent implements OnInit {
    * Will Decrease current value and emit the value.
    */
   onClickRemove(): void {
-
     if (this.min != undefined) {
       if (this.value - 1 < this.min) {
         return;
@@ -62,5 +59,4 @@ export class AttributeComponent implements OnInit {
     this.value--;
     this.valueChanged.emit(this.value);
   }
-
 }

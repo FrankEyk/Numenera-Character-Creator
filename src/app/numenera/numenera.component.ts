@@ -1,15 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-numenera',
   templateUrl: './numenera.component.html',
-  styleUrls: ['./numenera.component.scss']
+  styleUrls: ['./numenera.component.scss'],
 })
-export class NumeneraComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
-}
+export class NumeneraComponent {}

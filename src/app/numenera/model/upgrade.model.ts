@@ -1,3 +1,59 @@
+import { AttributeType } from './Attribute.model';
+import { Contact } from './Contact.model';
+import { NumeneraCharacter } from './NumeneraCharacter.model';
+import { Skill } from './Skill.model';
+
+/** Upgrade strategy. */
+export interface UpgradeStrategy {
+  upgrade(character: NumeneraCharacter): void;
+}
+
+/** Pool Upgrades, increases or decreases specific attribute. */
+export class PoolUpgradeStrategy implements UpgradeStrategy {
+  /** Affected Attribute. */
+  private attribute: AttributeType;
+  /** Value to add or substract.*/
+  private value: number;
+
+  constructor(attribute: AttributeType, value: number) {
+    this.attribute = attribute;
+    this.value = value;
+  }
+
+  upgrade(character: NumeneraCharacter): void {
+    character.attributes.forEach((a) => {
+      if (a.type === this.attribute) {
+        a.value += this.value;
+      }
+    });
+  }
+}
+
+/** Modifies Character Skills. */
+export class SkillUpgradeStratey implements UpgradeStrategy {
+  private skill: Skill;
+
+  constructor(skill: Skill) {
+    this.skill = skill;
+  }
+
+  upgrade(character: NumeneraCharacter): void {
+    character.skills.push(this.skill);
+  }
+}
+
+/** Modifies Character contatcs. */
+export class ContactUpgradeStrategy implements UpgradeStrategy {
+  private contact: Contact;
+
+  constructor(contact: Contact) {
+    this.contact = contact;
+  }
+
+  upgrade(character: NumeneraCharacter): void {
+    character.contacts.push(this.contact);
+  }
+}
 
 /**
  * One Instruction for an upgrade.
@@ -9,33 +65,3 @@ export interface Upgrade {
 }
 
 // DATA
-export const PLUS_TWO_INT: Upgrade = {
-  type : 'pool',
-  effect : 'intellect +2'
-};
-
-export const INABLITY_STUDYING: Upgrade = {
-  type : 'inability',
-  effect : 'Studying or retaining facts'
-};
-
-export const INABLITY_RESIST_MENTAL_ATTACK: Upgrade = {
-  type : 'inability',
-  effect : 'Resisting mental attacks'
-};
-
-export const TRAINED_POSITIVE_SOCIAL_INTERACTIONS: Upgrade = {
-  type : 'trained',
-  effect : 'Positive or pleasant social interactions'
-};
-
-export const TRAINED_INFLUENCING_OTHERS_MINDS: Upgrade = {
-  type : 'trained',
-  effect : 'Using esoteries or abilities to influence the minds of others'
-};
-
-export const CONTACT_INFLUENTIAL_POSITION: Upgrade = {
-  type : 'contact',
-  effect : 'You have an important contact in a influential position.'
-};
-

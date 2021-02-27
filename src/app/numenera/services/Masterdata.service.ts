@@ -5,14 +5,13 @@ import { FOCUS, Focus } from '../model/Focus.model';
 import { Type, TYPES } from '../model/Type.model';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class MasterdataService {
-
   /**
    * Returns available descriptors.
    */
-  get descriptors(): Observable<Descriptor[]>{
+  get descriptors(): Observable<Descriptor[]> {
     return of(DESCRIPTIONS);
   }
 
@@ -29,5 +28,4 @@ export class MasterdataService {
   get focus(): Observable<Focus[]> {
     return of(FOCUS);
   }
-
 }

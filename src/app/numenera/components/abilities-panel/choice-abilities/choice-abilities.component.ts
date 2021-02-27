@@ -9,17 +9,16 @@ import { NumeneraCharacterService } from 'src/app/numenera/services/NumeneraChar
   styleUrls: ['./choice-abilities.component.scss'],
 })
 export class ChoiceAbilitiesComponent implements OnInit, OnDestroy {
-
   abilities: Ability[] = [];
 
   private subs: Subscription[] = [];
 
   private subscription!: Subscription;
 
-  constructor(private readonly service: NumeneraCharacterService) { }
+  constructor(private readonly service: NumeneraCharacterService) {}
 
   ngOnInit(): void {
-    this.subscription = this.service.character$.subscribe(character => {
+    this.subscription = this.service.character$.subscribe((character) => {
       if (character.type) {
         this.abilities = character.type.choiceAbilities;
       }

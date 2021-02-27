@@ -32,13 +32,13 @@ import { SharedModule } from '../shared/shared.module';
     MainPanelComponent,
     InfoPanelComponent,
     StatsPanelComponent,
-    SkillsPanelComponent,    
+    SkillsPanelComponent,
     SpecializedComponent,
     TrainedComponent,
     InabilityComponent,
     AbilitiesPanelComponent,
     FixedAbilitiesComponent,
-    ChoiceAbilitiesComponent
+    ChoiceAbilitiesComponent,
   ],
   imports: [
     CommonModule,
@@ -52,10 +52,8 @@ import { SharedModule } from '../shared/shared.module';
     MatChipsModule,
     MatExpansionModule,
     FormsModule,
-    SharedModule
+    SharedModule,
   ],
-  exports: [
-    NumeneraComponent
-  ]
+  exports: [NumeneraComponent],
 })
-export class NumeneraModule { }
+export class NumeneraModule {}
