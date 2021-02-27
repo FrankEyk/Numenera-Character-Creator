@@ -1,39 +1,42 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { NumeneraCharacterService } from '../../services/NumeneraCharacter.service';
 import { MatSelectChange } from '@angular/material/select';
 import { MasterdataService } from '../../services/Masterdata.service';
 import { Type } from '../../model/Type.model';
+import { Focus } from '../../model/Focus.model';
+import { Descriptor } from '../../model/Descriptor.model';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-main-panel',
   templateUrl: './main-panel.component.html',
   styleUrls: ['./main-panel.component.scss'],
 })
-export class MainPanelComponent implements OnInit {
+export class MainPanelComponent{
 
   name = '';
   type!: Type;
+
+  private subscription!:Subscription;
 
   constructor(
     readonly service: NumeneraCharacterService,
     readonly masterdata: MasterdataService) { }
 
-  ngOnInit(): void { }
-
   onChangeName(name: string): void {
-    this.service.name$.next(name);
+    this.service.name = name;
   }
 
-  onChangeType(event: MatSelectChange): void {
-    this.type = event.value;
-    this.service.type$.next(this.type);
+  onChangeType(event: MatSelectChange): void {    
+    this.type = <Type>event.value;
+    this.service.type = this.type;
   }
 
   onChangeDesc(event: MatSelectChange): void {
-    this.service.descriptor$.next(event.value);
+    this.service.descriptor = <Descriptor>event.value;
   }
 
   onChangeFocus(event: MatSelectChange): void {
-    this.service.focus$.next(event.value);
+    this.service.focus = <Focus>event.value;
   }
 }

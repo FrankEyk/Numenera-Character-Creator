@@ -1,4 +1,4 @@
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { Ability } from 'src/app/numenera/model/Ability.model';
 
@@ -9,35 +9,27 @@ import { NumeneraCharacterService } from 'src/app/numenera/services/NumeneraChar
   styleUrls: ['./fixed-abilities.component.scss'],
 })
 export class FixedAbilitiesComponent implements OnInit, OnDestroy {
-  private subs: Subscription[] = [];
-  header = 'Fixed Abilites';
+
   abilities: Ability[] = [];
-  typeAbilities: Ability[] = [];
+
+  private subscription!: Subscription;
 
   constructor(private readonly service: NumeneraCharacterService) { }
 
   ngOnInit(): void {
-    this.subs.push(
-      this.service.focus$.subscribe(focus => {
-        this.abilities = [];
-        if (focus.name !== '') {
-          focus.abilities.forEach(ability => this.abilities.push(ability));
-        }
-      }));
-
-    this.service.type$.subscribe(type => {
-      this.typeAbilities = [];
-      if (type.name !== '') {
-        type.abilities.forEach((ability) => this.typeAbilities.push(ability));
+    this.subscription = this.service.character$.subscribe(character => {
+      this.abilities = [];
+      if (character.focus) {
+        this.abilities.push(...character.focus.abilities);
+      }
+      if (character.type) {
+        this.abilities.push(...character.type.abilities);
       }
     });
   }
 
   ngOnDestroy(): void {
-    this.subs.forEach((sub) => sub.unsubscribe());
+    this.subscription.unsubscribe();
   }
 
-  showInfo(ability: Ability): void {
-    this.service.ability$.next(ability);
-  }
 }

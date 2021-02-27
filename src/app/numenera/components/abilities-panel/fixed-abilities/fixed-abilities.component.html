@@ -1,11 +1,8 @@
-<h2>{{header}}</h2>
+<h2>Fixed Abilites</h2>
 <mat-divider></mat-divider>
 <mat-form-field>
   <mat-chip-list>
-    <mat-chip *ngFor="let ability of abilities" (click)="showInfo(ability)">
-      {{ability.name}}
-    </mat-chip>
-    <mat-chip *ngFor="let ability of typeAbilities" (click)="showInfo(ability)">
+    <mat-chip *ngFor="let ability of abilities">
       {{ability.name}}
     </mat-chip>
   </mat-chip-list>

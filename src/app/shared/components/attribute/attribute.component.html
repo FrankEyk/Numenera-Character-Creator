@@ -1,0 +1,12 @@
+<section>
+    <h3 *ngIf="label">{{label}}</h3>
+    <button mat-icon-button color="primary" (click)="onClickAdd()">
+        <mat-icon>add</mat-icon>
+    </button>
+    
+    <span>{{value}}</span>
+    
+    <button mat-icon-button color="accent" (click)="onClickRemove()">
+        <mat-icon>remove</mat-icon>
+    </button>
+</section>
