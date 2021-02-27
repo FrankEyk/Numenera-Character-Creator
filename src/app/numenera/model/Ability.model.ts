@@ -8,7 +8,6 @@ export interface Ability {
 }
 
 export class Abilities {
-    
   static readonly SHROUD_OF_FLAME: Ability = {
     name: 'Shroud of Flame',
     description:
@@ -23,7 +22,6 @@ export class Abilities {
       'of Armor that protect only against damage ' +
       'from fire from another source. Enabler. +2',
   };
-
 
   static readonly FIRE_POWERS: Ability = {
     name: 'Fire Powers',
@@ -77,7 +75,7 @@ export class Abilities {
     description:
       'You add +1 damage to one ' +
       'type of attack of your choice: melee attacks or ' +
-      'ranged attacks. Enabler.'
+      'ranged attacks. Enabler.',
   };
 
   static readonly TRAINED_IN_ARMOR: Ability = {
@@ -87,7 +85,7 @@ export class Abilities {
       'long periods of time without tiring and can ' +
       'compensate for slowed reactions from wearing ' +
       'armor. You reduce the Speed Effort cost for ' +
-      'wearing armor by 1. Enabler'
+      'wearing armor by 1. Enabler',
   };
 
   static readonly AGGRESSION: Ability = {
@@ -101,7 +99,7 @@ export class Abilities {
       'defense rolls against melee and ranged attacks ' +
       'are hindered. This effect lasts for as long as' +
       'you wish, but it ends if no combat is taking ' +
-      'place within range of your senses. Enabler.'
+      'place within range of your senses. Enabler.',
   };
 
   static readonly FLEET_OF_FOOT: Ability = {
@@ -114,7 +112,7 @@ export class Abilities {
       'level of Effort to this ability, you can move ' +
       'a long distance and make an attack as your ' +
       'entire action for a turn, but the attack is ' +
-      'hindered. Enabler.'
+      'hindered. Enabler.',
   };
 
   static readonly IMPRESSIVE_DISPLAY: Ability = {
@@ -125,7 +123,7 @@ export class Abilities {
       'or combat, impressing those nearby. For ' +
       'the next minute you gain an asset in all ' +
       'interaction tasks with people who saw you ' +
-      'use this ability. Action.'
+      'use this ability. Action.',
   };
 
   static readonly MISDIRECT: Ability = {
@@ -141,7 +139,7 @@ export class Abilities {
       'opponent’s modifiers to the attack roll, but ' +
       'you can apply Effort for accuracy). If the ' +
       'attack hits, the target takes damage from ' +
-      'your opponent’s attack. Enabler.'
+      'your opponent’s attack. Enabler.',
   };
 
   static readonly NO_NEED_FOR_WEAPONS: Ability = {
@@ -150,7 +148,7 @@ export class Abilities {
       'When you make an ' +
       'unarmed attack (such as a punch or kick), ' +
       'it counts as a medium weapon instead of a ' +
-      'light weapon. Enabler.'
+      'light weapon. Enabler.',
   };
 
   static readonly TRAINED_WITHOUT_ARMOR: Ability = {
@@ -158,13 +156,10 @@ export class Abilities {
     description:
       'You are trained in ' +
       'Speed defense actions when not wearing ' +
-      'armor. Enabler.'
+      'armor. Enabler.',
   };
-
-
 
   private constructor() {
     //NOOP
   }
-
 }

@@ -6,18 +6,10 @@ import { AppComponent } from './app.component';
 import { NumeneraModule } from './numenera/numenera.module';
 import { SharedModule } from './shared/shared.module';
 
-
 @NgModule({
-  declarations: [
-    AppComponent    
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    NumeneraModule,
-    SharedModule
-  ],
+  declarations: [AppComponent],
+  imports: [BrowserModule, AppRoutingModule, NumeneraModule, SharedModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

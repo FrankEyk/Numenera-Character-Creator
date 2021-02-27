@@ -31,12 +31,12 @@ export const TYPES: Type[] = [
     attributes: [
       { type: AttributeType.MIGHT, value: 11 },
       { type: AttributeType.SPEED, value: 10 },
-      { type: AttributeType.INTELLECT, value: 7 }
+      { type: AttributeType.INTELLECT, value: 7 },
     ],
     edge: [
       { type: AttributeType.MIGHT, value: 1 },
       { type: AttributeType.SPEED, value: 1 },
-      { type: AttributeType.INTELLECT, value: 0 }
+      { type: AttributeType.INTELLECT, value: 0 },
     ],
     description:
       'Glaives are the elite warriors of the Ninth World, ' +
@@ -84,10 +84,7 @@ export const TYPES: Type[] = [
         effect: 'Understanding numenera',
       },
     ],
-    abilities: [
-      Abilities.COMBAT_PROWESS, 
-      Abilities.TRAINED_IN_ARMOR
-    ],
+    abilities: [Abilities.COMBAT_PROWESS, Abilities.TRAINED_IN_ARMOR],
     choiceAbilities: [
       Abilities.AGGRESSION,
       Abilities.FLEET_OF_FOOT,

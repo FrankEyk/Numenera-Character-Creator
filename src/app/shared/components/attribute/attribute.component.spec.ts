@@ -8,9 +8,8 @@ describe('AttributeComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AttributeComponent ]
-    })
-    .compileComponents();
+      declarations: [AttributeComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

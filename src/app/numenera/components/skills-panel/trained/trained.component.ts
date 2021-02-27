@@ -6,31 +6,30 @@ import { NumeneraCharacterService } from 'src/app/numenera/services/NumeneraChar
 @Component({
   selector: 'app-trained',
   templateUrl: './trained.component.html',
-  styleUrls: ['./trained.component.scss']
+  styleUrls: ['./trained.component.scss'],
 })
 export class TrainedComponent implements OnInit, OnDestroy {
-
   skills: string[] = [];
 
   selectedDesc: Descriptor = {
     name: '',
     description: '',
-    benefits: []
+    benefits: [],
   };
 
-  private subscription!:Subscription;
+  private subscription!: Subscription;
 
-  constructor(private readonly service: NumeneraCharacterService) { }
+  constructor(private readonly service: NumeneraCharacterService) {}
 
   ngOnInit(): void {
-    this.subscription = this.service.character$.subscribe(character => {
+    this.subscription = this.service.character$.subscribe((character) => {
       this.selectedDesc = character.descriptor;
       this.calculateSkills();
-    });    
+    });
   }
 
   ngOnDestroy(): void {
-    this.subscription.unsubscribe();    
+    this.subscription.unsubscribe();
   }
 
   //TODO
@@ -38,12 +37,13 @@ export class TrainedComponent implements OnInit, OnDestroy {
     this.skills = [];
 
     if (this.selectedDesc) {
-      this.selectedDesc.benefits.forEach(benefit => {
+      this.selectedDesc.benefits.forEach((benefit) => {
+        /*
         if (benefit.upgrade.type === 'trained') {
           this.skills.push(benefit.upgrade.effect);
         }
+        */
       });
     }
   }
-
 }

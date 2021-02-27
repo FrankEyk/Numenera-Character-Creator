@@ -6,7 +6,7 @@ import { NumeneraCharacterService } from 'src/app/numenera/services/NumeneraChar
 @Component({
   selector: 'app-inability',
   templateUrl: './inability.component.html',
-  styleUrls: ['./inability.component.scss']
+  styleUrls: ['./inability.component.scss'],
 })
 export class InabilityComponent implements OnInit, OnDestroy {
   private subs: Subscription[] = [];
@@ -16,7 +16,7 @@ export class InabilityComponent implements OnInit, OnDestroy {
   selectedDesc: Descriptor = {
     name: '',
     description: '',
-    benefits: []
+    benefits: [],
   };
 
   selectedType: Type = {
@@ -28,21 +28,21 @@ export class InabilityComponent implements OnInit, OnDestroy {
     upgrades: [],
     abilities: [],
     choiceAbilities: [],
-    numberOfAbilitiesToChoose: 2
+    numberOfAbilitiesToChoose: 2,
   };
 
-  private subscription!:Subscription;
+  private subscription!: Subscription;
 
-  constructor(private readonly service: NumeneraCharacterService) { }
+  constructor(private readonly service: NumeneraCharacterService) {}
 
   ngOnDestroy(): void {
-    this.subscription.unsubscribe();    
+    this.subscription.unsubscribe();
   }
 
   ngOnInit(): void {
-    this.subscription = this.service.character$.subscribe(character => {
+    this.subscription = this.service.character$.subscribe((character) => {
       this.selectedDesc = character.descriptor;
-      this.selectedType = character.type;      
+      this.selectedType = character.type;
       this.calculateSkills();
     });
   }
@@ -52,20 +52,21 @@ export class InabilityComponent implements OnInit, OnDestroy {
     this.skills = [];
 
     if (this.selectedDesc && this.selectedDesc.name !== '') {
-      this.selectedDesc.benefits.forEach(benefit => {
+      this.selectedDesc.benefits.forEach((benefit) => {
+        /*
         if (benefit.upgrade.type === 'inability') {
           this.skills.push(benefit.upgrade.effect);
         }
+        */
       });
     }
 
     if (this.selectedType && this.selectedType.name !== '') {
-      this.selectedType.upgrades.forEach(upgrade => {
+      this.selectedType.upgrades.forEach((upgrade) => {
         if (upgrade.type === 'inability') {
           this.skills.push(upgrade.effect);
         }
       });
     }
   }
-
 }

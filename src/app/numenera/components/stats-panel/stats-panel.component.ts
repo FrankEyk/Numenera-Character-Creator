@@ -6,10 +6,9 @@ import { NumeneraCharacterService } from '../../services/NumeneraCharacter.servi
 @Component({
   selector: 'app-stats-panel',
   templateUrl: './stats-panel.component.html',
-  styleUrls: ['./stats-panel.component.scss']
+  styleUrls: ['./stats-panel.component.scss'],
 })
 export class StatsPanelComponent implements OnInit, OnDestroy {
-
   private subscription!: Subscription;
 
   might = 0;
@@ -20,13 +19,13 @@ export class StatsPanelComponent implements OnInit, OnDestroy {
   speedEdge = 0;
   intellectEdge = 0;
 
-  constructor(private readonly service: NumeneraCharacterService) { }
+  constructor(private readonly service: NumeneraCharacterService) {}
 
   ngOnInit(): void {
-    this.subscription = this.service.character$.subscribe(character => {
+    this.subscription = this.service.character$.subscribe((character) => {
       this.might = this.speed = this.intellect = 0;
 
-      character.attributes.forEach(attribute => {
+      character.attributes.forEach((attribute) => {
         if (attribute.type === AttributeType.MIGHT) {
           this.might = attribute.value;
         } else if (attribute.type === AttributeType.SPEED) {
@@ -37,7 +36,7 @@ export class StatsPanelComponent implements OnInit, OnDestroy {
       });
 
       this.mightEdge = this.speedEdge = this.intellectEdge = 0;
-      character.edge.forEach(edge => {
+      character.edge.forEach((edge) => {
         if (edge.type === AttributeType.MIGHT) {
           this.mightEdge = edge.value;
         } else if (edge.type === AttributeType.SPEED) {
@@ -76,5 +75,4 @@ export class StatsPanelComponent implements OnInit, OnDestroy {
   onIntellectEdgeChanged(value: number): void {
     this.service.edge = { type: AttributeType.INTELLECT, value: value };
   }
-
 }
