@@ -1,23 +1,16 @@
-import { Component, Input, OnDestroy, OnInit, Type } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { ClassType } from '../../model/Type.model';
-import { PLUS_TWO_INT } from '../../model/Upgrade.model';
+import { AttributeType } from '../../model/Attribute.model';
 import { NumeneraCharacterService } from '../../services/NumeneraCharacter.service';
 
 @Component({
   selector: 'app-stats-panel',
   templateUrl: './stats-panel.component.html',
-  styleUrls: ['./stats-panel.component.css']
+  styleUrls: ['./stats-panel.component.scss']
 })
 export class StatsPanelComponent implements OnInit, OnDestroy {
 
-  private subs: Subscription[] = [];
-
-  headerMight = 'Might';
-  headerSpeed = 'Speed';
-  headerInt = 'Intellect';
-
-  pointsToSpend = 6;
+  private subscription!: Subscription;
 
   might = 0;
   speed = 0;
@@ -30,90 +23,58 @@ export class StatsPanelComponent implements OnInit, OnDestroy {
   constructor(private readonly service: NumeneraCharacterService) { }
 
   ngOnInit(): void {
-    this.subs.push(this.service.type$.subscribe(type => {
-      this.setStats(0, 0, 0, 0, 0, 0);
-      this.pointsToSpend = 6;
+    this.subscription = this.service.character$.subscribe(character => {
+      this.might = this.speed = this.intellect = 0;
 
-      if (type.name !== '') {
-        if (type.classType === ClassType.GLAIVE) {
-          this.setStats(11, 1, 10, 1, 7, 0);
+      character.attributes.forEach(attribute => {
+        if (attribute.type === AttributeType.MIGHT) {
+          this.might = attribute.value;
+        } else if (attribute.type === AttributeType.SPEED) {
+          this.speed = attribute.value;
+        } else if (attribute.type === AttributeType.INTELLECT) {
+          this.intellect = attribute.value;
         }
-      }
+      });
 
-    }));
-
-    this.subs.push(this.service.descriptor$.subscribe(desc => {
-      if (desc.name !== '') {
-        desc.benefits.forEach(benefit => {
-          if (benefit.upgrade === PLUS_TWO_INT) {
-            this.intellect = this.intellect + 2;
-          }
-        });
-      }
-    }));
+      this.mightEdge = this.speedEdge = this.intellectEdge = 0;
+      character.edge.forEach(edge => {
+        if (edge.type === AttributeType.MIGHT) {
+          this.mightEdge = edge.value;
+        } else if (edge.type === AttributeType.SPEED) {
+          this.speedEdge = edge.value;
+        } else if (edge.type === AttributeType.INTELLECT) {
+          this.intellectEdge = edge.value;
+        }
+      });
+    });
   }
 
   ngOnDestroy(): void {
-    this.subs.forEach((sub) => sub.unsubscribe());
+    this.subscription.unsubscribe();
   }
 
-  setStats(m: number, me: number, s: number, se: number, i: number, ie: number): void {
-    this.might = m;
-    this.mightEdge = me;
-    this.speed = s;
-    this.speedEdge = se;
-    this.intellect = i;
-    this.intellectEdge = ie;
+  onMightChanged(value: number): void {
+    this.service.attribute = { type: AttributeType.MIGHT, value: value };
   }
 
-  poolMightAdd(): void {
-    this.might++;
+  onSpeedChanged(value: number): void {
+    this.service.attribute = { type: AttributeType.SPEED, value: value };
   }
 
-  poolMightRemove(): void {
-    this.might--;
+  onIntellectChanged(value: number): void {
+    this.service.attribute = { type: AttributeType.INTELLECT, value: value };
   }
 
-  poolSpeedAdd(): void {
-    this.speed++;
+  onMightEdgeChanged(value: number): void {
+    this.service.edge = { type: AttributeType.MIGHT, value: value };
   }
 
-  poolSpeedRemove(): void {
-    this.speed--;
+  onSpeedEdgeChanged(value: number): void {
+    this.service.edge = { type: AttributeType.SPEED, value: value };
   }
 
-  poolIntAdd(): void {
-    this.intellect++;
-  }
-
-  poolIntRemove(): void {
-    this.intellect--;
-  }
-
-  /** */
-
-  edgeMightAdd(): void {
-    this.mightEdge++;
-  }
-
-  edgeMightRemove(): void {
-    this.mightEdge--;
-  }
-
-  edgeSpeedAdd(): void {
-    this.speedEdge++;
-  }
-
-  edgeSpeedRemove(): void {
-    this.speedEdge--;
-  }
-
-  edgeIntAdd(): void {
-    this.intellectEdge++;
-  }
-
-  edgeIntRemove(): void {
-    this.intellectEdge--;
+  onIntellectEdgeChanged(value: number): void {
+    this.service.edge = { type: AttributeType.INTELLECT, value: value };
   }
 
 }

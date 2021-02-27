@@ -4,15 +4,18 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NumeneraModule } from './numenera/numenera.module';
+import { SharedModule } from './shared/shared.module';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NumeneraModule
+    NumeneraModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]

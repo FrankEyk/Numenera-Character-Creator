@@ -6,7 +6,6 @@ import { MainPanelComponent } from './components/main-panel/main-panel.component
 import { InfoPanelComponent } from './components/info-panel/info-panel.component';
 import { StatsPanelComponent } from './components/stats-panel/stats-panel.component';
 import { SkillsPanelComponent } from './components/skills-panel/skills-panel.component';
-import { StatComponent } from './components/stats-panel/stat/stat.component';
 import { SpecializedComponent } from './components/skills-panel/specialized/specialized.component';
 import { TrainedComponent } from './components/skills-panel/trained/trained.component';
 import { InabilityComponent } from './components/skills-panel/inability/inability.component';
@@ -25,6 +24,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatChipsModule } from '@angular/material/chips';
 import { FormsModule } from '@angular/forms';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -32,8 +32,7 @@ import { FormsModule } from '@angular/forms';
     MainPanelComponent,
     InfoPanelComponent,
     StatsPanelComponent,
-    SkillsPanelComponent,
-    StatComponent,
+    SkillsPanelComponent,    
     SpecializedComponent,
     TrainedComponent,
     InabilityComponent,
@@ -53,6 +52,7 @@ import { FormsModule } from '@angular/forms';
     MatChipsModule,
     MatExpansionModule,
     FormsModule,
+    SharedModule
   ],
   exports: [
     NumeneraComponent

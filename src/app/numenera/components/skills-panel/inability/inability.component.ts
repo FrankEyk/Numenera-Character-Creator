@@ -6,7 +6,7 @@ import { NumeneraCharacterService } from 'src/app/numenera/services/NumeneraChar
 @Component({
   selector: 'app-inability',
   templateUrl: './inability.component.html',
-  styleUrls: ['./inability.component.css']
+  styleUrls: ['./inability.component.scss']
 })
 export class InabilityComponent implements OnInit, OnDestroy {
   private subs: Subscription[] = [];
@@ -31,28 +31,27 @@ export class InabilityComponent implements OnInit, OnDestroy {
     numberOfAbilitiesToChoose: 2
   };
 
+  private subscription!:Subscription;
+
   constructor(private readonly service: NumeneraCharacterService) { }
 
   ngOnDestroy(): void {
-    this.subs.forEach(sub => sub.unsubscribe());
+    this.subscription.unsubscribe();    
   }
 
   ngOnInit(): void {
-    this.subs.push(this.service.descriptor$.subscribe(desc => {
-      this.selectedDesc = desc;
-      this.calculateSkills();
-    }));
-
-    this.service.type$.subscribe(type => {
-      this.selectedType = type;
+    this.subscription = this.service.character$.subscribe(character => {
+      this.selectedDesc = character.descriptor;
+      this.selectedType = character.type;      
       this.calculateSkills();
     });
   }
 
+  //TODO
   calculateSkills(): void {
     this.skills = [];
 
-    if (this.selectedDesc.name !== '') {
+    if (this.selectedDesc && this.selectedDesc.name !== '') {
       this.selectedDesc.benefits.forEach(benefit => {
         if (benefit.upgrade.type === 'inability') {
           this.skills.push(benefit.upgrade.effect);
@@ -60,7 +59,7 @@ export class InabilityComponent implements OnInit, OnDestroy {
       });
     }
 
-    if (this.selectedType.name !== '') {
+    if (this.selectedType && this.selectedType.name !== '') {
       this.selectedType.upgrades.forEach(upgrade => {
         if (upgrade.type === 'inability') {
           this.skills.push(upgrade.effect);
