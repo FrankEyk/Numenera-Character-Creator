@@ -16,25 +16,24 @@ describe('MasterdataService', () => {
     expect(service).toBeTruthy();
   });
 
-  it('should contain all known descriptors', done => {
-    service.descriptors.subscribe(descriptors => {
+  it('should contain all known descriptors', (done) => {
+    service.descriptors.subscribe((descriptors) => {
       expect(descriptors).toEqual(DESCRIPTIONS);
       done();
     });
   });
 
-  it('should contain all known types', done => {
-    service.types.subscribe(types => {
+  it('should contain all known types', (done) => {
+    service.types.subscribe((types) => {
       expect(types).toEqual(TYPES);
       done();
     });
   });
 
-  it('should contain all know focus variants', done => {
-    service.focus.subscribe(focus => {
+  it('should contain all know focus variants', (done) => {
+    service.focus.subscribe((focus) => {
       expect(focus).toEqual(FOCUS);
       done();
     });
   });
-
 });
