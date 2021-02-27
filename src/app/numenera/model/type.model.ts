@@ -1,14 +1,4 @@
-import {
-  Ability,
-  AGGRESSION,
-  COMBAT_PROWESS,
-  FLEET_OF_FOOT,
-  IMPRESSIVE_DISPLAY,
-  MISDIRECT,
-  NO_NEED_FOR_WEAPONS,
-  TRAINED_IN_ARMOR,
-  TRAINED_WITHOUT_ARMOR,
-} from './Ability.model';
+import { Abilities, Ability } from './Ability.model';
 import { Attribute, AttributeType, Edge } from './Attribute.model';
 import { Upgrade } from './Upgrade.model';
 
@@ -39,14 +29,14 @@ export const TYPES: Type[] = [
     name: 'Glaive',
     classType: ClassType.GLAIVE,
     attributes: [
-      { name: 'Might', type: AttributeType.MIGHT, value: 11 },
-      { name: 'Speed', type: AttributeType.SPEED, value: 10 },
-      { name: 'Intellect', type: AttributeType.INTELLECT, value: 7 }
+      { type: AttributeType.MIGHT, value: 11 },
+      { type: AttributeType.SPEED, value: 10 },
+      { type: AttributeType.INTELLECT, value: 7 }
     ],
     edge: [
-      { name: 'Might', type: AttributeType.MIGHT, value: 1 },
-      { name: 'Speed', type: AttributeType.SPEED, value: 1 },
-      { name: 'Intellect', type: AttributeType.INTELLECT, value: 0 }
+      { type: AttributeType.MIGHT, value: 1 },
+      { type: AttributeType.SPEED, value: 1 },
+      { type: AttributeType.INTELLECT, value: 0 }
     ],
     description:
       'Glaives are the elite warriors of the Ninth World, ' +
@@ -94,14 +84,17 @@ export const TYPES: Type[] = [
         effect: 'Understanding numenera',
       },
     ],
-    abilities: [COMBAT_PROWESS, TRAINED_IN_ARMOR],
+    abilities: [
+      Abilities.COMBAT_PROWESS, 
+      Abilities.TRAINED_IN_ARMOR
+    ],
     choiceAbilities: [
-      AGGRESSION,
-      FLEET_OF_FOOT,
-      IMPRESSIVE_DISPLAY,
-      MISDIRECT,
-      NO_NEED_FOR_WEAPONS,
-      TRAINED_WITHOUT_ARMOR,
+      Abilities.AGGRESSION,
+      Abilities.FLEET_OF_FOOT,
+      Abilities.IMPRESSIVE_DISPLAY,
+      Abilities.MISDIRECT,
+      Abilities.NO_NEED_FOR_WEAPONS,
+      Abilities.TRAINED_WITHOUT_ARMOR,
     ],
     numberOfAbilitiesToChoose: 2,
   },

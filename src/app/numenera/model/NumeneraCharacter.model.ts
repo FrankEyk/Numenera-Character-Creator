@@ -11,8 +11,9 @@ import { PLUS_TWO_INT } from './Upgrade.model';
 export class NumeneraCharacter {
 
     public name = '';
-    public attributes: Array<Attribute> = [];
+    public attributes: Array<Attribute> = [ ];
     public edge: Array<Edge> = [];
+
     public abilities: Array<Ability> = [];
 
     private _type!: Type;

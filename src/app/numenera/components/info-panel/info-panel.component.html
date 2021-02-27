@@ -1,42 +1,13 @@
-<h1>My name is {{name}}</h1>
+<h1>My name is {{character?.name || "Doe"}}</h1>
 <mat-accordion>
 
   <mat-expansion-panel>
     <mat-expansion-panel-header>
-      <mat-panel-title>Who is a {{descriptor?.name}}</mat-panel-title>
+      <mat-panel-title>Who is a {{character?.descriptor?.name}}</mat-panel-title>
     </mat-expansion-panel-header>
-    <p>{{descriptor?.description}}</p>
-  </mat-expansion-panel>
-
-  <mat-expansion-panel>
-    <mat-expansion-panel-header>
-      <mat-panel-title>{{type?.name || "nobody"}}</mat-panel-title>
-    </mat-expansion-panel-header>
-    <p>{{type?.description}}</p>
-  </mat-expansion-panel>
-
-
-  <mat-expansion-panel>
-    <mat-expansion-panel-header>
-      <mat-panel-title>Who {{focus?.name || "can do nothing"}}</mat-panel-title>
-    </mat-expansion-panel-header>
-    <p>{{focus?.description}}</p>
-  </mat-expansion-panel>
-
-</mat-accordion>
-
-<!--
-
-  <div class="info">
-    <div>
-      <h1>{{ selectedName }}</h1>
-  </div>
-  <div>
-    {{ selectedDesc }}
-  </div>
-  <div *ngIf="benefits">
+    <p>{{character?.descriptor?.description}}</p>
     <ul>
-      <li *ngFor="let benefit of benefits">
+      <li *ngFor="let benefit of character?.descriptor?.benefits">
         <div>
           <b>{{ benefit.name }}</b>
         </div>
@@ -45,6 +16,21 @@
         </div>
       </li>
     </ul>
-  </div>
-</div>
--->
+  </mat-expansion-panel>
+
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>{{character?.type?.name || "nobody"}}</mat-panel-title>
+    </mat-expansion-panel-header>
+    <p>{{character?.type?.description}}</p>
+  </mat-expansion-panel>
+
+
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>Who {{character?.focus?.name || "can do nothing"}}</mat-panel-title>
+    </mat-expansion-panel-header>
+    <p>{{character?.focus?.description}}</p>
+  </mat-expansion-panel>
+
+</mat-accordion>

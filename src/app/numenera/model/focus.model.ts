@@ -1,4 +1,4 @@
-import { Ability, SHROUD_OF_FLAME, FIRE_POWERS, MENTAL_ESOTERIES, TELEPATHIC } from './Ability.model';
+import { Ability, Abilities } from './Ability.model';
 
 /** Character Focus. */
 export interface Focus {
@@ -30,7 +30,7 @@ export const FOCUS: Array<Focus> = [
       'Although Nanos frequently command ' +
       'mental powers, psionic characters of every ' +
       'other type are not uncommon.',
-    abilities: [MENTAL_ESOTERIES, TELEPATHIC],
+    abilities: [Abilities.MENTAL_ESOTERIES, Abilities.TELEPATHIC],
   },
   {
     name: 'Bears a Halo of Fire',
@@ -49,6 +49,6 @@ export const FOCUS: Array<Focus> = [
       'Although most of those who take up this ' +
       'mantle are Nanos, flame-wielding Glaives and ' +
       'Jacks are fearsome indeed.',
-    abilities: [FIRE_POWERS, SHROUD_OF_FLAME],
+    abilities: [Abilities.FIRE_POWERS, Abilities.SHROUD_OF_FLAME],
   },
 ];

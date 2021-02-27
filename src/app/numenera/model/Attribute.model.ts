@@ -10,13 +10,11 @@ export enum AttributeType {
 /** Attribute */
 export interface Attribute {
     type: AttributeType;
-    name: string;
     value: number;
 }
 
 /** Edge */
 export interface Edge {
     type: AttributeType;
-    name: string;
     value: number;
 }

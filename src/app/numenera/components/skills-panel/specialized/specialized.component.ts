@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { Descriptor } from 'src/app/numenera/model/Descriptor.model';
 import { NumeneraCharacterService } from 'src/app/numenera/services/NumeneraCharacter.service';
 
@@ -7,7 +8,7 @@ import { NumeneraCharacterService } from 'src/app/numenera/services/NumeneraChar
   templateUrl: './specialized.component.html',
   styleUrls: ['./specialized.component.scss']
 })
-export class SpecializedComponent implements OnInit {
+export class SpecializedComponent implements OnInit, OnDestroy {
 
   skills: string[] = [];
 
@@ -17,15 +18,22 @@ export class SpecializedComponent implements OnInit {
     benefits: []
   };
 
+  private subscription!:Subscription;
+
   constructor(private readonly service: NumeneraCharacterService) { }
 
   ngOnInit(): void {
-    this.service.descriptor$.subscribe( desc => {
-      this.selectedDesc = desc;
+    this.subscription = this.service.character$.subscribe(character => {
+      this.selectedDesc = character.descriptor;
       this.calculateSkills();
-    });
+    });    
   }
 
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();  
+  }
+
+  //TODO
   calculateSkills(): void {
     this.skills = [];
 
