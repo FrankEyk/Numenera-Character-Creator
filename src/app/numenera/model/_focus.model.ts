@@ -1,4 +1,4 @@
-import { Ability, Abilities } from './Ability.model';
+import { Ability, Abilities } from './_ability.model';
 
 /** Character Focus. */
 export interface Focus {
