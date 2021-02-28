@@ -1,16 +1,22 @@
 <div>
   <h2>Skills</h2>
-  <mat-divider></mat-divider>
 
-  <div class="skills">
-    <div class="skill">
-      <app-specialized></app-specialized>
-    </div>
-    <div class="skill">
-      <app-trained></app-trained>
-    </div>
-    <div class="skill">
-      <app-inability></app-inability>
-    </div>
-  </div>
+  <section class="specialized">
+    <ul>
+      <li *ngFor="let skill of specialized">{{skill.name}}</li>
+    </ul>
+  </section>
+  
+  <section class="trained">
+    <ul>
+      <li *ngFor="let skill of trained">{{skill.name}}</li>
+    </ul>
+  </section>
+  
+  <section class="inability">
+    <ul>
+      <li *ngFor="let skill of inabilities">{{skill.name}}</li>
+    </ul>
+  </section>
+
 </div>

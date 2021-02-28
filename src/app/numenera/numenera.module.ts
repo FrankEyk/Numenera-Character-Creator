@@ -6,9 +6,6 @@ import { MainPanelComponent } from './components/main-panel/main-panel.component
 import { InfoPanelComponent } from './components/info-panel/info-panel.component';
 import { StatsPanelComponent } from './components/stats-panel/stats-panel.component';
 import { SkillsPanelComponent } from './components/skills-panel/skills-panel.component';
-import { SpecializedComponent } from './components/skills-panel/specialized/specialized.component';
-import { TrainedComponent } from './components/skills-panel/trained/trained.component';
-import { InabilityComponent } from './components/skills-panel/inability/inability.component';
 import { AbilitiesPanelComponent } from './components/abilities-panel/abilities-panel.component';
 import { FixedAbilitiesComponent } from './components/abilities-panel/fixed-abilities/fixed-abilities.component';
 import { ChoiceAbilitiesComponent } from './components/abilities-panel/choice-abilities/choice-abilities.component';
@@ -33,9 +30,6 @@ import { SharedModule } from '../shared/shared.module';
     InfoPanelComponent,
     StatsPanelComponent,
     SkillsPanelComponent,
-    SpecializedComponent,
-    TrainedComponent,
-    InabilityComponent,
     AbilitiesPanelComponent,
     FixedAbilitiesComponent,
     ChoiceAbilitiesComponent,
