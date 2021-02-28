@@ -1,6 +1,6 @@
 import { Abilities, Ability } from './Ability.model';
 import { Attribute, AttributeType, Edge } from './Attribute.model';
-import { Upgrade } from './Upgrade.model';
+import { Proficiency, Skill } from './Skill.model';
 
 /** Enumeration of Class Type. */
 export enum ClassType {
@@ -15,8 +15,8 @@ export interface Type {
   classType: ClassType;
   attributes: Array<Attribute>;
   edge: Array<Edge>;
+  skills: Array<Skill>;
   description: string;
-  upgrades: Upgrade[];
   abilities: Ability[];
   choiceAbilities: Ability[];
   numberOfAbilitiesToChoose: number;
@@ -37,6 +37,23 @@ export const TYPES: Type[] = [
       { type: AttributeType.MIGHT, value: 1 },
       { type: AttributeType.SPEED, value: 1 },
       { type: AttributeType.INTELLECT, value: 0 },
+    ],
+    skills: [
+      {
+        name: 'Crafting numenera',
+        effect: 'Unable to craft numenera',
+        proficiency: Proficiency.INABILITY,
+      },
+      {
+        name: 'Salvaging numenera',
+        effect: 'Unable to salvage numenera',
+        proficiency: Proficiency.INABILITY,
+      },
+      {
+        name: 'Understanding numenera',
+        effect: 'Unable to understand numenera',
+        proficiency: Proficiency.INABILITY,
+      },
     ],
     description:
       'Glaives are the elite warriors of the Ninth World, ' +
@@ -62,28 +79,6 @@ export const TYPES: Type[] = [
       'use their bodies in hand-to-hand combat— ' +
       'punching, kicking, grabbing, throwing, and ' +
       'so on.',
-    upgrades: [
-      {
-        type: 'edge',
-        effect: 'might',
-      },
-      {
-        type: 'edge',
-        effect: 'speed',
-      },
-      {
-        type: 'inability',
-        effect: 'Crafting numenera',
-      },
-      {
-        type: 'inability',
-        effect: 'Salvaging numenera',
-      },
-      {
-        type: 'inability',
-        effect: 'Understanding numenera',
-      },
-    ],
     abilities: [Abilities.COMBAT_PROWESS, Abilities.TRAINED_IN_ARMOR],
     choiceAbilities: [
       Abilities.AGGRESSION,
@@ -136,7 +131,7 @@ export const TYPES: Type[] = [
       'esoterica rather than to purely physical pursuits. ' +
       'As a result, they’re often well versed in the ' +
       'artifacts and leftovers of the previous worlds.',
-    upgrades: [],
+    skills: [],
     abilities: [],
     choiceAbilities: [],
     numberOfAbilitiesToChoose: 2,
@@ -159,7 +154,7 @@ export const TYPES: Type[] = [
       'hunters (particularly treasure hunters), con ' +
       'artists, skalds, rogues, scouts, and experts in a ' +
       'variety of fields.',
-    upgrades: [],
+    skills: [],
     abilities: [],
     choiceAbilities: [],
     numberOfAbilitiesToChoose: 2,
