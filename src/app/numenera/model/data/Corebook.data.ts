@@ -849,7 +849,7 @@ export const FOCI: Array<Focus> = [
         collaborate to ensure that the transformation is
         logical—for example, you probably can’t transform a
         pill into a helmet. Enabler.`,
-        origin: { title: CORE_BOOK , page: 59 },
+        origin: { title: CORE_BOOK, page: 59 },
       },
       {
         name: 'Inventor',
@@ -1311,9 +1311,9 @@ export const TYPES: Array<CharacterType> = [
     combat—punching, kicking, grabbing, throwing, and
     so on`,
     attributes: [
-      { attribute: Attribute.MIGHT, value: 11 },
-      { attribute: Attribute.SPEED, value: 10 },
-      { attribute: Attribute.INTELLECT, value: 7 },
+      { type: Attribute.MIGHT, value: 11 },
+      { type: Attribute.SPEED, value: 10 },
+      { type: Attribute.INTELLECT, value: 7 },
     ],
   },
   {
@@ -1338,9 +1338,9 @@ export const TYPES: Array<CharacterType> = [
     dangerous than any conventional storm. In truth,
     nanites are literally everywhere.`,
     attributes: [
-      { attribute: Attribute.MIGHT, value: 7 },
-      { attribute: Attribute.SPEED, value: 9 },
-      { attribute: Attribute.INTELLECT, value: 12 },
+      { type: Attribute.MIGHT, value: 7 },
+      { type: Attribute.SPEED, value: 9 },
+      { type: Attribute.INTELLECT, value: 12 },
     ],
   },
   {
@@ -1358,9 +1358,9 @@ export const TYPES: Array<CharacterType> = [
     (particularly treasure hunters), con artists, skalds,
     rogues, scouts, and experts in a variety of fields.`,
     attributes: [
-      { attribute: Attribute.MIGHT, value: 10 },
-      { attribute: Attribute.SPEED, value: 10 },
-      { attribute: Attribute.INTELLECT, value: 10 },
+      { type: Attribute.MIGHT, value: 10 },
+      { type: Attribute.SPEED, value: 10 },
+      { type: Attribute.INTELLECT, value: 10 },
     ],
   },
 ];

@@ -1,10 +1,10 @@
-import { Attribute, Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 
 import { Descriptor } from '../model/Descriptor.model';
 import { Focus } from '../model/Focus.model';
 import { NumeneraCharacter } from '../model/NumeneraCharacter.model';
-import { CharacterType } from '../model/Type.model';
+import { Attribute, CharacterType } from '../model/Type.model';
 
 @Injectable({
   providedIn: 'root',
@@ -20,7 +20,10 @@ export class NumeneraCharacterService {
    *
    * @param attribute the attribute to set.
    */
-  set attribute(attribute: { attribute: Attribute; value: number }) {
+  set attribute(attribute: { type: Attribute; value: number }) {
+    this.character.pool
+      .filter((a) => a.type == attribute.type)
+      .map((a) => (a.value = attribute.value));
     this.character$.next(this.character);
   }
 
@@ -30,7 +33,10 @@ export class NumeneraCharacterService {
    *
    * @param edge the edge to set.
    */
-  set edge(edge: { attribute: Attribute; value: number }) {
+  set edge(edge: { type: Attribute; value: number }) {
+    this.character.edge
+      .filter((a) => a.type == edge.type)
+      .map((a) => (a.value = edge.value));
     this.character$.next(this.character);
   }
 

@@ -8,13 +8,31 @@ export class NumeneraCharacter {
   /** Character Name */
   name?: string;
   /** Character Type */
-  type?: CharacterType;
+  private _type!: CharacterType;
   /** Character Description */
-  descriptor?: Descriptor;
+  private _descriptor!: Descriptor;
   /** Character Focus */
   focus?: Focus;
   /** Charater Attribute Pool */
-  pool: Array<{ attribute: Attribute; value: number }> = [];
+  pool: Array<{ type: Attribute; value: number }> = [];
   /** Character Edges */
-  edge: Array<{ attribute: Attribute; value: number }> = [];
+  edge: Array<{ type: Attribute; value: number }> = [];
+
+  set descriptor(descriptor: Descriptor) {
+    this._descriptor = descriptor;
+  }
+
+  get descriptor(): Descriptor {
+    return this._descriptor;
+  }
+
+  set type(type: CharacterType) {
+    this._type = type;
+    this.pool = [];
+    this.pool = type.attributes;
+  }
+
+  get type(): CharacterType {
+    return this._type;
+  }
 }

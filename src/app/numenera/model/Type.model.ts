@@ -3,10 +3,11 @@ import { Origin } from './Origin.model';
 /**
  * Available Attributes in Numenera.
  */
+
 export enum Attribute {
   MIGHT = 0,
   SPEED = 1,
-  INTELLECT = 3,
+  INTELLECT = 2,
 }
 
 /**
@@ -18,5 +19,5 @@ export interface CharacterType {
   name: string;
   origin: Origin;
   description?: string;
-  attributes: Array<{ attribute: Attribute; value: number }>;
+  attributes: Array<{ type: Attribute; value: number }>;
 }
