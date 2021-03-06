@@ -7,7 +7,7 @@
   <mat-form-field appearance="fill">
     <mat-label>Who is a</mat-label>
     <mat-select (selectionChange)="onChangeDesc($event)">
-      <mat-option *ngFor="let desc of masterdata?.descriptors | async" [value]="desc">
+      <mat-option *ngFor="let desc of masterdata?.descriptions| async" [value]="desc">
         {{desc.name}}
       </mat-option>
     </mat-select>

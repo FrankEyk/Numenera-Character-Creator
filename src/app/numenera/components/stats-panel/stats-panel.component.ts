@@ -1,6 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { AttributeType } from '../../model/Attribute.model';
 import { NumeneraCharacterService } from '../../services/NumeneraCharacter.service';
 
 @Component({
@@ -25,26 +24,7 @@ export class StatsPanelComponent implements OnInit, OnDestroy {
     this.subscription = this.service.character$.subscribe((character) => {
       this.might = this.speed = this.intellect = 0;
 
-      character.attributes.forEach((attribute) => {
-        if (attribute.type === AttributeType.MIGHT) {
-          this.might = attribute.value;
-        } else if (attribute.type === AttributeType.SPEED) {
-          this.speed = attribute.value;
-        } else if (attribute.type === AttributeType.INTELLECT) {
-          this.intellect = attribute.value;
-        }
-      });
-
-      this.mightEdge = this.speedEdge = this.intellectEdge = 0;
-      character.edge.forEach((edge) => {
-        if (edge.type === AttributeType.MIGHT) {
-          this.mightEdge = edge.value;
-        } else if (edge.type === AttributeType.SPEED) {
-          this.speedEdge = edge.value;
-        } else if (edge.type === AttributeType.INTELLECT) {
-          this.intellectEdge = edge.value;
-        }
-      });
+      //TODO add update
     });
   }
 
@@ -53,26 +33,26 @@ export class StatsPanelComponent implements OnInit, OnDestroy {
   }
 
   onMightChanged(value: number): void {
-    this.service.attribute = { type: AttributeType.MIGHT, value: value };
+    //TODO
   }
 
   onSpeedChanged(value: number): void {
-    this.service.attribute = { type: AttributeType.SPEED, value: value };
+    //TODO
   }
 
   onIntellectChanged(value: number): void {
-    this.service.attribute = { type: AttributeType.INTELLECT, value: value };
+    //TODO
   }
 
   onMightEdgeChanged(value: number): void {
-    this.service.edge = { type: AttributeType.MIGHT, value: value };
+    //TODO
   }
 
   onSpeedEdgeChanged(value: number): void {
-    this.service.edge = { type: AttributeType.SPEED, value: value };
+    //TODO
   }
 
   onIntellectEdgeChanged(value: number): void {
-    this.service.edge = { type: AttributeType.INTELLECT, value: value };
+    //TODO
   }
 }

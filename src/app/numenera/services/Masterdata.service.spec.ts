@@ -1,10 +1,12 @@
 import { TestBed } from '@angular/core/testing';
-import { DESCRIPTIONS } from '../model/Descriptor.model';
-import { FOCUS } from '../model/Focus.model';
-import { TYPES } from '../model/Type.model';
+import { DESCRIPTORS, FOCI, TYPES } from '../model/data/Corebook.data';
 import { MasterdataService } from './Masterdata.service';
 
 describe('MasterdataService', () => {
+  const _descriptions = [...DESCRIPTORS];
+  const _types = [...TYPES];
+  const _foci = [...FOCI];
+
   let service: MasterdataService;
 
   beforeEach(() => {
@@ -17,22 +19,22 @@ describe('MasterdataService', () => {
   });
 
   it('should contain all known descriptors', (done) => {
-    service.descriptors.subscribe((descriptors) => {
-      expect(descriptors).toEqual(DESCRIPTIONS);
+    service.descriptions.subscribe((descriptors) => {
+      expect(descriptors).toEqual(_descriptions);
       done();
     });
   });
 
   it('should contain all known types', (done) => {
     service.types.subscribe((types) => {
-      expect(types).toEqual(TYPES);
+      expect(types).toEqual(_types);
       done();
     });
   });
 
   it('should contain all know focus variants', (done) => {
     service.focus.subscribe((focus) => {
-      expect(focus).toEqual(FOCUS);
+      expect(focus).toEqual(_foci);
       done();
     });
   });
