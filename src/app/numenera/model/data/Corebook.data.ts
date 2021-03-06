@@ -856,11 +856,720 @@ export const FOCI: Array<Focus> = [
         level: 6,
         type: ActionType.ENABLER,
         description: `You can create new artifacts in half the time, as if they were two levels lower, by spending  half the normal XP. Enabler.`,
-        origin: { title: CORE_BOOK, page: 59 }
+        origin: { title: CORE_BOOK, page: 59 },
       },
     ],
   },
-  //TODO add more foci
+  {
+    name: 'Employs Magnetism',
+    origin: { title: CORE_BOOK, page: 59 },
+    description: `Electromagnetism is a fundamental force in the
+    universe, and it is yours to command. You are a
+    master of metal.
+    You probably wear a lot of metal, perhaps as part
+    of your clothing or armor, as part of your accessories
+    (such as jewelry or piercings), embedded into your
+    body surgically, or in some combination of these
+    options.
+    No one type of character is more likely than
+    any other to employ magnetism, although glaives
+    who wield weapons and wear armor will find it an
+    interesting complement to their powers.`,
+    benefits: [
+      {
+        name: 'Connection',
+        description: `Pick one other PC. Whenever you use your powers, the metallic items on that character’s body shudder, rattle, clink, and shake if he is within short range.
+        Minor Effect Suggestions: The duration of the effect is doubled
+        Major Effect Suggestions: An important item on the target’s person is destroyed.`,
+        upgrade: (char) => console.log(char),
+      },
+    ],
+    tiers: [
+      {
+        name: 'Move Metal',
+        level: 1,
+        type: ActionType.ACTION,
+        description: `You can exert
+        force on metal objects within short range for one
+        round. Once activated, your power has an effective
+        Might Pool of 10, a Might Edge of 1, and an Effort
+        of 2 (approximately equal to the strength of a fit,
+        capable, adult human), and you can use it to move
+        metal objects, push against metal objects, and so
+        on. For example, in your round, you could lift and
+        pull a light metal object anywhere within range
+        to yourself or move a heavy object (like a piece of
+        furniture) about 10 feet (3 m). This power lacks the
+        fine control to wield a weapon or move objects with
+        much speed, so in most situations, it’s not a means
+        of attack. You can’t use this ability on your own
+        body. Action.`,
+        origin: { title: CORE_BOOK, page: 59 },
+        cost: { attribute: Attribute.INTELLECT, value: 1 },
+      },
+      {
+        name: 'Repel Metal',
+        level: 2,
+        type: ActionType.ENABLER,
+        description: `By manipulating magnetism,
+        you are trained in Speed defense tasks against any
+        incoming attack that uses metal. Enabler.`,
+        origin: { title: CORE_BOOK, page: 59 },
+      },
+      {
+        name: 'Destroy Metal',
+        level: 3,
+        type: ActionType.ACTION,
+        description: `You
+        instantly tear, rip, or burst a metal object that is
+        within sight, within short range, and no bigger than
+        half your size. Make an Intellect roll to destroy the
+        object; the difficulty of this task is decreased by three
+        steps (compared to breaking it with brute strength).
+        Action.`,
+        origin: { title: CORE_BOOK, page: 59 },
+        cost: { attribute: Attribute.INTELLECT, value: 4 },
+      },
+      {
+        name: 'Magnetic Field',
+        level: 4,
+        type: ActionType.ENABLER,
+        description: `When
+        you wish it, a field of magnetism around you pulls
+        incoming, ranged, metallic projectile attacks (such
+        as arrows, bullets, a thrown metal knife, and so on)
+        to the ground. You are immune to such attacks for
+        one round. You must be aware of an attack to foil it.
+        Enabler.`,
+        origin: { title: CORE_BOOK, page: 60 },
+        cost: { attribute: Attribute.INTELLECT, value: 4 },
+      },
+      {
+        name: 'Command Metal',
+        level: 5,
+        type: ActionType.ACTION,
+        description: `You
+        reshape a metallic item as you desire. The item must
+        be within sight and within short range, and its mass
+        can be no greater than your own. You can affect
+        multiple items at once as long as their combined
+        mass falls within these limits. You can fuse multiple
+        items together. You can use this power to destroy a
+        metal object (as the Destroy Metal ability), or you
+        can craft it into another desired shape (crudely,
+        unless you have the proper crafting skills). You can
+        then move the new object anywhere within range.
+        For example, you could take a few metal shields, fuse
+        them together, and use the resulting shape to block a
+        doorway. You can use this ability to make an attack—
+        causing a foe’s armor to constrict, rendering a metal
+        item into shards that you fling across the battlefield,
+        and so on—against one target within short range.
+        Regardless of the form of the attack, it is an Intellect
+        action that deals 7 points of damage. Action.`,
+        origin: { title: CORE_BOOK, page: 60 },
+        cost: { attribute: Attribute.INTELLECT, value: 5 },
+      },
+      {
+        name: 'Diamagnetism',
+        level: 6,
+        type: ActionType.ENABLER,
+        description: `You magnetize any
+        nonmetallic object within short range so that it can
+        be affected by your other powers. Thus, with Move
+        Metal, you can move any object. With Repel Metal,
+        you are trained in all Speed defense tasks, regardless
+        of whether the incoming attack uses metal. And so
+        on. Enabler.`,
+        origin: { title: CORE_BOOK, page: 60 },
+      },
+    ],
+  },
+  {
+    name: 'Entertains',
+    description: `You are an entertainer: a singer, dancer, poet,
+    storyteller, or something similar. You perform for the
+    benefit of others. Naturally charismatic and talented,
+    you have also studied to master your art. You know
+    all the old poems, songs, jokes, and stories, and
+    you’re skilled at creating new ones, too.
+    You probably wear flamboyant or at least
+    fashionable clothes and use cosmetics, tattoos, or
+    hair stylings for dramatic effect.
+    The role of the entertainer fits the jack best, but
+    glaives and nanos sometimes entertain as well.`,
+    origin: { title: CORE_BOOK, page: 60 },
+    benefits: [
+      {
+        name: 'Connection',
+        description: `Pick one other PC. This character is your worst critic. Your abilities to help or inspire others don’t function for her.`,
+        upgrade: (char) => console.log(char),
+      },
+      {
+        name: 'Additional Equipment',
+        description: `You start with a musical instrument or other tools needed to perform.
+        Minor Effect Suggestions: You enchant the target, who remains enchanted as long as you focus all your attention on keeping her that way 
+        Major Effect Suggestions: The target is forever favorably disposed toward you.`,
+        upgrade: (char) => console.log(char),
+      },
+    ],
+    tiers: [
+      {
+        name: 'Levity',
+        level: 1,
+        type: ActionType.ENABLER,
+        description: `Through wit, charm, humor, and grace,
+        you are trained in all social interactions other than
+        those involving coercion or intimidation. During
+        rests, you put friends and comrades at ease so much
+        that they gain +1 to their recovery rolls. Enabler.`,
+        origin: { title: CORE_BOOK, page: 60 },
+      },
+      {
+        name: 'Inspiration',
+        level: 2,
+        type: ActionType.ENABLER,
+        description: `Through stories, songs, art,
+        or other forms of entertainment, you inspire your
+        friends. After spending 28 hours with you, once per
+        day each of your friends can decrease the difficulty
+        of a task by one step. This benefit is ongoing while
+        you remain in the friend’s company. It ends if you
+        leave, but it resumes if you return to the friend’s
+        company within 28 hours. If you leave the friend’s
+        company for more than 28 hours, you must spend
+        another 28 hours together to reactivate the benefit.
+        Enabler.`,
+        origin: { title: CORE_BOOK, page: 60 },
+      },
+      {
+        name: 'Knowledge',
+        level: 3,
+        type: ActionType.ENABLER,
+        description: `Your stories and songs contain
+        truth. You are trained in two areas of knowledge of
+        your choosing. Enabler.`,
+        origin: { title: CORE_BOOK, page: 60 },
+      },
+      {
+        name: 'Calm',
+        level: 4,
+        type: ActionType.ACTION,
+        description: `Through jokes, song,
+        or other art, you prevent a living foe from attacking
+        anyone or anything for one round. Action.`,
+        origin: { title: CORE_BOOK, page: 60 },
+        cost: { attribute: Attribute.INTELLECT, value: 3 },
+      },
+      {
+        name: 'Able Assistance',
+        level: 5,
+        type: ActionType.ENABLER,
+        description: `When you help someone
+        with a task, you always reduce the difficulty of the
+        task by one step regardless of your own skill at that
+        task. Enabler.`,
+        origin: { title: CORE_BOOK, page: 60 },
+      },
+      {
+        name: 'Master Entertainer',
+        level: 6,
+        type: ActionType.ACTION,
+        description: `Your Inspiration ability
+        works more effectively, allowing your friends to
+        decrease the difficulty of a task by two steps rather
+        than one step. Enabler.`,
+        origin: { title: CORE_BOOK, page: 60 },
+      },
+    ],
+  },
+  {
+    name: 'Exists Partially Out Of Phase',
+    origin: { title: CORE_BOOK, page: 60 },
+    description: `You have the ability to change your phase state. In
+    fact, you’re always slightly out of phase, giving you
+    a ghostly translucence. With concentration, you can
+    pass your hand through a solid object, allow a solid
+    object to pass harmlessly through you, or literally
+    walk through walls. However, moving in and out
+    of different phase states requires extreme force of
+    will and can be mentally taxing. The explanation for 
+    your strange power lies within some aspect of the
+    numenera. Perhaps the ability emerged through the
+    use of (or exposure to) lingering transdimensional
+    technology or as the result of an encounter with
+    a creature not native to this world or dimension.
+    Perhaps one of your ancestors first developed
+    the power and passed it down through generations.
+    You might do whatever you can to play up your translucent
+    appearance by wearing diaphanous, billowy clothing,
+    or, depending on your personality, you might do
+    just the opposite. Jacks enjoy the infiltration
+    possibilities of changing their phase state, and nanos
+    appreciate the defensive capabilities. Glaives can use
+    the offensive and defensive aspects but might find them
+    a bit hindering as well.`,
+    benefits: [
+      {
+        name: 'Connection',
+        description: `Pick one other PC. You have known that character for a while, and he helped you gain control of your phase states.
+        Minor Effect Suggestion: While out of phase, you also gain +1 to all Speed defense tasks.
+        Major Effect Suggestion: While out of phase, you are also invisible.`,
+        upgrade: (char) => console.log(char),
+      },
+    ],
+    tiers: [
+      {
+        name: 'Walk Through Walls',
+        level: 1,
+        type: ActionType.ACTION,
+        description: `You
+        can slowly pass through physical barriers at a rate of
+        1 inch (2.5 cm) per round (minimum of one round
+        to pass through any barrier). You can’t act (other
+        than moving) or perceive anything until you pass
+        entirely through the barrier. You can’t pass through
+        energy barriers. Action.`,
+        origin: { title: CORE_BOOK, page: 61 },
+        cost: { attribute: Attribute.INTELLECT, value: 2 },
+      },
+      {
+        name: 'Defensive Phasing',
+        level: 2,
+        type: ActionType.ACTION,
+        description: `You can change your phase so that some attacks
+        pass through you harmlessly. For the next ten
+        minutes, reduce the difficulty of all your Speed
+        defensive tasks by one step, but during this time
+        you lose any benefit from armor you wear. Action
+        to initiate.`,
+        origin: { title: CORE_BOOK, page: 61 },
+        cost: { attribute: Attribute.INTELLECT, value: 2 },
+      },
+      {
+        name: 'Phased Attack',
+        level: 3,
+        type: ActionType.ENABLER,
+        description: `The attack
+        you make on this turn ignores your foe’s armor. The
+        ability works for whatever kind of attack you use
+        (melee, ranged, energy, and so on). Enabler.`,
+        origin: { title: CORE_BOOK, page: 61 },
+      },
+      {
+        name: 'Ghost',
+        level: 4,
+        type: ActionType.ACTION,
+        description: `For the next ten
+        minutes, you are trained in sneaking tasks. During
+        this time, you can move through solid barriers (but
+        not energy barriers) at a rate of 1 foot (30 cm) per
+        round, and you can perceive while phased within a
+        barrier or object, which allows you to peek through
+        walls. Action to initiate.`,
+        origin: { title: CORE_BOOK, page: 61 },
+        cost: { attribute: Attribute.INTELLECT, value: 4 },
+      },
+      {
+        name: 'Untouchable',
+        level: 5,
+        type: ActionType.ACTION,
+        description: `You change
+        your phase state for the next one minute so that you
+        can’t affect or be affected by normal matter or energy.
+        Only mental attacks and special transdimensional
+        energies, devices, or abilities can affect you, but likewise
+        you can’t attack, touch, or otherwise affect anything.
+        Action to initiate.`,
+        origin: { title: CORE_BOOK, page: 61 },
+        cost: { attribute: Attribute.INTELLECT, value: 6 },
+      },
+      {
+        name: 'Enhanced Phase',
+        level: 6,
+        type: ActionType.ENABLER,
+        description: `This
+        ability works like the third-tier Phased Attack ability except
+        that your attack also disrupts the foe’s vitals, dealing an
+        additional 5 points of damage. Enabler.`,
+        origin: { title: CORE_BOOK, page: 61 },
+        cost: { attribute: Attribute.INTELLECT, value: 5 },
+      },
+    ],
+  },
+  {
+    name: 'Explores Dark Places',
+    origin: { title: CORE_BOOK, page: 61 },
+    description: `You explore the foreboding ruins and mysterious
+    locales of the ancient eras, trained in such activities
+    by those who have gone before you. You’re the
+    archetypical treasure hunter, scavenger, and finder of
+    lost things. You spend so much of your time in the
+    dark that you slowly adapt to it, almost becoming
+    a creature of the gloom yourself. Even in civilized
+    areas, you prefer to keep to the shadows.
+    Most likely, you wear dark clothing to help you blend
+    into the blackness. On the other hand, you might wear
+    sensible garments and gear because you have serious
+    and dangerous business to attend to in the dark.
+    Jacks in particular are suited to exploring dark
+    places; those who do so are called shadowjacks.
+    Glaives who follow this path are known as shadow
+    warriors, and nanos are called shadowcasters.`,
+    benefits: [
+      {
+        name: 'Connection',
+        description: ` Pick one other PC. This character
+        has been your adventuring partner in previous
+        expeditions, and the two of you work so well together
+        that you both gain +1 to any die rolls when you
+        collaborate on the same task, fight the same foe, and
+        so on.`,
+        upgrade: (char) => console.log(char),
+      },
+      {
+        name: 'Additional Equipment',
+        description: `You start with an explorer’s pack. If you already have one, you can instead take 50 extra feet (15 m) of rope, rations for two more days, and two minor glowglobes.`,
+        upgrade: (char) => console.log(char),
+      },
+      {
+        name: 'Dark Esoteries',
+        description: `If you perform esoteries, they make almost no sound, and whatever visual displays they produce are dark and shadowy. These alterations change nothing other than the appearance of the effects. A Flash esotery is a silent burst of shadows, a Barrier esotery is a mass of shadowy wisps, and so on.
+        Minor Effect Suggestions: The target is also dazed for one round, during which time the difficulty of all tasks it performs is modified by one step to its detriment.
+        Major Effect Suggestions: The target is also stunned and loses its next turn.`,
+        upgrade: (char) => console.log(char),
+      },
+    ],
+    tiers: [
+      {
+        name: 'Trained Explorer',
+        level: 1,
+        type: ActionType.ENABLER,
+        description: `You are trained in searching, listening, climbing, balancing, and jumping tasks. Enabler.`,
+        origin: { title: CORE_BOOK, page: 62 },
+      },
+      {
+        name: 'Trained Infiltrator',
+        level: 2,
+        type: ActionType.ENABLER,
+        description: `You are trained in lockpicking and tinkering with devices. Enabler`,
+        origin: { title: CORE_BOOK, page: 62 },
+        benefit: {
+          name: 'Eyes Adjusted',
+          description: `You can see in extremely dim light as though it were bright light. You can see in total darkness as if it were extremely dim. Enabler.`,
+          upgrade: (char) => console.log(char),
+        },
+      },
+      {
+        name: 'Slippery Customer',
+        level: 3,
+        type: ActionType.ENABLER,
+        description: `You are trained in
+        escaping from bonds, fitting in tight spaces, and
+        other contortionist tasks. Thanks to your experience,
+        you also are trained in Speed defense tasks while
+        wearing light armor or no armor. Enabler.`,
+        origin: { title: CORE_BOOK, page: 62 },
+      },
+      {
+        name: 'Resilient',
+        level: 4,
+        type: ActionType.ENABLER,
+        description: `In your explorations of dark places,
+        you’ve been exposed to all sorts of terrible things
+        and are developing a general resistance. You gain
+        +1 to Armor and are trained in Might defense tasks.
+        Enabler.`,
+        origin: { title: CORE_BOOK, page: 62 },
+      },
+      {
+        name: 'Dark Explorer',
+        level: 5,
+        type: ActionType.ENABLER,
+        description: `You ignore penalties for any
+        action (including fighting) in extremely dim light
+        or in cramped spaces. Combined with your Eyes
+        Adjusted ability, you can act without penalty even in
+        total darkness. You are also trained in sneaking tasks
+        while in dim or no light. Enabler.`,
+        origin: { title: CORE_BOOK, page: 62 },
+      },
+      {
+        name: 'Blinding Attack',
+        level: 6,
+        type: ActionType.ACTION,
+        description: `If you have
+        a source of light, you can use it to make a melee
+        attack against a target. If successful, the attack deals
+        no damage, but the target is blinded for one minute.
+        Action.`,
+        origin: { title: CORE_BOOK, page: 62 },
+        cost: { attribute: Attribute.SPEED, value: 3 },
+      },
+    ],
+  },
+  {
+    name: 'Fights With Panache',
+    origin: { title: CORE_BOOK, page: 62 },
+    description: `You know that style is at least as important as
+    substance. Defeating foes is secondary to looking
+    good while doing it. Some might call you a
+    swashbuckler or daredevil. You leap through the air,
+    make a flourish with your weapon, and attack, usually
+    with a clever, biting show of wit. Your enemies hate
+    you, but your allies adore you. Just watching you fight
+    is entertaining.
+    You very likely wear no armor, instead preferring
+    stylish clothing—perhaps even a hat with a feather.
+    Jacks and glaives make the best swashbucklers,
+    and they are the most common types of character to
+    fight with panache.`,
+    benefits: [
+      {
+        name: 'Connection',
+        description: `Pick one other PC. You’re always
+        trying to impress this character with your skill, wit,
+        appearance, or bravado. Perhaps she is a rival,
+        perhaps you need her respect, or perhaps you’re
+        romantically interested in her.`,
+        upgrade: (char) => console.log(char),
+      },
+      {
+        name: 'Additional Equipment',
+        description: `You begin with a set of extremely stylish clothes and a jeweled weapon.
+        Minor Effect Suggestions: The target is so dazzled by your style that it is dazed for one round, during which time the difficulty of all tasks it performs is modified by one step to its detriment.
+        Major Effect Suggestions: Make an additional attack with your weapon on your turn.`,
+        upgrade: (char) => console.log(char),
+      },
+    ],
+    tiers: [
+      {
+        name: 'Attack Flourish',
+        level: 1,
+        type: ActionType.ENABLER,
+        description: `With your attack, you add
+        stylish moves, entertaining quips, or a certain
+        “something” that entertains or impresses others.
+        Choose any number of creatures within short range
+        who can see you; each of them gains a +1 bonus to
+        its next die roll. Enabler.`,
+        origin: { title: CORE_BOOK, page: 62 },
+      },
+      {
+        name: 'Quick Block',
+        level: 2,
+        type: ActionType.ENABLER,
+        description: `If you use a light or medium
+        weapon, you decrease the difficulty of your Speed
+        defense actions by one step. Enabler.`,
+        origin: { title: CORE_BOOK, page: 62 },
+      },
+      {
+        name: 'Acrobatic Attack',
+        level: 3,
+        type: ActionType.ENABLER,
+        description: `You leap
+        into the attack, twisting or flipping through the air.
+        This motion decreases the difficulty of your attack
+        by one step. If you roll a natural 17 or 18, you can
+        choose to have a minor effect rather than deal extra
+        damage. You can’t use this ability if your Speed is
+        reduced from wearing armor. Enabler.`,
+        origin: { title: CORE_BOOK, page: 62 },
+        cost: { attribute: Attribute.SPEED, value: 3 },
+      },
+      {
+        name: 'Mobile Fighter',
+        level: 4,
+        type: ActionType.ENABLER,
+        description: `As part of
+        your attack, you can leap on or over obstacles, swing
+        from ropes, run along narrow surfaces, or otherwise
+        move around the battlefield at your normal speed
+        as if such tasks were routine (difficulty 0). You can’t
+        use this ability if your Speed is reduced from wearing
+        armor. Enabler.`,
+        origin: { title: CORE_BOOK, page: 62 },
+        cost: { attribute: Attribute.SPEED, value: 3 },
+      },
+      {
+        name: 'Block for Another',
+        level: 5,
+        type: ActionType.ENABLER,
+        description: `If you use a light or medium
+        weapon, you can block attacks made against an ally
+        near you. Choose one creature within immediate
+        range. You decrease the difficulty of that creature’s
+        Speed defense actions by one step. You can’t use
+        Quick Block while using Block for Another. Enabler`,
+        origin: { title: CORE_BOOK, page: 62 },
+      },
+      {
+        name: 'Agile Wit',
+        level: 6,
+        type: ActionType.ENABLER,
+        description: `When attempting a Speed task, you
+        instead can roll (and spend points) as if it were an
+        Intellect action. If you apply Effort to this task, you
+        can spend points from your Intellect Pool instead
+        of your Speed Pool (in which case you also use your
+        Intellect Edge instead of your Speed Edge). Enabler.`,
+        origin: { title: CORE_BOOK, page: 63 },
+      },
+    ],
+  },
+  {
+    name: 'Focuses Mind Over Matter',
+    origin: { title: CORE_BOOK, page: 63 },
+    description: `Telekinesis. Psychokinesis. Mind over matter. The
+    power has many names, but in the end, it all boils
+    down to one thing—the molecules that make up all
+    matter are yours to command. You likely call yourself
+    a telekinetic or just a TK.
+    Many telekinetics prefer to wear tight clothing
+    without much accouterment so there is little another
+    TK could grab hold of psychically. On the other hand,
+    you have the power to create very minor telekinetic
+    effects at will, so your hair might always be in
+    motion, you could have a few tiny objects floating
+    around you, or you might wear a long cape that’s
+    always billowing.
+    Jacks are the most likely characters to be
+    telekinetics, but glaives find that the abilities add
+    to their combat prowess, and nanos, of course,
+    appreciate the additional power`,
+    benefits: [
+      {
+        name: 'Connection',
+        description: `Pick one other PC. This character
+        can cause your telekinetic powers to act oddly. Every
+        once in a while, if he stands directly next to you, your
+        powers are cancelled, but at other times, they seem
+        improved when used near him.`,
+        upgrade: (char) => console.log(char),
+      },
+      {
+        name: 'Mental Esoteries',
+        description: `If you perform esoteries, those
+        that would normally use force or other energy instead
+        use telekinetic force. For example, a Flash or an
+        Onslaught force blast is a telekinetic blast from your
+        mind. This alteration changes nothing except that you
+        don’t need a free hand to perform esoteries. Enabler.
+        Minor Effect Suggestions: An object moves faster or more efficiently.
+        Major Effect Suggestions: You can move or affect twice as much as normal.`,
+        upgrade: (char) => console.log(char),
+      },
+    ],
+    tiers: [
+      {
+        name: 'Deflect Attacks',
+        level: 1,
+        type: ActionType.ACTION,
+        description: `Using your
+        mind, you protect yourself from incoming attacks.
+        For the next ten minutes, you are trained in Speed
+        defense tasks. Action to initiate.`,
+        origin: { title: CORE_BOOK, page: 63 },
+        cost: { attribute: Attribute.INTELLECT, value: 1 },
+      },
+      {
+        name: 'Telekinesis',
+        level: 2,
+        type: ActionType.ACTION,
+        description: ` You can exert
+        force on objects within short range. Once activated,
+        your power has an effective Might Pool of 10, a
+        Might Edge of 1, and an Effort of 2 (approximately
+        equal to the strength of a fit, capable, adult human),
+        and you can use it to move objects, push against
+        objects, and so on. For example, you could lift and
+        pull a light object anywhere within range to yourself
+        or move a heavy object (like a piece of furniture)
+        about 10 feet (3 m). This power lacks the fine control
+        to wield a weapon or move objects with much
+        speed, so in most situations, it’s not a means of
+        attack. You can’t use this ability on your own body.
+        The power lasts for one hour or until its Might Pool
+        is depleted—whichever comes first. Action.`,
+        origin: { title: CORE_BOOK, page: 63 },
+        cost: { attribute: Attribute.INTELLECT, value: 2 },
+      },
+      {
+        name: 'Enhance Strenght',
+        level: 3,
+        type: ActionType.ACTION,
+        description: `For the
+        next ten minutes, tasks that depend on brute force—
+        such as moving a heavy object, smashing down a
+        door, or hitting someone with a melee weapon—are
+        easier for you. The difficulty of all such tasks is
+        decreased by one step. Action to initiate.`,
+        origin: { title: CORE_BOOK, page: 63 },
+        cost: { attribute: Attribute.INTELLECT, value: 3 },
+      },
+      {
+        name: 'Apportation',
+        level: 4,
+        type: ActionType.ACTION,
+        description: `You call a
+        physical object to you. You can choose any piece of
+        normal equipment on the standard equipment list,
+        or (no more than once per day) you can allow the
+        GM to determine the object randomly. If you call a
+        random object, it has a 10 percent chance of being
+        a cypher or artifact, a 10 percent chance of being
+        an oddity, a 40 percent chance of being a piece of
+        standard equipment, and a 40 percent chance of
+        being a bit of worthless junk. You can’t use this
+        ability to take an item held by another creature.
+        Action.`,
+        origin: { title: CORE_BOOK, page: 63 },
+        cost: { attribute: Attribute.INTELLECT, value: 4 },
+      },
+      {
+        name: 'Psychokinetic Attack',
+        level: 5,
+        type: ActionType.ACTION,
+        description: `You
+        can use this attack in one of two ways. The first way
+        is to pick up a heavy object and hurl it at someone
+        within short range. This attack is an Intellect action,
+        and if successful, it deals 6 points of damage to
+        the target and to the hurled object (which could be
+        another foe, although that would require two rolls—
+        one roll to grab the first foe and another roll to hit
+        the second foe with the first). The second way is to
+        unleash a shattering burst of power that works only
+        against an inanimate object no larger than half your
+        size. Make an Intellect roll to instantly destroy the
+        object; the difficulty of this task is decreased by three
+        steps (compared to breaking it with brute strength).
+        Action.`,
+        origin: { title: CORE_BOOK, page: 63 },
+        cost: { attribute: Attribute.INTELLECT, value: 5 },
+      },
+      {
+        name: 'Reshape Matter',
+        level: 6,
+        type: ActionType.ACTION,
+        description: `Your
+        mastery of telekinesis is so great that you can reshape
+        objects on a molecular level. You can affect a single
+        object no larger than you, and the object must be
+        visible and close enough for you to touch. You can
+        use this ability to damage the object (as if using
+        Psychokinetic Attack, except the difficulty of the task
+        is decreased by four steps instead of three), or you
+        can attempt a crafting task to reshape the object
+        into another form. Reshaping an object usually has a
+        difficulty equal to 1 plus the level of the finished object. `,
+        origin: { title: CORE_BOOK, page: 63 },
+        cost: { attribute: Attribute.INTELLECT, value: 6 },
+      },
+    ],
+  },
+  //TODO add more foci 64ff.
 ];
 
 export const DESCRIPTORS: Array<Descriptor> = [
