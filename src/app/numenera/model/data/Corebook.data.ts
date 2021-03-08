@@ -51,7 +51,6 @@ export const FOCI: Array<Focus> = [
         is active, you gain +2 points of Armor that protect
         only against damage from fire from another source.
         Enabler.`,
-        origin: { title: CORE_BOOK, page: 53 },
         cost: { attribute: Attribute.INTELLECT, value: 1 },
       },
       {
@@ -59,9 +58,7 @@ export const FOCI: Array<Focus> = [
         level: 2,
         type: ActionType.ACTION,
         description: `While your Shroud of Flame is active, you can reach into your halo and hurl a handful of fire at a target. 
-        This is a ranged attack with short range that deals 4 points of fire damage. Action.
-        `,
-        origin: { title: CORE_BOOK, page: 53 },
+        This is a ranged attack with short range that deals 4 points of fire damage. Action.`,
         cost: { attribute: Attribute.INTELLECT, value: 2 },
         benefit: {
           name: 'Fiery Power',
@@ -90,7 +87,6 @@ export const FOCI: Array<Focus> = [
         creature and deals 1 extra point of damage from
         fire when it attacks. Once created, the hand lasts
         for ten minutes. Action to create; action to direct.`,
-        origin: { title: CORE_BOOK, page: 53 },
         cost: { attribute: Attribute.INTELLECT, value: 3 },
       },
       {
@@ -102,7 +98,6 @@ export const FOCI: Array<Focus> = [
         flame ends if you stop holding or carrying the
         weapon. While the flame lasts, the weapon inflicts 2
         additional points of damage. Enabler.`,
-        origin: { title: CORE_BOOK, page: 53 },
         cost: { attribute: Attribute.INTELLECT, value: 4 },
       },
       {
@@ -114,7 +109,6 @@ export const FOCI: Array<Focus> = [
         Each tendril inflicts 4 points of damage.
         Otherwise, the attacks function as standard attacks. 
         If you don’t use the tendrils to attack, they remain but do nothing. Enabler.`,
-        origin: { title: CORE_BOOK, page: 53 },
         cost: { attribute: Attribute.INTELLECT, value: 5 },
       },
       {
@@ -137,7 +131,6 @@ export const FOCI: Array<Focus> = [
         and deals 1 extra point of damage
         from fire when it attacks. Action to
         create; action to direct.`,
-        origin: { title: CORE_BOOK, page: 54 },
         cost: { attribute: Attribute.INTELLECT, value: 6 },
       },
     ],
@@ -174,7 +167,6 @@ export const FOCI: Array<Focus> = [
         level: 1,
         type: ActionType.ENABLER,
         description: `To be truly deadly with a bow, you must know where to aim. You can spend points from either your Speed Pool or your Intellect Pool to apply levels of Effort to increase your bow damage. Each level of Effort adds 3 points of damage to a successful attack. Enabler.`,
-        origin: { title: CORE_BOOK, page: 54 },
         benefit: {
           name: 'Fletcher',
           description: `You are trained in making arrows.`,
@@ -187,7 +179,6 @@ export const FOCI: Array<Focus> = [
         level: 2,
         type: ActionType.ENABLER,
         description: `In a round where you attack with your bow, if you fire an additional arrow, the difficulty of attacks and special abilities used by the target is increased by one step. Enabler.`,
-        origin: { title: CORE_BOOK, page: 54 },
         cost: { attribute: Attribute.SPEED, value: 1 },
         benefit: {
           name: 'Bowyer',
@@ -201,7 +192,6 @@ export const FOCI: Array<Focus> = [
         level: 3,
         description: `You are trained in using bows. Enabler.`,
         type: ActionType.ENABLER,
-        origin: { title: CORE_BOOK, page: 54 },
         benefit: {
           name: 'Master Fletcher',
           description: `You are specialized in making arrows. Enabler`,
@@ -214,7 +204,6 @@ export const FOCI: Array<Focus> = [
         level: 4,
         type: ActionType.ENABLER,
         description: `If you roll a natural 17 or higher with a bow attack, instead of adding damage or a minor or major effect, you can make another attack with your bow. This attack reuses the same Effort and bonuses (if any) from the first attack. Enabler`,
-        origin: { title: CORE_BOOK, page: 54 },
         benefit: {
           name: 'Master Bowyer',
           description: `You are specialized in making bows. Enabler.`,
@@ -227,14 +216,12 @@ export const FOCI: Array<Focus> = [
         level: 5,
         type: ActionType.ENABLER,
         description: `You are specialized in using bows. Enabler.`,
-        origin: { title: CORE_BOOK, page: 54 },
       },
       {
         name: 'Powerful Shot',
         level: 6,
         type: ActionType.ENABLER,
         description: `You inflict 3 additional points of damage with a bow. The Might points spent to use this ability are in addition to any Speed points spent on the attack. Enabler.`,
-        origin: { title: CORE_BOOK, page: 54 },
       },
     ],
   },
@@ -293,7 +280,6 @@ export const FOCI: Array<Focus> = [
         If you apply a level of Effort to increase the duration
         rather than affect the difficulty, the contact lasts for
         28 hours. Action to establish contact.`,
-        origin: { title: CORE_BOOK, page: 55 },
         cost: { attribute: Attribute.INTELLECT, value: 1 },
       },
       {
@@ -309,7 +295,6 @@ export const FOCI: Array<Focus> = [
         use this ability at long range, and you don’t need to
         be able to see the target (but you do have to know
         that the target is within range). Action to initiate.`,
-        origin: { title: CORE_BOOK, page: 55 },
         cost: { attribute: Attribute.INTELLECT, value: 2 },
       },
       {
@@ -322,7 +307,6 @@ export const FOCI: Array<Focus> = [
         Intellect damage (and thus ignores Armor). For each 2
         additional Intellect points you spend, you can make an
         Intellect attack roll against an additional target. Action.`,
-        origin: { title: CORE_BOOK, page: 55 },
         cost: { attribute: Attribute.INTELLECT, value: 3 },
       },
       {
@@ -336,7 +320,6 @@ export const FOCI: Array<Focus> = [
         target can try to resist. You don’t need to see the
         target, but you must know that it’s within range. Your
         shared senses last ten minutes. Action to establish.`,
-        origin: { title: CORE_BOOK, page: 55 },
         cost: { attribute: Attribute.INTELLECT, value: 4 },
       },
       {
@@ -358,7 +341,6 @@ export const FOCI: Array<Focus> = [
         ends, the creature doesn’t remember being controlled
         or anything it did while under your command. Action
         to initiate.`,
-        origin: { title: CORE_BOOK, page: 55 },
         cost: { attribute: Attribute.INTELLECT, value: 6 },
       },
       {
@@ -382,7 +364,6 @@ export const FOCI: Array<Focus> = [
         last for ten minutes. Creating a network of twenty or
         more creatures does require an action to establish
         contact. Enabler.`,
-        origin: { title: CORE_BOOK, page: 55 },
         cost: { attribute: Attribute.INTELLECT, value: 0 },
       },
     ],
@@ -434,14 +415,12 @@ export const FOCI: Array<Focus> = [
         its creature type (avian, swimmer, and so on). If your
         beast companion dies, you can hunt in the wild for
         1d6 days to find a new companion. Enabler.`,
-        origin: { title: CORE_BOOK, page: 56 },
       },
       {
         name: 'Soothe the Savage',
         level: 2,
         type: ActionType.ACTION,
         description: ``,
-        origin: { title: CORE_BOOK, page: 56 },
         cost: { attribute: Attribute.INTELLECT, value: 2 },
         benefit: {
           name: 'Communication',
@@ -459,7 +438,7 @@ export const FOCI: Array<Focus> = [
         name: 'Mount',
         level: 3,
         type: ActionType.ENABLER,
-        description: ` A level 3 creature serves you as a
+        description: `A level 3 creature serves you as a
         mount and follows your instructions. While you’re
         mounted on it, the creature can move and you can
         attack on your turn, or it can attack foes when you
@@ -468,7 +447,6 @@ export const FOCI: Array<Focus> = [
         combat or when it takes actions. The mount acts on
         your turn. If your mount dies, you can hunt in the
         wild for 3d6 days to find a new one. Enabler.`,
-        origin: { title: CORE_BOOK, page: 56 },
       },
       {
         name: 'Beast Eyes',
@@ -478,7 +456,6 @@ export const FOCI: Array<Focus> = [
         through your beast companion’s senses if it is within
         1 mile (1.6 km) of you. This effect lasts up to ten
         minutes. Action to establish`,
-        origin: { title: CORE_BOOK, page: 56 },
         cost: { attribute: Attribute.INTELLECT, value: 3 },
         benefit: {
           name: 'Improved Companion',
@@ -498,15 +475,22 @@ export const FOCI: Array<Focus> = [
         Creatures are native to the area and arrive under their
         own power, so if you’re in an unreachable place, this
         ability won’t work. Action.`,
-        origin: { title: CORE_BOOK, page: 56 },
         cost: { attribute: Attribute.INTELLECT, value: 5 },
       },
       {
         name: 'Control the Savage',
         level: 6,
         type: ActionType.ACTION,
-        description: ``,
-        origin: { title: CORE_BOOK, page: 56 },
+        description: `You
+        can control a calm nonhuman beast within 30 feet
+        (9 m). You control it for as long as you focus all your
+        attention on it, using your turn each round. The
+        GM has final say over what counts as a nonhuman
+        beast, but unless some kind of deception is at work,
+        you should know whether you can affect a creature
+        before you attempt to use this ability on it. Aliens,
+        extradimensional entities, very intelligent creatures,
+        and automatons never count. Action.`,
         cost: { attribute: Attribute.INTELLECT, value: 6 },
         benefit: {
           name: 'Improved Companion',
@@ -562,7 +546,6 @@ export const FOCI: Array<Focus> = [
         Hover esotery or trick of the trade, you can hover for
         twenty minutes and move your normal speed. Action
         to initiate.`,
-        origin: { title: CORE_BOOK, page: 57 },
         cost: { attribute: Attribute.INTELLECT, value: 1 },
       },
       {
@@ -570,14 +553,12 @@ export const FOCI: Array<Focus> = [
         level: 2,
         type: ActionType.ENABLER,
         description: `By manipulating gravity’s pull on yourself, you gain +1 to your Speed Edge. Enabler.`,
-        origin: { title: CORE_BOOK, page: 57 },
       },
       {
         name: 'Gravity Cleave',
         level: 3,
         type: ActionType.ACTION,
         description: `By manipulating gravity’s pull on yourself, you gain +1 to your Speed Edge. Enabler.`,
-        origin: { title: CORE_BOOK, page: 57 },
         cost: { attribute: Attribute.INTELLECT, value: 3 },
       },
       {
@@ -585,7 +566,6 @@ export const FOCI: Array<Focus> = [
         level: 4,
         type: ActionType.ENABLER,
         description: `When you wish it, a field of manipulated gravity around you pulls incoming ranged projectile attacks to the ground. You are immune to such attacks until your turn in the next round. You must be aware of an attack to foil it. This ability does not work on energy attacks. Enabler`,
-        origin: { title: CORE_BOOK, page: 57 },
         cost: { attribute: Attribute.INTELLECT, value: 4 },
       },
       {
@@ -593,7 +573,6 @@ export const FOCI: Array<Focus> = [
         level: 5,
         type: ActionType.ACTION,
         description: `You can float and fly through the air for one hour. For each level of Effort applied, you can affect one additional creature of your size or smaller. You must touch the creature to bestow the power of flight. You direct the other creature’s movement, and while flying, it must remain within sight of you or fall. In terms of overland movement, a flying creature moves about 20 miles (32 km) per hour and is not affected by terrain. Action to initiate.`,
-        origin: { title: CORE_BOOK, page: 57 },
         cost: { attribute: Attribute.INTELLECT, value: 4 },
       },
       {
@@ -601,7 +580,6 @@ export const FOCI: Array<Focus> = [
         level: 6,
         type: ActionType.ACTION,
         description: `You can increase a target’s weight dramatically. The target is pulled to the ground and can’t move physically under its own power for one minute. The target must be within short range. For each level of Effort applied, you can affect one additional creature. Action.`,
-        origin: { title: CORE_BOOK, page: 57 },
         cost: { attribute: Attribute.INTELLECT, value: 6 },
       },
     ],
@@ -666,7 +644,6 @@ export const FOCI: Array<Focus> = [
         cost additional Intellect points). If you move beyond
         immediate range of the cube, the illusion vanishes.
         Action to create; action to modify.`,
-        origin: { title: CORE_BOOK, page: 57 },
         cost: { attribute: Attribute.INTELLECT, value: 1 },
       },
       {
@@ -680,7 +657,6 @@ export const FOCI: Array<Focus> = [
         disguise one other creature. All disguised creatures
         must stay within sight of you or lose their disguise.
         Action to create.`,
-        origin: { title: CORE_BOOK, page: 57 },
         cost: { attribute: Attribute.INTELLECT, value: 2 },
       },
       {
@@ -696,7 +672,6 @@ export const FOCI: Array<Focus> = [
         and changes as you direct (no concentration is
         needed). If you move beyond immediate range of the
         cube, the illusion vanishes. Action to create.`,
-        origin: { title: CORE_BOOK, page: 58 },
         cost: { attribute: Attribute.INTELLECT, value: 3 },
       },
       {
@@ -711,7 +686,6 @@ export const FOCI: Array<Focus> = [
         things. If struck violently, they either disappear
         permanently or freeze motionless (your choice).
         Action to create.`,
-        origin: { title: CORE_BOOK, page: 58 },
         cost: { attribute: Attribute.INTELLECT, value: 4 },
       },
       {
@@ -728,7 +702,6 @@ export const FOCI: Array<Focus> = [
         for one minute, pursued by its nightmares. Failure
         means the creature ignores the images, which do not
         hamper it in any way. Action.`,
-        origin: { title: CORE_BOOK, page: 58 },
         cost: { attribute: Attribute.INTELLECT, value: 6 },
       },
       {
@@ -748,7 +721,6 @@ export const FOCI: Array<Focus> = [
         machines or flying creatures, on and above terrain
         of your creation. The illusion lasts for one hour (or
         longer, if you concentrate on it after that time). Action.`,
-        origin: { title: CORE_BOOK, page: 58 },
         cost: { attribute: Attribute.INTELLECT, value: 8 },
       },
     ],
@@ -803,7 +775,6 @@ export const FOCI: Array<Focus> = [
         level: 1,
         type: ActionType.ENABLER,
         description: `You are trained in the crafting of two kinds of items. Enabler.`,
-        origin: { title: CORE_BOOK, page: 58 },
         benefit: {
           name: 'Master Identifier',
           type: ActionType.ENABLER,
@@ -816,7 +787,6 @@ export const FOCI: Array<Focus> = [
         level: 2,
         type: ActionType.ENABLER,
         description: `If you spend at least one day tinkering with an artifact in your possession, it functions at one level higher than normal. This applies to all artifacts in your possession, but they retain this bonus only for you. Enabler`,
-        origin: { title: CORE_BOOK, page: 58 },
         benefit: {
           name: 'Quick Work',
           type: ActionType.ACTION,
@@ -830,7 +800,6 @@ export const FOCI: Array<Focus> = [
         level: 3,
         type: ActionType.ENABLER,
         description: `You are trained in the crafting of two more kinds of items, or you are specialized in two kinds of items that you are already trained in. Enabler. `,
-        origin: { title: CORE_BOOK, page: 58 },
       },
       {
         name: 'Cyphersmith',
@@ -838,7 +807,6 @@ export const FOCI: Array<Focus> = [
         type: ActionType.ENABLER,
         description: `All cyphers you use function at one level higher than normal. If given a week and the right tools, chemicals, and parts, you can tinker with one of your cyphers, transforming it into
         another cypher of the same type (anoetic or occultic) that you had in the past. The GM and player should collaborate to ensure that the transformation is logical—for example, you probably can’t transform a pill into a helmet. Enabler.`,
-        origin: { title: CORE_BOOK, page: 58 },
       },
       {
         name: 'Innovator',
@@ -849,14 +817,12 @@ export const FOCI: Array<Focus> = [
         collaborate to ensure that the transformation is
         logical—for example, you probably can’t transform a
         pill into a helmet. Enabler.`,
-        origin: { title: CORE_BOOK, page: 59 },
       },
       {
         name: 'Inventor',
         level: 6,
         type: ActionType.ENABLER,
         description: `You can create new artifacts in half the time, as if they were two levels lower, by spending  half the normal XP. Enabler.`,
-        origin: { title: CORE_BOOK, page: 59 },
       },
     ],
   },
@@ -904,7 +870,6 @@ export const FOCI: Array<Focus> = [
         much speed, so in most situations, it’s not a means
         of attack. You can’t use this ability on your own
         body. Action.`,
-        origin: { title: CORE_BOOK, page: 59 },
         cost: { attribute: Attribute.INTELLECT, value: 1 },
       },
       {
@@ -914,7 +879,6 @@ export const FOCI: Array<Focus> = [
         description: `By manipulating magnetism,
         you are trained in Speed defense tasks against any
         incoming attack that uses metal. Enabler.`,
-        origin: { title: CORE_BOOK, page: 59 },
       },
       {
         name: 'Destroy Metal',
@@ -927,7 +891,6 @@ export const FOCI: Array<Focus> = [
         object; the difficulty of this task is decreased by three
         steps (compared to breaking it with brute strength).
         Action.`,
-        origin: { title: CORE_BOOK, page: 59 },
         cost: { attribute: Attribute.INTELLECT, value: 4 },
       },
       {
@@ -941,7 +904,6 @@ export const FOCI: Array<Focus> = [
         to the ground. You are immune to such attacks for
         one round. You must be aware of an attack to foil it.
         Enabler.`,
-        origin: { title: CORE_BOOK, page: 60 },
         cost: { attribute: Attribute.INTELLECT, value: 4 },
       },
       {
@@ -967,7 +929,6 @@ export const FOCI: Array<Focus> = [
         and so on—against one target within short range.
         Regardless of the form of the attack, it is an Intellect
         action that deals 7 points of damage. Action.`,
-        origin: { title: CORE_BOOK, page: 60 },
         cost: { attribute: Attribute.INTELLECT, value: 5 },
       },
       {
@@ -981,7 +942,6 @@ export const FOCI: Array<Focus> = [
         you are trained in all Speed defense tasks, regardless
         of whether the incoming attack uses metal. And so
         on. Enabler.`,
-        origin: { title: CORE_BOOK, page: 60 },
       },
     ],
   },
@@ -1023,7 +983,6 @@ export const FOCI: Array<Focus> = [
         those involving coercion or intimidation. During
         rests, you put friends and comrades at ease so much
         that they gain +1 to their recovery rolls. Enabler.`,
-        origin: { title: CORE_BOOK, page: 60 },
       },
       {
         name: 'Inspiration',
@@ -1040,7 +999,6 @@ export const FOCI: Array<Focus> = [
         company for more than 28 hours, you must spend
         another 28 hours together to reactivate the benefit.
         Enabler.`,
-        origin: { title: CORE_BOOK, page: 60 },
       },
       {
         name: 'Knowledge',
@@ -1049,7 +1007,6 @@ export const FOCI: Array<Focus> = [
         description: `Your stories and songs contain
         truth. You are trained in two areas of knowledge of
         your choosing. Enabler.`,
-        origin: { title: CORE_BOOK, page: 60 },
       },
       {
         name: 'Calm',
@@ -1058,7 +1015,6 @@ export const FOCI: Array<Focus> = [
         description: `Through jokes, song,
         or other art, you prevent a living foe from attacking
         anyone or anything for one round. Action.`,
-        origin: { title: CORE_BOOK, page: 60 },
         cost: { attribute: Attribute.INTELLECT, value: 3 },
       },
       {
@@ -1069,7 +1025,6 @@ export const FOCI: Array<Focus> = [
         with a task, you always reduce the difficulty of the
         task by one step regardless of your own skill at that
         task. Enabler.`,
-        origin: { title: CORE_BOOK, page: 60 },
       },
       {
         name: 'Master Entertainer',
@@ -1079,7 +1034,6 @@ export const FOCI: Array<Focus> = [
         works more effectively, allowing your friends to
         decrease the difficulty of a task by two steps rather
         than one step. Enabler.`,
-        origin: { title: CORE_BOOK, page: 60 },
       },
     ],
   },
@@ -1130,7 +1084,6 @@ export const FOCI: Array<Focus> = [
         than moving) or perceive anything until you pass
         entirely through the barrier. You can’t pass through
         energy barriers. Action.`,
-        origin: { title: CORE_BOOK, page: 61 },
         cost: { attribute: Attribute.INTELLECT, value: 2 },
       },
       {
@@ -1143,7 +1096,6 @@ export const FOCI: Array<Focus> = [
         defensive tasks by one step, but during this time
         you lose any benefit from armor you wear. Action
         to initiate.`,
-        origin: { title: CORE_BOOK, page: 61 },
         cost: { attribute: Attribute.INTELLECT, value: 2 },
       },
       {
@@ -1154,7 +1106,6 @@ export const FOCI: Array<Focus> = [
         you make on this turn ignores your foe’s armor. The
         ability works for whatever kind of attack you use
         (melee, ranged, energy, and so on). Enabler.`,
-        origin: { title: CORE_BOOK, page: 61 },
       },
       {
         name: 'Ghost',
@@ -1167,7 +1118,6 @@ export const FOCI: Array<Focus> = [
         round, and you can perceive while phased within a
         barrier or object, which allows you to peek through
         walls. Action to initiate.`,
-        origin: { title: CORE_BOOK, page: 61 },
         cost: { attribute: Attribute.INTELLECT, value: 4 },
       },
       {
@@ -1181,7 +1131,6 @@ export const FOCI: Array<Focus> = [
         energies, devices, or abilities can affect you, but likewise
         you can’t attack, touch, or otherwise affect anything.
         Action to initiate.`,
-        origin: { title: CORE_BOOK, page: 61 },
         cost: { attribute: Attribute.INTELLECT, value: 6 },
       },
       {
@@ -1192,7 +1141,6 @@ export const FOCI: Array<Focus> = [
         ability works like the third-tier Phased Attack ability except
         that your attack also disrupts the foe’s vitals, dealing an
         additional 5 points of damage. Enabler.`,
-        origin: { title: CORE_BOOK, page: 61 },
         cost: { attribute: Attribute.INTELLECT, value: 5 },
       },
     ],
@@ -1246,14 +1194,12 @@ export const FOCI: Array<Focus> = [
         level: 1,
         type: ActionType.ENABLER,
         description: `You are trained in searching, listening, climbing, balancing, and jumping tasks. Enabler.`,
-        origin: { title: CORE_BOOK, page: 62 },
       },
       {
         name: 'Trained Infiltrator',
         level: 2,
         type: ActionType.ENABLER,
         description: `You are trained in lockpicking and tinkering with devices. Enabler`,
-        origin: { title: CORE_BOOK, page: 62 },
         benefit: {
           name: 'Eyes Adjusted',
           description: `You can see in extremely dim light as though it were bright light. You can see in total darkness as if it were extremely dim. Enabler.`,
@@ -1269,7 +1215,6 @@ export const FOCI: Array<Focus> = [
         other contortionist tasks. Thanks to your experience,
         you also are trained in Speed defense tasks while
         wearing light armor or no armor. Enabler.`,
-        origin: { title: CORE_BOOK, page: 62 },
       },
       {
         name: 'Resilient',
@@ -1280,7 +1225,6 @@ export const FOCI: Array<Focus> = [
         and are developing a general resistance. You gain
         +1 to Armor and are trained in Might defense tasks.
         Enabler.`,
-        origin: { title: CORE_BOOK, page: 62 },
       },
       {
         name: 'Dark Explorer',
@@ -1292,7 +1236,6 @@ export const FOCI: Array<Focus> = [
         Adjusted ability, you can act without penalty even in
         total darkness. You are also trained in sneaking tasks
         while in dim or no light. Enabler.`,
-        origin: { title: CORE_BOOK, page: 62 },
       },
       {
         name: 'Blinding Attack',
@@ -1303,7 +1246,6 @@ export const FOCI: Array<Focus> = [
         attack against a target. If successful, the attack deals
         no damage, but the target is blinded for one minute.
         Action.`,
-        origin: { title: CORE_BOOK, page: 62 },
         cost: { attribute: Attribute.SPEED, value: 3 },
       },
     ],
@@ -1353,7 +1295,6 @@ export const FOCI: Array<Focus> = [
         Choose any number of creatures within short range
         who can see you; each of them gains a +1 bonus to
         its next die roll. Enabler.`,
-        origin: { title: CORE_BOOK, page: 62 },
       },
       {
         name: 'Quick Block',
@@ -1362,7 +1303,6 @@ export const FOCI: Array<Focus> = [
         description: `If you use a light or medium
         weapon, you decrease the difficulty of your Speed
         defense actions by one step. Enabler.`,
-        origin: { title: CORE_BOOK, page: 62 },
       },
       {
         name: 'Acrobatic Attack',
@@ -1375,7 +1315,6 @@ export const FOCI: Array<Focus> = [
         choose to have a minor effect rather than deal extra
         damage. You can’t use this ability if your Speed is
         reduced from wearing armor. Enabler.`,
-        origin: { title: CORE_BOOK, page: 62 },
         cost: { attribute: Attribute.SPEED, value: 3 },
       },
       {
@@ -1389,7 +1328,6 @@ export const FOCI: Array<Focus> = [
         as if such tasks were routine (difficulty 0). You can’t
         use this ability if your Speed is reduced from wearing
         armor. Enabler.`,
-        origin: { title: CORE_BOOK, page: 62 },
         cost: { attribute: Attribute.SPEED, value: 3 },
       },
       {
@@ -1402,7 +1340,6 @@ export const FOCI: Array<Focus> = [
         range. You decrease the difficulty of that creature’s
         Speed defense actions by one step. You can’t use
         Quick Block while using Block for Another. Enabler`,
-        origin: { title: CORE_BOOK, page: 62 },
       },
       {
         name: 'Agile Wit',
@@ -1414,7 +1351,6 @@ export const FOCI: Array<Focus> = [
         can spend points from your Intellect Pool instead
         of your Speed Pool (in which case you also use your
         Intellect Edge instead of your Speed Edge). Enabler.`,
-        origin: { title: CORE_BOOK, page: 63 },
       },
     ],
   },
@@ -1470,7 +1406,6 @@ export const FOCI: Array<Focus> = [
         mind, you protect yourself from incoming attacks.
         For the next ten minutes, you are trained in Speed
         defense tasks. Action to initiate.`,
-        origin: { title: CORE_BOOK, page: 63 },
         cost: { attribute: Attribute.INTELLECT, value: 1 },
       },
       {
@@ -1492,7 +1427,6 @@ export const FOCI: Array<Focus> = [
         attack. You can’t use this ability on your own body.
         The power lasts for one hour or until its Might Pool
         is depleted—whichever comes first. Action.`,
-        origin: { title: CORE_BOOK, page: 63 },
         cost: { attribute: Attribute.INTELLECT, value: 2 },
       },
       {
@@ -1505,7 +1439,6 @@ export const FOCI: Array<Focus> = [
         door, or hitting someone with a melee weapon—are
         easier for you. The difficulty of all such tasks is
         decreased by one step. Action to initiate.`,
-        origin: { title: CORE_BOOK, page: 63 },
         cost: { attribute: Attribute.INTELLECT, value: 3 },
       },
       {
@@ -1524,7 +1457,6 @@ export const FOCI: Array<Focus> = [
         being a bit of worthless junk. You can’t use this
         ability to take an item held by another creature.
         Action.`,
-        origin: { title: CORE_BOOK, page: 63 },
         cost: { attribute: Attribute.INTELLECT, value: 4 },
       },
       {
@@ -1546,7 +1478,6 @@ export const FOCI: Array<Focus> = [
         object; the difficulty of this task is decreased by three
         steps (compared to breaking it with brute strength).
         Action.`,
-        origin: { title: CORE_BOOK, page: 63 },
         cost: { attribute: Attribute.INTELLECT, value: 5 },
       },
       {
@@ -1563,13 +1494,344 @@ export const FOCI: Array<Focus> = [
         is decreased by four steps instead of three), or you
         can attempt a crafting task to reshape the object
         into another form. Reshaping an object usually has a
-        difficulty equal to 1 plus the level of the finished object. `,
-        origin: { title: CORE_BOOK, page: 63 },
+        difficulty equal to 1 plus the level of the finished object.`,
         cost: { attribute: Attribute.INTELLECT, value: 6 },
       },
     ],
   },
-  //TODO add more foci 64ff.
+  {
+    name: 'Fuses Flesh And Steel',
+    origin: { title: CORE_BOOK, page: 64 },
+    description: `At some point in your past, some of your organic
+    parts were replaced with artificial components.
+    (Alternatively, you belong to a secret race
+    of biomechanical hybrids.) These artificial
+    components might be subdermal, or they might
+    resemble more overt metal or synth plating on
+    your skin. They can also take the form of threadlike
+    tendrils of circuitry winding across your flesh.
+    Whatever their appearance, these components give
+    you special abilities. As you advance, you can add
+    to, modify, or discover new functions for them.
+    Unfortunately, your artificial body also has special
+    requirements when it takes damage.
+    You probably wear a cloak with a hood or
+    something similar to hide your artificial parts from
+    those who would persecute you. Because your
+    components are tricky to repair, as time goes on, it
+    might become more difficult to conceal your true
+    nature, with exposed circuitry, metal plates, and
+    more in a state of partial disassembly.
+    Anyone—glaive, jack, or nano—might be a
+    cybernetic organism.`,
+    benefits: [
+      {
+        name: 'Connection',
+        description: `Pick one other PC. This
+        character knows your true nature, even if
+        no one else does. If your components
+        are not particularly hidden, she
+        knows a different secret of yours,
+        such as a preprogrammed word that
+        will shut you down for ten minutes.`,
+        upgrade: (char) => console.log(char),
+      },
+      {
+        name: 'Additional Equipment',
+        description: `You have a bag of light tools and a variety of parts to repair yourself.
+        Minor Effect Suggestions: Your servos learn from your successful actions. You gain a +1 bonus to similar actions involving the same task (such as making attacks against the same foe or operating the same device). 
+        Major Effect Suggestions: You discharge a small pulse of power into your foe. Make an immediate attack against that foe (using the same stat as the action that caused the major effect). If the attack succeeds, it deals 4 points of electrical damage.`,
+        upgrade: (char) => console.log(char),
+      },
+    ],
+    tiers: [
+      {
+        name: 'Enhance Body',
+        level: 1,
+        type: ActionType.ENABLER,
+        description: `You
+        gain +1 to Armor, +3 to your
+        Might Pool, and +3 to your
+        Speed Pool. Enabler.`,
+        benefit: {
+          name: 'Special Healing',
+          description: `Traditional healing skills,
+          medicines, and techniques work only half as well
+          for you. Each time you start at full health, the first 5
+          points of damage you take can never be healed in
+          these ways or recovered normally. Instead, you must
+          use repairing skills and abilities to restore those
+          points. For example, if you start with a full Might
+          Pool of 10 and take 8 points of damage, you can use
+          recovery rolls to restore 3 points, but the remaining 5
+          points must be restored using repairing methods.`,
+          upgrade: (char) => console.log(char),
+        },
+      },
+      {
+        name: 'Interface',
+        level: 2,
+        type: ActionType.ENABLER,
+        description: `By directly plugging into a device,
+        you can identify and learn to operate it as though the
+        task were one level lower. Enabler.`,
+      },
+      {
+        name: 'Weaponization',
+        level: 3,
+        type: ActionType.ENABLER,
+        description: `One light or medium melee
+        weapon of your choice is built into your body, and
+        you are trained in this weapon (even if you are not
+        trained in other weapons of that type). The weapon is
+        concealed until you wish to use it. Enabler.`,
+      },
+      {
+        name: 'Fusion',
+        level: 4,
+        type: ActionType.ENABLER,
+        description: `You can fuse your cyphers and
+        artifacts with your body. These fused devices function
+        as if they were one level higher. Enabler.`,
+      },
+      {
+        name: 'Deep Reserves',
+        level: 5,
+        type: ActionType.ACTION,
+        description: `Once each day, you can
+        transfer up to 5 points between your Pools in any
+        combination, at a rate of 1 point per round. For
+        example, you could transfer 3 points of Might to
+        Speed and 2 points of Intellect to Speed, which
+        would take a total of five rounds. Action.`,
+      },
+      {
+        name: 'Ultra Enhancement',
+        level: 6,
+        type: ActionType.ENABLER,
+        description: `You gain +1 to Armor and +5 to each of your three stat Pools. Enabler.`,
+      },
+    ],
+  },
+  {
+    name: 'Howls At The Moon',
+    origin: { title: CORE_BOOK, page: 64 },
+    description: `Sometimes the numenera is a double-edged sword.
+    You are cursed and blessed to be able to transform
+    into a powerful creature, drawing additional mass
+    from a transdimensional source. You and the GM
+    should work out the exact nature of the creature,
+    including its appearance, but it’s a wild beast of
+    rage and blood—at least until you learn to control it.
+    Creatures like you are often called “lycanthropes.”
+    Style and appearance are probably low on your list
+    of concerns. Your clothes might be ragged because
+    your transformation is hard on them (or they’re
+    cheap because you know they’ll be destroyed the next
+    time you transform).
+    Anyone—glaive, jack, or nano—can be a
+    lycanthrope, although a glaive likely benefits the
+    most from the transformation.`,
+    benefits: [
+      {
+        name: 'Connection',
+        description: `Pick one other PC. That character is
+        able to soothe you when you’re in beast form. You’ll
+        never attack him while transformed, and if he spends
+        three consecutive turns using his action to calm you
+        down, you can revert to your normal form without
+        having to make a roll.`,
+        upgrade: (char) => console.log(char),
+      },
+      {
+        name: 'Additional Equipment',
+        description: `You have an accurate chronometer artifact that always lets you know when the next transformation is coming.
+        Minor Effect Suggestions: The target is so intimidated by your bestial attack that it is dazed for one round, during which time the difficulty of all tasks it performs is modified by one step to its detriment.
+        Major Effect Suggestions: Your attack conveys a small bit of your lycanthropy. If your foe survives, one month later, he transforms into an uncontrolled beast. The GM decides what happens from there.`,
+        upgrade: (char) => console.log(char),
+      },
+    ],
+    tiers: [
+      {
+        name: 'Beast Form',
+        level: 1,
+        type: ActionType.ACTION,
+        description: `On five consecutive nights each
+        month, you change into a monstrous beast for up to
+        one hour each night. In this new form, you gain +8 to
+        your Might Pool, +1 to your Might Edge, +2 to your
+        Speed Pool, and +1 to your Speed Edge. While in beast
+        form, you can’t spend Intellect points for any reason
+        other than to try to change to your normal form before
+        the one-hour duration is over (a difficulty 2 task). In
+        addition, you attack any and every living creature within
+        short range. After you revert to your normal form, you
+        take a –1 penalty to all rolls for one hour. If you did not
+        kill and eat at least one substantial creature while in
+        beast form, the penalty increases to –2 and affects all
+        your rolls for the next 28 hours. Action to change back.`,
+      },
+      {
+        name: 'Controlled Change',
+        level: 2,
+        type: ActionType.ACTION,
+        description: `You can try to change into
+        your beast form on any night you wish (a difficulty 3
+        Intellect task). Any transformations you make using
+        this power are in addition to the five nights per month
+        that you change involuntarily. Action to change.`,
+      },
+      {
+        name: 'Greater Beast Form',
+        level: 3,
+        type: ActionType.ENABLER,
+        description: `Your beast form gains
+        the following additional bonuses: +1 to your Might
+        Edge, +2 to your Speed Pool, and +1 to your Speed
+        Edge. Enabler.`,
+      },
+      {
+        name: 'Greatewr Controlled Change',
+        level: 4,
+        type: ActionType.ENABLER,
+        description: `You no longer
+        change into your beast form unless you want to.
+        Transforming into your beast form or back to your
+        normal form is now a difficulty 1 Intellect task.
+        Enabler.`,
+      },
+      {
+        name: 'Enhanced Beast Form',
+        level: 5,
+        type: ActionType.ENABLER,
+        description: `Your beast form gains
+        the following additional bonuses: +3 to your Might
+        Pool, +2 to your Speed Pool, and +2 to Armor.
+        Enabler`,
+      },
+      {
+        name: 'Perfect Control',
+        level: 6,
+        type: ActionType.ENABLER,
+        description: `You no longer need to make
+        a roll to change into your beast form or your normal
+        form. You can change back and forth as your action.
+        When you return to your normal form, you no longer
+        take a penalty to your rolls. Enabler`,
+      },
+    ],
+  },
+  {
+    name: 'Hunts With Great Skill',
+    origin: { title: CORE_BOOK, page: 65 },
+    description: `You are a tracker. Perhaps you hunt animals or
+    more deadly creatures. Perhaps you go after people
+    as a bounty hunter, law enforcer, or killer for hire.
+    Whatever form your hunting takes, you are trained in
+    stalking your quarry and bringing it down. You are a
+    dangerous individual.
+    If you hunt animals or creatures, you might
+    carry the trophies of past kills, such as teeth or
+    skins. If you’re a bounty hunter, you probably wear
+    whatever your quarry would find most intimidating
+    so it feels as though it has no chance of getting
+    away from you. Most hunters are glaives, but jacks and nanos
+    bring unique skills to the chase.`,
+    benefits: [
+      {
+        name: 'Connection',
+        description: `Pick one other PC. That person
+        once saw you show surprising mercy toward your
+        prey, and now you hope she keeps that information
+        quiet—it might harm your reputation.`,
+        upgrade: (char) => console.log(char),
+      },
+      {
+        name: 'Additional Equipment',
+        description: `You wear boots that muffle your footsteps, giving you a +1 bonus to any roll made involving sneaky movement.
+        Minor Effect Suggestions: You can attempt an intimidating task to cause your foe to immediately surrender.
+        Major Effect Suggestions: Your foe pauses, terrified by your prowess, and takes no action on his turn.`,
+        upgrade: (char) => console.log(char),
+      },
+    ],
+    tiers: [
+      {
+        name: 'Tracker',
+        level: 1,
+        type: ActionType.ENABLER,
+        description: `You are trained in following and identifying tracks. Enabler.`,
+        benefit: {
+          name: 'Stalker',
+          description: `You are trained in all types of movement tasks (including climbing, swimming, jumping, and balancing). Enabler`,
+          upgrade: (char) => console.log(char),
+        },
+      },
+      {
+        name: 'Sneak',
+        level: 2,
+        type: ActionType.ENABLER,
+        description: `You are trained in stealth and initiative tasks. Enabler`,
+        benefit: {
+          name: 'Sprint and Grab',
+          description: `You can run a
+          short distance and make a melee attack to grab a foe
+          of your size or smaller. A successful attack means you
+          grab the foe and bring it to a halt if it was moving (this
+          can be treated as a tackle, if appropriate). Action.`,
+          cost: { attribute: Attribute.SPEED, value: 2 },
+          upgrade: (char) => console.log(char),
+        },
+      },
+      {
+        name: 'Quarry',
+        level: 3,
+        type: ActionType.ACTION,
+        description: `Choose a quarry
+        (a single individual creature that you can see).
+        You are trained in all tasks involving following,
+        understanding, interacting with, or fighting that
+        creature. You can have only one quarry at a time.
+        Action to initiate.`,
+        cost: { attribute: Attribute.INTELLECT, value: 2 },
+      },
+      {
+        name: 'Surprise Attack',
+        level: 4,
+        type: ActionType.ENABLER,
+        description: `If attacking from a hidden
+        vantage, with surprise, or before your opponent has
+        acted, you decrease the difficulty of your attack by
+        one step. On a successful hit, you inflict 2 additional
+        points of damage. Enabler.`,
+      },
+      {
+        name: 'Hunter`s Drive',
+        level: 5,
+        type: ActionType.ENABLER,
+        description: `Through
+        force of will, when you wish it, you grant yourself
+        greater prowess in the hunt for ten minutes. During
+        this time, you decrease the difficulty of all tasks
+        involving your quarry, including attacks, by one step.
+        Your quarry is the creature you selected with your
+        third-tier ability. Enabler.`,
+        cost: { attribute: Attribute.INTELLECT, value: 5 },
+      },
+      {
+        name: 'Multiple Quarry',
+        level: 6,
+        type: ActionType.ACTION,
+        description: `This
+        ability functions like the third-tier Quarry ability
+        except that you can select up to three creatures as
+        quarry. You must be able to see all three creatures
+        when you initiate this ability. Your Hunter’s Drive
+        ability applies to all three creatures. Action to initiate.`,
+        cost: { attribute: Attribute.INTELLECT, value: 6 },
+      },
+    ],
+  },
+  //TODO add more foci 66ff.
 ];
 
 export const DESCRIPTORS: Array<Descriptor> = [

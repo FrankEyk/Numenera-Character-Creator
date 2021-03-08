@@ -1,4 +1,5 @@
 import { Descriptor } from './Descriptor.model';
+import { Equipment } from './Equipment.model';
 import { Focus } from './Focus.model';
 import { Attribute, CharacterType } from './Type.model';
 /**
@@ -17,6 +18,15 @@ export class NumeneraCharacter {
   pool: Array<{ type: Attribute; value: number }> = [];
   /** Character Edges */
   edge: Array<{ type: Attribute; value: number }> = [];
+  /** Character Money. */
+  shins = 0;
+  /** Character Connections. */
+  connections: Array<string> = [];
+  /** Character Equiptment. */
+  equipment: Array<Equipment> = [];
+  /** Character Abilities */
+  abilities: Array<string> = [];
+  //TODO crate models for abilities, connections
 
   set descriptor(descriptor: Descriptor) {
     this._descriptor = descriptor;

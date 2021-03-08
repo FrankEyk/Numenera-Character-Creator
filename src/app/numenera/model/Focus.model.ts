@@ -13,7 +13,6 @@ interface Tier {
   description: string;
   type: ActionType;
   cost?: { attribute: Attribute; value: number };
-  origin?: Origin;
   benefit?: Benefit;
 }
 
