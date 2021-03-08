@@ -1,13 +1,13 @@
 <section>
-  <h1>Pool</h1>
-  <app-attribute label="Might" (valueChanged)="onMightChanged($event)" [value]="this.might" [min]=0></app-attribute>
-  <app-attribute label="Speed" (valueChanged)="onSpeedChanged($event)" [value]="this.speed" [min]=0></app-attribute>
-  <app-attribute label="Intellect" (valueChanged)="onIntellectChanged($event)" [value]="this.intellect" [min]=0></app-attribute>
+  <h1>Pool ({{this.pool.pointsLeft}})</h1>
+  <app-attribute label="Might"      [value]="this.pool.might.current"     [min]="this.pool.might.minimum"     [disabled]="!isSelectionComplete"></app-attribute>
+  <app-attribute label="Speed"      [value]="this.pool.speed.current"     [min]="this.pool.speed.minimum"     [disabled]="!isSelectionComplete"></app-attribute>
+  <app-attribute label="Intellect"  [value]="this.pool.intellect.current" [min]="this.pool.intellect.minimum" [disabled]="!isSelectionComplete"></app-attribute>
 </section>
 
 <section>
   <h1>Edge</h1>
-  <app-attribute label="Might" (valueChanged)="onMightEdgeChanged($event)" [value]="this.mightEdge" [min]=0></app-attribute>
-  <app-attribute label="Speed" (valueChanged)="onSpeedEdgeChanged($event)" [value]="this.speedEdge" [min]=0></app-attribute>
-  <app-attribute label="Intellect" (valueChanged)="onIntellectEdgeChanged($event)" [value]="this.intellectEdge" [min]=0></app-attribute>
+  <app-attribute label="Might"      [value]="this.edge.might"     [min]=0 [disabled]="!isSelectionComplete"></app-attribute>
+  <app-attribute label="Speed"      [value]="this.edge.speed"     [min]=0 [disabled]="!isSelectionComplete"></app-attribute>
+  <app-attribute label="Intellect"  [value]="this.edge.intellect" [min]=0 [disabled]="!isSelectionComplete"></app-attribute>
 </section>
