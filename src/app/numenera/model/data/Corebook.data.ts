@@ -2656,7 +2656,640 @@ const FOCI: Array<Focus> = [
       },
     ],
   },
-  //TODO add more foci 68ff.
+  {
+    name: 'Talks To Machines',
+    origin: { title: TITLE, page: 72 },
+    description: `Since you were young, you had an affinity for
+    machines. It seemed almost like you were speaking
+    to them.
+    You were. You have the ability to use your organic
+    brain like a computer, interfacing “wirelessly” with
+    any electronic device. You can control and influence
+    them in ways that others can’t. Computers are your
+    friends and companions. You have also learned to
+    repair machines of all kinds because the better they
+    work, the better off you are as well.
+    You likely wear a tool belt full of various implements,
+    and machine oils stain your clothes and fingertips.
+    All types of characters can spend their time talking to
+    machines, although this practice fits the nano best of all.`,
+    benefits: [
+      {
+        name: 'Connection',
+        description: `Pick one other PC. That character
+        seems to have a terrible relationship with
+        machines—or at least the machines that you
+        communicate with. If she is next to a machine that
+        you interact with in a friendly manner, that machine
+        is treated in all ways as being one level lower than
+        normal (unless doing so benefits you or her, in
+        which case the level does not change).`,
+        upgrade: (char) => console.log(char),
+      },
+      {
+        name: 'Additional Equipment',
+        description: `A bag of small tools.
+        Minor Effect Suggestions: The duration of influence or control is doubled.
+        Major Effect Suggestions: The duration of influence or control becomes 28 hours.`,
+        upgrade: (char) => console.log(char),
+      },
+    ],
+    tiers: [
+      {
+        name: 'Machine Affinity',
+        level: 1,
+        type: ActionType.ENABLER,
+        description: `You are trained in all tasks involving electrical machines. Enabler.`,
+        benefit: {
+          name: 'Distant Activation',
+          description: `You can
+          activate or deactivate any machine you can see
+          within short range, even if normally you would have
+          to touch or manually operate the device. To use
+          this ability, you must understand the function of
+          the machine, it must be your size or smaller, and
+          it can’t be connected to another intelligence (or be
+          intelligent itself). Action.`,
+          upgrade: (char) => console.log(char),
+        },
+      },
+      {
+        name: 'Coaxing Power',
+        level: 2,
+        type: ActionType.ACTION,
+        description: `You boost the power or function of a machine so that
+        it operates at one level higher than normal for one
+        hour. Action to initiate.`,
+        benefit: {
+          name: 'Charm Machine',
+          description: `You convince
+          an unintelligent machine to “like” you. A machine
+          that likes you is 50 percent less likely to function if
+          said function would cause you harm. Thus, if a foe
+          attempts to detonate a bomb near you controlled
+          by a detonator that likes you, there is a 50 percent
+          chance that it won’t explode. Action to initiate.`,
+          upgrade: (char) => console.log(char),
+        },
+      },
+      {
+        name: 'Intelligent Interface',
+        level: 3,
+        type: ActionType.ENABLER,
+        description: `You can
+        speak telepathically with any intelligent machine within
+        long range. Further, you are trained in all interactions
+        with intelligent machines. Such machines and
+        automatons that normally would never communicate
+        with a human might talk to you. Enabler.`,
+        cost: { attribute: Attribute.INTELLECT, value: 3 },
+      },
+      {
+        name: 'Machine Companion',
+        level: 4,
+        type: ActionType.ENABLER,
+        description: `You create a level 3
+        animate, intelligent machine that accompanies
+        you and acts as you direct. As a level 3 machine
+        companion, it has a target number of 9 and a health of
+        9, and it inflicts 3 points of damage. If it’s destroyed, it
+        takes you one month to create a new one. Enabler.`,
+        benefit: {
+          name: 'Robot Fight',
+          description: `When fighting an automaton or
+          intelligent machine, you are trained in attacks and
+          defense. Enabler.`,
+          upgrade: (char) => console.log(char),
+        },
+      },
+      {
+        name: 'Information Gathering',
+        level: 5,
+        type: ActionType.ACTION,
+        description: `You
+        speak telepathically with any or all machines within 1
+        mile (1.6 km). You can ask one basic question about
+        themselves or anything happening near them and
+        receive a simple answer. For example, while in an area
+        with many machines, you could ask “Where is the ravage
+        bear?” and if the creature is within a mile of you, one or
+        more machines will probably provide the answer. Action`,
+        cost: { attribute: Attribute.INTELLECT, value: 5 },
+      },
+      {
+        name: 'Control Machine',
+        level: 6,
+        type: ActionType.ACTION,
+        description: `You can
+        control the functions of any machine, intelligent or
+        otherwise, within short range. This effect lasts ten
+        minutes. Action.`,
+        cost: { attribute: Attribute.INTELLECT, value: 6 },
+      },
+    ],
+  },
+  {
+    name: 'Wears A Sheen Of Ice',
+    origin: { title: TITLE, page: 73 },
+    description: `Through your studies, you have learned to focus your
+    natural talents to command the powers of ice and cold.
+    People might refer to you as an ice mage. Sometimes
+    ice mages are thought to come into conflict with those
+    known as fire mages, but this is a fallacy believed by
+    ordinary folks more than anything based in truth.
+    You likely wear white or blue garments that are
+    heavier than they need to be—unless you live in
+    a cold region or wintry clime, in which case you
+    probably wear less clothing than other people do
+    because the cold doesn’t bother you.
+    Most ice mages are nanos, but a glaive armored
+    in ice, perhaps wielding an ice sword, would be quite
+    impressive.`,
+    benefits: [
+      {
+        name: 'Connection',
+        description: `Pick one other PC. Due to a quirk of
+        the numenera, if that character is standing next to
+        you when you use your Ice Armor ability, he is also
+        protected by a sheen of ice. (He does not get the
+        added protection of your Resilient Ice Armor ability.)`,
+        upgrade: (char) => console.log(char),
+      },
+      {
+        name: 'Additional Equipment',
+        description: `You have a bladed weapon made of stronglass that looks like ice.`,
+        upgrade: (char) => console.log(char),
+      },
+      {
+        name: 'Ice Esoteries',
+        description: `If you perform esoteries, those that would
+        normally use force or other energy instead use cold and ice.
+        For example, an Onslaught force blast is a ray of frost, and
+        Flash produces a blast of cold and ice shards. This alteration
+        changes nothing other than the type of damage. As another
+        example, Barrier creates a wall of ice. This alteration
+        changes nothing except the wall’s appearance and the fact
+        that it takes 2 additional points of damage from fire.
+        Minor Effect Suggestions: The surface around the target becomes slick and difficult to stand on.
+        Major Effect Suggestions: The target is covered in ice that hinders its movement for one minute, during which time the difficulty of all tasks it performs is modified by one step to its detriment.`,
+        upgrade: (char) => console.log(char),
+      },
+    ],
+    tiers: [
+      {
+        name: 'Ice Armor',
+        level: 1,
+        type: ActionType.ENABLER,
+        description: `When you wish
+        it, your body is covered in a sheen of ice for ten
+        minutes that gives you +1 to Armor. While the sheen
+        is active, you feel no discomfort from normal cold
+        temperatures and have an additional +2 to Armor
+        versus cold damage specifically. Enabler.`,
+        cost: { attribute: Attribute.INTELLECT, value: 1 },
+      },
+      {
+        name: 'Frost Touch',
+        level: 2,
+        type: ActionType.ACTION,
+        description: `Your hands
+        become so cold that the next time you touch a
+        creature, you inflict 3 points of damage. Alternatively,
+        you can use this ability on a weapon, and for ten
+        minutes, it inflicts 1 additional point of damage from
+        the cold. Action for touch; enabler for weapon.`,
+        cost: { attribute: Attribute.INTELLECT, value: 1 },
+      },
+      {
+        name: 'Freezing Touch',
+        level: 3,
+        type: ActionType.ACTION,
+        description: `Your hands
+        become so cold that, in addition to inflicting damage
+        as described under Frost Touch, your touch freezes
+        solid a living target of your size or smaller, rendering
+        it immobile for one round. Action.`,
+        cost: { attribute: Attribute.INTELLECT, value: 4 },
+      },
+      {
+        name: 'Resilient Ice Armor',
+        level: 4,
+        type: ActionType.ENABLER,
+        description: `The sheen of ice you
+        generate using your Ice Armor ability gives you an
+        additional +1 to Armor. Enabler`,
+      },
+      {
+        name: 'Cold Burst',
+        level: 5,
+        type: ActionType.ACTION,
+        description: `You emit a
+        blast of cold in all directions, up to short range. All
+        within the burst take 5 points of damage. If you apply
+        Effort to increase the damage rather than to decrease
+        the difficulty, you deal 2 additional points of damage
+        per level of Effort (instead of 3 points); however,
+        targets in the area take 1 point of damage even if you
+        fail the attack roll. Action.`,
+        cost: { attribute: Attribute.INTELLECT, value: 5 },
+      },
+      {
+        name: 'Ice Creation',
+        level: 6,
+        type: ActionType.ACTION,
+        description: ` You create
+        a solid object of ice that is your size or smaller.
+        The object is crude and can have no moving
+        parts, so you can make a sword, a shield, a short
+        ladder, and so on. Your ice objects are as strong
+        as iron, but if you’re not in constant contact
+        with them, they function for only 1d6 + 6 rounds
+        before breaking or melting. For example, you can
+        make and wield an ice sword, but if you give it to
+        another PC, the sword won’t last as long for that
+        character. Action.`,
+        cost: { attribute: Attribute.INTELLECT, value: 6 },
+      },
+    ],
+  },
+  {
+    name: 'Wields Power With Precision',
+    origin: { title: TITLE, page: 74 },
+    description: `Not only are you blessed with a great command
+    of the numenera, but you are also trained to
+    exploit esoteries in ways that elevate you above
+    other nanos and jacks. Some people believe that
+    those who perform esoteries are born with the
+    ability, but you know that skill and intelligence
+    play important roles. The ancients created the
+    numenera through knowledge, discovery, and
+    intellect, and to use it properly, you must follow
+    the same path.
+    You probably wear spectacles and dapper
+    outfits, carrying extra books, notebooks, and pens
+    so you can continually focus on your studies and
+    experiments.
+    Nanos usually receive this instruction and focus,
+    but some jacks do as well. Glaives never do.`,
+    benefits: [
+      {
+        name: 'Connection',
+        description: `Pick one other PC. You’ve placed an
+        immutable, one-time ward that renders her immune
+        to the esoteries you perform unless she wants to be
+        affected.`,
+        upgrade: (char) => console.log(char),
+      },
+      {
+        name: 'Additional Equipment',
+        description: `You have an additional book on the subject of the numenera.
+        Minor Effect Suggestions: The esotery overwhelms and dazzles the target for one round, during which time the difficulty of all tasks it performs is modified by one step to its detriment.
+        Major Effect Suggestions: The esotery terrifies the target, who uses its next two turns to flee.`,
+        upgrade: (char) => console.log(char),
+      },
+    ],
+    tiers: [
+      {
+        name: 'Genius',
+        level: 1,
+        type: ActionType.ENABLER,
+        description: `Your Intellect Pool increases by 5 points. Enabler`,
+      },
+      {
+        name: 'Training and Precision',
+        level: 2,
+        type: ActionType.ENABLER,
+        description: `You are trained in all
+        esoteries. As a result, you reduce the difficulty of any
+        task involved in the use of an esotery by one step.
+        Enabler.`,
+      },
+      {
+        name: 'Enhanced Esoteries',
+        level: 3,
+        type: ActionType.ENABLER,
+        description: `Your esoteries that have
+        durations last twice as long. Your esoteries that
+        have short ranges reach to long range instead. Your
+        esoteries that inflict damage deal 1 additional point
+        of damage. Enabler.`,
+      },
+      {
+        name: 'Greater Repetoire',
+        level: 4,
+        type: ActionType.ENABLER,
+        description: `You can learn one additional esotery of fourth tier or lower. Enabler.`,
+      },
+      {
+        name: 'Greater Training',
+        level: 5,
+        type: ActionType.ENABLER,
+        description: `You are specialized in all
+        esoteries. As a result, you reduce the difficulty of any
+        task involved in the use of an esotery by two steps.
+        Enabler.`,
+      },
+      {
+        name: 'Supra-Genius',
+        level: 6,
+        type: ActionType.ENABLER,
+        description: `Your Intellect Pool increases by 5, and your Intellect Edge increases by 1. Enabler.`,
+      },
+    ],
+  },
+  {
+    name: 'Wields Two Weapons At Once',
+    origin: { title: TITLE, page: 75 },
+    description: `You bear steel with both hands, ready to take on any
+    foe. You fight with two weapons in melee, sometimes
+    called dual wielding. A fearsome warrior, quick and
+    strong, you believe that the best defense is a strong
+    offense.
+    You probably sheathe one weapon on each side or
+    both crossed behind your back. They are likely your
+    most prized possessions, and you might have names
+    for them.
+    Many glaives and jacks train to fight with two
+    weapons at once. Very rarely would a nano spend the
+    time required to learn such a purely physical art, but
+    it’s possible.`,
+    benefits: [
+      {
+        name: 'Connection',
+        description: `: Pick one other PC. You have trained
+        with this character so much that if the two of you
+        stand back to back in a fight, you both gain a +1
+        bonus to Speed defense tasks.`,
+        upgrade: (char) => console.log(char),
+      },
+      {
+        name: 'Additional Equipment',
+        description: `You start with an additional light melee weapon.
+        Minor Effect Suggestions: The target is intimidated and flees as its next action
+        Major Effect Suggestions: You can make an immediate additional attack with one of your weapons`,
+        upgrade: (char) => console.log(char),
+      },
+    ],
+    tiers: [
+      {
+        name: 'Dual Light Wield',
+        level: 1,
+        type: ActionType.ENABLER,
+        description: `You can use two light
+        weapons at the same time, making two separate
+        attacks on your turn as a single action. You remain
+        limited by the amount of Effort you can apply on
+        one action, but because you make separate attacks,
+        your opponent’s Armor applies to both. Anything
+        that modifies your attack or damage applies to both
+        attacks, unless it’s specifically tied to one of the
+        weapons. Enabler.`,
+      },
+      {
+        name: 'Double Strike',
+        level: 2,
+        type: ActionType.ACTION,
+        description: `When you
+        wield two weapons, you can choose to make one
+        attack roll against a foe. If you hit, you inflict damage
+        with both weapons plus 2 additional points of
+        damage, and because you made a single attack, the
+        target’s Armor is subtracted only once. Action.`,
+        cost: { attribute: Attribute.MIGHT, value: 3 },
+      },
+      {
+        name: 'Dual Medium Wield',
+        level: 3,
+        type: ActionType.ENABLER,
+        description: `You can use two light
+        weapons or medium weapons at the same time (or
+        one light weapon and one medium weapon), making
+        two separate attacks on your turn as a single action.
+        This ability otherwise works like the Dual Light Wield
+        ability. Enabler.`,
+      },
+      {
+        name: 'Dual Defence',
+        level: 4,
+        type: ActionType.ENABLER,
+        description: `When you wield two weapons, you are trained in Speed defense tasks. Enabler.`,
+      },
+      {
+        name: 'Dual Distraction',
+        level: 5,
+        type: ActionType.ENABLER,
+        description: `When you
+        wield two weapons, your opponent’s next attack is
+        hindered. As a result, the difficulty of your defense
+        roll against that attack is reduced by one step, and
+        the difficulty of your next attack is reduced by one
+        step. Enabler.`,
+        cost: { attribute: Attribute.SPEED, value: 4 },
+      },
+      {
+        name: 'Whirling Dervish',
+        level: 6,
+        type: ActionType.ENABLER,
+        description: `When you wield two
+        weapons, you can attack up to six times in one round
+        as a single action, but you must make each attack
+        against a different foe. Make a separate attack roll
+        for each attack. You remain limited by the amount
+        of Effort you can apply on one action, but because
+        you make separate attacks, Armor applies to each of
+        them. Anything that modifies your attack or damage
+        applies to all attacks (positively or negatively), unless
+        it’s specifically tied to one of the weapons, in which
+        case it applies to only half of the attacks. Enabler.`,
+      },
+    ],
+  },
+  {
+    name: 'Works Miracles',
+    origin: { title: TITLE, page: 75 },
+    description: `You manipulate matter and time to help others
+    and are beloved by everyone you encounter. Some
+    people consider you a representative of the gods
+    or a power from beyond this world. Perhaps they’re
+    right—transdimensional experiments in the prior
+    worlds might be what created the energies that you
+    now wield.
+    You probably wear simple clothes—nothing too flashy or
+    stylish. There’s no need to call more attention to yourself.
+    Nanos are the likeliest miracle workers, using their
+    mental fortitude to focus the power of healing. A
+    glaive who can heal himself, though, is an interesting
+    and dangerous proposition.`,
+    benefits: [
+      {
+        name: 'Connection',
+        description: `Pick one other PC. This character
+        quietly suspects that you’re a messiah or
+        supernatural being. You can choose whether or not
+        you’re aware of his suspicion.
+        Minor Effect Suggestions: The target is healed for 1 additional point.
+        Major Effect Suggestions: The target is healed for 2 additional points`,
+        upgrade: (char) => console.log(char),
+      },
+    ],
+    tiers: [
+      {
+        name: 'Healing Touch',
+        level: 1,
+        type: ActionType.ACTION,
+        description: `With a
+        touch, you restore 1d6 points to one stat Pool of any
+        creature. This ability is a difficulty 2 Intellect task. Each
+        time you attempt to heal the same creature, the task
+        difficulty increases by one step. The difficulty returns
+        to 2 after that creature rests for ten hours. Action.`,
+        cost: { attribute: Attribute.INTELLECT, value: 1 },
+      },
+      {
+        name: 'Alleviate',
+        level: 2,
+        type: ActionType.ACTION,
+        description: `You attempt
+        to cancel or cure one malady (such as disease or
+        poison) in one creature. Action.`,
+        cost: { attribute: Attribute.INTELLECT, value: 3 },
+      },
+      {
+        name: 'Font of Healing',
+        level: 3,
+        type: ActionType.ENABLER,
+        description: `With your approval, other
+        creatures can touch you and regain 1d6 points to either
+        their Might Pool or their Speed Pool. This healing costs
+        them 2 Intellect points. A single creature can benefit
+        from this ability only once each day. Enabler.`,
+      },
+      {
+        name: 'Inspiration',
+        level: 4,
+        type: ActionType.ACTION,
+        description: `Through mental
+        inspiration and the manipulation of time, one creature
+        you choose within short range is granted an additional,
+        immediate action, which it can take out of turn. Action.`,
+        cost: { attribute: Attribute.INTELLECT, value: 4 },
+      },
+      {
+        name: 'Undo',
+        level: 5,
+        type: ActionType.ACTION,
+        description: `You turn back
+        time a few seconds, effectively undoing a single
+        creature’s most recent action. That creature can then
+        immediately repeat the same action or try something
+        different. Action.`,
+        cost: { attribute: Attribute.INTELLECT, value: 5 },
+      },
+      {
+        name: 'Greater Healing Touch',
+        level: 6,
+        type: ActionType.ACTION,
+        description: `You touch a creature and restore its Might Pool,
+        Speed Pool, and Intellect Pool to their maximum
+        values, as if it were fully rested. A single creature can
+        benefit from this ability only once each day. Action.`,
+      },
+    ],
+  },
+  {
+    name: 'Works The Back Alleys',
+    origin: { title: TITLE, page: 76 },
+    description: `The thief, the burglar, the pickpocket: these are the
+    dangerous individuals who haunt the back alleys of
+    every community. You are a thief in a city or town,
+    making your livelihood at the expense of the wealthy.
+    Your talents, however, prepare you for all kinds of
+    pursuits, even when you’re not crouching in an alley
+    or climbing into a window.
+    Usually, you dress to blend in with the crowd.
+    When you’re on a mission, black, form-fitting
+    clothing allows you to swim in the shadows.
+    Most thieves are jacks, but nanos make interesting
+    burglars as well. A glaive thief likely adds a little more
+    physicality to his crimes.`,
+    benefits: [
+      {
+        name: 'Connection',
+        description: `Pick one other PC. The character knew
+        you beforehand and convinced you to leave your life
+        of crime for other pursuits—at least temporarily.`,
+        upgrade: (char) => console.log(char),
+      },
+      {
+        name: 'Additional Equipment',
+        description: `You start with a bag of light tools
+        Minor Effect Suggestions: You can immediately attempt to hide after this action.
+        Major Effect Suggestions: You can immediately take a second action during this turn.`,
+        upgrade: (char) => console.log(char),
+      },
+    ],
+    tiers: [
+      {
+        name: 'Thief',
+        level: 1,
+        type: ActionType.ENABLER,
+        description: `You are trained in sneaking,
+        pickpocketing, and lockpicking tasks. Enabler`,
+      },
+      {
+        name: 'Underworld COntacts',
+        level: 2,
+        type: ActionType.ENABLER,
+        description: `You know many
+        people in a variety of communities who engage in
+        illegal activities. These people are not necessarily
+        your friends and might not be trustworthy, but they
+        recognize you as a peer. You and the GM should
+        work out the details of your underworld contacts.
+        Enabler.`,
+      },
+      {
+        name: 'Pull a Fast One',
+        level: 3,
+        type: ActionType.ENABLER,
+        description: `When you’re
+        running a con, picking a pocket, fooling or tricking a
+        dupe, sneaking something by a guard, and so on, you
+        treat the task as if it were one level lower. Enabler.`,
+        cost: { attribute: Attribute.INTELLECT, value: 3 },
+      },
+      {
+        name: 'Master Thief',
+        level: 4,
+        type: ActionType.ENABLER,
+        description: `You are trained in climbing,
+        escaping from bonds, slipping through narrow
+        places, and other contortionist moves. Enabler.`,
+      },
+      {
+        name: 'Dirty Fighter',
+        level: 5,
+        type: ActionType.ACTION,
+        description: `You distract,
+        blind, annoy, hamper, or otherwise interfere with a foe,
+        hindering his attack and defense rolls for one minute.
+        As a result, the difficulty of your defense rolls and attack
+        rolls against the foe is reduced by one step. Action.`,
+        cost: { attribute: Attribute.SPEED, value: 2 },
+      },
+      {
+        name: 'Alley Rat',
+        level: 6,
+        type: ActionType.ACTION,
+        description: `While in a city,
+        you find or create a significant shortcut, secret
+        entrance, or emergency escape route where it looked
+        like none existed. You and the GM should work out
+        the details. Action.`,
+        cost: { attribute: Attribute.INTELLECT, value: 4 },
+      },
+    ],
+  },
 ];
 
 const DESCRIPTORS: Array<Descriptor> = [
