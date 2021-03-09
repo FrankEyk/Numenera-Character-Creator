@@ -1,4 +1,4 @@
-import { ActionType } from './Action.model';
+import { ActionType } from './Ability.model';
 import { NumeneraCharacter } from './NumeneraCharacter.model';
 import { Attribute } from './Type.model';
 

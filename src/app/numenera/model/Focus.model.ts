@@ -1,4 +1,4 @@
-import { ActionType } from './Action.model';
+import { ActionType } from './Ability.model';
 import { Benefit } from './Benefit.model';
 import { Origin } from './Origin.model';
 import { Attribute } from './Type.model';

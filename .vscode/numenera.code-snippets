@@ -29,6 +29,11 @@
 	"tier": {
 		"scope": "javascript, typescript",
 		"prefix": "tier",
-		"body": ["{\n\tname: '',\n\tlevel: ,\n\ttype: ActionType.ACTION,\n\tdescription: ``,\n\tcost: { attribute: , value: },\n},"]
+		"body": ["{\n\tname: '',\n\tlevel: ,\n\ttype: ActionType.ACTION,\n\tdescription: ``,\n},"]
+	},
+	"focus": {
+		"scope": "javascript, typescript",
+		"prefix": "focus",
+		"body": ["{\n\tname: '',\n\torigin: { title: , page: },\n\tdescription: ``,\n\tbenefits: [],\n\ttiers: [],\n},"]
 	}
 }

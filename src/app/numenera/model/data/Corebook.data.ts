@@ -1,14 +1,15 @@
-import { ActionType } from '../Action.model';
+import { ActionType } from '../Ability.model';
 import { Descriptor } from '../Descriptor.model';
 import { Focus } from '../Focus.model';
+import { SourceBook } from '../Origin.model';
 import { Attribute, CharacterType } from '../Type.model';
 
-const CORE_BOOK = 'Numenera Corebook';
+const TITLE = 'Numenera Corebook';
 
-export const FOCI: Array<Focus> = [
+const FOCI: Array<Focus> = [
   {
     name: 'Bears A Halo Of Fire',
-    origin: { title: CORE_BOOK, page: 52 },
+    origin: { title: TITLE, page: 52 },
     description: `You can create a sheath of flames around your body. 
     You leave scorch marks wherever you go, and you can’t handle combustible objects without first dousing your inherent flames. 
     If you perform esoteries (or similar effects beyond the abilities of normal humans), all your effects are tainted with flame. 
@@ -137,7 +138,7 @@ export const FOCI: Array<Focus> = [
   },
   {
     name: 'Carries A Quiver',
-    origin: { title: CORE_BOOK, page: 54 },
+    origin: { title: TITLE, page: 54 },
     description: `The archer is a skilled combatant, deadly in any fight.
     With a keen eye and quick reflexes, you can eliminate
     foes at range before they reach you. A good archer
@@ -227,7 +228,7 @@ export const FOCI: Array<Focus> = [
   },
   {
     name: 'Commands Mental Powers',
-    origin: { title: CORE_BOOK, page: 54 },
+    origin: { title: TITLE, page: 54 },
     description: `You have always had special abilities that others
     didn’t seem to share. Through practice and
     devotion, you have honed this unique talent so that
@@ -370,7 +371,7 @@ export const FOCI: Array<Focus> = [
   },
   {
     name: 'Controls Beasts',
-    origin: { title: CORE_BOOK, page: 55 },
+    origin: { title: TITLE, page: 55 },
     description: `To say that you have a way with animals and
     nonhuman creatures doesn’t begin to cover it. Your
     mastery and communication with beasts is positively
@@ -503,7 +504,7 @@ export const FOCI: Array<Focus> = [
   },
   {
     name: 'Controls Gravity',
-    origin: { title: CORE_BOOK, page: 56 },
+    origin: { title: TITLE, page: 56 },
     description: `Gravity must have been quite a concern for the
     people of prior epochs because there are many paths
     within the numenera to control it. Through a quirk
@@ -601,7 +602,7 @@ export const FOCI: Array<Focus> = [
     illusionist, but jacks find illusions to be helpful as
     well. The rare glaive illusionist can find ways to use
     tricks in battle.`,
-    origin: { title: CORE_BOOK, page: 57 },
+    origin: { title: TITLE, page: 57 },
     benefits: [
       {
         name: 'Connection',
@@ -727,7 +728,7 @@ export const FOCI: Array<Focus> = [
   },
   {
     name: 'Crafts Unique Objects',
-    origin: { title: CORE_BOOK, page: 58 },
+    origin: { title: TITLE, page: 58 },
     description: `With the remains of previous civilizations all around,
     the raw materials for a crafter offer themselves to
     those who know where to look. You are a maker, a
@@ -828,7 +829,7 @@ export const FOCI: Array<Focus> = [
   },
   {
     name: 'Employs Magnetism',
-    origin: { title: CORE_BOOK, page: 59 },
+    origin: { title: TITLE, page: 59 },
     description: `Electromagnetism is a fundamental force in the
     universe, and it is yours to command. You are a
     master of metal.
@@ -958,7 +959,7 @@ export const FOCI: Array<Focus> = [
     hair stylings for dramatic effect.
     The role of the entertainer fits the jack best, but
     glaives and nanos sometimes entertain as well.`,
-    origin: { title: CORE_BOOK, page: 60 },
+    origin: { title: TITLE, page: 60 },
     benefits: [
       {
         name: 'Connection',
@@ -1039,7 +1040,7 @@ export const FOCI: Array<Focus> = [
   },
   {
     name: 'Exists Partially Out Of Phase',
-    origin: { title: CORE_BOOK, page: 60 },
+    origin: { title: TITLE, page: 60 },
     description: `You have the ability to change your phase state. In
     fact, you’re always slightly out of phase, giving you
     a ghostly translucence. With concentration, you can
@@ -1147,7 +1148,7 @@ export const FOCI: Array<Focus> = [
   },
   {
     name: 'Explores Dark Places',
-    origin: { title: CORE_BOOK, page: 61 },
+    origin: { title: TITLE, page: 61 },
     description: `You explore the foreboding ruins and mysterious
     locales of the ancient eras, trained in such activities
     by those who have gone before you. You’re the
@@ -1252,7 +1253,7 @@ export const FOCI: Array<Focus> = [
   },
   {
     name: 'Fights With Panache',
-    origin: { title: CORE_BOOK, page: 62 },
+    origin: { title: TITLE, page: 62 },
     description: `You know that style is at least as important as
     substance. Defeating foes is secondary to looking
     good while doing it. Some might call you a
@@ -1356,7 +1357,7 @@ export const FOCI: Array<Focus> = [
   },
   {
     name: 'Focuses Mind Over Matter',
-    origin: { title: CORE_BOOK, page: 63 },
+    origin: { title: TITLE, page: 63 },
     description: `Telekinesis. Psychokinesis. Mind over matter. The
     power has many names, but in the end, it all boils
     down to one thing—the molecules that make up all
@@ -1501,7 +1502,7 @@ export const FOCI: Array<Focus> = [
   },
   {
     name: 'Fuses Flesh And Steel',
-    origin: { title: CORE_BOOK, page: 64 },
+    origin: { title: TITLE, page: 64 },
     description: `At some point in your past, some of your organic
     parts were replaced with artificial components.
     (Alternatively, you belong to a secret race
@@ -1615,7 +1616,7 @@ export const FOCI: Array<Focus> = [
   },
   {
     name: 'Howls At The Moon',
-    origin: { title: CORE_BOOK, page: 64 },
+    origin: { title: TITLE, page: 64 },
     description: `Sometimes the numenera is a double-edged sword.
     You are cursed and blessed to be able to transform
     into a powerful creature, drawing additional mass
@@ -1723,7 +1724,7 @@ export const FOCI: Array<Focus> = [
   },
   {
     name: 'Hunts With Great Skill',
-    origin: { title: CORE_BOOK, page: 65 },
+    origin: { title: TITLE, page: 65 },
     description: `You are a tracker. Perhaps you hunt animals or
     more deadly creatures. Perhaps you go after people
     as a bounty hunter, law enforcer, or killer for hire.
@@ -1831,13 +1832,837 @@ export const FOCI: Array<Focus> = [
       },
     ],
   },
-  //TODO add more foci 66ff.
+  {
+    name: 'Leads',
+    origin: { title: TITLE, page: 66 },
+    description: `Using charisma, natural leadership, and perhaps
+    some training, you command the actions of others,
+    who follow you willingly. You are a commander, a
+    captain, a leader, or a general. Your skills allow you
+    to make people do what you want, but you also have
+    the wisdom to know what actions would be best for
+    your followers and allies.
+    Since you need the respect of others, you probably
+    dress and carry yourself in such a way that inspires,
+    endears, or intimidates. You have a voice suited to
+    barking orders that can be heard even on a noisy
+    battlefield.
+    Glaives make excellent military leaders, but a
+    jack could easily lead a group of explorers or a den
+    of thieves. A nano might be the head of a group of
+    “mages” or scholars, or she might have a gang of
+    bodyguards as followers.`,
+    benefits: [
+      {
+        name: 'Connection',
+        description: `Pick one other PC. That character was
+        once a follower of yours, but you have since grown to
+        think of him as a peer.`,
+        upgrade: (char) => console.log(char),
+      },
+      {
+        name: 'Additional Equipment',
+        description: `You have an artifact that
+        allows you to tag up to seven followers. By looking
+        into the glass plate on the device, you can determine
+        their distance and direction relative to you. The
+        tagging process is somewhat demeaning, so it is
+        likely that only your followers would ever submit to it.
+        Minor Effect Suggestions: The next time you attempt to command, captivate, or otherwise influence the same foe, the difficulty of the task is decreased by one step.
+        Major Effect Suggestions: The foe is influenced, captivated, or otherwise affected by your ability for twice as long as normal. `,
+        upgrade: (char) => console.log(char),
+      },
+    ],
+    tiers: [
+      {
+        name: 'Natural Charisma',
+        level: 1,
+        type: ActionType.ENABLER,
+        description: `You are trained in all social
+        interactions, whether they involve charm, learning a
+        person’s secrets, or intimidating others. Enabler.`,
+        benefit: {
+          name: 'Good Advice',
+          description: `You have a clear mind for determining the best way to proceed. When you give another character a suggestion involving his next action, the character is trained in that action for one round. Action.`,
+          cost: { attribute: Attribute.INTELLECT, value: 1 },
+          upgrade: (char) => console.log(char),
+        },
+      },
+      {
+        name: 'Follower',
+        level: 2,
+        type: ActionType.ENABLER,
+        description: `You gain a level 2 NPC follower
+        who is completely devoted to you. You and the GM
+        must work out the details of the follower and you’ll
+        probably make rolls for it in combat or when it takes
+        actions. The follower acts on your turn. As a level 2
+        follower, it has a target number of 6 and a health of
+        6, and it inflicts 2 points of damage. If the follower
+        dies, you gain a new one after at least two weeks and
+        proper recruitment. Enabler.`,
+      },
+      {
+        name: 'Command',
+        level: 3,
+        type: ActionType.ACTION,
+        description: `Through
+        sheer force of will and charisma, you issue a
+        simple command to a single living creature, which
+        attempts to carry out your command as its next
+        action. The creature must be within short range
+        and be able to understand you. The command can’t
+        inflict direct harm on the creature or its allies, so
+        “Commit suicide” won’t work, but “Flee” might.
+        In addition, the command can require the creature
+        to take only one action, so “Open the door” might
+        work, but “Open the door and run through it”
+        won’t. Action.`,
+        cost: { attribute: Attribute.INTELLECT, value: 3 },
+        benefit: {
+          name: 'Capable Follower',
+          description: `Your first follower increases to level 3. As a level 3 follower, it has a target number of 9 and a health of 9, and it inflicts 3 points of damage. Enabler.`,
+          upgrade: (char) => console.log(char),
+        },
+      },
+      {
+        name: 'Captivate or Inspire',
+        level: 4,
+        type: ActionType.ACTION,
+        description: `You
+        can use this ability in one of two ways. Either your
+        words keep the attention of all NPCs that hear them
+        for as long as you speak, or your words inspire all
+        NPCs (of your choosing) that hear them to function
+        as if they were one level higher for the next hour.
+        Action.`,
+        cost: { attribute: Attribute.INTELLECT, value: 4 },
+        benefit: {
+          name: 'Capable Follower',
+          description: `Your first follower increases to
+          level 4. As a level 4 follower, it has a target number
+          of 12 and a health of 12, and it inflicts 4 points of
+          damage. Enabler.`,
+          upgrade: (char) => console.log(char),
+        },
+      },
+      {
+        name: 'Band of Followers',
+        level: 5,
+        type: ActionType.ENABLER,
+        description: `You gain six level 2 NPC
+        followers who are completely devoted to you. (They
+        are in addition to the follower you gained at second
+        tier.) You and the GM must work out the details of
+        these followers. If a follower dies, you gain a new
+        one after at least two weeks and proper recruitment.
+        Enabler.`,
+      },
+      {
+        name: 'Mind of a Leader',
+        level: 6,
+        type: ActionType.ACTION,
+        description: `When
+        you develop a plan that involves your followers, you
+        can ask the GM one very general question about what
+        is likely to happen if you carry out the plan, and you
+        will get a simple, brief answer. Action.`,
+        cost: { attribute: Attribute.INTELLECT, value: 6 },
+        benefit: {
+          name: 'Capable Followers',
+          description: `Your first follower increases to
+          level 5. As a level 5 follower, it has a target number
+          of 15 and a health of 15, and it inflicts 5 points of
+          damage. Each of your level 2 followers increases to
+          level 3. Enabler.`,
+          upgrade: (char) => console.log(char),
+        },
+      },
+    ],
+  },
+  {
+    name: 'Lives In The Wilderness',
+    origin: { title: TITLE, page: 67 },
+    description: `You dwell in the wilds. You probably have done so
+    most, if not all, of your life, coming to understand
+    the mysteries of nature, weather, and survival. The
+    ways of flora and fauna are your ways.
+    Your rough, rugged clothing shows little concern
+    for style. Most of the time, covering yourself in natural
+    smells to keep your scent from arousing suspicion in
+    the wilderness is more important than bathing to keep
+    yourself presentable to other humans.
+    Glaives and jacks are the most likely characters
+    to live in the wilderness, perhaps working as guides,
+    hunters, trappers, scouts, or trackers. A nano that does
+    so might be seen as a nature priest or wild wizard.`,
+    benefits: [
+      {
+        name: 'Connection',
+        description: `Pick one other PC who isn’t from the
+        wilderness. You can’t help but feel a little contempt
+        for that character and her “civilized” ways, which
+        show disdain for all things natural and (to your
+        mind) true.`,
+        upgrade: (char) => console.log(char),
+      },
+      {
+        name: 'Additional Equipment',
+        description: `You have a directional compass.
+        Minor Effect Suggestions: A foe that is a natural creature flees rather than continue to fight you.
+        Major Effect Suggestions: A foe that is a natural creature becomes warily passive.`,
+        upgrade: (char) => console.log(char),
+      },
+    ],
+    tiers: [
+      {
+        name: 'Wilderness Life',
+        level: 1,
+        type: ActionType.ENABLER,
+        description: `You are trained in climbing and swimming tasks. Enabler.`,
+        benefit: {
+          name: 'Wilderness Lore',
+          description: `You are trained in wilderness navigation and in identifying plants and creatures. Enabler.`,
+          upgrade: (char) => console.log(char),
+        },
+      },
+      {
+        name: 'Living of the Land',
+        level: 2,
+        type: ActionType.ENABLER,
+        description: `Given an hour or so, you
+        can always find edible food and potable water in the
+        wilderness. You can even find enough for a small
+        group of people, if need be. Further, since you’re
+        so hardy and have gained resistance over time, the
+        difficulty of resisting the effects of natural poisons
+        (such as those from plants or living creatures)
+        is decreased by one step. You’re also immune to
+        natural diseases. Enabler.`,
+      },
+      {
+        name: 'Animal Senses and Sensibilities',
+        level: 3,
+        type: ActionType.ENABLER,
+        description: `You are
+        trained in listening and spotting things. In addition,
+        most of the time, the GM should alert you if you’re
+        about to walk into an ambush or a trap that is lower
+        than level 3. Enabler.`,
+        benefit: {
+          name: 'Wilderness Explorer',
+          description: `While taking any action
+          (including fighting) in the wild, you ignore any
+          penalties due to natural causes such as tall grass,
+          thick brush, rugged terrain, weather, and so on.
+          Enabler.`,
+          upgrade: (char) => console.log(char),
+        },
+      },
+      {
+        name: 'Wilderness Awareness',
+        level: 4,
+        type: ActionType.ACTION,
+        description: `Your connection to the natural world extends to a
+        degree that some would call supernatural. While in
+        the wilderness, you can extend your senses up to a
+        mile in any direction and ask the GM a very simple,
+        general question about that area, such as “Where
+        is the margr camp?” or “Is my friend Deithan still
+        alive?” If the answer you seek is not in the area, you
+        receive no information. Action.`,
+        cost: { attribute: Attribute.INTELLECT, value: 4 },
+      },
+      {
+        name: 'The Wild Is on Your Side',
+        level: 5,
+        type: ActionType.ACTION,
+        description: `While you’re in the wilderness, foes within short
+        range are tripped by rocks, tangled in vines, bitten by
+        insects, and distracted or confused by small animals.
+        The difficulty of any tasks performed by those foes
+        is increased by one step. This effect lasts for ten
+        minutes. Action to initiate.`,
+        cost: { attribute: Attribute.INTELLECT, value: 5 },
+      },
+      {
+        name: 'On With the Wild',
+        level: 6,
+        type: ActionType.ACTION,
+        description: `For the
+        next ten minutes, natural animals and plants within
+        long range will not knowingly harm you or those you
+        designate. Action.`,
+        cost: { attribute: Attribute.INTELLECT, value: 6 },
+        benefit: {
+          name: 'Master of the Wild',
+          description: `While you’re in the wilderness,
+          your Might Edge, Speed Edge, and Intellect Edge
+          increase by 1. When you make a recovery roll in
+          the wilderness, you recover twice as many points.
+          Enabler.`,
+          upgrade: (char) => console.log(char),
+        },
+      },
+    ],
+  },
+  {
+    name: 'Masters Defense',
+    origin: { title: TITLE, page: 68 },
+    description: `Protecting yourself is obviously important in
+    dangerous situations, and you are particularly
+    good at it. Cautious and prudent, you learn
+    techniques to defend against all kinds of
+    attacks, both physical and mental. The winner
+    is often the last person standing, and you’ve
+    done all you can to ensure that person will
+    be you. You carry a shield and
+    probably wear the best armor you can find.
+    Glaives make excellent defensive masters, but jacks and 
+    nanos also find at least some of these skills of great value`,
+    benefits: [
+      {
+        name: 'Connection',
+        description: `Pick one other PC. This character protected you from harm recently, and you feel indebted to him for saving your life.`,
+        upgrade: (char) => console.log(char),
+      },
+      {
+        name: 'Additional Equipment',
+        description: `You have a shield.
+        Minor Effect Suggestions: You gain a +1 bonus to Speed defense rolls for one round.
+        Major Effect Suggestions: You gain a +2 bonus to Speed defense rolls for one round.`,
+        upgrade: (char) => console.log(char),
+      },
+    ],
+    tiers: [
+      {
+        name: 'Shield master',
+        level: 1,
+        type: ActionType.ENABLER,
+        description: `When you use a shield, in
+        addition to the asset it gives you (lowering the difficulty
+        of Speed defense tasks by one step), you can act as if
+        you are trained in Speed defense tasks. However, in
+        any round in which you use this benefit, the difficulty of
+        your attacks increases by one step. Enabler.`,
+      },
+      {
+        name: 'Sturdy',
+        level: 2,
+        type: ActionType.ENABLER,
+        description: `You are trained in Might defense tasks. Enabler.`,
+        benefit: {
+          name: 'Armor Expert',
+          description: `When you wear any armor, you reduce the armor’s penalties (Might cost per hour and Speed reduction) by 1. Enabler.`,
+          upgrade: (char) => console.log(char),
+        },
+      },
+      {
+        name: 'Doge and Resist',
+        level: 3,
+        type: ActionType.ENABLER,
+        description: `You can
+        reroll any of your Might, Speed, or Intellect defensive
+        rolls and take the better of the two results. Enabler.`,
+        cost: { attribute: Attribute.SPEED, value: 3 },
+      },
+      {
+        name: 'Tower of Will',
+        level: 4,
+        type: ActionType.ENABLER,
+        description: `You are trained in Intellect defense tasks. Enabler.`,
+        benefit: {
+          name: 'Armor Master',
+          description: `When you wear any armor, you
+          reduce the armor’s penalties (Might cost per hour
+          and Speed reduction) to 0. Enabler.`,
+          upgrade: (char) => console.log(char),
+        },
+      },
+      {
+        name: 'Nothing but Defend',
+        level: 5,
+        type: ActionType.ACTION,
+        description: `If you do nothing on
+        your turn other than defend, you are specialized in
+        all defensive tasks for that one round. Action.`,
+      },
+      {
+        name: 'Defense Master',
+        level: 6,
+        type: ActionType.ENABLER,
+        description: `Every time you succeed at
+        a Speed defense task, you can make an immediate
+        attack against your foe. Your attack must be the
+        same type (melee weapon, ranged weapon, or
+        unarmed) as the attack you defend against. If you
+        don’t have an appropriate type of weapon ready, you
+        can’t use this ability. Enabler.`,
+      },
+    ],
+  },
+  {
+    name: 'Masters of Weaponry',
+    origin: { title: TITLE, page: 69 },
+    description: `You have worked long and hard with one particular
+    type of weapon: swords, axes, daggers, whips, or
+    whatever you choose. Thus, you are a swordsman,
+    an axemaster, a mistress of knives, or whatever is
+    appropriate to your chosen weapon. A master of the
+    rapier is different from a master of the warhammer.
+    You might wear a symbol—a badge, a pin, a
+    tattoo, an amulet, certain colors, and so on—that
+    indicates the school in which you trained, the style
+    of fighting you have mastered, or the name of your
+    mentor. Your weapon is almost certainly your finest
+    possession. Not only is it well cared for and of
+    high quality, but you probably keep it in a beautiful
+    scabbard, harness, belt, case, or something similar.
+    Many glaives are weapon masters, but sometimes
+    a jack might choose this path, particularly with
+    lighter weapons.`,
+    benefits: [
+      {
+        name: 'Connection',
+        description: `Pick one other PC. That character
+        shows potential in the use of your weapon. You
+        would like to train her, but you’re not necessarily
+        qualified to teach (that’s up to you), and she might
+        not be interested (that’s up to her).`,
+        upgrade: (char) => console.log(char),
+      },
+      {
+        name: 'Additional Equipment',
+        description: `You have a high-quality weapon of your choosing.`,
+        upgrade: (char) => console.log(char),
+      },
+      {
+        name: 'Weaponry Esoteries',
+        description: `: If you perform esoteries, your
+        attacks always look like your chosen weapon. So the
+        force blast of the Onslaught esotery appears to be a
+        large weapon made of force, and the Flash esotery
+        produces a flurry of weaponry. These alterations change
+        nothing other than the appearance of the effects. As
+        another example, Barrier becomes a wall of swirling
+        blades of energy. This alteration changes the esotery
+        such that it is not a solid barrier but rather inflicts 1
+        point of damage to anyone who touches it and 4 points
+        of damage to anyone who passes through it.
+        Minor Effect Suggestions: The target is so dazzled by your expertise that it is dazed for one round, during which time the difficulty of all tasks it performs is modified by one step to its detriment.
+        Major Effect Suggestions: Make an immediate additional attack with the weapon as part of your turn.`,
+        upgrade: (char) => console.log(char),
+      },
+    ],
+    tiers: [
+      {
+        name: 'Weapon Master',
+        level: 1,
+        type: ActionType.ENABLER,
+        description: `You gain a +1 bonus to damage with your chosen weapon. Enabler.`,
+      },
+      {
+        name: 'Weapon Defense',
+        level: 2,
+        type: ActionType.ENABLER,
+        description: `While your chosen weapon
+        is in your hand or hands, you are trained in Speed
+        defense rolls. Enabler.`,
+      },
+      {
+        name: 'Rapid Attack',
+        level: 3,
+        type: ActionType.ENABLER,
+        description: `Once per
+        round, you can make an additional attack with your
+        chosen weapon. Enabler.`,
+        cost: { attribute: Attribute.SPEED, value: 3 },
+      },
+      {
+        name: 'Never Fumble',
+        level: 4,
+        type: ActionType.ENABLER,
+        description: `If you roll a natural 1 when
+        attacking with your chosen weapon, you can ignore
+        or countermand the GM’s intrusion for that roll. You
+        can never be disarmed of your chosen weapon, nor
+        will you ever drop it accidentally. Enabler.`,
+      },
+      {
+        name: 'Extreme Mastery',
+        level: 5,
+        type: ActionType.ENABLER,
+        description: `When
+        using your chosen weapon, you can reroll any attack
+        roll you wish and take the better of the two results.
+        Enabler`,
+      },
+      {
+        name: 'Damage Dealer',
+        level: 6,
+        type: ActionType.ACTION,
+        description: `You gain a +2 bonus to
+        damage with your chosen weapon. This bonus adds
+        to the one from the Weapon Master ability, giving
+        you a total bonus of +3. Enabler.`,
+        benefit: {
+          name: 'Death Dealer',
+          description: `If you strike a foe of level 3 or less with your chosen weapon, you kill the target instantly. Action.`,
+          upgrade: (char) => console.log(char),
+        },
+      },
+    ],
+  },
+  {
+    name: 'Murders',
+    origin: { title: TITLE, page: 70 },
+    description: `The murderous assassin is a master of dealing
+    death. No one is better at sneaking into a location,
+    eliminating a target, and slipping out again. Obviously,
+    a professional killer is not likely to have a lot of friends.
+    You probably wear dark colors—black, charcoal
+    grey, or midnight blue—to help blend into the
+    shadows. But since you’re also a master of disguise,
+    in truth you could look like anyone.
+    Any character could be an assassin. Jacks are the
+    most likely choice, but nanos with their esoteries
+    or glaives with their combat abilities would make
+    efficient killers as well.`,
+    benefits: [
+      {
+        name: 'Connection',
+        description: `Pick one other PC. That character
+        knows your real identity, profession, and
+        background. To all others, the truth about you is a
+        closely guarded secret.`,
+        upgrade: (char) => console.log(char),
+      },
+      {
+        name: 'Additional Equipment',
+        description: `You start with a disguise kit and three doses of a level 2 blade poison that inflicts 5 points of damage.
+        Minor Effect Suggestions: No one but the foe notices that you make the attack
+        Major Effect Suggestions: If you have poison amid your belongings, you were able to apply it just before the strike, adding the poison’s effects to the normal attack damage.`,
+        upgrade: (char) => console.log(char),
+      },
+    ],
+    tiers: [
+      {
+        name: 'Surprise Attack',
+        level: 1,
+        type: ActionType.ENABLER,
+        description: `If attacking from a hidden
+        vantage, with surprise, or before an opponent has
+        acted, you reduce the difficulty of your attack by one
+        step. On a successful hit with this surprise attack,
+        you inflict 2 additional points of damage. Enabler.`,
+        benefit: {
+          name: 'Trained Assassin',
+          description: `You are trained in stealth and disguise tasks. Enabler`,
+          upgrade: (char) => console.log(char),
+        },
+      },
+      {
+        name: 'Quick Death',
+        level: 2,
+        type: ActionType.ACTION,
+        description: `You know how
+        to kill quickly. When you hit with a melee or ranged
+        attack, you deal 4 additional points of damage. You
+        can’t make this attack in two consecutive rounds.
+        Action.`,
+      },
+      {
+        name: 'Poison Crafter',
+        level: 3,
+        type: ActionType.ENABLER,
+        description: `You are trained in crafting,
+        sensing, identifying, and resisting poisons. Enabler`,
+        benefit: {
+          name: 'Trained Infiltrator',
+          description: `You are trained in all interactions involving lies or trickery. Enabler.`,
+          upgrade: (char) => console.log(char),
+        },
+      },
+      {
+        name: 'Better Surprise Attack',
+        level: 4,
+        type: ActionType.ENABLER,
+        description: `If attacking from a
+        hidden vantage, with surprise, or before an opponent
+        has acted, you reduce the difficulty of your attack
+        by one step. On a successful hit with this surprise
+        attack, you inflict 2 additional points of damage.
+        These effects add to those from Surprise Attack,
+        giving you a total decrease of two steps and a total of
+        4 additional points of damage. Enabler.`,
+      },
+      {
+        name: 'Slayer',
+        level: 5,
+        type: ActionType.ACTION,
+        description: `With a swift and
+        sudden attack, you strike a foe in a vital spot. If the
+        target is level 3 or less, it is slain outright. Action.`,
+        cost: { attribute: Attribute.SPEED, value: 5 },
+      },
+      {
+        name: 'Escape Plan',
+        level: 6,
+        type: ActionType.ENABLER,
+        description: `When you kill a foe, you can
+        attempt a sneaking action to immediately hide from
+        anyone around, assuming that a suitable hiding
+        place is nearby. Enabler.`,
+      },
+    ],
+  },
+  {
+    name: 'Rages',
+    origin: { title: TITLE, page: 71 },
+    description: `The berserker is a feared fighter who cannot be
+    stopped. You put yourself into a howling battle frenzy
+    that can make you a terror on the battlefield. You
+    might hail from a less civilized society, perhaps even
+    a tribal one.
+    You likely wear little or no armor so as not to
+    restrict your speed or maneuverability. Your clothing
+    is probably simple and utilitarian.
+    Glaives make the best berserkers.`,
+    benefits: [
+      {
+        name: 'Connection',
+        description: `Choose one other PC. You feel
+        strangely protective toward that character and don’t
+        want to see her come to harm.
+        Minor Effect Suggestions: When fighting multiple foes, you knock one into another, putting both off balance. As a result, treat both foes as one level lower for one round.
+        Major Effect Suggestions: Your foe is terrified of your rage and uses his next two actions to flee.`,
+        upgrade: (char) => console.log(char),
+      },
+    ],
+    tiers: [
+      {
+        name: 'Frenzy',
+        level: 1,
+        type: ActionType.ENABLER,
+        description: `When you wish,
+        while in combat, you can enter a state of frenzy.
+        While in this state, you can’t use Intellect points,
+        but you gain +1 to your Might Edge and your Speed
+        Edge. This effect lasts for as long as you wish, but
+        it ends if no combat is taking place within range of
+        your senses. Enabler.`,
+      },
+      {
+        name: 'Hardy',
+        level: 2,
+        type: ActionType.ENABLER,
+        description: `You gain +5 to your Might Pool.
+        These additional points can be used only to absorb
+        damage. You can’t spend them to apply Effort to
+        rolls. Enabler.`,
+        benefit: {
+          name: 'Mobile Fighter',
+          description: `You are trained in climbing and jumping tasks. Enabler.`,
+          upgrade: (char) => console.log(char),
+        },
+      },
+      {
+        name: 'Power Strike',
+        level: 3,
+        type: ActionType.ENABLER,
+        description: `If you
+        successfully attack a target, you knock it prone in
+        addition to inflicting damage. The target must be
+        your size or smaller. You can knock down a target
+        larger than you if you apply a level of Effort to do so
+        (rather than to decrease the difficulty of the attack).
+        Enabler`,
+        benefit: {
+          name: 'Unamored Fighter',
+          description: `While unarmored, you are trained in Speed defense tasks. Enabler.`,
+          upgrade: (char) => console.log(char),
+        },
+      },
+      {
+        name: 'Greater Frenzy',
+        level: 4,
+        type: ActionType.ENABLER,
+        description: `When you
+        wish, while in combat, you can enter a state of frenzy.
+        While in this state, you can’t use Intellect points,
+        but you gain +2 to your Might Edge and your Speed
+        Edge. This effect lasts for as long as you wish, but
+        it ends if no combat is taking place within range of
+        your senses. You can use this ability or your first-tier
+        Frenzy ability, but you can’t use both at the same
+        time. Enabler.`,
+      },
+      {
+        name: 'Attack and Attack Again',
+        level: 5,
+        type: ActionType.ENABLER,
+        description: `Rather than granting
+        additional damage or a minor or major effect, a
+        natural 17 or higher on your attack roll allows you
+        the option of immediately making another attack.
+        Enabler`,
+      },
+      {
+        name: 'Tough and Fast',
+        level: 6,
+        type: ActionType.ENABLER,
+        description: `You gain +6 to your Might Pool and your Speed Pool. Enabler.`,
+      },
+    ],
+  },
+  {
+    name: 'Rides the Lighting',
+    origin: { title: TITLE, page: 71 },
+    description: `The ancients harnessed electricity in strange and
+    wonderful ways. Through practice and inherent
+    ability (or the subtle use of hidden or implanted
+    devices), you control the same energy. Not only can
+    you create and discharge electrical power, but you
+    can eventually learn to use it to transport yourself.
+    You probably wear tight-fitting clothing that allows
+    you to move quickly. Your garments might be blue
+    and black, perhaps with a lightning-bolt motif.
+    Although nanos seem most suited to wielding
+    lightning, jacks can make good use of the varied
+    lightning abilities.`,
+    benefits: [
+      {
+        name: 'Connection',
+        description: `Pick one other PC. This character
+        has been your friend for a long time, and you
+        have learned to bring her along when you ride the
+        lightning. If the character is standing right next to
+        you, you can take her with you when you use the Bolt
+        Rider or Electrical Flight powers. (Normally, neither
+        ability allows you to transport other creatures.)`,
+        upgrade: (char) => console.log(char),
+      },
+      {
+        name: 'Additional Equipment',
+        description: `You have a bag of
+        miscellaneous batteries and power cells. Whenever you
+        find a new device that operates on batteries or cells
+        (GM discretion), there is a 75 percent chance that the
+        bag contains one that will power it if it depletes.`,
+        upgrade: (char) => console.log(char),
+      },
+      {
+        name: 'Electrical Esoteries',
+        description: `If you perform esoteries,
+        those that would normally use force or other energy
+        instead use electricity. For example, a Flash or an
+        Onslaught force blast is a blast of lightning. This
+        alteration changes nothing other than the type of
+        damage and the fact that it might start fires.
+        Minor Effect Suggestions: The target is dazed by electricity for one round, during which time the difficulty of all tasks it performs is modified by one step to its detriment. Electricity can also shut down an android, robot, or other automaton for one round.        
+        Major Effect Suggestions: Devices filled with electrical power explode. You can target and destroy an artifact that a foe is holding or wearing.`,
+        upgrade: (char) => console.log(char),
+      },
+    ],
+    tiers: [
+      {
+        name: 'Shock',
+        level: 1,
+        type: ActionType.ACTION,
+        description: `Your hands crackle
+        with electricity, and the next time you touch a
+        creature, you inflict 3 points of damage. Alternatively,
+        if you wield a weapon, for ten minutes it crackles
+        with electricity and inflicts 1 additional point of
+        damage per attack. Action for touch; enabler for
+        weapon.`,
+        cost: { attribute: Attribute.INTELLECT, value: 1 },
+        benefit: {
+          name: 'Charge',
+          description: `You can charge an
+          artifact or other device (except a cypher) so that it
+          can be used once. The cost is 1 Intellect point plus 1
+          point per level of the device. Action.`,
+          cost: { attribute: Attribute.INTELLECT, value: 1 },
+          upgrade: (char) => console.log(char),
+        },
+      },
+      {
+        name: 'Bolt Rider',
+        level: 2,
+        type: ActionType.ACTION,
+        description: `You can move
+        a long distance from one location to another almost
+        instantaneously, carried by a bolt of lightning. You
+        must be able to see the new location, and there must
+        be no intervening barriers. Action.`,
+      },
+      {
+        name: 'Lightning Swift',
+        level: 3,
+        type: ActionType.ENABLER,
+        description: `You gain +3 to your Speed
+        Pool and +1 to your Speed Edge. Enabler.`,
+        benefit: {
+          name: 'Drain Charge',
+          description: `You can drain the power from an
+          artifact or device, allowing you to regain 1 Intellect
+          point per level of the device. You regain points at
+          the rate of 1 point per round and must give your
+          full concentration to the process each round. The
+          GM determines whether the device is fully drained
+          (likely true of most handheld or smaller devices) or
+          retains some power (likely true of large machines).
+          Action to initiate; action each round to drain.`,
+          upgrade: (char) => console.log(char),
+        },
+      },
+      {
+        name: 'Bolts of Power',
+        level: 4,
+        type: ActionType.ACTION,
+        description: `You blast
+        a fan of lightning out to short range in an arc that is
+        approximately 50 feet (15 m) wide at the end. This
+        discharge inflicts 4 points of damage. If you apply
+        Effort to increase the damage rather than to decrease
+        the difficulty, you deal 2 additional points of damage
+        per level of Effort (instead of 3 points); however,
+        targets in the area take 1 point of damage even if you
+        fail the attack roll. Action.`,
+        cost: { attribute: Attribute.INTELLECT, value: 5 },
+      },
+      {
+        name: 'Electrical Flight',
+        level: 5,
+        type: ActionType.ACTION,
+        description: `You exude
+        an aura of crackling electricity that lets you fly for ten
+        minutes. You can’t carry other creatures with you.
+        Action to activate.`,
+        cost: { attribute: Attribute.INTELLECT, value: 5 },
+      },
+      {
+        name: 'Wall of Lightning',
+        level: 6,
+        type: ActionType.ACTION,
+        description: `You
+        create a barrier of crackling electricity up to 2,500
+        square feet (230 sq. m) in size, shaped as you wish.
+        The wall is a level 7 barrier. Anyone within immediate
+        distance of the wall automatically takes 10 points of
+        damage. The wall lasts for one hour. Action to create.`,
+        cost: { attribute: Attribute.INTELLECT, value: 6 },
+      },
+    ],
+  },
+  //TODO add more foci 68ff.
 ];
 
-export const DESCRIPTORS: Array<Descriptor> = [
+const DESCRIPTORS: Array<Descriptor> = [
   {
     name: 'Charming',
-    origin: { title: CORE_BOOK, page: 47 },
+    origin: { title: TITLE, page: 47 },
     description: `You’re a smooth talker and a charmer. 
     Whether through seemingly supernatural means or just a way with words, you can convince others to do as you wish.
     Most likely, you’re physically attractive or at least highly charismatic, and others enjoy listening to your voice.
@@ -1884,7 +2709,7 @@ export const DESCRIPTORS: Array<Descriptor> = [
   },
   {
     name: 'Clever',
-    origin: { title: CORE_BOOK, page: 48 },
+    origin: { title: TITLE, page: 48 },
     description: `You’re quick-witted, thinking well on your feet. 
     You understand people, so you can fool them but are rarely fooled. 
     Because you easily see things for what they are, you get the lay of the land swiftly, 
@@ -1925,7 +2750,7 @@ export const DESCRIPTORS: Array<Descriptor> = [
   },
   {
     name: 'Graceful',
-    origin: { title: CORE_BOOK, page: 48 },
+    origin: { title: TITLE, page: 48 },
     description: `You have a perfect sense of balance, moving and speaking with grace and beauty. 
     You’re quick, lithe, flexible, and dexterous. 
     Your body is perfectly suited to dance, and you use that advantage in combat to dodge blows. 
@@ -1955,7 +2780,7 @@ export const DESCRIPTORS: Array<Descriptor> = [
   },
   {
     name: 'Intelligent',
-    origin: { title: CORE_BOOK, page: 48 },
+    origin: { title: TITLE, page: 48 },
     description: `You’re quite smart. Your memory is sharp, and you easily grasp concepts that others might struggle with. 
     This aptitude doesn’t necessarily mean that you’ve had years of formal education, but you have learned a great deal in your life, 
     primarily because you pick things up quickly and retain so much.`,
@@ -1982,7 +2807,7 @@ export const DESCRIPTORS: Array<Descriptor> = [
     description: `You have studied, either on your own or with an instructor.
     You know many things and are an expert on a few topics, such as history, biology, geography, the numenera, nature, or any other area of study.
     Learned characters typically carry a few books around with them and spend their spare time reading.`,
-    origin: { title: CORE_BOOK, page: 48 },
+    origin: { title: TITLE, page: 48 },
     benefits: [
       {
         name: 'Smart',
@@ -2008,7 +2833,7 @@ export const DESCRIPTORS: Array<Descriptor> = [
   },
   {
     name: 'Mystical/Mechanical',
-    origin: { title: CORE_BOOK, page: 49 },
+    origin: { title: TITLE, page: 49 },
     description: `You have a special talent that can be viewed in two
     ways. You might think of yourself as “mystical,”
     and thus attuned with the mysterious and the
@@ -2065,7 +2890,7 @@ export const DESCRIPTORS: Array<Descriptor> = [
   },
   {
     name: 'Rugged',
-    origin: { title: CORE_BOOK, page: 49 },
+    origin: { title: TITLE, page: 49 },
     description: `You’re a nature lover accustomed to living rough,
     pitting your wits against the elements. Most likely,
     you’re a skilled hunter, gatherer, or naturalist. Years
@@ -2105,7 +2930,7 @@ export const DESCRIPTORS: Array<Descriptor> = [
   },
   {
     name: 'Stealthy',
-    origin: { title: CORE_BOOK, page: 50 },
+    origin: { title: TITLE, page: 50 },
     description: `You’re sneaky, slippery, and fast. 
     These talents help you hide, move quietly, and pull off tricks that require sleight of hand. 
     Most likely, you’re wiry and small.
@@ -2140,7 +2965,7 @@ export const DESCRIPTORS: Array<Descriptor> = [
   },
   {
     name: 'Strong',
-    origin: { title: CORE_BOOK, page: 50 },
+    origin: { title: TITLE, page: 50 },
     description: `You’re extremely strong and physically powerful, and you use these qualities well, 
     whether through violence or feats of prowess. 
     You  likely have a brawny build and impressive muscles.`,
@@ -2169,7 +2994,7 @@ export const DESCRIPTORS: Array<Descriptor> = [
   },
   {
     name: 'String-Willed',
-    origin: { title: CORE_BOOK, page: 50 },
+    origin: { title: TITLE, page: 50 },
     description: `You’re tough-minded, willful, and independent. 
     No one can talk you into anything or change your mind when you don’t want it changed. 
     This quality doesn’t necessarily make you smart, but it does make you a bastion of willpower and resolve. 
@@ -2199,7 +3024,7 @@ export const DESCRIPTORS: Array<Descriptor> = [
   },
   {
     name: 'Swift',
-    origin: { title: CORE_BOOK, page: 51 },
+    origin: { title: TITLE, page: 51 },
     description: `You move quickly, able to sprint in short bursts and work with your hands with dexterity. 
     You’re great at crossing distances quickly but not always smoothly.
     You are likely slim and muscular.`,
@@ -2228,7 +3053,7 @@ export const DESCRIPTORS: Array<Descriptor> = [
   },
   {
     name: 'Tough',
-    origin: { title: CORE_BOOK, page: 51 },
+    origin: { title: TITLE, page: 51 },
     description: `You’re strong and can take a lot of physical punishment. 
     You might have a large frame and a square jaw. 
     Tough characters frequently have visible scars.`,
@@ -2257,10 +3082,10 @@ export const DESCRIPTORS: Array<Descriptor> = [
   },
 ];
 
-export const TYPES: Array<CharacterType> = [
+const TYPES: Array<CharacterType> = [
   {
     name: 'Glaive',
-    origin: { title: CORE_BOOK, page: 26 },
+    origin: { title: TITLE, page: 26 },
     description: `Glaives are the elite warriors of the Ninth World,
     using weapons and armor to fight their enemies.
     Hunters, guardians, and soldiers could be glaives.
@@ -2289,7 +3114,7 @@ export const TYPES: Array<CharacterType> = [
   },
   {
     name: 'Nano',
-    origin: { title: CORE_BOOK, page: 32 },
+    origin: { title: TITLE, page: 32 },
     description: `Nanos are sometimes called mages, wizards, sorcerers,
     or witches by the people of the Ninth World. Nanosorcerer is also a common term, with their abilities
     referred to as nano-sorcery. Some claim to be the
@@ -2316,7 +3141,7 @@ export const TYPES: Array<CharacterType> = [
   },
   {
     name: 'Jack',
-    origin: { title: CORE_BOOK, page: 40 },
+    origin: { title: TITLE, page: 40 },
     description: `Jacks are intrepid explorers and adventurers. They are
     jacks of all trades—hence the name—although the
     word also hearkens back to fables involving a wily,
@@ -2335,3 +3160,10 @@ export const TYPES: Array<CharacterType> = [
     ],
   },
 ];
+
+export const NUMENERA_COREBOOK: SourceBook = {
+  title: TITLE,
+  descriptors: DESCRIPTORS,
+  foci: FOCI,
+  types: TYPES,
+};

@@ -25,7 +25,7 @@ export class NumeneraCharacter {
   /** Character Equiptment. */
   equipment: Array<Equipment> = [];
   /** Character Abilities */
-  abilities: Array<string> = [];
+  skills: Array<string> = [];
   //TODO crate models for abilities, connections
 
   set descriptor(descriptor: Descriptor) {
