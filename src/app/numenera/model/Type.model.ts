@@ -20,4 +20,5 @@ export interface CharacterType {
   origin: Origin;
   description?: string;
   attributes: Array<{ type: Attribute; value: number }>;
+  edges: Array<{ type: Attribute; value: number }>;
 }

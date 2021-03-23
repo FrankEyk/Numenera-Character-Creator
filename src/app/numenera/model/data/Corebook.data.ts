@@ -3744,6 +3744,11 @@ const TYPES: Array<CharacterType> = [
       { type: Attribute.SPEED, value: 10 },
       { type: Attribute.INTELLECT, value: 7 },
     ],
+    edges: [
+      { type: Attribute.MIGHT, value: 1 },
+      { type: Attribute.SPEED, value: 1 },
+      { type: Attribute.INTELLECT, value: 0 },
+    ],
   },
   {
     name: 'Nano',
@@ -3771,6 +3776,11 @@ const TYPES: Array<CharacterType> = [
       { type: Attribute.SPEED, value: 9 },
       { type: Attribute.INTELLECT, value: 12 },
     ],
+    edges: [
+      { type: Attribute.MIGHT, value: 0 },
+      { type: Attribute.SPEED, value: 0 },
+      { type: Attribute.INTELLECT, value: 1 },
+    ],
   },
   {
     name: 'Jack',
@@ -3790,6 +3800,11 @@ const TYPES: Array<CharacterType> = [
       { type: Attribute.MIGHT, value: 10 },
       { type: Attribute.SPEED, value: 10 },
       { type: Attribute.INTELLECT, value: 10 },
+    ],
+    edges: [
+      { type: Attribute.MIGHT, value: 0 },
+      { type: Attribute.SPEED, value: 0 },
+      { type: Attribute.INTELLECT, value: 0 },
     ],
   },
 ];
