@@ -26,6 +26,9 @@ export class NumeneraCharacter {
   equipment: Array<Equipment> = [];
   /** Character Abilities */
   skills: Array<string> = [];
+  /** Number of Cyphers the character can use without penalties */
+  cypheruse = 0;
+
   //TODO create models for abilities, connections
 
   set descriptor(descriptor: Descriptor) {

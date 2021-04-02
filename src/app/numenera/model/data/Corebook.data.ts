@@ -3749,6 +3749,13 @@ const TYPES: Array<CharacterType> = [
       { type: Attribute.SPEED, value: 1 },
       { type: Attribute.INTELLECT, value: 0 },
     ],
+    cypheruse: 2,
+    tiers: [],
+    talents: {
+      name: ``,
+      description: ``,
+      talents: []
+    }
   },
   {
     name: 'Nano',
@@ -3781,6 +3788,13 @@ const TYPES: Array<CharacterType> = [
       { type: Attribute.SPEED, value: 0 },
       { type: Attribute.INTELLECT, value: 1 },
     ],
+    cypheruse: 3,
+    tiers: [],
+    talents: {
+      name: ``,
+      description: ``,
+      talents: []
+    }
   },
   {
     name: 'Jack',
@@ -3806,6 +3820,13 @@ const TYPES: Array<CharacterType> = [
       { type: Attribute.SPEED, value: 0 },
       { type: Attribute.INTELLECT, value: 0 },
     ],
+    cypheruse: 2,
+    tiers: [],
+    talents: {
+      name: ``,
+      description: ``,
+      talents: []
+    }
   },
 ];
 
