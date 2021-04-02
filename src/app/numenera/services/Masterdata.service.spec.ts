@@ -1,11 +1,12 @@
 import { TestBed } from '@angular/core/testing';
-import { DESCRIPTORS, FOCI, TYPES } from '../model/data/Corebook.data';
+import { NUMENERA_COREBOOK } from '../model/data/Corebook.data';
+import { NUMENERA_DISCOVERY } from '../model/data/Discovery.data';
 import { MasterdataService } from './Masterdata.service';
 
 describe('MasterdataService', () => {
-  const _descriptions = [...DESCRIPTORS];
-  const _types = [...TYPES];
-  const _foci = [...FOCI];
+  const _descriptions = [...NUMENERA_COREBOOK.descriptors, ...NUMENERA_DISCOVERY.descriptors];
+  const _types = [...NUMENERA_COREBOOK.types, ...NUMENERA_DISCOVERY.types];
+  const _foci = [...NUMENERA_COREBOOK.foci, ...NUMENERA_DISCOVERY.foci];
 
   let service: MasterdataService;
 
