@@ -419,81 +419,102 @@ const TYPES: Array<CharacterType> = [
       { type: Attribute.SPEED, value: 1 },
       { type: Attribute.INTELLECT, value: 0 },
     ],
-    tiers: [      
+    tiers: [
       {
-        name: `Cypher Use`,
         level: 1,
-        description: `You can bear two cyphers at a time.`
+        abilities: [
+          {
+            name: `Cypher Use`,
+            description: `You can bear two cyphers at a time.`
+          },
+          {
+            name: `Combat Prowess`,
+            type: ActionType.ENABLER,
+            description: `You add +1 damage to one type of attack of your choice: melee attacks or
+            ranged attacks. Enabler.`
+          },
+          {
+            name: `Trained in Armor`,
+            type: ActionType.ENABLER,
+            description: `You can wear armor for long periods of time without tiring and can
+            compensate for slowed reactions from wearing armor. You reduce the Speed Effort cost for
+            wearing armor by 1. Enabler.`
+          },
+        ]
       },
       {
-        name: `Combat Prowess`,
-        level: 1,
-        type: ActionType.ENABLER,
-        description: `You add +1 damage to one type of attack of your choice: melee attacks or
-        ranged attacks. Enabler.`
-      },
-      {
-        name: `Trained in Armor`,
-        level: 1,
-        type: ActionType.ENABLER,
-        description: `You can wear armor for long periods of time without tiring and can
-        compensate for slowed reactions from wearing armor. You reduce the Speed Effort cost for
-        wearing armor by 1. Enabler.`
-      },
-      {
-        name: `Skill With Attacks`,
         level: 2,
-        type: ActionType.ENABLER,
-        description: `Choose one type of attack in which you are not already trained: light bashing,
-        light bladed, light ranged, medium bashing, medium bladed, medium ranged, heavy bashing,
-        heavy bladed, or heavy ranged. You are trained in attacks using that type of weapon. Enabler.`
+        abilities: [
+          {
+            name: `Skill With Attacks`,
+            type: ActionType.ENABLER,
+            description: `Choose one type of attack in which you are not already trained: light bashing,
+            light bladed, light ranged, medium bashing, medium bladed, medium ranged, heavy bashing,
+            heavy bladed, or heavy ranged. You are trained in attacks using that type of weapon. Enabler.`
+          },
+        ]
       },
       {
-        name: `Skill With Attacks`,
         level: 3,
-        type: ActionType.ENABLER,
-        description: `Choose one type of attack in which you are not already trained: light bashing,
-        light bladed, light ranged, medium bashing, medium bladed, medium ranged, heavy bashing,
-        heavy bladed, or heavy ranged. You are trained in attacks using that type of weapon. Enabler.`
+        abilities: [
+          {
+            name: `Skill With Attacks`,
+            type: ActionType.ENABLER,
+            description: `Choose one type of attack in which you are not already trained: light bashing,
+            light bladed, light ranged, medium bashing, medium bladed, medium ranged, heavy bashing,
+            heavy bladed, or heavy ranged. You are trained in attacks using that type of weapon. Enabler.`
+          },
+          {
+            name: `Expert Cypher Use`,
+            description: `You can bear three cyphers at a time.`
+          },  
+        ]
       },
       {
-        name: `Expert Cypher Use`,
-        level: 3,
-        description: `You can bear three cyphers at a time.`
-      },      
-      {
-        name: `Skill With Attacks`,
         level: 4,
-        type: ActionType.ENABLER,
-        description: `Choose one type of attack in which you are not already trained: light bashing,
-        light bladed, light ranged, medium bashing, medium bladed, medium ranged, heavy bashing,
-        heavy bladed, or heavy ranged. You are trained in attacks using that type of weapon. Enabler.`
-      },      
-      {
-        name: `Adept Cypher Use`,
-        level: 5,
-        description: `You can bear four cyphers at a time.`
+        abilities: [
+          {
+            name: `Skill With Attacks`,
+            type: ActionType.ENABLER,
+            description: `Choose one type of attack in which you are not already trained: light bashing,
+            light bladed, light ranged, medium bashing, medium bladed, medium ranged, heavy bashing,
+            heavy bladed, or heavy ranged. You are trained in attacks using that type of weapon. Enabler.`
+          },  
+        ]
       },
       {
-        name: `Mastery With Attacks`,
         level: 5,
-        type: ActionType.ENABLER,
-        description: `Choose one type of attack in which you are trained: light bashing,
-        light bladed, light ranged, medium bashing, medium bladed, medium ranged, heavy
-        bashing, heavy bladed, or heavy ranged. You are specialized in attacks using that type of
-        weapon. Enabler. (In place of this ability, you may instead select Skill With Attacks to become
-        trained in one type of attack.).`
+        abilities: [
+          {
+            name: `Adept Cypher Use`,
+            description: `You can bear four cyphers at a time.`
+          },
+          {
+            name: `Mastery With Attacks`,
+            type: ActionType.ENABLER,
+            description: `Choose one type of attack in which you are trained: light bashing,
+            light bladed, light ranged, medium bashing, medium bladed, medium ranged, heavy
+            bashing, heavy bladed, or heavy ranged. You are specialized in attacks using that type of
+            weapon. Enabler. (In place of this ability, you may instead select Skill With Attacks to become
+            trained in one type of attack.).`
+          },
+        ]
       },
       {
-        name: `Mastery With Attacks`,
         level: 6,
-        type: ActionType.ENABLER,
-        description: `Choose one type of attack in which you are trained: light bashing,
-        light bladed, light ranged, medium bashing, medium bladed, medium ranged, heavy
-        bashing, heavy bladed, or heavy ranged. You are specialized in attacks using that type of
-        weapon. Enabler. (In place of this ability, you may instead select Skill With Attacks to become
-        trained in one type of attack.).`
+        abilities: [
+          {
+            name: `Mastery With Attacks`,
+            type: ActionType.ENABLER,
+            description: `Choose one type of attack in which you are trained: light bashing,
+            light bladed, light ranged, medium bashing, medium bladed, medium ranged, heavy
+            bashing, heavy bladed, or heavy ranged. You are specialized in attacks using that type of
+            weapon. Enabler. (In place of this ability, you may instead select Skill With Attacks to become
+            trained in one type of attack.).`
+          },
+        ]
       },
+      
     ],
     talents: {
       name: 'Fighting Moves',
@@ -603,10 +624,15 @@ const TYPES: Array<CharacterType> = [
     ],
     tiers: [
       {
-        name: `Expert Cypher Use`,
         level: 1,
-        description: `You can bear three cyphers at a time.`
-      },],
+        abilities: [
+          {
+            name: `Expert Cypher Use`,
+            description: `You can bear three cyphers at a time.`
+          }
+        ]
+      },
+    ],
     talents: {
       name: 'Esoteries:',
       description: `You can tap into the numenera to reshape the world around you. Similar in

@@ -6,13 +6,18 @@ import { Origin } from './Origin.model';
  * Available Attributes in Numenera.
  */
 
- interface Tier {
+
+interface Ability {
   name: string;
-  level: number;
   description: string;
   type?: ActionType;
   cost?: { attribute: Attribute; value: number };
   benefit?: Benefit;
+}
+
+interface Tier {
+  level: number;
+  abilities: Ability[];
 }
 
 interface Talent {
