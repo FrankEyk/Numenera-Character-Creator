@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { NumeneraCharacterService } from '../../services/NumeneraCharacter.service';
 import { NumeneraCharacter } from '../../model/NumeneraCharacter.model';
+import { Attribute } from '../../model/Type.model';
 
 @Component({
   selector: 'app-info-panel',

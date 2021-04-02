@@ -15,7 +15,10 @@ interface Ability {
   benefit?: Benefit;
 }
 
-interface Tier {
+/**
+ * The Abilities a character gets, sorted per Tier.
+ */
+interface AbilityTier {
   level: number;
   abilities: Ability[];
 }
@@ -23,22 +26,31 @@ interface Tier {
 interface Talent {
   name: string;
   description: string;
-  level: number;
   type: ActionType;
   cost?: { attribute: Attribute; value: number };
   benefit?: Benefit;
 }
 
-interface Talents {
-  name: string;
-  description: string;
+interface TalentTier {
+  level: number;
   talents: Talent[];
 }
 
+/**
+ * The talents of a character (Esotery, Fighting Move, etc.).
+ * These are the talents (abilities) that a character gains
+ * when he/she advances in the tiers.
+ */
+interface Talents {
+  name: string;
+  description: string;
+  tiers: TalentTier[];
+}
+
 export enum Attribute {
-  MIGHT = 0,
-  SPEED = 1,
-  INTELLECT = 2,
+  MIGHT = 'Might',
+  SPEED = 'Speed',
+  INTELLECT = 'Intellect',
 }
 
 /**
@@ -52,7 +64,7 @@ export interface CharacterType {
   description?: string;
   attributes: Array<{ type: Attribute; value: number }>;
   edges: Array<{ type: Attribute; value: number }>;
-  tiers: Array<Tier>;
+  tiers: Array<AbilityTier>;
   cypheruse: number;
   talents: Talents;
 }

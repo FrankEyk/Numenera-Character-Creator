@@ -3754,7 +3754,7 @@ const TYPES: Array<CharacterType> = [
     talents: {
       name: ``,
       description: ``,
-      talents: []
+      tiers: []
     }
   },
   {
@@ -3793,7 +3793,7 @@ const TYPES: Array<CharacterType> = [
     talents: {
       name: ``,
       description: ``,
-      talents: []
+      tiers: []
     }
   },
   {
@@ -3825,7 +3825,7 @@ const TYPES: Array<CharacterType> = [
     talents: {
       name: ``,
       description: ``,
-      talents: []
+      tiers: []
     }
   },
 ];

@@ -521,73 +521,77 @@ const TYPES: Array<CharacterType> = [
       description: `You have a special talent for combat and can perform feats that others can
       barely imagine. These feats are called fighting moves. Some fighting moves are constant, ongoing
       effects, and others are specific actions that usually cost points from one of your stat Pools.`,
-      talents: [
+      tiers: [
         {
-          name: `Aggression`,
           level: 1,
-          type: ActionType.ENABLER,
-          description: `You focus on making attacks to such an extent that you
-          leave yourself vulnerable to your opponents. While this ability is active, you gain an
-          asset on your melee attacks, and your Speed defense rolls against melee and ranged attacks
-          are hindered. This effect lasts for as long as you wish, but it ends if no combat is taking
-          place within range of your senses. Enabler.`,
-          cost: {attribute: Attribute.MIGHT, value: 2}
+          talents: [
+            {
+              name: `Aggression`,
+              type: ActionType.ENABLER,
+              description: `You focus on making attacks to such an extent that you
+              leave yourself vulnerable to your opponents. While this ability is active, you gain an
+              asset on your melee attacks, and your Speed defense rolls against melee and ranged attacks
+              are hindered. This effect lasts for as long as you wish, but it ends if no combat is taking
+              place within range of your senses. Enabler.`,
+              cost: {attribute: Attribute.MIGHT, value: 2}
+            },
+            {
+              name: `Fleet of Foot`,
+              type: ActionType.ENABLER,
+              description: `You can move a short distance as part of another
+              action. You can move a long distance as your entire action for a turn. If you apply a
+              level of Effort to this ability, you can move a long distance and make an attack as your
+              entire action for a turn, but the attack is hindered. Enabler.`,
+              cost: {attribute: Attribute.SPEED, value: 1}
+            },
+            {
+              name: `Impressive Display`,
+              type: ActionType.ACTION,
+              description: `You perform a feat of strength, speed, or combat, impressing those nearby. For
+              the next minute you gain an asset in all interaction tasks with people who saw you
+              use this ability. Action.`,
+              cost: {attribute: Attribute.MIGHT, value: 2}
+            },
+            {
+              name: `Misdirect`,
+              type: ActionType.ACTION,
+              description: `When an opponent misses you, you can redirect
+              their attack to another target (a creature or object) of your choosing that’s within
+              immediate range of you. Make an unmodified attack roll against the new
+              target (do not use any of your or the opponent’s modifiers to the attack roll, but
+              you can apply Effort for accuracy). If the attack hits, the target takes damage from
+              your opponent’s attack. Enabler.`,
+              cost: {attribute: Attribute.SPEED, value: 3}
+            },
+            {
+              name: `No Need for Weapons`,
+              type: ActionType.ENABLER,
+              description: `When you make an unarmed attack (such as a punch or kick),
+              it counts as a medium weapon instead of a light weapon. Enabler.`,
+            },
+            {
+              name: `Trained Without Armor`,
+              type: ActionType.ENABLER,
+              description: `You are trained in Speed defense actions when not wearing
+              armor. Enabler.`,
+            },
+
+          ]
         },
         {
-          name: `Fleet of Foot`,
-          level: 1,
-          type: ActionType.ENABLER,
-          description: `You can move a short distance as part of another
-          action. You can move a long distance as your entire action for a turn. If you apply a
-          level of Effort to this ability, you can move a long distance and make an attack as your
-          entire action for a turn, but the attack is hindered. Enabler.`,
-          cost: {attribute: Attribute.SPEED, value: 1}
-        },
-        {
-          name: `Impressive Display`,
-          level: 1,
-          type: ActionType.ACTION,
-          description: `You perform a feat of strength, speed, or combat, impressing those nearby. For
-          the next minute you gain an asset in all interaction tasks with people who saw you
-          use this ability. Action.`,
-          cost: {attribute: Attribute.MIGHT, value: 2}
-        },
-        {
-          name: `Misdirect`,
-          level: 1,
-          type: ActionType.ACTION,
-          description: `When an opponent misses you, you can redirect
-          their attack to another target (a creature or object) of your choosing that’s within
-          immediate range of you. Make an unmodified attack roll against the new
-          target (do not use any of your or the opponent’s modifiers to the attack roll, but
-          you can apply Effort for accuracy). If the attack hits, the target takes damage from
-          your opponent’s attack. Enabler.`,
-          cost: {attribute: Attribute.SPEED, value: 3}
-        },
-        {
-          name: `No Need for Weapons`,
-          level: 1,
-          type: ActionType.ENABLER,
-          description: `When you make an unarmed attack (such as a punch or kick),
-          it counts as a medium weapon instead of a light weapon. Enabler.`,
-        },
-        {
-          name: `Trained Without Armor`,
-          level: 1,
-          type: ActionType.ENABLER,
-          description: `You are trained in Speed defense actions when not wearing
-          armor. Enabler.`,
-        },
-        {
-          name: `Crushing Blow`,
           level: 2,
-          type: ActionType.ACTION,
-          description: `When you use a bashing or bladed weapon in both
-          hands and apply Effort on the attack, you get a free level of Effort on the damage. (If
-          fighting unarmed, this attack is made with both fists or both feet together.) Action.`,
-          cost: {attribute: Attribute.MIGHT, value: 2}
-        },        
-      ]   
+          talents: [
+            {
+              name: `Crushing Blow`,
+              type: ActionType.ACTION,
+              description: `When you use a bashing or bladed weapon in both
+              hands and apply Effort on the attack, you get a free level of Effort on the damage. (If
+              fighting unarmed, this attack is made with both fists or both feet together.) Action.`,
+              cost: {attribute: Attribute.MIGHT, value: 2}
+            }, 
+          ]
+        }
+      ] 
     },
   },
   {
@@ -642,142 +646,146 @@ const TYPES: Array<CharacterType> = [
       or more Intellect points. If no Intellect point cost is given for an esotery, it functions continuously
       without needing to be activated. Some esoteries specify a duration, but you can always end one of
       your own esoteries anytime you wish.`,
-      talents: [
+      tiers: [
         {
-          name: `Hedge Magic`,
           level: 1,
-          type: ActionType.ACTION,
-          description: `You can perform small tricks: temporarily change
-          the color or basic appearance of a small object, cause small objects to float through
-          the air, clean a small area, mend a broken object, prepare (but not create) food, and
-          so on. You can’t use Hedge Magic to harm another creature or object. Action.`,
-          cost: {attribute: Attribute.INTELLECT, value: 1}
+          talents: [
+            {
+              name: `Hedge Magic`,
+              type: ActionType.ACTION,
+              description: `You can perform small tricks: temporarily change
+              the color or basic appearance of a small object, cause small objects to float through
+              the air, clean a small area, mend a broken object, prepare (but not create) food, and
+              so on. You can’t use Hedge Magic to harm another creature or object. Action.`,
+              cost: {attribute: Attribute.INTELLECT, value: 1}
+            },
+            {
+              name: `Onslaught`,
+              type: ActionType.ACTION,
+              description: `You attack a foe using energies that assail either their
+              physical form or their mind. In either case, you must be able to see your target. If the
+              attack is physical, you emit a short-range ray of force that inflicts 4 points of damage. If
+              the attack is mental, you focus your mental energy to blast the thought processes of
+              another creature within short range. This mindslice inflicts 2 points of Intellect damage
+              (and thus ignores Armor). Some creatures without minds (such as automatons) might
+              be immune to your mindslice. Action.`,
+              cost: {attribute: Attribute.INTELLECT, value: 1}
+            },
+            {
+              name: `Push`,
+              type: ActionType.ACTION,
+              description: `You push a creature or object an immediate distance
+              in any direction you wish. You must be able to see the target, which must be your size
+              or smaller, must not be affixed to anything, and must be within short range. The push
+              is quick, and the force is too crude to be manipulated. For example, you can’t use
+              this esotery to pull a lever or even close a door. Action.`,
+              cost: {attribute: Attribute.INTELLECT, value: 2}
+            },
+            {
+              name: `Scan`,
+              type: ActionType.ACTION,
+              description: `You scan an area equal in size to a 10-foot (3 m) cube,
+              including all objects or creatures within that area. The area must be within short
+              range. Scanning a creature or object always reveals its level (a measure of how powerful,
+              dangerous, or difficult it is). You also learn whatever facts the GM feels are pertinent
+              about the matter and energy in that area. For example, you might learn that the wooden
+              box contains a device of metal and synth. You might learn that the glass cylinder is full of poisonous gas, and that its metal stand
+              has an electrical field running through it that connects to a metal mesh in the floor.
+              You might learn that the creature standing before you is a mammal with a small brain.
+              However, this esotery doesn’t tell you what the information means. Thus, in the first
+              example, you don’t know what the metal and synth device does. In the second, you
+              don’t know if stepping on the floor causes the cylinder to release the gas. In the third,
+              you might suspect that the creature is not very intelligent, but scans, like looks, can be
+              deceiving. Many materials and energy fields prevent or resist scanning. Action.`,
+              cost: {attribute: Attribute.INTELLECT, value: 2}
+            },
+            {
+              name: `Ward`,
+              type: ActionType.ENABLER,
+              description: `You have a shield of energy around you at all times that helps deflect attacks.
+              You gain +1 to Armor. Enabler`,
+            },
+          ]
         },
         {
-          name: `Onslaught`,
-          level: 1,
-          type: ActionType.ACTION,
-          description: `You attack a foe using energies that assail either their
-          physical form or their mind. In either case, you must be able to see your target. If the
-          attack is physical, you emit a short-range ray of force that inflicts 4 points of damage. If
-          the attack is mental, you focus your mental energy to blast the thought processes of
-          another creature within short range. This mindslice inflicts 2 points of Intellect damage
-          (and thus ignores Armor). Some creatures without minds (such as automatons) might
-          be immune to your mindslice. Action.`,
-          cost: {attribute: Attribute.INTELLECT, value: 1}
-        },
-        {
-          name: `Push`,
-          level: 1,
-          type: ActionType.ACTION,
-          description: `You push a creature or object an immediate distance
-          in any direction you wish. You must be able to see the target, which must be your size
-          or smaller, must not be affixed to anything, and must be within short range. The push
-          is quick, and the force is too crude to be manipulated. For example, you can’t use
-          this esotery to pull a lever or even close a door. Action.`,
-          cost: {attribute: Attribute.INTELLECT, value: 2}
-        },
-        {
-          name: `Scan`,
-          level: 1,
-          type: ActionType.ACTION,
-          description: `You scan an area equal in size to a 10-foot (3 m) cube,
-          including all objects or creatures within that area. The area must be within short
-          range. Scanning a creature or object always reveals its level (a measure of how powerful,
-          dangerous, or difficult it is). You also learn whatever facts the GM feels are pertinent
-          about the matter and energy in that area. For example, you might learn that the wooden
-          box contains a device of metal and synth. You might learn that the glass cylinder is full of poisonous gas, and that its metal stand
-          has an electrical field running through it that connects to a metal mesh in the floor.
-          You might learn that the creature standing before you is a mammal with a small brain.
-          However, this esotery doesn’t tell you what the information means. Thus, in the first
-          example, you don’t know what the metal and synth device does. In the second, you
-          don’t know if stepping on the floor causes the cylinder to release the gas. In the third,
-          you might suspect that the creature is not very intelligent, but scans, like looks, can be
-          deceiving. Many materials and energy fields prevent or resist scanning. Action.`,
-          cost: {attribute: Attribute.INTELLECT, value: 2}
-        },
-        {
-          name: `Ward`,
-          level: 1,
-          type: ActionType.ENABLER,
-          description: `You have a shield of energy around you at all times that helps deflect attacks.
-          You gain +1 to Armor. Enabler`,
-        },
-        {
-          name: `Adaptation`,
           level: 2,
-          type: ActionType.ACTION,
-          description: `You adapt to a hostile environment for 28 hours.
-          As a result, you can breathe safely, the temperature doesn’t kill you (though it might
-          be extremely uncomfortable or debilitating), crushing gravity doesn’t incapacitate or
-          harm you (though, again, you might be seriously hindered), and so on. In extreme
-          environments, the GM might increase the cost of activating this esotery to a maximum
-          cost of 10 Intellect points. Roughly speaking, the cost should equal the amount of damage
-          you would sustain in a given round. For example, if you enter a hostile environment
-          that would normally deal 6 points of damage per round, using Adaptation to avoid that
-          damage costs 6 points. You can protect other creatures in addition to yourself,
-          but each additional creature costs you the same number of Intellect points as it costs
-          to protect you. Thus, if it costs 6 points to protect yourself, it costs 12 more to protect
-          two other people. This esotery never protects against quick, instantaneous threats, like an
-          attack with a weapon or a sudden explosion of fire. Action to initiate.`,
-          cost: {attribute: Attribute.INTELLECT, value: 2}
+          talents: [
+            {
+              name: `Adaptation`,
+              type: ActionType.ACTION,
+              description: `You adapt to a hostile environment for 28 hours.
+              As a result, you can breathe safely, the temperature doesn’t kill you (though it might
+              be extremely uncomfortable or debilitating), crushing gravity doesn’t incapacitate or
+              harm you (though, again, you might be seriously hindered), and so on. In extreme
+              environments, the GM might increase the cost of activating this esotery to a maximum
+              cost of 10 Intellect points. Roughly speaking, the cost should equal the amount of damage
+              you would sustain in a given round. For example, if you enter a hostile environment
+              that would normally deal 6 points of damage per round, using Adaptation to avoid that
+              damage costs 6 points. You can protect other creatures in addition to yourself,
+              but each additional creature costs you the same number of Intellect points as it costs
+              to protect you. Thus, if it costs 6 points to protect yourself, it costs 12 more to protect
+              two other people. This esotery never protects against quick, instantaneous threats, like an
+              attack with a weapon or a sudden explosion of fire. Action to initiate.`,
+              cost: {attribute: Attribute.INTELLECT, value: 2}
+            },
+            {
+              name: `Flash`,
+              type: ActionType.ACTION,
+              description: `You create an explosion of energy at a point within close
+              range, affecting an area up to immediate range from that point. You must be able to
+              see the location where you intend to center the explosion. The blast inflicts 2 points of
+              damage to all creatures or objects within the area. Because this is an area attack,
+              adding Effort to increase your damage works differently than it does for singletarget
+              attacks. If you apply a level of Effort to increase the damage, add 2 points of
+              damage for each target, and even if you fail your attack roll, all targets in the area still
+              take 1 point of damage. Action.`,
+              cost: {attribute: Attribute.INTELLECT, value: 4}
+            },
+            {
+              name: `Hover`,
+              type: ActionType.ACTION,
+              description: `You float slowly into the air. If you concentrate, you
+              can control your movement to remain motionless in the air or float up to a short
+              distance as your action; otherwise, you drift with the wind or with any momentum 
+              you have gained. This effect lasts for up to ten minutes. Action to initiate.`,
+              cost: {attribute: Attribute.INTELLECT, value: 2}
+            },
+            {
+              name: `Mind Reading`,
+              type: ActionType.ACTION,
+              description: `You can read the surface thoughts of a creature
+              within short range of you, even if the target doesn’t want you to. You must be able to
+              see the target. Once you have established contact, you can read the target’s thoughts
+              for up to one minute. If you or the target move out of range, the connection is
+              broken. Action to initiate.`,
+              cost: {attribute: Attribute.INTELLECT, value: 4}
+            },
+            {
+              name: `Stasis`,
+              type: ActionType.ACTION,
+              description: `You surround a foe of your size or smaller with scintillating
+              energy, keeping it from moving or acting for one minute, as if frozen solid. You must be
+              able to see the target, and it must be within short range. While in stasis, the target is
+              impervious to harm, cannot be moved, and is immune to all effects. Action.`,
+              cost: {attribute: Attribute.INTELLECT, value: 3}
+            },
+          ]
         },
         {
-          name: `Flash`,
-          level: 2,
-          type: ActionType.ACTION,
-          description: `You create an explosion of energy at a point within close
-          range, affecting an area up to immediate range from that point. You must be able to
-          see the location where you intend to center the explosion. The blast inflicts 2 points of
-          damage to all creatures or objects within the area. Because this is an area attack,
-          adding Effort to increase your damage works differently than it does for singletarget
-          attacks. If you apply a level of Effort to increase the damage, add 2 points of
-          damage for each target, and even if you fail your attack roll, all targets in the area still
-          take 1 point of damage. Action.`,
-          cost: {attribute: Attribute.INTELLECT, value: 4}
-        },
-        {
-          name: `Hover`,
-          level: 2,
-          type: ActionType.ACTION,
-          description: `You float slowly into the air. If you concentrate, you
-          can control your movement to remain motionless in the air or float up to a short
-          distance as your action; otherwise, you drift with the wind or with any momentum 
-          you have gained. This effect lasts for up to ten minutes. Action to initiate.`,
-          cost: {attribute: Attribute.INTELLECT, value: 2}
-        },
-        {
-          name: `Mind Reading`,
-          level: 2,
-          type: ActionType.ACTION,
-          description: `You can read the surface thoughts of a creature
-          within short range of you, even if the target doesn’t want you to. You must be able to
-          see the target. Once you have established contact, you can read the target’s thoughts
-          for up to one minute. If you or the target move out of range, the connection is
-          broken. Action to initiate.`,
-          cost: {attribute: Attribute.INTELLECT, value: 4}
-        },
-        {
-          name: `Stasis`,
-          level: 2,
-          type: ActionType.ACTION,
-          description: `You surround a foe of your size or smaller with scintillating
-          energy, keeping it from moving or acting for one minute, as if frozen solid. You must be
-          able to see the target, and it must be within short range. While in stasis, the target is
-          impervious to harm, cannot be moved, and is immune to all effects. Action.`,
-          cost: {attribute: Attribute.INTELLECT, value: 3}
-        },
-        {
-          name: `Barrier`,
           level: 3,
-          type: ActionType.ACTION,
-          description: `You create an opaque, stationary barrier of solid energy
-          within immediate range. The barrier is 10 feet by 10 feet (3 m by 3 m) and of
-          negligible thickness. It is a level 2 barrier and lasts for ten minutes. It can be placed
-          anywhere it fits, whether against a solid object (including the ground) or floating
-          in the air. Each level of Effort you apply strengthens the barrier by one level. For
-          example, applying two levels of Effort creates a level 4 barrier. Action.`,
-          cost: {attribute: Attribute.INTELLECT, value: 3}
+          talents: [            
+            {
+              name: `Barrier`,
+              type: ActionType.ACTION,
+              description: `You create an opaque, stationary barrier of solid energy
+              within immediate range. The barrier is 10 feet by 10 feet (3 m by 3 m) and of
+              negligible thickness. It is a level 2 barrier and lasts for ten minutes. It can be placed
+              anywhere it fits, whether against a solid object (including the ground) or floating
+              in the air. Each level of Effort you apply strengthens the barrier by one level. For
+              example, applying two levels of Effort creates a level 4 barrier. Action.`,
+              cost: {attribute: Attribute.INTELLECT, value: 3}
+            },
+          ]
         },
       ]
     },
@@ -814,7 +822,7 @@ const TYPES: Array<CharacterType> = [
       these tricks of the trade are technically esoteries,
       using the numenera, while others are more mundane. Some tricks are constant, ongoing
       effects; others are specific actions that usually cost points from one of your stat Pools.`,
-      talents: []
+      tiers: []
     },
   },
 ]
