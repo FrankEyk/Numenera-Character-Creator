@@ -419,7 +419,12 @@ const TYPES: Array<CharacterType> = [
       { type: Attribute.SPEED, value: 1 },
       { type: Attribute.INTELLECT, value: 0 },
     ],
-    tiers: [
+    tiers: [      
+      {
+        name: `Cypher Use`,
+        level: 1,
+        description: `You can bear two cyphers at a time.`
+      },
       {
         name: `Combat Prowess`,
         level: 1,
@@ -436,11 +441,58 @@ const TYPES: Array<CharacterType> = [
         wearing armor by 1. Enabler.`
       },
       {
-        name: `Combat Prowess`,
-        level: 1,
+        name: `Skill With Attacks`,
+        level: 2,
         type: ActionType.ENABLER,
-        description: `You add +1 damage to one type of attack of your choice: melee attacks or
-        ranged attacks. Enabler.`
+        description: `Choose one type of attack in which you are not already trained: light bashing,
+        light bladed, light ranged, medium bashing, medium bladed, medium ranged, heavy bashing,
+        heavy bladed, or heavy ranged. You are trained in attacks using that type of weapon. Enabler.`
+      },
+      {
+        name: `Skill With Attacks`,
+        level: 3,
+        type: ActionType.ENABLER,
+        description: `Choose one type of attack in which you are not already trained: light bashing,
+        light bladed, light ranged, medium bashing, medium bladed, medium ranged, heavy bashing,
+        heavy bladed, or heavy ranged. You are trained in attacks using that type of weapon. Enabler.`
+      },
+      {
+        name: `Expert Cypher Use`,
+        level: 3,
+        description: `You can bear three cyphers at a time.`
+      },      
+      {
+        name: `Skill With Attacks`,
+        level: 4,
+        type: ActionType.ENABLER,
+        description: `Choose one type of attack in which you are not already trained: light bashing,
+        light bladed, light ranged, medium bashing, medium bladed, medium ranged, heavy bashing,
+        heavy bladed, or heavy ranged. You are trained in attacks using that type of weapon. Enabler.`
+      },      
+      {
+        name: `Adept Cypher Use`,
+        level: 5,
+        description: `You can bear four cyphers at a time.`
+      },
+      {
+        name: `Mastery With Attacks`,
+        level: 5,
+        type: ActionType.ENABLER,
+        description: `Choose one type of attack in which you are trained: light bashing,
+        light bladed, light ranged, medium bashing, medium bladed, medium ranged, heavy
+        bashing, heavy bladed, or heavy ranged. You are specialized in attacks using that type of
+        weapon. Enabler. (In place of this ability, you may instead select Skill With Attacks to become
+        trained in one type of attack.).`
+      },
+      {
+        name: `Mastery With Attacks`,
+        level: 6,
+        type: ActionType.ENABLER,
+        description: `Choose one type of attack in which you are trained: light bashing,
+        light bladed, light ranged, medium bashing, medium bladed, medium ranged, heavy
+        bashing, heavy bladed, or heavy ranged. You are specialized in attacks using that type of
+        weapon. Enabler. (In place of this ability, you may instead select Skill With Attacks to become
+        trained in one type of attack.).`
       },
     ],
     talents: {
@@ -549,7 +601,12 @@ const TYPES: Array<CharacterType> = [
       { type: Attribute.SPEED, value: 0 },
       { type: Attribute.INTELLECT, value: 1 },
     ],
-    tiers: [],
+    tiers: [
+      {
+        name: `Expert Cypher Use`,
+        level: 1,
+        description: `You can bear three cyphers at a time.`
+      },],
     talents: {
       name: 'Esoteries:',
       description: `You can tap into the numenera to reshape the world around you. Similar in
@@ -559,7 +616,144 @@ const TYPES: Array<CharacterType> = [
       or more Intellect points. If no Intellect point cost is given for an esotery, it functions continuously
       without needing to be activated. Some esoteries specify a duration, but you can always end one of
       your own esoteries anytime you wish.`,
-      talents: []
+      talents: [
+        {
+          name: `Hedge Magic`,
+          level: 1,
+          type: ActionType.ACTION,
+          description: `You can perform small tricks: temporarily change
+          the color or basic appearance of a small object, cause small objects to float through
+          the air, clean a small area, mend a broken object, prepare (but not create) food, and
+          so on. You can’t use Hedge Magic to harm another creature or object. Action.`,
+          cost: {attribute: Attribute.INTELLECT, value: 1}
+        },
+        {
+          name: `Onslaught`,
+          level: 1,
+          type: ActionType.ACTION,
+          description: `You attack a foe using energies that assail either their
+          physical form or their mind. In either case, you must be able to see your target. If the
+          attack is physical, you emit a short-range ray of force that inflicts 4 points of damage. If
+          the attack is mental, you focus your mental energy to blast the thought processes of
+          another creature within short range. This mindslice inflicts 2 points of Intellect damage
+          (and thus ignores Armor). Some creatures without minds (such as automatons) might
+          be immune to your mindslice. Action.`,
+          cost: {attribute: Attribute.INTELLECT, value: 1}
+        },
+        {
+          name: `Push`,
+          level: 1,
+          type: ActionType.ACTION,
+          description: `You push a creature or object an immediate distance
+          in any direction you wish. You must be able to see the target, which must be your size
+          or smaller, must not be affixed to anything, and must be within short range. The push
+          is quick, and the force is too crude to be manipulated. For example, you can’t use
+          this esotery to pull a lever or even close a door. Action.`,
+          cost: {attribute: Attribute.INTELLECT, value: 2}
+        },
+        {
+          name: `Scan`,
+          level: 1,
+          type: ActionType.ACTION,
+          description: `You scan an area equal in size to a 10-foot (3 m) cube,
+          including all objects or creatures within that area. The area must be within short
+          range. Scanning a creature or object always reveals its level (a measure of how powerful,
+          dangerous, or difficult it is). You also learn whatever facts the GM feels are pertinent
+          about the matter and energy in that area. For example, you might learn that the wooden
+          box contains a device of metal and synth. You might learn that the glass cylinder is full of poisonous gas, and that its metal stand
+          has an electrical field running through it that connects to a metal mesh in the floor.
+          You might learn that the creature standing before you is a mammal with a small brain.
+          However, this esotery doesn’t tell you what the information means. Thus, in the first
+          example, you don’t know what the metal and synth device does. In the second, you
+          don’t know if stepping on the floor causes the cylinder to release the gas. In the third,
+          you might suspect that the creature is not very intelligent, but scans, like looks, can be
+          deceiving. Many materials and energy fields prevent or resist scanning. Action.`,
+          cost: {attribute: Attribute.INTELLECT, value: 2}
+        },
+        {
+          name: `Ward`,
+          level: 1,
+          type: ActionType.ENABLER,
+          description: `You have a shield of energy around you at all times that helps deflect attacks.
+          You gain +1 to Armor. Enabler`,
+        },
+        {
+          name: `Adaptation`,
+          level: 2,
+          type: ActionType.ACTION,
+          description: `You adapt to a hostile environment for 28 hours.
+          As a result, you can breathe safely, the temperature doesn’t kill you (though it might
+          be extremely uncomfortable or debilitating), crushing gravity doesn’t incapacitate or
+          harm you (though, again, you might be seriously hindered), and so on. In extreme
+          environments, the GM might increase the cost of activating this esotery to a maximum
+          cost of 10 Intellect points. Roughly speaking, the cost should equal the amount of damage
+          you would sustain in a given round. For example, if you enter a hostile environment
+          that would normally deal 6 points of damage per round, using Adaptation to avoid that
+          damage costs 6 points. You can protect other creatures in addition to yourself,
+          but each additional creature costs you the same number of Intellect points as it costs
+          to protect you. Thus, if it costs 6 points to protect yourself, it costs 12 more to protect
+          two other people. This esotery never protects against quick, instantaneous threats, like an
+          attack with a weapon or a sudden explosion of fire. Action to initiate.`,
+          cost: {attribute: Attribute.INTELLECT, value: 2}
+        },
+        {
+          name: `Flash`,
+          level: 2,
+          type: ActionType.ACTION,
+          description: `You create an explosion of energy at a point within close
+          range, affecting an area up to immediate range from that point. You must be able to
+          see the location where you intend to center the explosion. The blast inflicts 2 points of
+          damage to all creatures or objects within the area. Because this is an area attack,
+          adding Effort to increase your damage works differently than it does for singletarget
+          attacks. If you apply a level of Effort to increase the damage, add 2 points of
+          damage for each target, and even if you fail your attack roll, all targets in the area still
+          take 1 point of damage. Action.`,
+          cost: {attribute: Attribute.INTELLECT, value: 4}
+        },
+        {
+          name: `Hover`,
+          level: 2,
+          type: ActionType.ACTION,
+          description: `You float slowly into the air. If you concentrate, you
+          can control your movement to remain motionless in the air or float up to a short
+          distance as your action; otherwise, you drift with the wind or with any momentum 
+          you have gained. This effect lasts for up to ten minutes. Action to initiate.`,
+          cost: {attribute: Attribute.INTELLECT, value: 2}
+        },
+        {
+          name: `Mind Reading`,
+          level: 2,
+          type: ActionType.ACTION,
+          description: `You can read the surface thoughts of a creature
+          within short range of you, even if the target doesn’t want you to. You must be able to
+          see the target. Once you have established contact, you can read the target’s thoughts
+          for up to one minute. If you or the target move out of range, the connection is
+          broken. Action to initiate.`,
+          cost: {attribute: Attribute.INTELLECT, value: 4}
+        },
+        {
+          name: `Stasis`,
+          level: 2,
+          type: ActionType.ACTION,
+          description: `You surround a foe of your size or smaller with scintillating
+          energy, keeping it from moving or acting for one minute, as if frozen solid. You must be
+          able to see the target, and it must be within short range. While in stasis, the target is
+          impervious to harm, cannot be moved, and is immune to all effects. Action.`,
+          cost: {attribute: Attribute.INTELLECT, value: 3}
+        },
+        {
+          name: `Barrier`,
+          level: 3,
+          type: ActionType.ACTION,
+          description: `You create an opaque, stationary barrier of solid energy
+          within immediate range. The barrier is 10 feet by 10 feet (3 m by 3 m) and of
+          negligible thickness. It is a level 2 barrier and lasts for ten minutes. It can be placed
+          anywhere it fits, whether against a solid object (including the ground) or floating
+          in the air. Each level of Effort you apply strengthens the barrier by one level. For
+          example, applying two levels of Effort creates a level 4 barrier. Action.`,
+          cost: {attribute: Attribute.INTELLECT, value: 3}
+        },
+      ]
     },
   },
   {

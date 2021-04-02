@@ -10,7 +10,7 @@ import { Origin } from './Origin.model';
   name: string;
   level: number;
   description: string;
-  type: ActionType;
+  type?: ActionType;
   cost?: { attribute: Attribute; value: number };
   benefit?: Benefit;
 }

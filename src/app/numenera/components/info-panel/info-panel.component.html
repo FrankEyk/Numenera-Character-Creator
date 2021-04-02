@@ -22,7 +22,35 @@
     <mat-expansion-panel-header>
       <mat-panel-title>{{character?.type?.name || "nobody"}}</mat-panel-title>
     </mat-expansion-panel-header>
-    <p>{{character?.type?.description}}</p>
+
+    <mat-accordion *ngIf="character && character.type">
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <h3>Tier abilitys:</h3>
+        </mat-expansion-panel-header>
+        <p *ngFor="let tier of character.type.tiers">
+          <b>
+            (Tier {{ tier.level }}) {{ tier.name }}:
+          </b>
+          {{ tier.description }}
+        </p>
+      </mat-expansion-panel>
+
+      
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>        
+          <h3>{{ character.type.talents.name }}</h3>
+        </mat-expansion-panel-header>
+        {{character.type.talents.description}}
+        <hr>
+        <p *ngFor="let talent of character.type.talents.talents">
+          <b>
+            (Tier {{ talent.level }}) {{ talent.name }}:
+          </b>
+          {{ talent.description }}
+      </p>
+      </mat-expansion-panel>
+    </mat-accordion>
   </mat-expansion-panel>
 
 
