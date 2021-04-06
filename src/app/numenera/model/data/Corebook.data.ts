@@ -4,7 +4,7 @@ import { Focus } from '../Focus.model';
 import { SourceBook } from '../Origin.model';
 import { Attribute, CharacterType } from '../Type.model';
 
-const TITLE = 'Numenera Corebook';
+const TITLE = 'Corebook';
 
 const FOCI: Array<Focus> = [
   {

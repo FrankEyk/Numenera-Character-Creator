@@ -8,7 +8,7 @@
     <mat-label>Who is a</mat-label>
     <mat-select (selectionChange)="onChangeDesc($event)">
       <mat-option *ngFor="let desc of masterdata?.descriptions| async" [value]="desc">
-        {{desc.name}}
+        {{desc.name}} ({{desc.origin.title}})
       </mat-option>
     </mat-select>
   </mat-form-field>
@@ -17,7 +17,7 @@
     <mat-label *ngIf="!type">Type</mat-label>
     <mat-select (selectionChange)="onChangeType($event)">
       <mat-option *ngFor="let type of masterdata?.types | async" [value]="type">
-        {{type.name}}
+        {{type.name}} ({{type.origin.title}})
       </mat-option>
     </mat-select>
   </mat-form-field>
@@ -26,7 +26,7 @@
     <mat-label>Who</mat-label>
     <mat-select (selectionChange)="onChangeFocus($event)">
       <mat-option *ngFor="let focus of masterdata?.focus | async" [value]="focus">
-        {{focus.name}}
+        {{focus.name}} ({{focus.origin.title}})
       </mat-option>
     </mat-select>
   </mat-form-field>
