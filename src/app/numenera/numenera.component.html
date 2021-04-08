@@ -1,20 +1,49 @@
 <div class="startpage">
   <h1>Numenera Character Creator</h1>
-  <mat-grid-list cols="4">
-    <mat-grid-tile colspan=3 style="background-color: bisque;">
-      <app-main-panel></app-main-panel>
+
+  <mat-grid-list cols="2">
+    <mat-grid-tile>
+      <mat-accordion multi>
+        <mat-expansion-panel expanded>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Character
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <app-main-panel></app-main-panel>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Stats
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <app-stats-panel></app-stats-panel>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Skills
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <app-skills-panel></app-skills-panel>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Abilites
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <app-abilities-panel style="width: 80%;"></app-abilities-panel>
+        </mat-expansion-panel>
+      </mat-accordion>
     </mat-grid-tile>
-    <mat-grid-tile rowspan=4>
+    
+    <mat-grid-tile>
       <app-info-panel></app-info-panel>
-    </mat-grid-tile>
-    <mat-grid-tile colspan=3 style="background-color: hotpink;">
-      <app-stats-panel></app-stats-panel>
-    </mat-grid-tile>
-    <mat-grid-tile colspan=3 style="background-color: chocolate;">
-      <app-skills-panel></app-skills-panel>
-    </mat-grid-tile>
-    <mat-grid-tile colspan=3 style="background-color: gold;">
-      <app-abilities-panel style="width: 80%;"></app-abilities-panel>
     </mat-grid-tile>
   </mat-grid-list>
 </div>
