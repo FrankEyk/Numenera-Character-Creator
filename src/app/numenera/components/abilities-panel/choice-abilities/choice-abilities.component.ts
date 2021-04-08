@@ -1,6 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { Ability } from 'src/app/numenera/model/Ability.model';
 import { NumeneraCharacterService } from 'src/app/numenera/services/NumeneraCharacter.service';
 
 @Component({
@@ -9,7 +8,7 @@ import { NumeneraCharacterService } from 'src/app/numenera/services/NumeneraChar
   styleUrls: ['./choice-abilities.component.scss'],
 })
 export class ChoiceAbilitiesComponent implements OnInit, OnDestroy {
-  abilities: Ability[] = [];
+  abilities = [];
 
   private subs: Subscription[] = [];
 
@@ -19,9 +18,7 @@ export class ChoiceAbilitiesComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.subscription = this.service.character$.subscribe((character) => {
-      if (character.type) {
-        this.abilities = character.type.choiceAbilities;
-      }
+      //TODO
     });
   }
 

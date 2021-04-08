@@ -1,10 +1,13 @@
 import { TestBed } from '@angular/core/testing';
-import { DESCRIPTIONS } from '../model/Descriptor.model';
-import { FOCUS } from '../model/Focus.model';
-import { TYPES } from '../model/Type.model';
+import { NUMENERA_COREBOOK } from '../model/data/Corebook.data';
+import { NUMENERA_DISCOVERY } from '../model/data/Discovery.data';
 import { MasterdataService } from './Masterdata.service';
 
 describe('MasterdataService', () => {
+  const _descriptions = [...NUMENERA_COREBOOK.descriptors, ...NUMENERA_DISCOVERY.descriptors];
+  const _types = [...NUMENERA_COREBOOK.types, ...NUMENERA_DISCOVERY.types];
+  const _foci = [...NUMENERA_COREBOOK.foci, ...NUMENERA_DISCOVERY.foci];
+
   let service: MasterdataService;
 
   beforeEach(() => {
@@ -17,22 +20,22 @@ describe('MasterdataService', () => {
   });
 
   it('should contain all known descriptors', (done) => {
-    service.descriptors.subscribe((descriptors) => {
-      expect(descriptors).toEqual(DESCRIPTIONS);
+    service.descriptions.subscribe((descriptors) => {
+      expect(descriptors).toEqual(_descriptions);
       done();
     });
   });
 
   it('should contain all known types', (done) => {
     service.types.subscribe((types) => {
-      expect(types).toEqual(TYPES);
+      expect(types).toEqual(_types);
       done();
     });
   });
 
   it('should contain all know focus variants', (done) => {
     service.focus.subscribe((focus) => {
-      expect(focus).toEqual(FOCUS);
+      expect(focus).toEqual(_foci);
       done();
     });
   });

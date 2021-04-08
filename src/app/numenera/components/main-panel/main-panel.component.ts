@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NumeneraCharacterService } from '../../services/NumeneraCharacter.service';
 import { MatSelectChange } from '@angular/material/select';
 import { MasterdataService } from '../../services/Masterdata.service';
-import { Type } from '../../model/Type.model';
+import { CharacterType } from '../../model/Type.model';
 import { Focus } from '../../model/Focus.model';
 import { Descriptor } from '../../model/Descriptor.model';
 import { Subscription } from 'rxjs';
@@ -14,7 +14,9 @@ import { Subscription } from 'rxjs';
 })
 export class MainPanelComponent {
   name = '';
-  type!: Type;
+  type!: CharacterType;
+
+  private subscription!: Subscription;
 
   private subscription!: Subscription;
 
@@ -28,12 +30,12 @@ export class MainPanelComponent {
   }
 
   onChangeType(event: MatSelectChange): void {
-    this.type = <Type>event.value;
+    this.type = <CharacterType>event.value;
     this.service.type = this.type;
   }
 
   onChangeDesc(event: MatSelectChange): void {
-    this.service.descriptor = <Descriptor>event.value;
+    this.service.description = <Descriptor>event.value;
   }
 
   onChangeFocus(event: MatSelectChange): void {

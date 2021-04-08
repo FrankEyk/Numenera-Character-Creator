@@ -18,13 +18,7 @@
     </ul>
   </mat-expansion-panel>
 
-  <mat-expansion-panel>
-    <mat-expansion-panel-header>
-      <mat-panel-title>{{character?.type?.name || "nobody"}}</mat-panel-title>
-    </mat-expansion-panel-header>
-    <p>{{character?.type?.description}}</p>
-  </mat-expansion-panel>
-
+  <app-type-info [character]="character"></app-type-info>
 
   <mat-expansion-panel>
     <mat-expansion-panel-header>

@@ -1,6 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { Ability } from 'src/app/numenera/model/Ability.model';
 
 import { NumeneraCharacterService } from 'src/app/numenera/services/NumeneraCharacter.service';
 @Component({
@@ -9,7 +8,7 @@ import { NumeneraCharacterService } from 'src/app/numenera/services/NumeneraChar
   styleUrls: ['./fixed-abilities.component.scss'],
 })
 export class FixedAbilitiesComponent implements OnInit, OnDestroy {
-  abilities: Ability[] = [];
+  abilities = [];
 
   private subscription!: Subscription;
 
@@ -17,13 +16,7 @@ export class FixedAbilitiesComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.subscription = this.service.character$.subscribe((character) => {
-      this.abilities = [];
-      if (character.focus) {
-        this.abilities.push(...character.focus.abilities);
-      }
-      if (character.type) {
-        this.abilities.push(...character.type.abilities);
-      }
+      //TODO
     });
   }
 

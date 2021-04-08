@@ -18,6 +18,9 @@ export class AttributeComponent implements OnInit {
   @Input()
   value = 0;
 
+  @Input()
+  disabled = false;
+
   @Output()
   valueChanged = new EventEmitter<number>();
 

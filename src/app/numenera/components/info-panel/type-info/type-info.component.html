@@ -1,0 +1,50 @@
+<mat-expansion-panel>
+  <mat-expansion-panel-header>
+    <mat-panel-title>{{character?.type?.name || "nobody"}}</mat-panel-title>
+  </mat-expansion-panel-header>
+
+  <mat-accordion *ngIf="character && character.type">
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>Tier abilities:</mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <mat-accordion>
+        <mat-expansion-panel *ngFor="let tier of character.type.tiers">
+          <mat-expansion-panel-header>
+            <mat-panel-title>Tier {{ tier.level }}</mat-panel-title>
+          </mat-expansion-panel-header>
+          <p *ngFor="let ability of tier.abilities">
+            <b>{{ ability.name }}: </b>
+            {{ ability.description }}
+          </p>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </mat-expansion-panel>
+  </mat-accordion>
+
+  <mat-accordion *ngIf="character && character.type">      
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>{{ character.type.talents.name }}</mat-panel-title>
+      </mat-expansion-panel-header>
+      {{character.type.talents.description}}
+
+      <mat-accordion>
+        <mat-expansion-panel *ngFor="let talent of character.type.talents.tiers">
+          <mat-expansion-panel-header>
+            <mat-panel-title>Tier {{ talent.level }}</mat-panel-title>
+          </mat-expansion-panel-header>
+          <p *ngFor="let tier of talent.talents">
+            <b>{{ tier.name }}
+              <span *ngIf="tier.cost">
+                ({{ tier.cost.value }} {{ tier.cost.attribute }} points)
+              </span>
+            </b>
+            {{ tier.description }}
+          </p>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </mat-expansion-panel>
+  </mat-accordion>
+</mat-expansion-panel>

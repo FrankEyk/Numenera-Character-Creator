@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { AttributeType } from '../../model/Attribute.model';
+import { Attribute } from '../../model/Type.model';
 import { NumeneraCharacterService } from '../../services/NumeneraCharacter.service';
 
 @Component({
@@ -11,38 +11,85 @@ import { NumeneraCharacterService } from '../../services/NumeneraCharacter.servi
 export class StatsPanelComponent implements OnInit, OnDestroy {
   private subscription!: Subscription;
 
-  might = 0;
-  speed = 0;
-  intellect = 0;
+  pool = {
+    might: {
+      current: 0,
+      minimum: 0,
+    },
+    speed: {
+      current: 0,
+      minimum: 0,
+    },
+    intellect: {
+      current: 0,
+      minimum: 0,
+    },
+    pointsLeft: 6,
+  };
 
-  mightEdge = 0;
-  speedEdge = 0;
-  intellectEdge = 0;
+  edge = {
+    might: 0,
+    speed: 0,
+    intellect: 0,
+  };
+
+  isSelectionComplete = false;
 
   constructor(private readonly service: NumeneraCharacterService) {}
 
   ngOnInit(): void {
     this.subscription = this.service.character$.subscribe((character) => {
-      this.might = this.speed = this.intellect = 0;
+      this.isSelectionComplete =
+        character.type != undefined &&
+        character.descriptor != undefined &&
+        character.focus != undefined;
 
-      character.attributes.forEach((attribute) => {
-        if (attribute.type === AttributeType.MIGHT) {
-          this.might = attribute.value;
-        } else if (attribute.type === AttributeType.SPEED) {
-          this.speed = attribute.value;
-        } else if (attribute.type === AttributeType.INTELLECT) {
-          this.intellect = attribute.value;
+      if (!this.isSelectionComplete) {
+        return;
+      }
+
+      character.type.attributes.forEach((attribute) => {
+        switch (attribute.type) {
+          case Attribute.INTELLECT:
+            this.pool.intellect.minimum = attribute.value;
+            break;
+          case Attribute.MIGHT:
+            this.pool.might.minimum = attribute.value;
+            break;
+          default:
+          case Attribute.SPEED:
+            this.pool.speed.minimum = attribute.value;
+            break;
         }
       });
-
-      this.mightEdge = this.speedEdge = this.intellectEdge = 0;
+      //FIXME update logic is not working!
+      character.pool.forEach((attribute) => {
+        switch (attribute.type) {
+          case Attribute.INTELLECT:
+            this.pool.intellect.current = attribute.value;
+            break;
+          case Attribute.MIGHT:
+            this.pool.might.current = attribute.value;
+            break;
+          default:
+          case Attribute.SPEED:
+            this.pool.speed.current = attribute.value;
+            break;
+        }
+      });
+      //FIXME update logic is not working!
       character.edge.forEach((edge) => {
-        if (edge.type === AttributeType.MIGHT) {
-          this.mightEdge = edge.value;
-        } else if (edge.type === AttributeType.SPEED) {
-          this.speedEdge = edge.value;
-        } else if (edge.type === AttributeType.INTELLECT) {
-          this.intellectEdge = edge.value;
+        switch (edge.type) {
+          case Attribute.INTELLECT:
+            this.edge.intellect = edge.value;
+            break;
+          case Attribute.MIGHT:
+            this.edge.might = edge.value;
+            break;
+          default:
+          case Attribute.SPEED:
+            this.edge.speed = edge.value;
+            break;
         }
       });
     });
@@ -50,29 +97,5 @@ export class StatsPanelComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
-  }
-
-  onMightChanged(value: number): void {
-    this.service.attribute = { type: AttributeType.MIGHT, value: value };
-  }
-
-  onSpeedChanged(value: number): void {
-    this.service.attribute = { type: AttributeType.SPEED, value: value };
-  }
-
-  onIntellectChanged(value: number): void {
-    this.service.attribute = { type: AttributeType.INTELLECT, value: value };
-  }
-
-  onMightEdgeChanged(value: number): void {
-    this.service.edge = { type: AttributeType.MIGHT, value: value };
-  }
-
-  onSpeedEdgeChanged(value: number): void {
-    this.service.edge = { type: AttributeType.SPEED, value: value };
-  }
-
-  onIntellectEdgeChanged(value: number): void {
-    this.service.edge = { type: AttributeType.INTELLECT, value: value };
   }
 }

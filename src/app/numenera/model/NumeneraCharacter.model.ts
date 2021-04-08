@@ -1,55 +1,52 @@
-import { Ability } from './Ability.model';
-import { Attribute, Edge } from './Attribute.model';
-import { Contact } from './Contact.model';
 import { Descriptor } from './Descriptor.model';
+import { Equipment } from './Equipment.model';
 import { Focus } from './Focus.model';
-import { Skill } from './Skill.model';
-import { Type } from './Type.model';
-
+import { Attribute, CharacterType } from './Type.model';
 /**
- * Domain Aggregate.
+ * Numenera Player Character Model.
  */
 export class NumeneraCharacter {
-  public name = '';
-  public attributes: Array<Attribute> = [];
-  public edge: Array<Edge> = [];
-
-  public abilities: Array<Ability> = [];
-  public skills: Array<Skill> = [];
-  public contacts: Array<Contact> = [];
-
-  private _type!: Type;
-  private _focus!: Focus;
+  /** Character Name */
+  name?: string;
+  /** Character Type */
+  private _type!: CharacterType;
+  /** Character Description */
   private _descriptor!: Descriptor;
+  /** Character Focus */
+  focus?: Focus;
+  /** Charater Attribute Pool */
+  pool: Array<{ type: Attribute; value: number }> = [];
+  /** Character Edges */
+  edge: Array<{ type: Attribute; value: number }> = [];
+  /** Character Money. */
+  shins = 0;
+  /** Character Connections. */
+  connections: Array<string> = [];
+  /** Character Equiptment. */
+  equipment: Array<Equipment> = [];
+  /** Character Abilities */
+  skills: Array<string> = [];
+  /** Number of Cyphers the character can use without penalties */
+  cypheruse = 0;
 
-  get type(): Type {
-    return this._type;
-  }
+  //TODO create models for abilities, connections
 
-  set type(type: Type) {
-    this._type = type;
-    this.attributes = type.attributes;
-    this.edge = type.edge;
+  set descriptor(descriptor: Descriptor) {
+    this._descriptor = descriptor;
   }
 
   get descriptor(): Descriptor {
     return this._descriptor;
   }
 
-  set descriptor(descriptor: Descriptor) {
-    this._descriptor = descriptor;
-
-    for (const benefit of descriptor.benefits) {
-      benefit.upgrade.upgrade(this);
-    }
+  set type(type: CharacterType) {
+    this._type = type;
+    this.pool = [];
+    this.pool = type.attributes;
+    this.edge = type.edges;
   }
 
-  get focus(): Focus {
-    return this._focus;
-  }
-
-  set focus(focus: Focus) {
-    this._focus = focus;
-    this.abilities = focus.abilities;
+  get type(): CharacterType {
+    return this._type;
   }
 }
