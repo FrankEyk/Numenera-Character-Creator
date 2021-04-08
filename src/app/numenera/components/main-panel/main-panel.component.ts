@@ -18,8 +18,6 @@ export class MainPanelComponent {
 
   private subscription!: Subscription;
 
-  private subscription!: Subscription;
-
   constructor(
     readonly service: NumeneraCharacterService,
     readonly masterdata: MasterdataService
