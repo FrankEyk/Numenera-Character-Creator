@@ -33,6 +33,10 @@ export class StatsPanelComponent implements OnInit, OnDestroy {
     intellect: 0,
   };
 
+  mightDisableAdd = false;
+  speedDisableAdd = false;
+  intDisableAdd = false;
+
   isSelectionComplete = false;
 
   constructor(private readonly service: NumeneraCharacterService) {}
@@ -97,5 +101,57 @@ export class StatsPanelComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
+  }
+
+  mightChanged(newValue: number): void {
+    if (this.pool.might.current < newValue) {
+      this.pool.pointsLeft = this.pool.pointsLeft - 1;
+    } else {
+      this.pool.pointsLeft = this.pool.pointsLeft + 1;
+    }
+
+    this.pool.might.current = newValue;
+
+    this.checkIfPointsLeft();
+  }
+
+  speedChanged(newValue: number): void {
+    if (this.pool.speed.current < newValue) {
+      this.pool.pointsLeft = this.pool.pointsLeft - 1;
+    } else {
+      this.pool.pointsLeft = this.pool.pointsLeft + 1;
+    }
+
+    this.pool.speed.current = newValue;
+
+    this.checkIfPointsLeft();
+  }
+
+  intChanged(newValue: number): void {
+    if (this.pool.intellect.current < newValue) {
+      this.pool.pointsLeft = this.pool.pointsLeft - 1;
+    } else {
+      this.pool.pointsLeft = this.pool.pointsLeft + 1;
+    }
+
+    this.pool.intellect.current = newValue;
+
+    this.checkIfPointsLeft();
+  }  
+
+  /**
+   * Check if there are any points left to add to a pool.
+   * If not, then disable all pool attributes, else enable them.
+   */
+  private checkIfPointsLeft(): void {
+    if (this.pool.pointsLeft === 0) {
+      this.mightDisableAdd = true;
+      this.speedDisableAdd = true;
+      this.intDisableAdd = true;
+    } else {
+      this.mightDisableAdd = false;
+      this.speedDisableAdd = false;
+      this.intDisableAdd = false;
+    }
   }
 }

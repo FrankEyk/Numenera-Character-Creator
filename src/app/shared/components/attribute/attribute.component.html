@@ -1,6 +1,6 @@
 <section>
     <h3 *ngIf="label">{{label}}</h3>
-    <button mat-icon-button color="primary" (click)="onClickAdd()" [disabled]="this.disabled || this.value == this.max">
+    <button mat-icon-button color="primary" (click)="onClickAdd()" [disabled]="this.disabled || this.value == this.max || disableAdd">
         <mat-icon>add</mat-icon>
     </button>
     

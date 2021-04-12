@@ -21,6 +21,11 @@ export class AttributeComponent implements OnInit {
   @Input()
   disabled = false;
 
+  /** Disable all Buttons. */
+  @Input()
+  disableAdd = false;
+
+  /** When the value (number) is changed, this emits the new value. */
   @Output()
   valueChanged = new EventEmitter<number>();
 

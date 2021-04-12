@@ -1,8 +1,8 @@
 <section>
   <h1>Pool ({{this.pool.pointsLeft}})</h1>
-  <app-attribute label="Might"      [value]="this.pool.might.current"     [min]="this.pool.might.minimum"     [disabled]="!isSelectionComplete"></app-attribute>
-  <app-attribute label="Speed"      [value]="this.pool.speed.current"     [min]="this.pool.speed.minimum"     [disabled]="!isSelectionComplete"></app-attribute>
-  <app-attribute label="Intellect"  [value]="this.pool.intellect.current" [min]="this.pool.intellect.minimum" [disabled]="!isSelectionComplete"></app-attribute>
+  <app-attribute label="Might"      (valueChanged)="mightChanged($event)"      [disableAdd]="mightDisableAdd"      [value]="this.pool.might.current"     [min]="this.pool.might.minimum"       [disabled]="!isSelectionComplete"></app-attribute>
+  <app-attribute label="Speed"      (valueChanged)="speedChanged($event)"      [disableAdd]="speedDisableAdd"      [value]="this.pool.speed.current"     [min]="this.pool.speed.minimum"       [disabled]="!isSelectionComplete"></app-attribute>
+  <app-attribute label="Intellect"  (valueChanged)="intChanged($event)"        [disableAdd]="intDisableAdd"        [value]="this.pool.intellect.current" [min]="this.pool.intellect.minimum"   [disabled]="!isSelectionComplete"></app-attribute>
 </section>
 
 <section>
