@@ -16,7 +16,7 @@ export interface Benefit {
   /**Benefit name */
   name: string;
   /** Benefit description */
-  description?: string;
+  description: string;
   /** Action Type */
   type?: ActionType;
   /** Cost to activate (optional) */

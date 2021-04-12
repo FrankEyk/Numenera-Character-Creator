@@ -10,8 +10,8 @@ import { NumeneraCharacterService } from '../../services/NumeneraCharacter.servi
 export class SkillsPanelComponent implements OnInit, OnDestroy {
   private subscription!: Subscription;
 
-  inabilities = [];
-  trained = [];
+  inabilities: string[] = [];
+  trained: string[] = [];
   specialized = [];
 
   constructor(private readonly service: NumeneraCharacterService) {}
@@ -19,7 +19,26 @@ export class SkillsPanelComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.subscription = this.service.character$.subscribe((character) => {
       //TODO
+      this.reset();
+
+      if (character.descriptor) {
+        const desc = character.descriptor;
+        desc.benefits.forEach(benefit => {
+          console.log(benefit.name);
+          if (benefit.name === 'Skill') {
+            this.trained.push(benefit.description);
+          } else if (benefit.name === 'Inability') {
+            this.inabilities.push(benefit.description);
+          }
+        });
+      }
     });
+  }
+
+  private reset(): void {
+    this.inabilities = [];
+    this.trained = [];
+    this.specialized = [];
   }
 
   ngOnDestroy(): void {

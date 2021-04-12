@@ -1,21 +1,24 @@
 <div>
   <h2>Skills</h2>
 
-  <section class="specialized">
+  <section class="specialized" *ngIf="specialized.length > 0">
+    <h3>Specialized</h3>
     <ul>
-      <li *ngFor="let skill of specialized"></li>
+      <li *ngFor="let skill of specialized">{{ skill }}</li>
     </ul>
   </section>
   
-  <section class="trained">
+  <section class="trained"  *ngIf="trained.length > 0">
+    <h3>Trained</h3>
     <ul>
-      <li *ngFor="let skill of trained"></li>
+      <li *ngFor="let skill of trained"> {{ skill }} </li>
     </ul>
   </section>
   
-  <section class="inability">
+  <section class="inability"  *ngIf="inabilities.length > 0">
+    <h3>Inability</h3>
     <ul>
-      <li *ngFor="let skill of inabilities"></li>
+      <li *ngFor="let skill of inabilities">{{ skill }}</li>
     </ul>
   </section>
 
