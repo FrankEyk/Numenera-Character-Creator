@@ -15,9 +15,17 @@ export class NumeneraCharacter {
   /** Character Focus */
   focus?: Focus;
   /** Charater Attribute Pool */
-  pool: Array<{ type: Attribute; value: number }> = [];
+  // pool: Array<{ type: Attribute; value: number }> = [];
+  
+  mightPool = 0;
+  speedPool = 0;
+  intPool = 0;
+  
   /** Character Edges */
-  edge: Array<{ type: Attribute; value: number }> = [];
+  // edge: Array<{ type: Attribute; value: number }> = [];
+  mightEdge = 0;
+  speedEdge = 0;
+  intEdge = 0;
   /** Character Money. */
   shins = 0;
   /** Character Connections. */
@@ -41,9 +49,26 @@ export class NumeneraCharacter {
 
   set type(type: CharacterType) {
     this._type = type;
-    this.pool = [];
-    this.pool = type.attributes;
-    this.edge = type.edges;
+
+    type.attributes.forEach(attribute => {
+      if (attribute.type === Attribute.MIGHT) {
+        this.mightPool = attribute.value;
+      } else if (attribute.type === Attribute.SPEED) {
+        this.speedPool = attribute.value;
+      } else {
+        this.intPool = attribute.value;
+      }
+    });
+
+    type.edges.forEach(edge => {
+      if (edge.type === Attribute.MIGHT) {
+        this.mightEdge = edge.value;
+      } else if (edge.type === Attribute.SPEED) {
+        this.speedEdge = edge.value;
+      } else {
+        this.intEdge = edge.value;
+      } 
+    });
   }
 
   get type(): CharacterType {

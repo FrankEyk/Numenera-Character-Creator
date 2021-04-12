@@ -66,36 +66,16 @@ export class StatsPanelComponent implements OnInit, OnDestroy {
             break;
         }
       });
+
       //FIXME update logic is not working!
-      character.pool.forEach((attribute) => {
-        switch (attribute.type) {
-          case Attribute.INTELLECT:
-            this.pool.intellect.current = attribute.value;
-            break;
-          case Attribute.MIGHT:
-            this.pool.might.current = attribute.value;
-            break;
-          default:
-          case Attribute.SPEED:
-            this.pool.speed.current = attribute.value;
-            break;
-        }
-      });
+      this.pool.intellect.current = character.intPool;
+      this.pool.might.current = character.mightPool;
+      this.pool.speed.current = character.speedPool;
+      
       //FIXME update logic is not working!
-      character.edge.forEach((edge) => {
-        switch (edge.type) {
-          case Attribute.INTELLECT:
-            this.edge.intellect = edge.value;
-            break;
-          case Attribute.MIGHT:
-            this.edge.might = edge.value;
-            break;
-          default:
-          case Attribute.SPEED:
-            this.edge.speed = edge.value;
-            break;
-        }
-      });
+      this.edge.intellect = character.intEdge;
+      this.edge.might = character.mightEdge;
+      this.edge.speed = character.speedEdge;
     });
   }
 

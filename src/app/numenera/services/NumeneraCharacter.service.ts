@@ -21,9 +21,14 @@ export class NumeneraCharacterService {
    * @param attribute the attribute to set.
    */
   set attribute(attribute: { type: Attribute; value: number }) {
-    this.character.pool
-      .filter((a) => a.type == attribute.type)
-      .map((a) => (a.value = attribute.value));
+    if (attribute.type === Attribute.MIGHT) {
+      this.character.mightPool = attribute.value;
+    } else if (attribute.type === Attribute.SPEED) {
+      this.character.speedPool = attribute.value;
+    } else {
+      this.character.intPool = attribute.value;
+    }
+
     this.character$.next(this.character);
   }
 
@@ -34,9 +39,15 @@ export class NumeneraCharacterService {
    * @param edge the edge to set.
    */
   set edge(edge: { type: Attribute; value: number }) {
-    this.character.edge
-      .filter((a) => a.type == edge.type)
-      .map((a) => (a.value = edge.value));
+
+    if (edge.type === Attribute.MIGHT) {
+      this.character.mightEdge = edge.value;
+    } else if (edge.type === Attribute.SPEED) {
+      this.character.speedEdge = edge.value;
+    } else {
+      this.character.intEdge = edge.value;
+    }
+    
     this.character$.next(this.character);
   }
 
