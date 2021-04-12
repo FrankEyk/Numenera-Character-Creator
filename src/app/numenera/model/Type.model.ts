@@ -1,18 +1,11 @@
 import { ActionType } from './Ability.model';
 import { Benefit } from './Benefit.model';
-import { NumeneraCharacter } from './NumeneraCharacter.model';
 import { Origin } from './Origin.model';
+import { Upgrade } from './Upgrade.model';
 
 /**
  * Available Attributes in Numenera.
  */
-
-/*
- * Upgrade Function.
- */
- interface Upgrade {
-  (character: NumeneraCharacter): void;
-}
 
 interface Ability {
   name: string;

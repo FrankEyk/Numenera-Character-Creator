@@ -1,13 +1,7 @@
 import { ActionType } from './Ability.model';
-import { NumeneraCharacter } from './NumeneraCharacter.model';
 import { Attribute } from './Type.model';
+import { Upgrade } from './Upgrade.model';
 
-/*
- * Upgrade Funtion for a Benefit.
- */
-interface Upgrade {
-  (character: NumeneraCharacter): void;
-}
 
 /**
  * A benefit represents a perk of you character.
