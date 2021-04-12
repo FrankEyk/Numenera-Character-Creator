@@ -28,7 +28,10 @@ const FOCI: Array<Focus> = [
       {
         name: 'Additional Equipment',
         description: `You have an artifact—a device that sprays inanimate objects to make them fireresistant. All your starting gear has already been treated unless you don’t want it to be.`,
-        upgrade: (char) => console.log(char),
+        upgrade: (char) => char.equipment.push({
+          name: 'Fireresistantspray',
+          description: `An artifact that sprays inanimate objects to make them fire-resistant`,
+        }),
       },
       {
         name: 'Fire Esoteries',
@@ -38,7 +41,7 @@ const FOCI: Array<Focus> = [
         this case, the alteration changes the esotery so that the barrier is not solid but instead inflicts
         1 point of damage to anything that touches it and 4 points of damage to anyone who passes
         through it. Even fighting moves such as No Need for Weapons might mean your hands and fists are surrounded by flames.`,
-        upgrade: (char) => console.log(char),
+        upgrade: (char) => char.abilities.push('Fire esoteries'),
       },
     ],
     tiers: [
@@ -332,17 +335,17 @@ const DESCRIPTORS: Array<Descriptor> = [
       {
         name: 'Contact',
         description: `You have an important contact who is in an influential position, such as a minor noble, the captain of the town guard, an Aeon Priest, or the head of a large gang of thieves. You and the GM should work out the details together.`,
-        upgrade: (char) => console.log('Contact'),
+        upgrade: (char) => char.extraNotes.push('Contact: you have an important contact in a influential position.'),
       },
       {
         name: 'Inability',
         description: `You were never good at studying or retaining facts. The difficulty of any task involving lore, knowledge, or understanding is increased by one step.`,
-        upgrade: (char) => console.log('Inability'),
+        upgrade: (char) => char.addInabilitySkill(`Studying or retaining facts`),
       },
       {
         name: 'Inability',
         description: `Your willpower is not one of your strong points. Whenever you try to resist a mental attack, the difficulty is increased by one step.`,
-        upgrade: (char) => console.log('Inability'),
+        upgrade: (char) => char.addInabilitySkill(`Resisting mental attacks`),
       },
       {
         name: 'Additional Equipment',
@@ -398,7 +401,6 @@ const TYPES: Array<CharacterType> = [
   {
   name: 'Glaive',
     origin: { title: TITLE, page: 28 },
-    cypheruse: 2,
     description: `Glaives are the elite warriors of the Ninth World, using weapons and armor to fight their enemies.
     Hunters, guardians, and soldiers could be glaives. Sometimes scouts, warlords, bandits, and even
     athletes are glaives. “Glaive” is a common slang term used almost everywhere in the Steadfast and
@@ -425,20 +427,34 @@ const TYPES: Array<CharacterType> = [
         abilities: [
           {
             name: `Cypher Use`,
-            description: `You can bear two cyphers at a time.`
+            description: `You can bear two cyphers at a time.`,
+            upgrade: (char) => char.cypheruse = 2
           },
           {
             name: `Combat Prowess`,
             type: ActionType.ENABLER,
             description: `You add +1 damage to one type of attack of your choice: melee attacks or
-            ranged attacks. Enabler.`
+            ranged attacks. Enabler.`,
+            upgrade: (char) => console.log(char)
           },
           {
             name: `Trained in Armor`,
             type: ActionType.ENABLER,
             description: `You can wear armor for long periods of time without tiring and can
             compensate for slowed reactions from wearing armor. You reduce the Speed Effort cost for
-            wearing armor by 1. Enabler.`
+            wearing armor by 1. Enabler.`,
+            upgrade: (char) => console.log(char)
+          },
+          {
+            name: `Physical Skills`,
+            description: `Choose one of the following skills in which you aren’t already trained:
+            balancing, climbing, jumping, or swimming. You are trained in this skill. You have an
+            inability in crafting numenera, salvaging numenera, and understanding numenera.`,
+            upgrade: (char) => { 
+              char.addInabilitySkill('Crafting Numenera');
+              char.addInabilitySkill('Salvaging Numenera');
+              char.addInabilitySkill('Understanding Numenera');
+            }
           },
         ]
       },
@@ -450,7 +466,8 @@ const TYPES: Array<CharacterType> = [
             type: ActionType.ENABLER,
             description: `Choose one type of attack in which you are not already trained: light bashing,
             light bladed, light ranged, medium bashing, medium bladed, medium ranged, heavy bashing,
-            heavy bladed, or heavy ranged. You are trained in attacks using that type of weapon. Enabler.`
+            heavy bladed, or heavy ranged. You are trained in attacks using that type of weapon. Enabler.`,
+            upgrade: (char) => console.log(char)
           },
         ]
       },
@@ -462,11 +479,13 @@ const TYPES: Array<CharacterType> = [
             type: ActionType.ENABLER,
             description: `Choose one type of attack in which you are not already trained: light bashing,
             light bladed, light ranged, medium bashing, medium bladed, medium ranged, heavy bashing,
-            heavy bladed, or heavy ranged. You are trained in attacks using that type of weapon. Enabler.`
+            heavy bladed, or heavy ranged. You are trained in attacks using that type of weapon. Enabler.`,
+            upgrade: (char) => console.log(char)
           },
           {
             name: `Expert Cypher Use`,
-            description: `You can bear three cyphers at a time.`
+            description: `You can bear three cyphers at a time.`,
+            upgrade: (char) => char.cypheruse = 3
           },  
         ]
       },
@@ -478,7 +497,8 @@ const TYPES: Array<CharacterType> = [
             type: ActionType.ENABLER,
             description: `Choose one type of attack in which you are not already trained: light bashing,
             light bladed, light ranged, medium bashing, medium bladed, medium ranged, heavy bashing,
-            heavy bladed, or heavy ranged. You are trained in attacks using that type of weapon. Enabler.`
+            heavy bladed, or heavy ranged. You are trained in attacks using that type of weapon. Enabler.`,
+            upgrade: (char) => console.log(char)
           },  
         ]
       },
@@ -487,7 +507,8 @@ const TYPES: Array<CharacterType> = [
         abilities: [
           {
             name: `Adept Cypher Use`,
-            description: `You can bear four cyphers at a time.`
+            description: `You can bear four cyphers at a time.`,
+            upgrade: (char) => console.log(char)
           },
           {
             name: `Mastery With Attacks`,
@@ -496,7 +517,8 @@ const TYPES: Array<CharacterType> = [
             light bladed, light ranged, medium bashing, medium bladed, medium ranged, heavy
             bashing, heavy bladed, or heavy ranged. You are specialized in attacks using that type of
             weapon. Enabler. (In place of this ability, you may instead select Skill With Attacks to become
-            trained in one type of attack.).`
+            trained in one type of attack.).`,
+            upgrade: (char) => console.log(char)
           },
         ]
       },
@@ -510,7 +532,8 @@ const TYPES: Array<CharacterType> = [
             light bladed, light ranged, medium bashing, medium bladed, medium ranged, heavy
             bashing, heavy bladed, or heavy ranged. You are specialized in attacks using that type of
             weapon. Enabler. (In place of this ability, you may instead select Skill With Attacks to become
-            trained in one type of attack.).`
+            trained in one type of attack.).`,
+            upgrade: (char) => console.log(char)
           },
         ]
       },
@@ -597,7 +620,6 @@ const TYPES: Array<CharacterType> = [
   {
     name: 'Nano',
     origin: { title: TITLE, page: 36 },
-    cypheruse: 3,
     description: `Nanos are sometimes called mages, wizards, sorcerers,
     or witches by the people of the Ninth World. Nanosorcerer is also a common term, with their abilities
     referred to as nano-sorcery. Some claim to be the
@@ -632,7 +654,8 @@ const TYPES: Array<CharacterType> = [
         abilities: [
           {
             name: `Expert Cypher Use`,
-            description: `You can bear three cyphers at a time.`
+            description: `You can bear three cyphers at a time.`,
+            upgrade: (char) => char.cypheruse = 3
           }
         ]
       },
@@ -793,7 +816,6 @@ const TYPES: Array<CharacterType> = [
   {
     name: 'Jack',
     origin: { title: TITLE, page: 44 },
-    cypheruse: 2,
     description: `Jacks are intrepid explorers and adventurers. They are
     jacks of all trades—hence the name—although the
     word also hearkens back to fables involving a wily,

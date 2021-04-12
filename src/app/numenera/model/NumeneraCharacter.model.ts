@@ -38,6 +38,8 @@ export class NumeneraCharacter {
   inabilitySkills: Array<String> = [];
   /** Number of Cyphers the character can use without penalties */
   cypheruse = 0;
+  /** Extra Notes */
+  extraNotes: Array<String> = [];
 
   //TODO create models for abilities, connections
 
@@ -77,6 +79,11 @@ export class NumeneraCharacter {
     return this._type;
   }
 
+  addInabilitySkill(skill: string): void {
+    // TODO logic to remove from specialized/trained.
+    this.inabilitySkills.push(skill);
+  }
+
   addTrainedSkill(skill: string): void {
     this.inabilitySkills.forEach((iSkill, index) => {
       if (iSkill === skill) {
@@ -103,5 +110,7 @@ export class NumeneraCharacter {
         return;
       }
     })
+
+    this.trainedSkills.push(skill);
   }
 }

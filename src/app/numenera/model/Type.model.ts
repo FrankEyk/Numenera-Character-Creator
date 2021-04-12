@@ -1,11 +1,18 @@
 import { ActionType } from './Ability.model';
 import { Benefit } from './Benefit.model';
+import { NumeneraCharacter } from './NumeneraCharacter.model';
 import { Origin } from './Origin.model';
 
 /**
  * Available Attributes in Numenera.
  */
 
+/*
+ * Upgrade Function.
+ */
+ interface Upgrade {
+  (character: NumeneraCharacter): void;
+}
 
 interface Ability {
   name: string;
@@ -13,6 +20,7 @@ interface Ability {
   type?: ActionType;
   cost?: { attribute: Attribute; value: number };
   benefit?: Benefit;
+  upgrade: Upgrade;
 }
 
 /**
@@ -65,6 +73,5 @@ export interface CharacterType {
   attributes: Array<{ type: Attribute; value: number }>;
   edges: Array<{ type: Attribute; value: number }>;
   tiers: Array<AbilityTier>;
-  cypheruse: number;
   talents: Talents;
 }

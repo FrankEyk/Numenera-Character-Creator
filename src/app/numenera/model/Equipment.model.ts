@@ -7,7 +7,7 @@ export interface Equipment {
   /** Equipment description (optional)*/
   description?: string;
   /** Minor Effects Suggestions. */
-  minorEffects: Array<string>;
+  minorEffects?: Array<string>;
   /** Major Effects Suggestions.  */
-  majorEffects: Array<string>;
+  majorEffects?: Array<string>;
 }
