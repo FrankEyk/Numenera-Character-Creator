@@ -1,13 +1,13 @@
 <section>
   <h1>Pool ({{this.pool.pointsLeft}})</h1>
-  <app-attribute label="Might"      (valueChanged)="mightChanged($event)"      [disableAdd]="mightDisableAdd"      [value]="this.pool.might.current"     [min]="this.pool.might.minimum"       [disabled]="!isSelectionComplete"></app-attribute>
-  <app-attribute label="Speed"      (valueChanged)="speedChanged($event)"      [disableAdd]="speedDisableAdd"      [value]="this.pool.speed.current"     [min]="this.pool.speed.minimum"       [disabled]="!isSelectionComplete"></app-attribute>
-  <app-attribute label="Intellect"  (valueChanged)="intChanged($event)"        [disableAdd]="intDisableAdd"        [value]="this.pool.intellect.current" [min]="this.pool.intellect.minimum"   [disabled]="!isSelectionComplete"></app-attribute>
+  <app-attribute label="Might"      (valueChanged)="mightChanged($event)"      [disableAdd]="mightDisableAdd"      [value]="pool.might.current"     [min]="pool.might.minimum"       [disabled]="!isSelectionComplete"></app-attribute>
+  <app-attribute label="Speed"      (valueChanged)="speedChanged($event)"      [disableAdd]="speedDisableAdd"      [value]="pool.speed.current"     [min]="pool.speed.minimum"       [disabled]="!isSelectionComplete"></app-attribute>
+  <app-attribute label="Intellect"  (valueChanged)="intChanged($event)"        [disableAdd]="intDisableAdd"        [value]="pool.intellect.current" [min]="pool.intellect.minimum"   [disabled]="!isSelectionComplete"></app-attribute>
 </section>
 
 <section>
-  <h1>Edge</h1>
-  <app-attribute label="Might"      [value]="this.edge.might"     [min]=0 [disabled]="!isSelectionComplete"></app-attribute>
-  <app-attribute label="Speed"      [value]="this.edge.speed"     [min]=0 [disabled]="!isSelectionComplete"></app-attribute>
-  <app-attribute label="Intellect"  [value]="this.edge.intellect" [min]=0 [disabled]="!isSelectionComplete"></app-attribute>
+  <h1>Edge ({{this.edge.pointsLeft}})</h1>
+  <app-attribute label="Might"      (valueChanged)="mightEdgeChanged($event)" [disableAdd]="mightEdgeDisableAdd"  [value]="edge.might.current"     [min]="edge.might.minimum"     [disabled]="!isSelectionComplete"></app-attribute>
+  <app-attribute label="Speed"      (valueChanged)="speedEdgeChanged($event)" [disableAdd]="speedEdgeDisableAdd"  [value]="edge.speed.current"     [min]="edge.speed.minimum"     [disabled]="!isSelectionComplete"></app-attribute>
+  <app-attribute label="Intellect"  (valueChanged)="intEdgeChanged($event)"   [disableAdd]="intEdgeDisableAdd"    [value]="edge.intellect.current" [min]="edge.intellect.minimum" [disabled]="!isSelectionComplete"></app-attribute>
 </section>

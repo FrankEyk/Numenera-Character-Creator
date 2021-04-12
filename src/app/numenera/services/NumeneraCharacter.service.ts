@@ -73,6 +73,15 @@ export class NumeneraCharacterService {
 
   set type(type: CharacterType) {
     this.character.type = type;
+
+    type.tiers.forEach(tier => {
+      if (tier.level === 1) {
+        tier.abilities.forEach(ability => {
+          ability.upgrade(this.character);
+        });
+      }
+    });
+
     this.character$.next(this.character);
   }
 

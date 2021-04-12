@@ -2,6 +2,7 @@ import { Descriptor } from './Descriptor.model';
 import { Equipment } from './Equipment.model';
 import { Focus } from './Focus.model';
 import { Attribute, CharacterType } from './Type.model';
+
 /**
  * Numenera Player Character Model.
  */
@@ -14,8 +15,7 @@ export class NumeneraCharacter {
   private _descriptor!: Descriptor;
   /** Character Focus */
   focus?: Focus;
-  /** Charater Attribute Pool */
-  
+  /** Charater Attribute Pool */  
   mightPool = 0;
   speedPool = 0;
   intPool = 0;
@@ -24,6 +24,9 @@ export class NumeneraCharacter {
   mightEdge = 0;
   speedEdge = 0;
   intEdge = 0;
+
+  /** Character Edge points to spend */
+  edgePointsToAdd = 0;
   /** Character Money. */
   shins = 0;
   /** Character Connections. */

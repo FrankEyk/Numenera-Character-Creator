@@ -837,7 +837,19 @@ const TYPES: Array<CharacterType> = [
       { type: Attribute.SPEED, value: 0 },
       { type: Attribute.INTELLECT, value: 0 },
     ],
-    tiers: [],
+    tiers: [
+      {
+        level: 1,
+        abilities: [
+          {
+            name: 'Jack of All Trades',
+            description: `You have an Edge of 1 for one stat of your choice: Might, Speed, or Intellect.
+            You have an Edge of 0 for the other two stats.`,
+            upgrade: (char) => char.edgePointsToAdd = char.edgePointsToAdd + 1
+          }
+        ]
+      }
+    ],
     talents: {
       name: 'Tricks of the Trade:',
       description: `You have a wide range of abilities that keep people guessing. Some of
