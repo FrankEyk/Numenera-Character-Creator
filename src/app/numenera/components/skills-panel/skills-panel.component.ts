@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
+import { NumeneraCharacter } from '../../model/NumeneraCharacter.model';
 import { NumeneraCharacterService } from '../../services/NumeneraCharacter.service';
 
 @Component({
@@ -10,35 +11,22 @@ import { NumeneraCharacterService } from '../../services/NumeneraCharacter.servi
 export class SkillsPanelComponent implements OnInit, OnDestroy {
   private subscription!: Subscription;
 
-  inabilities: string[] = [];
-  trained: string[] = [];
-  specialized = [];
+  inabilities: Array<String> = [];
+  trained: Array<String> = [];
+  specialized: Array<String> = [];
 
   constructor(private readonly service: NumeneraCharacterService) {}
 
   ngOnInit(): void {
     this.subscription = this.service.character$.subscribe((character) => {
-      //TODO
-      this.reset();
-
-      if (character.descriptor) {
-        const desc = character.descriptor;
-        desc.benefits.forEach(benefit => {
-          console.log(benefit.name);
-          if (benefit.name === 'Skill') {
-            this.trained.push(benefit.description);
-          } else if (benefit.name === 'Inability') {
-            this.inabilities.push(benefit.description);
-          }
-        });
-      }
+      this.updateSkills(character);
     });
   }
 
-  private reset(): void {
-    this.inabilities = [];
-    this.trained = [];
-    this.specialized = [];
+  private updateSkills(character: NumeneraCharacter) {
+    this.trained = character.trainedSkills;
+    this.specialized = character.specializedSkills;
+    this.inabilities = character.inabilitySkills;
   }
 
   ngOnDestroy(): void {

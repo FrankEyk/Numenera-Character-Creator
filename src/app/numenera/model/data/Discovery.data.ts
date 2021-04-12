@@ -317,32 +317,32 @@ const DESCRIPTORS: Array<Descriptor> = [
       {
         name: 'Personable',
         description: `+2 to your Intellect Pool.`,
-        upgrade: (char) => console.log(char),
+        upgrade: (char) => char.intPool = char.intPool + 2,
       },
       {
         name: 'Skill',
         description: `You’re trained in all tasks involving positive or pleasant social interaction`,
-        upgrade: (char) => console.log(char),
+        upgrade: (char) => char.addTrainedSkill('Positive or pleasant social interactions'),
       },
       {
         name: 'Skill',
         description: ` You’re trained when using esoteries or special abilities that influence the minds of others.`,
-        upgrade: (char) => console.log(char),
+        upgrade: (char) => char.addTrainedSkill('Using esoteries or abilities to influence the minds of others'),
       },
       {
         name: 'Contact',
         description: `You have an important contact who is in an influential position, such as a minor noble, the captain of the town guard, an Aeon Priest, or the head of a large gang of thieves. You and the GM should work out the details together.`,
-        upgrade: (char) => console.log(char),
+        upgrade: (char) => console.log('Contact'),
       },
       {
         name: 'Inability',
         description: `You were never good at studying or retaining facts. The difficulty of any task involving lore, knowledge, or understanding is increased by one step.`,
-        upgrade: (char) => console.log(char),
+        upgrade: (char) => console.log('Inability'),
       },
       {
         name: 'Inability',
         description: `Your willpower is not one of your strong points. Whenever you try to resist a mental attack, the difficulty is increased by one step.`,
-        upgrade: (char) => console.log(char),
+        upgrade: (char) => console.log('Inability'),
       },
       {
         name: 'Additional Equipment',

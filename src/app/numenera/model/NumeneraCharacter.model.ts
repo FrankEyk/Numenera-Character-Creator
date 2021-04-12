@@ -15,14 +15,12 @@ export class NumeneraCharacter {
   /** Character Focus */
   focus?: Focus;
   /** Charater Attribute Pool */
-  // pool: Array<{ type: Attribute; value: number }> = [];
   
   mightPool = 0;
   speedPool = 0;
   intPool = 0;
-  
+
   /** Character Edges */
-  // edge: Array<{ type: Attribute; value: number }> = [];
   mightEdge = 0;
   speedEdge = 0;
   intEdge = 0;
@@ -33,7 +31,11 @@ export class NumeneraCharacter {
   /** Character Equiptment. */
   equipment: Array<Equipment> = [];
   /** Character Abilities */
-  skills: Array<string> = [];
+  abilities: Array<string> = [];
+  /** skills */
+  trainedSkills: Array<String> = [];
+  specializedSkills: Array<String> = [];
+  inabilitySkills: Array<String> = [];
   /** Number of Cyphers the character can use without penalties */
   cypheruse = 0;
 
@@ -52,11 +54,11 @@ export class NumeneraCharacter {
 
     type.attributes.forEach(attribute => {
       if (attribute.type === Attribute.MIGHT) {
-        this.mightPool = attribute.value;
+        this.mightPool = this.mightPool + attribute.value;
       } else if (attribute.type === Attribute.SPEED) {
-        this.speedPool = attribute.value;
+        this.speedPool = this.speedPool + attribute.value;
       } else {
-        this.intPool = attribute.value;
+        this.intPool = this.intPool + attribute.value;
       }
     });
 
@@ -73,5 +75,33 @@ export class NumeneraCharacter {
 
   get type(): CharacterType {
     return this._type;
+  }
+
+  addTrainedSkill(skill: string): void {
+    this.inabilitySkills.forEach((iSkill, index) => {
+      if (iSkill === skill) {
+        console.log(skill + " is an inability. Remove as inability");
+        this.inabilitySkills.splice(index, 1);
+        return;
+      }
+    });
+
+    this.trainedSkills.forEach((tSkill, index) => {
+      if (tSkill === skill) {
+        console.log(skill + " is already trained, trying to make specialized!");
+        this.trainedSkills.splice(index, 1);
+        this.specializedSkills.forEach(sSkill => {
+          if (sSkill === skill) {
+            console.log(skill + " is already specialized, don't add it.")
+            // already in specialized, do nothing.
+            return;
+          }
+        });
+
+        console.log(skill + " is now specialized!");
+        this.specializedSkills.push(skill);
+        return;
+      }
+    })
   }
 }

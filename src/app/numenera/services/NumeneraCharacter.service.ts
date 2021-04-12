@@ -53,11 +53,21 @@ export class NumeneraCharacterService {
 
   set description(description: Descriptor) {
     this.character.descriptor = description;
+
+    description.benefits.forEach(benefit => {
+      benefit.upgrade(this.character);
+    });
+
     this.character$.next(this.character);
   }
 
   set focus(focus: Focus) {
     this.character.focus = focus;
+
+    focus.benefits.forEach(benefit => {
+      benefit.upgrade(this.character);
+    });
+    
     this.character$.next(this.character);
   }
 
