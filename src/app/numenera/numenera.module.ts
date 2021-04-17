@@ -23,6 +23,7 @@ import { MatChipsModule } from '@angular/material/chips';
 import { FormsModule } from '@angular/forms';
 import { SharedModule } from '../shared/shared.module';
 import { TypeInfoComponent } from './components/info-panel/type-info/type-info.component';
+import { AbilityInfoComponent } from './components/info-panel/ability-info/ability-info.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { TypeInfoComponent } from './components/info-panel/type-info/type-info.c
     FixedAbilitiesComponent,
     ChoiceAbilitiesComponent,
     TypeInfoComponent,
+    AbilityInfoComponent,
   ],
   imports: [
     CommonModule,

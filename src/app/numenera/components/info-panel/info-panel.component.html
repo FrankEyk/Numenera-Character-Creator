@@ -20,11 +20,6 @@
 
   <app-type-info [character]="character"></app-type-info>
 
-  <mat-expansion-panel>
-    <mat-expansion-panel-header>
-      <mat-panel-title>Who {{character?.focus?.name || "can do nothing"}}</mat-panel-title>
-    </mat-expansion-panel-header>
-    <p>{{character?.focus?.description}}</p>
-  </mat-expansion-panel>
+  <ability-info [character]="character"></ability-info>
 
 </mat-accordion>

@@ -9,13 +9,15 @@ import { Upgrade } from './Upgrade.model';
  * more abilities.
  */
 interface Tier {
-  name: string;
   level: number;
+  abilities: TierAbility[];
+}
+
+interface TierAbility {
+  name: string;
   description: string;
   type: ActionType;
   cost?: { attribute: Attribute; value: number };
-  // TODO: delete benefit (not needed)
-  benefit?: Benefit;
   upgrade: Upgrade;
 }
 

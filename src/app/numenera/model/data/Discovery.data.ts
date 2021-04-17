@@ -46,136 +46,159 @@ const FOCI: Array<Focus> = [
     ],
     tiers: [
       {
-        name: 'Shroud of Flame',
         level: 1,
-        type: ActionType.ENABLER,
-        description: `At your command, your entire body becomes
-        shrouded in flames that last up to ten minutes. The
-        fire doesn’t burn you, but it automatically inflicts
-        2 points of damage to anyone who tries to touch
-        you or strike you with a melee attack. Flames from
-        another source can still hurt you. While the shroud
-        is active, you gain +2 points of Armor that protect
-        only against damage from fire from another source.
-        Enabler.`,
-        cost: { attribute: Attribute.INTELLECT, value: 1 },
-        upgrade: (char) => char.abilities.push('Shroud of Flame'),
+        abilities: 
+        [
+          {
+            name: 'Shroud of Flame',
+            type: ActionType.ENABLER,
+            description: `At your command, your entire body becomes
+            shrouded in flames that last up to ten minutes. The
+            fire doesn’t burn you, but it automatically inflicts
+            2 points of damage to anyone who tries to touch
+            you or strike you with a melee attack. Flames from
+            another source can still hurt you. While the shroud
+            is active, you gain +2 points of Armor that protect
+            only against damage from fire from another source.
+            Enabler.`,
+            cost: { attribute: Attribute.INTELLECT, value: 1 },
+            upgrade: (char) => char.abilities.push('Shroud of Flame'),
+          },
+        ]
       },
       {
-        name: 'Hurl Flame',
         level: 2,
-        type: ActionType.ACTION,
-        description: `While your Shroud of Flame is active, you can reach into your halo and hurl a handful of fire at a target. 
-        This is a ranged attack with short range that deals 4 points of fire damage. Action.`,
-        cost: { attribute: Attribute.INTELLECT, value: 2 },
-        upgrade: (char) => char.abilities.push('Hurl Flame'),
+        abilities: [
+          {
+            name: 'Hurl Flame',
+            type: ActionType.ACTION,
+            description: `While your Shroud of Flame is active, you can reach into your halo and hurl a handful of fire at a target. 
+            This is a ranged attack with short range that deals 4 points of fire damage. Action.`,
+            cost: { attribute: Attribute.INTELLECT, value: 2 },
+            upgrade: (char) => char.abilities.push('Hurl Flame'),
+          },
+          {
+            name: 'Fiery Power',
+            type: ActionType.ENABLER,  
+            description: `When you use the Onslaught force blast esotery or the Flash esotery, increase the damage by 1 point. 
+            If you don’t have either of those abilities, this ability has no effect. 
+            Fiery Power does not affect damage from the Onslaught mindslice. Enabler.`,
+            upgrade: (char) => char.abilities.push('Fiery Power'),
+          },
+
+        ]
       },
       {
-        name: 'Fiery Power',
-        level: 2,
-        type: ActionType.ENABLER,  
-        description: `When you use the Onslaught force blast esotery or the Flash esotery, increase the damage by 1 point. 
-        If you don’t have either of those abilities, this ability has no effect. 
-        Fiery Power does not affect damage from the Onslaught mindslice. Enabler.`,
-        upgrade: (char) => char.abilities.push('Fiery Power'),
-      },
-      {
-        name: 'Fiery Hand of Doom',
         level: 3,
-        type: ActionType.ACTION,
-        description: `While your Shroud of Flame is active, you can
-        reach into your halo and produce a hand made of
-        animate flame that is twice the size of a human’s
-        hand. The hand acts as you direct, floating in the
-        air. Directing the hand is an action. Without a
-        command, the hand does nothing. It can move
-        a long distance in a round, but it never moves
-        farther away from you than long range. The hand
-        can grab, move, and carry things, but anything it
-        touches takes 1 point of damage per round from
-        the heat. The hand can also attack. It’s a level 3
-        creature and deals 1 extra point of damage from
-        fire when it attacks. Once created, the hand lasts
-        for ten minutes. Action to create; action to direct.`,
-        cost: { attribute: Attribute.INTELLECT, value: 3 },
-        upgrade: (char) => char.abilities.push('Fiery Hand of Doom'),
+        abilities: [
+          {
+            name: 'Fiery Hand of Doom',
+            type: ActionType.ACTION,
+            description: `While your Shroud of Flame is active, you can
+            reach into your halo and produce a hand made of
+            animate flame that is twice the size of a human’s
+            hand. The hand acts as you direct, floating in the
+            air. Directing the hand is an action. Without a
+            command, the hand does nothing. It can move
+            a long distance in a round, but it never moves
+            farther away from you than long range. The hand
+            can grab, move, and carry things, but anything it
+            touches takes 1 point of damage per round from
+            the heat. The hand can also attack. It’s a level 3
+            creature and deals 1 extra point of damage from
+            fire when it attacks. Once created, the hand lasts
+            for ten minutes. Action to create; action to direct.`,
+            cost: { attribute: Attribute.INTELLECT, value: 3 },
+            upgrade: (char) => char.abilities.push('Fiery Hand of Doom'),
+          },
+          {
+            name: 'Wings of Fire',
+            type: ActionType.ACTION,
+            description: `While your
+            Shroud of Flame is active, you can spread wings
+            of fire and can levitate, moving at a rate of up
+            to 20 feet (6 m) per round in any direction for
+            one minute. You can also take one other nonmovement
+            action on your turn. Action.`,
+            cost: { attribute: Attribute.INTELLECT, value: 4 },
+            upgrade: (char) => char.abilities.push('Wings of Fire'),
+          },
+        ]
       },
       {
-        name: 'Wings of Fire',
-        level: 3,
-        type: ActionType.ACTION,
-        description: `While your
-        Shroud of Flame is active, you can spread wings
-        of fire and can levitate, moving at a rate of up
-        to 20 feet (6 m) per round in any direction for
-        one minute. You can also take one other nonmovement
-        action on your turn. Action.`,
-        cost: { attribute: Attribute.INTELLECT, value: 4 },
-        upgrade: (char) => char.abilities.push('Wings of Fire'),
-      },
-      {
-        name: 'Flameblade',
         level: 4,
-        type: ActionType.ENABLER,
-        description: `When you wish it, you extend your halo of fire to cover
-        a weapon you wield in flame for one hour. The
-        flame ends if you stop holding or carrying the
-        weapon. While the flame lasts, the weapon inflicts 2
-        additional points of damage. Enabler.`,
-        cost: { attribute: Attribute.INTELLECT, value: 4 },
-        upgrade: (char) => char.abilities.push('Flameblade'),
+        abilities: [
+          {
+            name: 'Flameblade',
+            type: ActionType.ENABLER,
+            description: `When you wish it, you extend your halo of fire to cover
+            a weapon you wield in flame for one hour. The
+            flame ends if you stop holding or carrying the
+            weapon. While the flame lasts, the weapon inflicts 2
+            additional points of damage. Enabler.`,
+            cost: { attribute: Attribute.INTELLECT, value: 4 },
+            upgrade: (char) => char.abilities.push('Flameblade'),
+          },
+        ]
       },
       {
-        name: 'Fire Tendrils',
         level: 5,
-        type: ActionType.ENABLER,
-        description: `When you wish it, your halo sprouts three tendrils of flame that last for up to ten minutes. 
-        As an action, you can use the tendrils to attack, making a separate attack roll for each. 
-        Each tendril inflicts 4 points of damage.
-        Otherwise, the attacks function as standard attacks. 
-        If you don’t use the tendrils to attack, they remain but do nothing. Enabler.`,
-        cost: { attribute: Attribute.INTELLECT, value: 5 },
-        upgrade: (char) => char.abilities.push('Fire Tendrils'),
+        abilities: [
+          {
+            name: 'Fire Tendrils',
+            type: ActionType.ENABLER,
+            description: `When you wish it, your halo sprouts three tendrils of flame that last for up to ten minutes. 
+            As an action, you can use the tendrils to attack, making a separate attack roll for each. 
+            Each tendril inflicts 4 points of damage.
+            Otherwise, the attacks function as standard attacks. 
+            If you don’t use the tendrils to attack, they remain but do nothing. Enabler.`,
+            cost: { attribute: Attribute.INTELLECT, value: 5 },
+            upgrade: (char) => char.abilities.push('Fire Tendrils'),
+          },
+        ]
       },
       {
-        name: 'Fire Servant',
         level: 6,
-        type: ActionType.ACTION,
-        description: `You reach into your halo
-        and produce an automaton of fire
-        that is your general shape and size. It
-        acts as you direct each round. Directing
-        the servant is an action, and you can
-        command it only when you are within
-        long range of it. Without a command, the
-        servant continues to follow your previous
-        command. You can also give it a simple
-        programmed action, such as “Wait here,
-        and attack anyone who comes within
-        short range until they’re dead.” The servant
-        lasts for ten minutes, is a level 5 creature,
-        and deals 1 extra point of damage
-        from fire when it attacks. Action to
-        create; action to direct.`,
-        cost: { attribute: Attribute.INTELLECT, value: 6 },
-        upgrade: (char) => char.abilities.push('Fire Servant'),
-      },
-      {
-        name: 'Inferno Trail',
-        level: 6,
-        type: ActionType.ACTION,
-        description: `For the next
-        minute, you leave a trail of flame in your wake.
-        The trail matches your path and lasts for up to
-        a minute, creating a wall of flame about 6 feet
-        (2 m) high that inflicts 5 points of damage to
-        any creature that passes through it, potentially
-        catching them on fire for an additional 1 point of
-        damage each round (if they are flammable) until
-        they spend a round putting out the fire. Action.`,
-        cost: { attribute: Attribute.INTELLECT, value: 6 },
-        upgrade: (char) => char.abilities.push('Inferno Trail'),
-      },
+        abilities: [
+          {
+            name: 'Fire Servant',
+            type: ActionType.ACTION,
+            description: `You reach into your halo
+            and produce an automaton of fire
+            that is your general shape and size. It
+            acts as you direct each round. Directing
+            the servant is an action, and you can
+            command it only when you are within
+            long range of it. Without a command, the
+            servant continues to follow your previous
+            command. You can also give it a simple
+            programmed action, such as “Wait here,
+            and attack anyone who comes within
+            short range until they’re dead.” The servant
+            lasts for ten minutes, is a level 5 creature,
+            and deals 1 extra point of damage
+            from fire when it attacks. Action to
+            create; action to direct.`,
+            cost: { attribute: Attribute.INTELLECT, value: 6 },
+            upgrade: (char) => char.abilities.push('Fire Servant'),
+          },
+          {
+            name: 'Inferno Trail',
+            type: ActionType.ACTION,
+            description: `For the next
+            minute, you leave a trail of flame in your wake.
+            The trail matches your path and lasts for up to
+            a minute, creating a wall of flame about 6 feet
+            (2 m) high that inflicts 5 points of damage to
+            any creature that passes through it, potentially
+            catching them on fire for an additional 1 point of
+            damage each round (if they are flammable) until
+            they spend a round putting out the fire. Action.`,
+            cost: { attribute: Attribute.INTELLECT, value: 6 },
+            upgrade: (char) => char.abilities.push('Inferno Trail'),
+          },
+        ]
+      },      
     ],
   },{
     name: 'Commands Mental Powers',
@@ -209,115 +232,137 @@ const FOCI: Array<Focus> = [
     ],
     tiers: [
       {
-        name: 'Telepathic',
         level: 1,
-        type: ActionType.ACTION,
-        description: `You can speak telepathically with others who are within short
-        range. Communication is two-way, but the other party must be willing and able to communicate.
-        You don’t have to see the target, but you must know that it’s within range. You can have more
-        than one active contact at once, but you must establish contact with each target individually.
-        Each contact lasts up to ten minutes. If you apply a level of Effort to increase the duration rather than
-        affect the difficulty, the contact lasts for 28 hours.
-        Action to establish contact.`,
-        cost: { attribute: Attribute.INTELLECT, value: 1 },
-        upgrade: (char) => console.log(char),
+        abilities: [
+          {
+            name: 'Telepathic',
+            type: ActionType.ACTION,
+            description: `You can speak telepathically with others who are within short
+            range. Communication is two-way, but the other party must be willing and able to communicate.
+            You don’t have to see the target, but you must know that it’s within range. You can have more
+            than one active contact at once, but you must establish contact with each target individually.
+            Each contact lasts up to ten minutes. If you apply a level of Effort to increase the duration rather than
+            affect the difficulty, the contact lasts for 28 hours.
+            Action to establish contact.`,
+            cost: { attribute: Attribute.INTELLECT, value: 1 },
+            upgrade: (char) => console.log(char),
+          },
+        ]
       },
       {
-        name: 'Mind Reading',
         level: 2,
-        type: ActionType.ACTION,
-        description: `You can read the surface thoughts of a creature within
-        short range, even if the target doesn’t want you to. You must be able to see your target. Once
-        you have established contact, you can read the target’s thoughts for up to one minute. If you
-        also have the Mind Reading special ability from your type, you can use this ability at long range,
-        and you don’t need to be able to see the target (but you do have to know that the target is
-        within range). Action to initiate.`,
-        cost: { attribute: Attribute.INTELLECT, value: 2 },
-        upgrade: (char) => console.log(char),
+        abilities: [
+          {
+            name: 'Mind Reading',
+            type: ActionType.ACTION,
+            description: `You can read the surface thoughts of a creature within
+            short range, even if the target doesn’t want you to. You must be able to see your target. Once
+            you have established contact, you can read the target’s thoughts for up to one minute. If you
+            also have the Mind Reading special ability from your type, you can use this ability at long range,
+            and you don’t need to be able to see the target (but you do have to know that the target is
+            within range). Action to initiate.`,
+            cost: { attribute: Attribute.INTELLECT, value: 2 },
+            upgrade: (char) => console.log(char),
+          },
+        ]
       },
       {
-        name: 'Psychic Burst',
         level: 3,
-        type: ActionType.ACTION,  
-        description: `You blast waves of mental force into the minds of up to 
-        three targets within short range (make an Intellect roll against each target). 
-        This burst inflicts 3 points of Intellect damage (and thus ignores Armor). 
-        For each 2 additional Intellect points you spend, you can make an Intellect 
-        attack roll against an additional target. Action.`,
-        cost: { attribute: Attribute.INTELLECT, value: 3 },
-        upgrade: (char) => console.log(char),
+        abilities: [
+          {
+            name: 'Psychic Burst',
+            type: ActionType.ACTION,  
+            description: `You blast waves of mental force into the minds of up to 
+            three targets within short range (make an Intellect roll against each target). 
+            This burst inflicts 3 points of Intellect damage (and thus ignores Armor). 
+            For each 2 additional Intellect points you spend, you can make an Intellect 
+            attack roll against an additional target. Action.`,
+            cost: { attribute: Attribute.INTELLECT, value: 3 },
+            upgrade: (char) => console.log(char),
+          },
+          {
+            name: 'Psychic Suggestion',
+            type: ActionType.ACTION,
+            description: `You attempt to make the target take the action you
+            indicate on its next turn. If the action you wish the target to take would cause direct harm to
+            the target or its allies, your mental attack is hindered. Action.`,
+            cost: { attribute: Attribute.INTELLECT, value: 4 },
+            upgrade: (char) => console.log(char),
+          },
+        ]
       },
       {
-        name: 'Psychic Suggestion',
-        level: 3,
-        type: ActionType.ACTION,
-        description: `You attempt to make the target take the action you
-        indicate on its next turn. If the action you wish the target to take would cause direct harm to
-        the target or its allies, your mental attack is hindered. Action.`,
-        cost: { attribute: Attribute.INTELLECT, value: 4 },
-        upgrade: (char) => console.log(char),
-      },
-      {
-        name: 'Use Senses of Others',
         level: 4,
-        type: ActionType.ACTION,
-        description: `You can see, hear, smell, touch, and taste through the senses of anyone with whom
-        you have telepathic contact. You can attempt to use this ability on a willing or unwilling
-        target within long range; an unwilling target can try to resist. You don’t need to see the
-        target, but you must know that it’s within range. Your shared senses last ten minutes.
-        Action to establish.`,
-        cost: { attribute: Attribute.INTELLECT, value: 4 },
-        upgrade: (char) => console.log(char),
+        abilities: [
+          {
+            name: 'Use Senses of Others',
+            type: ActionType.ACTION,
+            description: `You can see, hear, smell, touch, and taste through the senses of anyone with whom
+            you have telepathic contact. You can attempt to use this ability on a willing or unwilling
+            target within long range; an unwilling target can try to resist. You don’t need to see the
+            target, but you must know that it’s within range. Your shared senses last ten minutes.
+            Action to establish.`,
+            cost: { attribute: Attribute.INTELLECT, value: 4 },
+            upgrade: (char) => console.log(char),
+          },
+        ]
       },
       {
-        name: 'Precognition',
         level: 5,
-        type: ActionType.ENABLER,
-        description: `You dimly sense the future for the next ten
-        minutes. This has the following effects until the duration expires:
-        Your defense tasks gain an asset.
-        You can predict the actions of those around you. You gain an asset to seeing through
-        deceptions and attempts to betray you as well as avoiding traps and ambushes.
-        You know what people are probably thinking and what they will say before they say it, which
-        gives you an edge. You gain an asset to all interaction skills.
-        Enabler.`,
-        cost: { attribute: Attribute.INTELLECT, value: 6 },
-        upgrade: (char) => console.log(char),
+        abilities: [
+          {
+            name: 'Precognition',
+            type: ActionType.ENABLER,
+            description: `You dimly sense the future for the next ten
+            minutes. This has the following effects until the duration expires:
+            Your defense tasks gain an asset.
+            You can predict the actions of those around you. You gain an asset to seeing through
+            deceptions and attempts to betray you as well as avoiding traps and ambushes.
+            You know what people are probably thinking and what they will say before they say it, which
+            gives you an edge. You gain an asset to all interaction skills.
+            Enabler.`,
+            cost: { attribute: Attribute.INTELLECT, value: 6 },
+            upgrade: (char) => console.log(char),
+          },
+        ]
       },
       {
-        name: 'Mind Control',
         level: 6,
-        type: ActionType.ACTION,
-        description: `You control the actions of another creature you touch. This
-        effect lasts for one minute. The target must be level 2 or lower. Once you have established
-        control, you maintain mental contact with the target and sense what it senses. You can allow it
-        to act freely or override its control on a case-bycase basis. In addition to the normal options
-        for using Effort, you can choose to use Effort to increase the maximum level of the target or
-        increase the duration by one minute. Thus, to control the mind of a level 5 target (three levels
-        above the normal limit) or control a target for four minutes (three levels above the normal
-        duration), you must apply three levels of Effort.
-        If you also have the Mind Control special ability from your type, the normal level limit is 3 rather
-        than 2. When the effect ends, the creature doesn’t remember being controlled or anything it did
-        while under your command. Action to initiate.`,
-        cost: { attribute: Attribute.INTELLECT, value: 6 },
-        upgrade: (char) => console.log(char),
-      },
-      {
-        name: 'Telepathic Network',
-        level: 6,
-        type: ActionType.ENABLER,
-        description: `When you wish it, you can contact up to ten
-        creatures known to you, no matter where they are. All targets must be willing and able to
-        communicate. You automatically succeed at establishing a telepathic network; no roll is
-        required. All creatures in the network are linked and can communicate telepathically with one
-        another. They can also “overhear” anything said in the network, if they wish. Activating this
-        ability doesn’t require an action and doesn’t cost Intellect points; to you, it’s as easy as speaking
-        out loud. The network lasts until you choose to end it. If you spend 5 Intellect points, you can
-        contact twenty creatures at once, and for every 1 Intellect point you spend above that, you can add
-        ten more creatures to the network. These larger networks last for ten minutes. Creating a network
-        of twenty or more creatures does require an action to establish contact. Enabler.`,
-        cost: { attribute: Attribute.INTELLECT, value: 0 },
-        upgrade: (char) => console.log(char),
+        abilities: [
+          {
+            name: 'Mind Control',
+            type: ActionType.ACTION,
+            description: `You control the actions of another creature you touch. This
+            effect lasts for one minute. The target must be level 2 or lower. Once you have established
+            control, you maintain mental contact with the target and sense what it senses. You can allow it
+            to act freely or override its control on a case-bycase basis. In addition to the normal options
+            for using Effort, you can choose to use Effort to increase the maximum level of the target or
+            increase the duration by one minute. Thus, to control the mind of a level 5 target (three levels
+            above the normal limit) or control a target for four minutes (three levels above the normal
+            duration), you must apply three levels of Effort.
+            If you also have the Mind Control special ability from your type, the normal level limit is 3 rather
+            than 2. When the effect ends, the creature doesn’t remember being controlled or anything it did
+            while under your command. Action to initiate.`,
+            cost: { attribute: Attribute.INTELLECT, value: 6 },
+            upgrade: (char) => console.log(char),
+          },
+          {
+            name: 'Telepathic Network',
+            type: ActionType.ENABLER,
+            description: `When you wish it, you can contact up to ten
+            creatures known to you, no matter where they are. All targets must be willing and able to
+            communicate. You automatically succeed at establishing a telepathic network; no roll is
+            required. All creatures in the network are linked and can communicate telepathically with one
+            another. They can also “overhear” anything said in the network, if they wish. Activating this
+            ability doesn’t require an action and doesn’t cost Intellect points; to you, it’s as easy as speaking
+            out loud. The network lasts until you choose to end it. If you spend 5 Intellect points, you can
+            contact twenty creatures at once, and for every 1 Intellect point you spend above that, you can add
+            ten more creatures to the network. These larger networks last for ten minutes. Creating a network
+            of twenty or more creatures does require an action to establish contact. Enabler.`,
+            cost: { attribute: Attribute.INTELLECT, value: 0 },
+            upgrade: (char) => console.log(char),
+          },
+        ]
       },
     ],
   },
