@@ -19,12 +19,12 @@ interface Ability {
 /**
  * The Abilities a character gets, sorted per Tier.
  */
-interface AbilityTier {
+interface TierAbility {
   level: number;
   abilities: Ability[];
 }
 
-interface Talent {
+export interface Talent {
   name: string;
   description: string;
   type: ActionType;
@@ -65,6 +65,6 @@ export interface CharacterType {
   description?: string;
   attributes: Array<{ type: Attribute; value: number }>;
   edges: Array<{ type: Attribute; value: number }>;
-  tiers: Array<AbilityTier>;
+  tiers: Array<TierAbility>;
   talents: Talents;
 }
