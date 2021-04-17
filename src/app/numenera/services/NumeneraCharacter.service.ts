@@ -51,29 +51,64 @@ export class NumeneraCharacterService {
     this.character$.next(this.character);
   }
 
-  set description(description: Descriptor) {
-    this.character.descriptor = description;
-
-    description.benefits.forEach(benefit => {
-      benefit.upgrade(this.character);
-    });
-
+  set descriptor(descriptor: Descriptor) {
+    this.resetChar('descriptor');
+    this.setDescriptor(descriptor);
     this.character$.next(this.character);
   }
 
   set focus(focus: Focus) {
-    this.character.focus = focus;
-
-    focus.benefits.forEach(benefit => {
-      benefit.upgrade(this.character);
-    });
-    
+    this.resetChar('focus');
+    this.setFocus(focus);    
     this.character$.next(this.character);
   }
 
   set type(type: CharacterType) {
-    this.character.type = type;
+    this.resetChar('type');
+    this.setCharType(type);
+    this.character$.next(this.character);
+  }
 
+  set name(name: string) {
+    this.character.name = name;
+    this.character$.next(this.character);
+  }
+
+  /**
+   * Replace the old character with a new, empty one.
+   * @param disregard Disregard setting a part of the new character (type, focus, etc.).
+   */
+  private resetChar(disregard: string): void {    
+    const desc = this.character.descriptor;
+    const focus = this.character.focus;
+    const type = this.character.type;
+    const name = this.character.name;
+
+    this.character = new NumeneraCharacter();
+    this.character.name = name;
+    
+    if (disregard !== 'descriptor' && desc) {
+      this.setDescriptor(desc);
+    }
+
+    if (disregard !== 'focus' && focus) {
+      this.setFocus(focus);
+    }
+
+    if (disregard !== 'type' && type) {
+      this.setCharType(type);
+    }
+  }
+
+  private setDescriptor(desc: Descriptor) {
+    this.character.descriptor = desc;
+    desc.benefits.forEach(benefit => {
+      benefit.upgrade(this.character);
+    });
+  }
+
+  private setCharType(type: CharacterType) {
+    this.character.type = type;
     type.tiers.forEach(tier => {
       if (tier.level === 1) {
         tier.abilities.forEach(ability => {
@@ -81,12 +116,12 @@ export class NumeneraCharacterService {
         });
       }
     });
-
-    this.character$.next(this.character);
   }
 
-  set name(name: string) {
-    this.character.name = name;
-    this.character$.next(this.character);
+  private setFocus(focus: Focus) {
+    this.character.focus = focus;
+    focus.benefits.forEach(benefit => {
+      benefit.upgrade(this.character);
+    });
   }
 }

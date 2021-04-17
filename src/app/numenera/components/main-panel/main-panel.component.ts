@@ -33,7 +33,7 @@ export class MainPanelComponent {
   }
 
   onChangeDesc(event: MatSelectChange): void {
-    this.service.description = <Descriptor>event.value;
+    this.service.descriptor = <Descriptor>event.value;
   }
 
   onChangeFocus(event: MatSelectChange): void {
