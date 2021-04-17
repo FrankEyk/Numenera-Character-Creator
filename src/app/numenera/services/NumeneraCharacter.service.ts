@@ -123,5 +123,11 @@ export class NumeneraCharacterService {
     focus.benefits.forEach(benefit => {
       benefit.upgrade(this.character);
     });
+
+    focus.tiers.forEach(tier => {
+      if (tier.level === 1) {
+        tier.upgrade(this.character);
+      }
+    });
   }
 }

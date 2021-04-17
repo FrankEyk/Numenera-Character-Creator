@@ -53,6 +53,7 @@ const FOCI: Array<Focus> = [
         only against damage from fire from another source.
         Enabler.`,
         cost: { attribute: Attribute.INTELLECT, value: 1 },
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Hurl Flame',
@@ -69,6 +70,7 @@ const FOCI: Array<Focus> = [
           type: ActionType.ENABLER,
           upgrade: (char) => console.log(char),
         },
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Fiery Hand of Doom',
@@ -89,6 +91,7 @@ const FOCI: Array<Focus> = [
         fire when it attacks. Once created, the hand lasts
         for ten minutes. Action to create; action to direct.`,
         cost: { attribute: Attribute.INTELLECT, value: 3 },
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Flameblade',
@@ -100,6 +103,7 @@ const FOCI: Array<Focus> = [
         weapon. While the flame lasts, the weapon inflicts 2
         additional points of damage. Enabler.`,
         cost: { attribute: Attribute.INTELLECT, value: 4 },
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Firre Tendrils',
@@ -111,6 +115,7 @@ const FOCI: Array<Focus> = [
         Otherwise, the attacks function as standard attacks. 
         If you don’t use the tendrils to attack, they remain but do nothing. Enabler.`,
         cost: { attribute: Attribute.INTELLECT, value: 5 },
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Fire Servant',
@@ -133,6 +138,7 @@ const FOCI: Array<Focus> = [
         from fire when it attacks. Action to
         create; action to direct.`,
         cost: { attribute: Attribute.INTELLECT, value: 6 },
+        upgrade: (char) => console.log(char),
       },
     ],
   },
@@ -174,6 +180,7 @@ const FOCI: Array<Focus> = [
           type: ActionType.ENABLER,
           upgrade: (char) => console.log(char),
         },
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Covering Fire',
@@ -187,6 +194,7 @@ const FOCI: Array<Focus> = [
           type: ActionType.ENABLER,
           upgrade: (char) => console.log(char),
         },
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Trained Archer',
@@ -199,6 +207,7 @@ const FOCI: Array<Focus> = [
           type: ActionType.ENABLER,
           upgrade: (char) => console.log(char),
         },
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Quick Shot',
@@ -211,18 +220,21 @@ const FOCI: Array<Focus> = [
           type: ActionType.ENABLER,
           upgrade: (char) => console.log(char),
         },
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Phenomenal Archer',
         level: 5,
         type: ActionType.ENABLER,
         description: `You are specialized in using bows. Enabler.`,
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Powerful Shot',
         level: 6,
         type: ActionType.ENABLER,
         description: `You inflict 3 additional points of damage with a bow. The Might points spent to use this ability are in addition to any Speed points spent on the attack. Enabler.`,
+        upgrade: (char) => console.log(char),
       },
     ],
   },
@@ -282,6 +294,7 @@ const FOCI: Array<Focus> = [
         rather than affect the difficulty, the contact lasts for
         28 hours. Action to establish contact.`,
         cost: { attribute: Attribute.INTELLECT, value: 1 },
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Mind Reading',
@@ -297,6 +310,7 @@ const FOCI: Array<Focus> = [
         be able to see the target (but you do have to know
         that the target is within range). Action to initiate.`,
         cost: { attribute: Attribute.INTELLECT, value: 2 },
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Psychic Burst',
@@ -309,6 +323,7 @@ const FOCI: Array<Focus> = [
         additional Intellect points you spend, you can make an
         Intellect attack roll against an additional target. Action.`,
         cost: { attribute: Attribute.INTELLECT, value: 3 },
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Use Senses of Others',
@@ -322,6 +337,7 @@ const FOCI: Array<Focus> = [
         target, but you must know that it’s within range. Your
         shared senses last ten minutes. Action to establish.`,
         cost: { attribute: Attribute.INTELLECT, value: 4 },
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Mind Control',
@@ -343,6 +359,7 @@ const FOCI: Array<Focus> = [
         or anything it did while under your command. Action
         to initiate.`,
         cost: { attribute: Attribute.INTELLECT, value: 6 },
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Telepathic Network',
@@ -366,6 +383,7 @@ const FOCI: Array<Focus> = [
         more creatures does require an action to establish
         contact. Enabler.`,
         cost: { attribute: Attribute.INTELLECT, value: 0 },
+        upgrade: (char) => console.log(char),
       },
     ],
   },
@@ -416,6 +434,7 @@ const FOCI: Array<Focus> = [
         its creature type (avian, swimmer, and so on). If your
         beast companion dies, you can hunt in the wild for
         1d6 days to find a new companion. Enabler.`,
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Soothe the Savage',
@@ -434,6 +453,7 @@ const FOCI: Array<Focus> = [
           cost: { attribute: Attribute.INTELLECT, value: 2 },
           upgrade: (char) => console.log(char),
         },
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Mount',
@@ -448,6 +468,7 @@ const FOCI: Array<Focus> = [
         combat or when it takes actions. The mount acts on
         your turn. If your mount dies, you can hunt in the
         wild for 3d6 days to find a new one. Enabler.`,
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Beast Eyes',
@@ -464,6 +485,7 @@ const FOCI: Array<Focus> = [
           type: ActionType.ENABLER,
           upgrade: (char) => console.log(char),
         },
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Beasts Call',
@@ -477,6 +499,7 @@ const FOCI: Array<Focus> = [
         own power, so if you’re in an unreachable place, this
         ability won’t work. Action.`,
         cost: { attribute: Attribute.INTELLECT, value: 5 },
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Control the Savage',
@@ -499,6 +522,7 @@ const FOCI: Array<Focus> = [
           type: ActionType.ENABLER,
           upgrade: (char) => console.log(char),
         },
+        upgrade: (char) => console.log(char),
       },
     ],
   },
@@ -548,12 +572,14 @@ const FOCI: Array<Focus> = [
         twenty minutes and move your normal speed. Action
         to initiate.`,
         cost: { attribute: Attribute.INTELLECT, value: 1 },
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Lessening Gravity`s Pull',
         level: 2,
         type: ActionType.ENABLER,
         description: `By manipulating gravity’s pull on yourself, you gain +1 to your Speed Edge. Enabler.`,
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Gravity Cleave',
@@ -561,6 +587,7 @@ const FOCI: Array<Focus> = [
         type: ActionType.ACTION,
         description: `By manipulating gravity’s pull on yourself, you gain +1 to your Speed Edge. Enabler.`,
         cost: { attribute: Attribute.INTELLECT, value: 3 },
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Field of Gravity',
@@ -568,6 +595,7 @@ const FOCI: Array<Focus> = [
         type: ActionType.ENABLER,
         description: `When you wish it, a field of manipulated gravity around you pulls incoming ranged projectile attacks to the ground. You are immune to such attacks until your turn in the next round. You must be aware of an attack to foil it. This ability does not work on energy attacks. Enabler`,
         cost: { attribute: Attribute.INTELLECT, value: 4 },
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Flight',
@@ -575,6 +603,7 @@ const FOCI: Array<Focus> = [
         type: ActionType.ACTION,
         description: `You can float and fly through the air for one hour. For each level of Effort applied, you can affect one additional creature of your size or smaller. You must touch the creature to bestow the power of flight. You direct the other creature’s movement, and while flying, it must remain within sight of you or fall. In terms of overland movement, a flying creature moves about 20 miles (32 km) per hour and is not affected by terrain. Action to initiate.`,
         cost: { attribute: Attribute.INTELLECT, value: 4 },
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Weight of the World',
@@ -582,6 +611,7 @@ const FOCI: Array<Focus> = [
         type: ActionType.ACTION,
         description: `You can increase a target’s weight dramatically. The target is pulled to the ground and can’t move physically under its own power for one minute. The target must be within short range. For each level of Effort applied, you can affect one additional creature. Action.`,
         cost: { attribute: Attribute.INTELLECT, value: 6 },
+        upgrade: (char) => console.log(char),
       },
     ],
   },
@@ -646,6 +676,7 @@ const FOCI: Array<Focus> = [
         immediate range of the cube, the illusion vanishes.
         Action to create; action to modify.`,
         cost: { attribute: Attribute.INTELLECT, value: 1 },
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Disguise',
@@ -659,6 +690,7 @@ const FOCI: Array<Focus> = [
         must stay within sight of you or lose their disguise.
         Action to create.`,
         cost: { attribute: Attribute.INTELLECT, value: 2 },
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Major Illusion',
@@ -674,6 +706,7 @@ const FOCI: Array<Focus> = [
         needed). If you move beyond immediate range of the
         cube, the illusion vanishes. Action to create.`,
         cost: { attribute: Attribute.INTELLECT, value: 3 },
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Illusory Selves',
@@ -688,6 +721,7 @@ const FOCI: Array<Focus> = [
         permanently or freeze motionless (your choice).
         Action to create.`,
         cost: { attribute: Attribute.INTELLECT, value: 4 },
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Terrifying Image',
@@ -704,6 +738,7 @@ const FOCI: Array<Focus> = [
         means the creature ignores the images, which do not
         hamper it in any way. Action.`,
         cost: { attribute: Attribute.INTELLECT, value: 6 },
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Grandiose Illusion',
@@ -723,6 +758,7 @@ const FOCI: Array<Focus> = [
         of your creation. The illusion lasts for one hour (or
         longer, if you concentrate on it after that time). Action.`,
         cost: { attribute: Attribute.INTELLECT, value: 8 },
+        upgrade: (char) => console.log(char),
       },
     ],
   },
@@ -782,6 +818,7 @@ const FOCI: Array<Focus> = [
           description: `You are trained in identifying the function of any kind of device. Enabler`,
           upgrade: (char) => console.log(char),
         },
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Tinkerer',
@@ -795,12 +832,14 @@ const FOCI: Array<Focus> = [
           description: `One use of any artifact (or one minute of its continuous function) is increased by one level if you use it within the next minute. If you spend 4 additional Intellect points, the use is increased by two levels if you use it within the next minute. Action.`,
           upgrade: (char) => console.log(char),
         },
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Master Crafter',
         level: 3,
         type: ActionType.ENABLER,
         description: `You are trained in the crafting of two more kinds of items, or you are specialized in two kinds of items that you are already trained in. Enabler. `,
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Cyphersmith',
@@ -808,6 +847,7 @@ const FOCI: Array<Focus> = [
         type: ActionType.ENABLER,
         description: `All cyphers you use function at one level higher than normal. If given a week and the right tools, chemicals, and parts, you can tinker with one of your cyphers, transforming it into
         another cypher of the same type (anoetic or occultic) that you had in the past. The GM and player should collaborate to ensure that the transformation is logical—for example, you probably can’t transform a pill into a helmet. Enabler.`,
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Innovator',
@@ -818,12 +858,14 @@ const FOCI: Array<Focus> = [
         collaborate to ensure that the transformation is
         logical—for example, you probably can’t transform a
         pill into a helmet. Enabler.`,
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Inventor',
         level: 6,
         type: ActionType.ENABLER,
         description: `You can create new artifacts in half the time, as if they were two levels lower, by spending  half the normal XP. Enabler.`,
+        upgrade: (char) => console.log(char),
       },
     ],
   },
@@ -872,6 +914,7 @@ const FOCI: Array<Focus> = [
         of attack. You can’t use this ability on your own
         body. Action.`,
         cost: { attribute: Attribute.INTELLECT, value: 1 },
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Repel Metal',
@@ -880,6 +923,7 @@ const FOCI: Array<Focus> = [
         description: `By manipulating magnetism,
         you are trained in Speed defense tasks against any
         incoming attack that uses metal. Enabler.`,
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Destroy Metal',
@@ -893,6 +937,7 @@ const FOCI: Array<Focus> = [
         steps (compared to breaking it with brute strength).
         Action.`,
         cost: { attribute: Attribute.INTELLECT, value: 4 },
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Magnetic Field',
@@ -906,6 +951,7 @@ const FOCI: Array<Focus> = [
         one round. You must be aware of an attack to foil it.
         Enabler.`,
         cost: { attribute: Attribute.INTELLECT, value: 4 },
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Command Metal',
@@ -931,6 +977,7 @@ const FOCI: Array<Focus> = [
         Regardless of the form of the attack, it is an Intellect
         action that deals 7 points of damage. Action.`,
         cost: { attribute: Attribute.INTELLECT, value: 5 },
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Diamagnetism',
@@ -943,6 +990,7 @@ const FOCI: Array<Focus> = [
         you are trained in all Speed defense tasks, regardless
         of whether the incoming attack uses metal. And so
         on. Enabler.`,
+        upgrade: (char) => console.log(char),
       },
     ],
   },
@@ -984,6 +1032,7 @@ const FOCI: Array<Focus> = [
         those involving coercion or intimidation. During
         rests, you put friends and comrades at ease so much
         that they gain +1 to their recovery rolls. Enabler.`,
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Inspiration',
@@ -999,7 +1048,9 @@ const FOCI: Array<Focus> = [
         company within 28 hours. If you leave the friend’s
         company for more than 28 hours, you must spend
         another 28 hours together to reactivate the benefit.
+        upgrade: (char) => console.log(char),
         Enabler.`,
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Knowledge',
@@ -1008,6 +1059,7 @@ const FOCI: Array<Focus> = [
         description: `Your stories and songs contain
         truth. You are trained in two areas of knowledge of
         your choosing. Enabler.`,
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Calm',
@@ -1017,6 +1069,7 @@ const FOCI: Array<Focus> = [
         or other art, you prevent a living foe from attacking
         anyone or anything for one round. Action.`,
         cost: { attribute: Attribute.INTELLECT, value: 3 },
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Able Assistance',
@@ -1026,6 +1079,7 @@ const FOCI: Array<Focus> = [
         with a task, you always reduce the difficulty of the
         task by one step regardless of your own skill at that
         task. Enabler.`,
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Master Entertainer',
@@ -1035,6 +1089,7 @@ const FOCI: Array<Focus> = [
         works more effectively, allowing your friends to
         decrease the difficulty of a task by two steps rather
         than one step. Enabler.`,
+        upgrade: (char) => console.log(char),
       },
     ],
   },
@@ -1086,6 +1141,7 @@ const FOCI: Array<Focus> = [
         entirely through the barrier. You can’t pass through
         energy barriers. Action.`,
         cost: { attribute: Attribute.INTELLECT, value: 2 },
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Defensive Phasing',
@@ -1098,6 +1154,7 @@ const FOCI: Array<Focus> = [
         you lose any benefit from armor you wear. Action
         to initiate.`,
         cost: { attribute: Attribute.INTELLECT, value: 2 },
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Phased Attack',
@@ -1107,6 +1164,7 @@ const FOCI: Array<Focus> = [
         you make on this turn ignores your foe’s armor. The
         ability works for whatever kind of attack you use
         (melee, ranged, energy, and so on). Enabler.`,
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Ghost',
@@ -1120,6 +1178,7 @@ const FOCI: Array<Focus> = [
         barrier or object, which allows you to peek through
         walls. Action to initiate.`,
         cost: { attribute: Attribute.INTELLECT, value: 4 },
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Untouchable',
@@ -1133,6 +1192,7 @@ const FOCI: Array<Focus> = [
         you can’t attack, touch, or otherwise affect anything.
         Action to initiate.`,
         cost: { attribute: Attribute.INTELLECT, value: 6 },
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Enhanced Phase',
@@ -1143,6 +1203,7 @@ const FOCI: Array<Focus> = [
         that your attack also disrupts the foe’s vitals, dealing an
         additional 5 points of damage. Enabler.`,
         cost: { attribute: Attribute.INTELLECT, value: 5 },
+        upgrade: (char) => console.log(char),
       },
     ],
   },
@@ -1195,6 +1256,7 @@ const FOCI: Array<Focus> = [
         level: 1,
         type: ActionType.ENABLER,
         description: `You are trained in searching, listening, climbing, balancing, and jumping tasks. Enabler.`,
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Trained Infiltrator',
@@ -1206,6 +1268,7 @@ const FOCI: Array<Focus> = [
           description: `You can see in extremely dim light as though it were bright light. You can see in total darkness as if it were extremely dim. Enabler.`,
           upgrade: (char) => console.log(char),
         },
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Slippery Customer',
@@ -1216,6 +1279,7 @@ const FOCI: Array<Focus> = [
         other contortionist tasks. Thanks to your experience,
         you also are trained in Speed defense tasks while
         wearing light armor or no armor. Enabler.`,
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Resilient',
@@ -1226,6 +1290,7 @@ const FOCI: Array<Focus> = [
         and are developing a general resistance. You gain
         +1 to Armor and are trained in Might defense tasks.
         Enabler.`,
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Dark Explorer',
@@ -1237,6 +1302,7 @@ const FOCI: Array<Focus> = [
         Adjusted ability, you can act without penalty even in
         total darkness. You are also trained in sneaking tasks
         while in dim or no light. Enabler.`,
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Blinding Attack',
@@ -1248,6 +1314,7 @@ const FOCI: Array<Focus> = [
         no damage, but the target is blinded for one minute.
         Action.`,
         cost: { attribute: Attribute.SPEED, value: 3 },
+        upgrade: (char) => console.log(char),
       },
     ],
   },
@@ -1296,6 +1363,7 @@ const FOCI: Array<Focus> = [
         Choose any number of creatures within short range
         who can see you; each of them gains a +1 bonus to
         its next die roll. Enabler.`,
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Quick Block',
@@ -1304,6 +1372,7 @@ const FOCI: Array<Focus> = [
         description: `If you use a light or medium
         weapon, you decrease the difficulty of your Speed
         defense actions by one step. Enabler.`,
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Acrobatic Attack',
@@ -1317,6 +1386,7 @@ const FOCI: Array<Focus> = [
         damage. You can’t use this ability if your Speed is
         reduced from wearing armor. Enabler.`,
         cost: { attribute: Attribute.SPEED, value: 3 },
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Mobile Fighter',
@@ -1330,6 +1400,7 @@ const FOCI: Array<Focus> = [
         use this ability if your Speed is reduced from wearing
         armor. Enabler.`,
         cost: { attribute: Attribute.SPEED, value: 3 },
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Block for Another',
@@ -1341,6 +1412,7 @@ const FOCI: Array<Focus> = [
         range. You decrease the difficulty of that creature’s
         Speed defense actions by one step. You can’t use
         Quick Block while using Block for Another. Enabler`,
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Agile Wit',
@@ -1352,6 +1424,7 @@ const FOCI: Array<Focus> = [
         can spend points from your Intellect Pool instead
         of your Speed Pool (in which case you also use your
         Intellect Edge instead of your Speed Edge). Enabler.`,
+        upgrade: (char) => console.log(char),
       },
     ],
   },
@@ -1408,6 +1481,7 @@ const FOCI: Array<Focus> = [
         For the next ten minutes, you are trained in Speed
         defense tasks. Action to initiate.`,
         cost: { attribute: Attribute.INTELLECT, value: 1 },
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Telekinesis',
@@ -1429,6 +1503,7 @@ const FOCI: Array<Focus> = [
         The power lasts for one hour or until its Might Pool
         is depleted—whichever comes first. Action.`,
         cost: { attribute: Attribute.INTELLECT, value: 2 },
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Enhance Strenght',
@@ -1441,6 +1516,7 @@ const FOCI: Array<Focus> = [
         easier for you. The difficulty of all such tasks is
         decreased by one step. Action to initiate.`,
         cost: { attribute: Attribute.INTELLECT, value: 3 },
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Apportation',
@@ -1459,6 +1535,7 @@ const FOCI: Array<Focus> = [
         ability to take an item held by another creature.
         Action.`,
         cost: { attribute: Attribute.INTELLECT, value: 4 },
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Psychokinetic Attack',
@@ -1480,6 +1557,7 @@ const FOCI: Array<Focus> = [
         steps (compared to breaking it with brute strength).
         Action.`,
         cost: { attribute: Attribute.INTELLECT, value: 5 },
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Reshape Matter',
@@ -1497,6 +1575,7 @@ const FOCI: Array<Focus> = [
         into another form. Reshaping an object usually has a
         difficulty equal to 1 plus the level of the finished object.`,
         cost: { attribute: Attribute.INTELLECT, value: 6 },
+        upgrade: (char) => console.log(char),
       },
     ],
   },
@@ -1568,6 +1647,7 @@ const FOCI: Array<Focus> = [
           points must be restored using repairing methods.`,
           upgrade: (char) => console.log(char),
         },
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Interface',
@@ -1576,6 +1656,7 @@ const FOCI: Array<Focus> = [
         description: `By directly plugging into a device,
         you can identify and learn to operate it as though the
         task were one level lower. Enabler.`,
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Weaponization',
@@ -1586,6 +1667,7 @@ const FOCI: Array<Focus> = [
         you are trained in this weapon (even if you are not
         trained in other weapons of that type). The weapon is
         concealed until you wish to use it. Enabler.`,
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Fusion',
@@ -1594,6 +1676,7 @@ const FOCI: Array<Focus> = [
         description: `You can fuse your cyphers and
         artifacts with your body. These fused devices function
         as if they were one level higher. Enabler.`,
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Deep Reserves',
@@ -1605,12 +1688,14 @@ const FOCI: Array<Focus> = [
         example, you could transfer 3 points of Might to
         Speed and 2 points of Intellect to Speed, which
         would take a total of five rounds. Action.`,
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Ultra Enhancement',
         level: 6,
         type: ActionType.ENABLER,
         description: `You gain +1 to Armor and +5 to each of your three stat Pools. Enabler.`,
+        upgrade: (char) => console.log(char),
       },
     ],
   },
@@ -1671,6 +1756,7 @@ const FOCI: Array<Focus> = [
         kill and eat at least one substantial creature while in
         beast form, the penalty increases to –2 and affects all
         your rolls for the next 28 hours. Action to change back.`,
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Controlled Change',
@@ -1681,6 +1767,7 @@ const FOCI: Array<Focus> = [
         Intellect task). Any transformations you make using
         this power are in addition to the five nights per month
         that you change involuntarily. Action to change.`,
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Greater Beast Form',
@@ -1690,6 +1777,7 @@ const FOCI: Array<Focus> = [
         the following additional bonuses: +1 to your Might
         Edge, +2 to your Speed Pool, and +1 to your Speed
         Edge. Enabler.`,
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Greatewr Controlled Change',
@@ -1700,6 +1788,7 @@ const FOCI: Array<Focus> = [
         Transforming into your beast form or back to your
         normal form is now a difficulty 1 Intellect task.
         Enabler.`,
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Enhanced Beast Form',
@@ -1709,6 +1798,7 @@ const FOCI: Array<Focus> = [
         the following additional bonuses: +3 to your Might
         Pool, +2 to your Speed Pool, and +2 to Armor.
         Enabler`,
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Perfect Control',
@@ -1719,6 +1809,7 @@ const FOCI: Array<Focus> = [
         form. You can change back and forth as your action.
         When you return to your normal form, you no longer
         take a penalty to your rolls. Enabler`,
+        upgrade: (char) => console.log(char),
       },
     ],
   },
@@ -1766,6 +1857,7 @@ const FOCI: Array<Focus> = [
           description: `You are trained in all types of movement tasks (including climbing, swimming, jumping, and balancing). Enabler`,
           upgrade: (char) => console.log(char),
         },
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Sneak',
@@ -1782,6 +1874,7 @@ const FOCI: Array<Focus> = [
           cost: { attribute: Attribute.SPEED, value: 2 },
           upgrade: (char) => console.log(char),
         },
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Quarry',
@@ -1794,6 +1887,7 @@ const FOCI: Array<Focus> = [
         creature. You can have only one quarry at a time.
         Action to initiate.`,
         cost: { attribute: Attribute.INTELLECT, value: 2 },
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Surprise Attack',
@@ -1804,6 +1898,7 @@ const FOCI: Array<Focus> = [
         acted, you decrease the difficulty of your attack by
         one step. On a successful hit, you inflict 2 additional
         points of damage. Enabler.`,
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Hunter`s Drive',
@@ -1817,6 +1912,7 @@ const FOCI: Array<Focus> = [
         Your quarry is the creature you selected with your
         third-tier ability. Enabler.`,
         cost: { attribute: Attribute.INTELLECT, value: 5 },
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Multiple Quarry',
@@ -1829,6 +1925,7 @@ const FOCI: Array<Focus> = [
         when you initiate this ability. Your Hunter’s Drive
         ability applies to all three creatures. Action to initiate.`,
         cost: { attribute: Attribute.INTELLECT, value: 6 },
+        upgrade: (char) => console.log(char),
       },
     ],
   },
@@ -1887,6 +1984,7 @@ const FOCI: Array<Focus> = [
           cost: { attribute: Attribute.INTELLECT, value: 1 },
           upgrade: (char) => console.log(char),
         },
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Follower',
@@ -1901,6 +1999,7 @@ const FOCI: Array<Focus> = [
         6, and it inflicts 2 points of damage. If the follower
         dies, you gain a new one after at least two weeks and
         proper recruitment. Enabler.`,
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Command',
@@ -1924,6 +2023,7 @@ const FOCI: Array<Focus> = [
           description: `Your first follower increases to level 3. As a level 3 follower, it has a target number of 9 and a health of 9, and it inflicts 3 points of damage. Enabler.`,
           upgrade: (char) => console.log(char),
         },
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Captivate or Inspire',
@@ -1945,6 +2045,7 @@ const FOCI: Array<Focus> = [
           damage. Enabler.`,
           upgrade: (char) => console.log(char),
         },
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Band of Followers',
@@ -1957,6 +2058,7 @@ const FOCI: Array<Focus> = [
         these followers. If a follower dies, you gain a new
         one after at least two weeks and proper recruitment.
         Enabler.`,
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Mind of a Leader',
@@ -1977,6 +2079,7 @@ const FOCI: Array<Focus> = [
           level 3. Enabler.`,
           upgrade: (char) => console.log(char),
         },
+        upgrade: (char) => console.log(char),
       },
     ],
   },
@@ -2025,6 +2128,7 @@ const FOCI: Array<Focus> = [
           description: `You are trained in wilderness navigation and in identifying plants and creatures. Enabler.`,
           upgrade: (char) => console.log(char),
         },
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Living of the Land',
@@ -2039,6 +2143,7 @@ const FOCI: Array<Focus> = [
         (such as those from plants or living creatures)
         is decreased by one step. You’re also immune to
         natural diseases. Enabler.`,
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Animal Senses and Sensibilities',
@@ -2058,6 +2163,7 @@ const FOCI: Array<Focus> = [
           Enabler.`,
           upgrade: (char) => console.log(char),
         },
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Wilderness Awareness',
@@ -2072,6 +2178,7 @@ const FOCI: Array<Focus> = [
         alive?” If the answer you seek is not in the area, you
         receive no information. Action.`,
         cost: { attribute: Attribute.INTELLECT, value: 4 },
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'The Wild Is on Your Side',
@@ -2084,6 +2191,7 @@ const FOCI: Array<Focus> = [
         is increased by one step. This effect lasts for ten
         minutes. Action to initiate.`,
         cost: { attribute: Attribute.INTELLECT, value: 5 },
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'On With the Wild',
@@ -2103,6 +2211,7 @@ const FOCI: Array<Focus> = [
           Enabler.`,
           upgrade: (char) => console.log(char),
         },
+        upgrade: (char) => console.log(char),
       },
     ],
   },
@@ -2145,6 +2254,7 @@ const FOCI: Array<Focus> = [
         you are trained in Speed defense tasks. However, in
         any round in which you use this benefit, the difficulty of
         your attacks increases by one step. Enabler.`,
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Sturdy',
@@ -2156,6 +2266,7 @@ const FOCI: Array<Focus> = [
           description: `When you wear any armor, you reduce the armor’s penalties (Might cost per hour and Speed reduction) by 1. Enabler.`,
           upgrade: (char) => console.log(char),
         },
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Doge and Resist',
@@ -2165,6 +2276,7 @@ const FOCI: Array<Focus> = [
         reroll any of your Might, Speed, or Intellect defensive
         rolls and take the better of the two results. Enabler.`,
         cost: { attribute: Attribute.SPEED, value: 3 },
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Tower of Will',
@@ -2178,6 +2290,7 @@ const FOCI: Array<Focus> = [
           and Speed reduction) to 0. Enabler.`,
           upgrade: (char) => console.log(char),
         },
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Nothing but Defend',
@@ -2186,6 +2299,7 @@ const FOCI: Array<Focus> = [
         description: `If you do nothing on
         your turn other than defend, you are specialized in
         all defensive tasks for that one round. Action.`,
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Defense Master',
@@ -2198,6 +2312,7 @@ const FOCI: Array<Focus> = [
         unarmed) as the attack you defend against. If you
         don’t have an appropriate type of weapon ready, you
         can’t use this ability. Enabler.`,
+        upgrade: (char) => console.log(char),
       },
     ],
   },
@@ -2260,6 +2375,7 @@ const FOCI: Array<Focus> = [
         level: 1,
         type: ActionType.ENABLER,
         description: `You gain a +1 bonus to damage with your chosen weapon. Enabler.`,
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Weapon Defense',
@@ -2268,6 +2384,7 @@ const FOCI: Array<Focus> = [
         description: `While your chosen weapon
         is in your hand or hands, you are trained in Speed
         defense rolls. Enabler.`,
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Rapid Attack',
@@ -2277,6 +2394,7 @@ const FOCI: Array<Focus> = [
         round, you can make an additional attack with your
         chosen weapon. Enabler.`,
         cost: { attribute: Attribute.SPEED, value: 3 },
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Never Fumble',
@@ -2287,6 +2405,7 @@ const FOCI: Array<Focus> = [
         or countermand the GM’s intrusion for that roll. You
         can never be disarmed of your chosen weapon, nor
         will you ever drop it accidentally. Enabler.`,
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Extreme Mastery',
@@ -2296,6 +2415,7 @@ const FOCI: Array<Focus> = [
         using your chosen weapon, you can reroll any attack
         roll you wish and take the better of the two results.
         Enabler`,
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Damage Dealer',
@@ -2310,6 +2430,7 @@ const FOCI: Array<Focus> = [
           description: `If you strike a foe of level 3 or less with your chosen weapon, you kill the target instantly. Action.`,
           upgrade: (char) => console.log(char),
         },
+        upgrade: (char) => console.log(char),
       },
     ],
   },
@@ -2360,6 +2481,7 @@ const FOCI: Array<Focus> = [
           description: `You are trained in stealth and disguise tasks. Enabler`,
           upgrade: (char) => console.log(char),
         },
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Quick Death',
@@ -2370,6 +2492,7 @@ const FOCI: Array<Focus> = [
         attack, you deal 4 additional points of damage. You
         can’t make this attack in two consecutive rounds.
         Action.`,
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Poison Crafter',
@@ -2382,6 +2505,7 @@ const FOCI: Array<Focus> = [
           description: `You are trained in all interactions involving lies or trickery. Enabler.`,
           upgrade: (char) => console.log(char),
         },
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Better Surprise Attack',
@@ -2395,6 +2519,7 @@ const FOCI: Array<Focus> = [
         These effects add to those from Surprise Attack,
         giving you a total decrease of two steps and a total of
         4 additional points of damage. Enabler.`,
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Slayer',
@@ -2404,6 +2529,7 @@ const FOCI: Array<Focus> = [
         sudden attack, you strike a foe in a vital spot. If the
         target is level 3 or less, it is slain outright. Action.`,
         cost: { attribute: Attribute.SPEED, value: 5 },
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Escape Plan',
@@ -2413,6 +2539,7 @@ const FOCI: Array<Focus> = [
         attempt a sneaking action to immediately hide from
         anyone around, assuming that a suitable hiding
         place is nearby. Enabler.`,
+        upgrade: (char) => console.log(char),
       },
     ],
   },
@@ -2451,6 +2578,7 @@ const FOCI: Array<Focus> = [
         Edge. This effect lasts for as long as you wish, but
         it ends if no combat is taking place within range of
         your senses. Enabler.`,
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Hardy',
@@ -2465,6 +2593,7 @@ const FOCI: Array<Focus> = [
           description: `You are trained in climbing and jumping tasks. Enabler.`,
           upgrade: (char) => console.log(char),
         },
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Power Strike',
@@ -2482,6 +2611,7 @@ const FOCI: Array<Focus> = [
           description: `While unarmored, you are trained in Speed defense tasks. Enabler.`,
           upgrade: (char) => console.log(char),
         },
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Greater Frenzy',
@@ -2496,6 +2626,7 @@ const FOCI: Array<Focus> = [
         your senses. You can use this ability or your first-tier
         Frenzy ability, but you can’t use both at the same
         time. Enabler.`,
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Attack and Attack Again',
@@ -2506,12 +2637,14 @@ const FOCI: Array<Focus> = [
         natural 17 or higher on your attack roll allows you
         the option of immediately making another attack.
         Enabler`,
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Tough and Fast',
         level: 6,
         type: ActionType.ENABLER,
         description: `You gain +6 to your Might Pool and your Speed Pool. Enabler.`,
+        upgrade: (char) => console.log(char),
       },
     ],
   },
@@ -2586,6 +2719,7 @@ const FOCI: Array<Focus> = [
           cost: { attribute: Attribute.INTELLECT, value: 1 },
           upgrade: (char) => console.log(char),
         },
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Bolt Rider',
@@ -2596,6 +2730,7 @@ const FOCI: Array<Focus> = [
         instantaneously, carried by a bolt of lightning. You
         must be able to see the new location, and there must
         be no intervening barriers. Action.`,
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Lightning Swift',
@@ -2616,6 +2751,7 @@ const FOCI: Array<Focus> = [
           Action to initiate; action each round to drain.`,
           upgrade: (char) => console.log(char),
         },
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Bolts of Power',
@@ -2631,6 +2767,7 @@ const FOCI: Array<Focus> = [
         targets in the area take 1 point of damage even if you
         fail the attack roll. Action.`,
         cost: { attribute: Attribute.INTELLECT, value: 5 },
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Electrical Flight',
@@ -2641,6 +2778,7 @@ const FOCI: Array<Focus> = [
         minutes. You can’t carry other creatures with you.
         Action to activate.`,
         cost: { attribute: Attribute.INTELLECT, value: 5 },
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Wall of Lightning',
@@ -2653,6 +2791,7 @@ const FOCI: Array<Focus> = [
         distance of the wall automatically takes 10 points of
         damage. The wall lasts for one hour. Action to create.`,
         cost: { attribute: Attribute.INTELLECT, value: 6 },
+        upgrade: (char) => console.log(char),
       },
     ],
   },
@@ -2712,6 +2851,7 @@ const FOCI: Array<Focus> = [
           intelligent itself). Action.`,
           upgrade: (char) => console.log(char),
         },
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Coaxing Power',
@@ -2731,6 +2871,7 @@ const FOCI: Array<Focus> = [
           chance that it won’t explode. Action to initiate.`,
           upgrade: (char) => console.log(char),
         },
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Intelligent Interface',
@@ -2743,6 +2884,7 @@ const FOCI: Array<Focus> = [
         automatons that normally would never communicate
         with a human might talk to you. Enabler.`,
         cost: { attribute: Attribute.INTELLECT, value: 3 },
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Machine Companion',
@@ -2761,6 +2903,7 @@ const FOCI: Array<Focus> = [
           defense. Enabler.`,
           upgrade: (char) => console.log(char),
         },
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Information Gathering',
@@ -2775,6 +2918,7 @@ const FOCI: Array<Focus> = [
         bear?” and if the creature is within a mile of you, one or
         more machines will probably provide the answer. Action`,
         cost: { attribute: Attribute.INTELLECT, value: 5 },
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Control Machine',
@@ -2785,6 +2929,7 @@ const FOCI: Array<Focus> = [
         otherwise, within short range. This effect lasts ten
         minutes. Action.`,
         cost: { attribute: Attribute.INTELLECT, value: 6 },
+        upgrade: (char) => console.log(char),
       },
     ],
   },
@@ -2847,6 +2992,7 @@ const FOCI: Array<Focus> = [
         temperatures and have an additional +2 to Armor
         versus cold damage specifically. Enabler.`,
         cost: { attribute: Attribute.INTELLECT, value: 1 },
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Frost Touch',
@@ -2859,6 +3005,7 @@ const FOCI: Array<Focus> = [
         minutes, it inflicts 1 additional point of damage from
         the cold. Action for touch; enabler for weapon.`,
         cost: { attribute: Attribute.INTELLECT, value: 1 },
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Freezing Touch',
@@ -2870,6 +3017,7 @@ const FOCI: Array<Focus> = [
         solid a living target of your size or smaller, rendering
         it immobile for one round. Action.`,
         cost: { attribute: Attribute.INTELLECT, value: 4 },
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Resilient Ice Armor',
@@ -2878,6 +3026,7 @@ const FOCI: Array<Focus> = [
         description: `The sheen of ice you
         generate using your Ice Armor ability gives you an
         additional +1 to Armor. Enabler`,
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Cold Burst',
@@ -2892,6 +3041,7 @@ const FOCI: Array<Focus> = [
         targets in the area take 1 point of damage even if you
         fail the attack roll. Action.`,
         cost: { attribute: Attribute.INTELLECT, value: 5 },
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Ice Creation',
@@ -2909,6 +3059,7 @@ const FOCI: Array<Focus> = [
         another PC, the sword won’t last as long for that
         character. Action.`,
         cost: { attribute: Attribute.INTELLECT, value: 6 },
+        upgrade: (char) => console.log(char),
       },
     ],
   },
@@ -2954,6 +3105,7 @@ const FOCI: Array<Focus> = [
         level: 1,
         type: ActionType.ENABLER,
         description: `Your Intellect Pool increases by 5 points. Enabler`,
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Training and Precision',
@@ -2963,6 +3115,7 @@ const FOCI: Array<Focus> = [
         esoteries. As a result, you reduce the difficulty of any
         task involved in the use of an esotery by one step.
         Enabler.`,
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Enhanced Esoteries',
@@ -2973,12 +3126,14 @@ const FOCI: Array<Focus> = [
         have short ranges reach to long range instead. Your
         esoteries that inflict damage deal 1 additional point
         of damage. Enabler.`,
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Greater Repetoire',
         level: 4,
         type: ActionType.ENABLER,
         description: `You can learn one additional esotery of fourth tier or lower. Enabler.`,
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Greater Training',
@@ -2988,12 +3143,14 @@ const FOCI: Array<Focus> = [
         esoteries. As a result, you reduce the difficulty of any
         task involved in the use of an esotery by two steps.
         Enabler.`,
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Supra-Genius',
         level: 6,
         type: ActionType.ENABLER,
         description: `Your Intellect Pool increases by 5, and your Intellect Edge increases by 1. Enabler.`,
+        upgrade: (char) => console.log(char),
       },
     ],
   },
@@ -3044,6 +3201,7 @@ const FOCI: Array<Focus> = [
         that modifies your attack or damage applies to both
         attacks, unless it’s specifically tied to one of the
         weapons. Enabler.`,
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Double Strike',
@@ -3056,6 +3214,7 @@ const FOCI: Array<Focus> = [
         damage, and because you made a single attack, the
         target’s Armor is subtracted only once. Action.`,
         cost: { attribute: Attribute.MIGHT, value: 3 },
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Dual Medium Wield',
@@ -3067,12 +3226,14 @@ const FOCI: Array<Focus> = [
         two separate attacks on your turn as a single action.
         This ability otherwise works like the Dual Light Wield
         ability. Enabler.`,
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Dual Defence',
         level: 4,
         type: ActionType.ENABLER,
         description: `When you wield two weapons, you are trained in Speed defense tasks. Enabler.`,
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Dual Distraction',
@@ -3085,6 +3246,7 @@ const FOCI: Array<Focus> = [
         the difficulty of your next attack is reduced by one
         step. Enabler.`,
         cost: { attribute: Attribute.SPEED, value: 4 },
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Whirling Dervish',
@@ -3101,6 +3263,7 @@ const FOCI: Array<Focus> = [
         applies to all attacks (positively or negatively), unless
         it’s specifically tied to one of the weapons, in which
         case it applies to only half of the attacks. Enabler.`,
+        upgrade: (char) => console.log(char),
       },
     ],
   },
@@ -3144,6 +3307,7 @@ const FOCI: Array<Focus> = [
         difficulty increases by one step. The difficulty returns
         to 2 after that creature rests for ten hours. Action.`,
         cost: { attribute: Attribute.INTELLECT, value: 1 },
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Alleviate',
@@ -3153,6 +3317,7 @@ const FOCI: Array<Focus> = [
         to cancel or cure one malady (such as disease or
         poison) in one creature. Action.`,
         cost: { attribute: Attribute.INTELLECT, value: 3 },
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Font of Healing',
@@ -3163,6 +3328,7 @@ const FOCI: Array<Focus> = [
         their Might Pool or their Speed Pool. This healing costs
         them 2 Intellect points. A single creature can benefit
         from this ability only once each day. Enabler.`,
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Inspiration',
@@ -3173,6 +3339,7 @@ const FOCI: Array<Focus> = [
         you choose within short range is granted an additional,
         immediate action, which it can take out of turn. Action.`,
         cost: { attribute: Attribute.INTELLECT, value: 4 },
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Undo',
@@ -3184,6 +3351,7 @@ const FOCI: Array<Focus> = [
         immediately repeat the same action or try something
         different. Action.`,
         cost: { attribute: Attribute.INTELLECT, value: 5 },
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Greater Healing Touch',
@@ -3193,6 +3361,7 @@ const FOCI: Array<Focus> = [
         Speed Pool, and Intellect Pool to their maximum
         values, as if it were fully rested. A single creature can
         benefit from this ability only once each day. Action.`,
+        upgrade: (char) => console.log(char),
       },
     ],
   },
@@ -3235,6 +3404,7 @@ const FOCI: Array<Focus> = [
         type: ActionType.ENABLER,
         description: `You are trained in sneaking,
         pickpocketing, and lockpicking tasks. Enabler`,
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Underworld COntacts',
@@ -3247,6 +3417,7 @@ const FOCI: Array<Focus> = [
         recognize you as a peer. You and the GM should
         work out the details of your underworld contacts.
         Enabler.`,
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Pull a Fast One',
@@ -3257,6 +3428,7 @@ const FOCI: Array<Focus> = [
         dupe, sneaking something by a guard, and so on, you
         treat the task as if it were one level lower. Enabler.`,
         cost: { attribute: Attribute.INTELLECT, value: 3 },
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Master Thief',
@@ -3265,6 +3437,7 @@ const FOCI: Array<Focus> = [
         description: `You are trained in climbing,
         escaping from bonds, slipping through narrow
         places, and other contortionist moves. Enabler.`,
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Dirty Fighter',
@@ -3276,6 +3449,7 @@ const FOCI: Array<Focus> = [
         As a result, the difficulty of your defense rolls and attack
         rolls against the foe is reduced by one step. Action.`,
         cost: { attribute: Attribute.SPEED, value: 2 },
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Alley Rat',
@@ -3287,6 +3461,7 @@ const FOCI: Array<Focus> = [
         like none existed. You and the GM should work out
         the details. Action.`,
         cost: { attribute: Attribute.INTELLECT, value: 4 },
+        upgrade: (char) => console.log(char),
       },
     ],
   },

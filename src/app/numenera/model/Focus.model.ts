@@ -2,6 +2,7 @@ import { ActionType } from './Ability.model';
 import { Benefit } from './Benefit.model';
 import { Origin } from './Origin.model';
 import { Attribute } from './Type.model';
+import { Upgrade } from './Upgrade.model';
 
 /**
  * As you progress to a new tier, your focus grants you
@@ -13,7 +14,9 @@ interface Tier {
   description: string;
   type: ActionType;
   cost?: { attribute: Attribute; value: number };
+  // TODO: delete benefit (not needed)
   benefit?: Benefit;
+  upgrade: Upgrade;
 }
 
 /**

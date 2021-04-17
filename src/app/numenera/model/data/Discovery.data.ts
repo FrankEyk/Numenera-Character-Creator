@@ -59,6 +59,7 @@ const FOCI: Array<Focus> = [
         only against damage from fire from another source.
         Enabler.`,
         cost: { attribute: Attribute.INTELLECT, value: 1 },
+        upgrade: (char) => char.abilities.push('Shroud of Flame'),
       },
       {
         name: 'Hurl Flame',
@@ -67,6 +68,7 @@ const FOCI: Array<Focus> = [
         description: `While your Shroud of Flame is active, you can reach into your halo and hurl a handful of fire at a target. 
         This is a ranged attack with short range that deals 4 points of fire damage. Action.`,
         cost: { attribute: Attribute.INTELLECT, value: 2 },
+        upgrade: (char) => char.abilities.push('Hurl Flame'),
       },
       {
         name: 'Fiery Power',
@@ -75,6 +77,7 @@ const FOCI: Array<Focus> = [
         description: `When you use the Onslaught force blast esotery or the Flash esotery, increase the damage by 1 point. 
         If you don’t have either of those abilities, this ability has no effect. 
         Fiery Power does not affect damage from the Onslaught mindslice. Enabler.`,
+        upgrade: (char) => char.abilities.push('Fiery Power'),
       },
       {
         name: 'Fiery Hand of Doom',
@@ -95,6 +98,7 @@ const FOCI: Array<Focus> = [
         fire when it attacks. Once created, the hand lasts
         for ten minutes. Action to create; action to direct.`,
         cost: { attribute: Attribute.INTELLECT, value: 3 },
+        upgrade: (char) => char.abilities.push('Fiery Hand of Doom'),
       },
       {
         name: 'Wings of Fire',
@@ -107,6 +111,7 @@ const FOCI: Array<Focus> = [
         one minute. You can also take one other nonmovement
         action on your turn. Action.`,
         cost: { attribute: Attribute.INTELLECT, value: 4 },
+        upgrade: (char) => char.abilities.push('Wings of Fire'),
       },
       {
         name: 'Flameblade',
@@ -118,6 +123,7 @@ const FOCI: Array<Focus> = [
         weapon. While the flame lasts, the weapon inflicts 2
         additional points of damage. Enabler.`,
         cost: { attribute: Attribute.INTELLECT, value: 4 },
+        upgrade: (char) => char.abilities.push('Flameblade'),
       },
       {
         name: 'Fire Tendrils',
@@ -129,6 +135,7 @@ const FOCI: Array<Focus> = [
         Otherwise, the attacks function as standard attacks. 
         If you don’t use the tendrils to attack, they remain but do nothing. Enabler.`,
         cost: { attribute: Attribute.INTELLECT, value: 5 },
+        upgrade: (char) => char.abilities.push('Fire Tendrils'),
       },
       {
         name: 'Fire Servant',
@@ -151,6 +158,7 @@ const FOCI: Array<Focus> = [
         from fire when it attacks. Action to
         create; action to direct.`,
         cost: { attribute: Attribute.INTELLECT, value: 6 },
+        upgrade: (char) => char.abilities.push('Fire Servant'),
       },
       {
         name: 'Inferno Trail',
@@ -166,6 +174,7 @@ const FOCI: Array<Focus> = [
         damage each round (if they are flammable) until
         they spend a round putting out the fire. Action.`,
         cost: { attribute: Attribute.INTELLECT, value: 6 },
+        upgrade: (char) => char.abilities.push('Inferno Trail'),
       },
     ],
   },{
@@ -211,6 +220,7 @@ const FOCI: Array<Focus> = [
         affect the difficulty, the contact lasts for 28 hours.
         Action to establish contact.`,
         cost: { attribute: Attribute.INTELLECT, value: 1 },
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Mind Reading',
@@ -223,6 +233,7 @@ const FOCI: Array<Focus> = [
         and you don’t need to be able to see the target (but you do have to know that the target is
         within range). Action to initiate.`,
         cost: { attribute: Attribute.INTELLECT, value: 2 },
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Psychic Burst',
@@ -234,6 +245,7 @@ const FOCI: Array<Focus> = [
         For each 2 additional Intellect points you spend, you can make an Intellect 
         attack roll against an additional target. Action.`,
         cost: { attribute: Attribute.INTELLECT, value: 3 },
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Psychic Suggestion',
@@ -243,6 +255,7 @@ const FOCI: Array<Focus> = [
         indicate on its next turn. If the action you wish the target to take would cause direct harm to
         the target or its allies, your mental attack is hindered. Action.`,
         cost: { attribute: Attribute.INTELLECT, value: 4 },
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Use Senses of Others',
@@ -254,6 +267,7 @@ const FOCI: Array<Focus> = [
         target, but you must know that it’s within range. Your shared senses last ten minutes.
         Action to establish.`,
         cost: { attribute: Attribute.INTELLECT, value: 4 },
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Precognition',
@@ -268,6 +282,7 @@ const FOCI: Array<Focus> = [
         gives you an edge. You gain an asset to all interaction skills.
         Enabler.`,
         cost: { attribute: Attribute.INTELLECT, value: 6 },
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Mind Control',
@@ -285,6 +300,7 @@ const FOCI: Array<Focus> = [
         than 2. When the effect ends, the creature doesn’t remember being controlled or anything it did
         while under your command. Action to initiate.`,
         cost: { attribute: Attribute.INTELLECT, value: 6 },
+        upgrade: (char) => console.log(char),
       },
       {
         name: 'Telepathic Network',
@@ -301,6 +317,7 @@ const FOCI: Array<Focus> = [
         ten more creatures to the network. These larger networks last for ten minutes. Creating a network
         of twenty or more creatures does require an action to establish contact. Enabler.`,
         cost: { attribute: Attribute.INTELLECT, value: 0 },
+        upgrade: (char) => console.log(char),
       },
     ],
   },
@@ -366,27 +383,30 @@ const DESCRIPTORS: Array<Descriptor> = [
       {
         name: 'Smart',
         description: `+2 to your Intellect Pool`,
-        upgrade: (char) => console.log(char),
+        upgrade: (char) => char.intPool = char.intPool + 2,
       },
       {
         name: 'Skill',
         description: `You’re trained in all interactions involving lies or trickery.`,
-        upgrade: (char) => console.log(char),
+        upgrade: (char) => char.addTrainedSkill('All interactions involving lies or trickery'),
       },
       {
         name: 'Skill',
         description: `: You’re trained in defense rolls to resist mental effects.`,
-        upgrade: (char) => console.log(char),
+        upgrade: (char) => char.addTrainedSkill('Defense to resist mental effects'),
       },
       {
         name: 'Skill',
         description: `You’re trained in all tasks involving, identifying, or assessing danger, lies, quality, importance, function, or power. `,
-        upgrade: (char) => console.log(char),
+        upgrade: (char) => char.addTrainedSkill('All tasks involving, identifying, or assessing danger, lies, quality, importance, function, or power'),
       },
       {
         name: 'Inability',
         description: `You were never good at studying or retaining trivial knowledge. The difficulty of any task involving lore, knowledge, or understanding is hindered.`,
-        upgrade: (char) => console.log(char),
+        upgrade: (char) => { 
+          char.addInabilitySkill(`Studying or retaining trivial knowledge`),
+          char.addInabilitySkill(`Any task involving lore, knowledge, or understanding`)
+        }
       },
       {
         name: 'Additional Equipment',
