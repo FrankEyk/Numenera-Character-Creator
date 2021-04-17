@@ -500,7 +500,7 @@ const TYPES: Array<CharacterType> = [
             type: ActionType.ENABLER,
             description: `You add +1 damage to one type of attack of your choice: melee attacks or
             ranged attacks. Enabler.`,
-            upgrade: (char) => console.log(char)
+            upgrade: (char) => char.abilities.push('Combat Prowess')
           },
           {
             name: `Trained in Armor`,
@@ -508,7 +508,7 @@ const TYPES: Array<CharacterType> = [
             description: `You can wear armor for long periods of time without tiring and can
             compensate for slowed reactions from wearing armor. You reduce the Speed Effort cost for
             wearing armor by 1. Enabler.`,
-            upgrade: (char) => console.log(char)
+            upgrade: (char) => char.abilities.push('Trained in Armor')
           },
           {
             name: `Physical Skills`,
@@ -573,7 +573,7 @@ const TYPES: Array<CharacterType> = [
           {
             name: `Adept Cypher Use`,
             description: `You can bear four cyphers at a time.`,
-            upgrade: (char) => console.log(char)
+            upgrade: (char) => char.cypheruse = 4
           },
           {
             name: `Mastery With Attacks`,

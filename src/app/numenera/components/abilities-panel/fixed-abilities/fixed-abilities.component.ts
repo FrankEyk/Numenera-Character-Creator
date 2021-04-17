@@ -8,7 +8,7 @@ import { NumeneraCharacterService } from 'src/app/numenera/services/NumeneraChar
   styleUrls: ['./fixed-abilities.component.scss'],
 })
 export class FixedAbilitiesComponent implements OnInit, OnDestroy {
-  abilities = [];
+  abilities: string[] = [];
 
   private subscription!: Subscription;
 
@@ -16,7 +16,7 @@ export class FixedAbilitiesComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.subscription = this.service.character$.subscribe((character) => {
-      //TODO
+      this.abilities = character.abilities;
     });
   }
 
