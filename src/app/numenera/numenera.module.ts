@@ -21,6 +21,8 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatChipsModule } from '@angular/material/chips';
 import { FormsModule } from '@angular/forms';
+import { MatListModule } from '@angular/material/list'; 
+import { MatTooltipModule } from '@angular/material/tooltip';
 import { SharedModule } from '../shared/shared.module';
 import { TypeInfoComponent } from './components/info-panel/type-info/type-info.component';
 import { AbilityInfoComponent } from './components/info-panel/ability-info/ability-info.component';
@@ -52,6 +54,8 @@ import { EquipmentPanelComponent } from './components/equipment-panel/equipment-
     MatChipsModule,
     MatExpansionModule,
     FormsModule,
+    MatListModule,
+    MatTooltipModule,
     SharedModule,
   ],
   exports: [NumeneraComponent],

@@ -29,7 +29,7 @@ const FOCI: Array<Focus> = [
         name: 'Additional Equipment',
         description: `You have an artifact—a device that sprays inanimate objects to make them fireresistant. All your starting gear has already been treated unless you don’t want it to be.`,
         upgrade: (char) => char.equipment.push({
-          name: 'Fireresistantspray',
+          name: 'Fire Resistantspray',
           description: `An artifact that sprays inanimate objects to make them fire-resistant`,
         }),
       },
@@ -220,7 +220,15 @@ const FOCI: Array<Focus> = [
         Intellect Pool. If you’re ever without the artifact,
         subtract 5 points from your Intellect Pool; the
         points are restored if you regain the item.`,        
-        upgrade: (char) => console.log(char),
+        upgrade: (char) => char.equipment.push({
+          name: 'Intellect Crystal',
+          description: `a crystal
+          or jewel artifact that, when worn against your
+          forehead or temple, adds 1 point to your
+          Intellect Pool. If you’re ever without the artifact,
+          subtract 5 points from your Intellect Pool; the
+          points are restored if you regain the item.`
+        }),
       },
       {
         name: 'Mental Esoteries',

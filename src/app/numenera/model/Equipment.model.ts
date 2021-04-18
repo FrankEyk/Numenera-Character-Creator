@@ -5,7 +5,7 @@ export interface Equipment {
   /** Equipment name */
   name: string;
   /** Equipment description (optional)*/
-  description?: string;
+  description: string;
   /** Minor Effects Suggestions. */
   minorEffects?: Array<string>;
   /** Major Effects Suggestions.  */

@@ -1,1 +1,17 @@
-<p>equipment-panel works!</p>
+<mat-grid-list cols="2">
+  <mat-grid-tile style="background-color: gray">
+    <mat-list-item *ngFor="let item of equipment" matTooltip="{{item.description}}">
+      {{item.name}}
+    </mat-list-item>
+  </mat-grid-tile>
+
+  <mat-grid-tile style="background-color: yellow">
+    <div>
+      shins: {{shins}}
+      <hr>
+      Number of Cyphers: {{cyphers}}
+      <hr>
+      Number of Oddities: {{oddities}}
+    </div>
+  </mat-grid-tile>
+</mat-grid-list>

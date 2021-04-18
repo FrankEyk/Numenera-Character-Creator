@@ -41,6 +41,8 @@ export class NumeneraCharacter {
   inabilitySkills: Array<String> = [];
   /** Number of Cyphers the character can use without penalties */
   cypheruse = 0;
+  /** Number of oddities the character has from the start */
+  oddities = 0;
   /** Extra Notes */
   extraNotes: Array<String> = [];
 
