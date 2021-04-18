@@ -27,6 +27,7 @@ import { SharedModule } from '../shared/shared.module';
 import { TypeInfoComponent } from './components/info-panel/type-info/type-info.component';
 import { AbilityInfoComponent } from './components/info-panel/ability-info/ability-info.component';
 import { EquipmentPanelComponent } from './components/equipment-panel/equipment-panel.component';
+import { ExtraNotesPanelComponent } from './components/extra-notes-panel/extra-notes-panel.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { EquipmentPanelComponent } from './components/equipment-panel/equipment-
     TypeInfoComponent,
     AbilityInfoComponent,
     EquipmentPanelComponent,
+    ExtraNotesPanelComponent,
   ],
   imports: [
     CommonModule,
