@@ -1,7 +1,7 @@
 import { Descriptor } from './Descriptor.model';
 import { Equipment } from './Equipment.model';
 import { Focus } from './Focus.model';
-import { Attribute, CharacterType } from './Type.model';
+import { Attribute, CharacterType, Talent } from './Type.model';
 
 /**
  * Numenera Player Character Model.
@@ -30,11 +30,12 @@ export class NumeneraCharacter {
   /** Character Money. */
   shins = 0;
   /** Character Connections. */
-  connections: Array<string> = [];
+  connections: Array<String> = [];
   /** Character Equiptment. */
   equipment: Array<Equipment> = [];
   /** Character Abilities */
-  abilities: Array<string> = [];
+  abilities: Array<String> = [];
+  chosenAbilities: Array<Talent> = []
   /** skills */
   trainedSkills: Array<String> = [];
   specializedSkills: Array<String> = [];

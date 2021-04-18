@@ -1,10 +1,35 @@
 <h2>Choose your Abilities</h2>
+<div *ngIf="amountToChoseFrom">
+  choose {{amountToChoseFrom}}
+</div>
+
 <mat-divider></mat-divider>
 
 <mat-form-field>
-  <mat-chip-list>
-    <mat-chip *ngFor="let ability of abilities">
-      {{ability.name}}
+  <mat-chip-list *ngIf="amountToChoseFrom>0" aria-label="abilities selection">
+    <mat-chip *ngFor="let ability of abilities" 
+      [selectable]="amountToChoseFrom>0" 
+      [removable]="amountToChoseFrom>0" 
+      (removed)="removeFromChoice(ability)"
+      matTooltip="{{ability.description}}"
+      matChipRemove>
+        {{ability.name}}
+        <mat-icon matChipRemove>check_circle</mat-icon>
     </mat-chip>
   </mat-chip-list>
+
+  <mat-divider></mat-divider>
+
+  <mat-chip-list aria-label="remove chosen ability" *ngIf="chosenAbilities.length > 0">
+    <mat-chip *ngFor="let ability of chosenAbilities" 
+    [selectable]="true" 
+    [removable]="true" 
+    matTooltip="{{ability.description}}"
+    (removed)="removeChosen(ability)"
+    matChipRemove>
+      {{ability.name}}
+      <mat-icon matChipRemove>cancel</mat-icon>
+    </mat-chip>
+  </mat-chip-list>
+
 </mat-form-field>

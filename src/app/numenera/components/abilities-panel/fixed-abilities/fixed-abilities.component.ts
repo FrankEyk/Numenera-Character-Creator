@@ -8,7 +8,7 @@ import { NumeneraCharacterService } from 'src/app/numenera/services/NumeneraChar
   styleUrls: ['./fixed-abilities.component.scss'],
 })
 export class FixedAbilitiesComponent implements OnInit, OnDestroy {
-  abilities: string[] = [];
+  abilities: String[] = [];
 
   private subscription!: Subscription;
 
