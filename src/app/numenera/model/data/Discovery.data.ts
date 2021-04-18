@@ -499,9 +499,33 @@ const TYPES: Array<CharacterType> = [
         level: 1,
         abilities: [
           {
-            name: `Cypher Use`,
-            description: `You can bear two cyphers at a time.`,
-            upgrade: (char) => char.cypheruse = 2
+            name: 'Starting Equipment',
+            description: `You start with clothing, two weapons (or one weapon and a shield),
+            light or medium armor, an explorer’s pack, two cyphers (chosen for you by the GM), one
+            oddity (chosen for you by the GM), and 5 shins (coins). If you start with a ranged weapon that
+            requires ammunition (arrows, for example), you start with 12 of that type of ammunition. Before
+            selecting your weapons, armor, and other gear, you might want to wait until after you’ve chosen
+            your fighting moves, descriptor, and focus.`,
+            upgrade: (char) => {
+              char.cypheruse = 2;
+              char.oddities = 1;
+              char.shins = char.shins + 5;
+              char.equipment.push(
+                {
+                  name: 'Clothing',
+                  description: 'Standard clothing'
+                },
+                {
+                  name: `Two weapons (or one weapon and a shield)`,
+                  description: `Two weapons (or one weapon and a shield.) If you start with a ranged weapon that
+                    requires ammunition (arrows, for example), you start with 12 of that type of ammunition.`
+                },
+                {
+                  name: 'Explorer’s pack',
+                  description: 'An explorer’s pack'
+                },
+              );
+            }
           },
           {
             name: `Combat Prowess`,
