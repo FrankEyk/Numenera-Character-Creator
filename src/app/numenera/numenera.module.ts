@@ -24,6 +24,7 @@ import { FormsModule } from '@angular/forms';
 import { SharedModule } from '../shared/shared.module';
 import { TypeInfoComponent } from './components/info-panel/type-info/type-info.component';
 import { AbilityInfoComponent } from './components/info-panel/ability-info/ability-info.component';
+import { EquipmentPanelComponent } from './components/equipment-panel/equipment-panel.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { AbilityInfoComponent } from './components/info-panel/ability-info/abili
     ChoiceAbilitiesComponent,
     TypeInfoComponent,
     AbilityInfoComponent,
+    EquipmentPanelComponent,
   ],
   imports: [
     CommonModule,
