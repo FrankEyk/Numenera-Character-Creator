@@ -10,19 +10,21 @@
         <mat-panel-title>Tier abilities:</mat-panel-title>
       </mat-expansion-panel-header>
 
-      <mat-expansion-panel *ngFor="let tier of character.focus.tiers">
-        <mat-expansion-panel-header>
-          <mat-panel-title>Tier {{ tier.level }}</mat-panel-title>
-        </mat-expansion-panel-header>
-        <p *ngFor="let ability of tier.abilities">
-          <b>{{ ability.name }}
-            <span *ngIf="ability.cost">
-              ({{ ability.cost.value }} {{ ability.cost.attribute }} points)
-            </span>
-          </b>
-          {{ ability.description }}
-        </p>
-      </mat-expansion-panel>
+      <mat-accordion multi="false">
+        <mat-expansion-panel *ngFor="let tier of character.focus.tiers">
+          <mat-expansion-panel-header>
+            <mat-panel-title>Tier {{ tier.level }}</mat-panel-title>
+          </mat-expansion-panel-header>
+          <p *ngFor="let ability of tier.abilities">
+            <b>{{ ability.name }}
+              <span *ngIf="ability.cost">
+                ({{ ability.cost.value }} {{ ability.cost.attribute }} points)
+              </span>
+            </b>
+            {{ ability.description }}
+          </p>
+        </mat-expansion-panel>
+      </mat-accordion>
     </mat-expansion-panel>
   </mat-accordion>
 </mat-expansion-panel>
