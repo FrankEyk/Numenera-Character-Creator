@@ -553,7 +553,7 @@ const TYPES: Array<CharacterType> = [
               char.addInabilitySkill('Salvaging Numenera');
               char.addInabilitySkill('Understanding Numenera');
 
-              const skills = ['balancing', 'climbing', 'jumping', 'swimming'];
+              const skills = ['Balancing', 'Climbing', 'Jumping', 'Swimming'];
               const toAddSkills: string[] = [];
 
               skills.forEach(skill => {
@@ -565,7 +565,7 @@ const TYPES: Array<CharacterType> = [
                   }
                 }
               });
-
+              
               char.skillsToChooseFrom.push({
                 numberOfChoices: 1,
                 skills: toAddSkills

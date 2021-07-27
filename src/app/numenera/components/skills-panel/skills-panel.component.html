@@ -21,12 +21,17 @@
   </section>
   
   <section class="choose" *ngIf="toChooseFrom.length > 0">
-    <div *ngFor="let choice of toChooseFrom">
-      <h3>choose {{choice.numberOfChoices}}:</h3>
-      <ul>
-        <li *ngFor="let skill of choice.skills">{{ skill }}</li>
-      </ul>
-    </div>
+    <mat-chip-list aria-label="skills selection" *ngFor="let choice of toChooseFrom">
+      <h3>choose ({{choice.numberOfChoices}}):</h3>
+      <mat-chip 
+      *ngFor="let item of choice.skills"
+      [selectable]="choice.numberOfChoices>0"
+      [removable]="choice.numberOfChoices>0"
+      (removed)="removeFromChoice(choice, item)">
+        {{item}}
+        <mat-icon matChipRemove>check_circle</mat-icon>
+      </mat-chip>
+    </mat-chip-list>
   </section>
 
 </div>

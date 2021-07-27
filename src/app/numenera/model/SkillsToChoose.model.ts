@@ -6,7 +6,7 @@ export interface SkillsToChoose {
   /** The amount of choices the user has */
   numberOfChoices: number;
   /** The skills the user can choose from */
-  skills: Array<String>;
+  skills: Array<string>;
   /** Description (optional) */
   description?: string;
 }
