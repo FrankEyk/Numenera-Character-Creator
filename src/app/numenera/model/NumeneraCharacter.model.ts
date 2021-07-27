@@ -1,6 +1,7 @@
 import { Descriptor } from './Descriptor.model';
 import { Equipment } from './Equipment.model';
 import { Focus } from './Focus.model';
+import { SkillsToChoose } from './SkillsToChoose.model';
 import { Attribute, CharacterType, Talent } from './Type.model';
 
 /**
@@ -36,10 +37,12 @@ export class NumeneraCharacter {
   /** Character Abilities */
   abilities: Array<String> = [];
   chosenAbilities: Array<Talent> = []
-  /** skills */
+  /** Skills */
   trainedSkills: Array<String> = [];
   specializedSkills: Array<String> = [];
   inabilitySkills: Array<String> = [];
+  /** Skills to choose from */
+  skillsToChooseFrom: Array<SkillsToChoose> = [];
   /** Number of Cyphers the character can use without penalties */
   cypheruse = 0;
   /** Number of oddities the character has from the start */

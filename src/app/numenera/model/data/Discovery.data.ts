@@ -2,6 +2,7 @@ import { ActionType } from '../Ability.model';
 import { Descriptor } from '../Descriptor.model';
 import { Focus } from '../Focus.model';
 import { SourceBook } from '../Origin.model';
+import { SkillsToChoose } from '../SkillsToChoose.model';
 import { Attribute, CharacterType } from '../Type.model';
 
 const TITLE = 'Discovery';
@@ -547,10 +548,28 @@ const TYPES: Array<CharacterType> = [
             description: `Choose one of the following skills in which you aren’t already trained:
             balancing, climbing, jumping, or swimming. You are trained in this skill. You have an
             inability in crafting numenera, salvaging numenera, and understanding numenera.`,
-            upgrade: (char) => { 
+            upgrade: (char) => {
               char.addInabilitySkill('Crafting Numenera');
               char.addInabilitySkill('Salvaging Numenera');
               char.addInabilitySkill('Understanding Numenera');
+
+              const skills = ['balancing', 'climbing', 'jumping', 'swimming'];
+              const toAddSkills: string[] = [];
+
+              skills.forEach(skill => {
+                const element = char.trainedSkills.find(element => {element === skill});
+                if (!element) {
+                  const spec = char.specializedSkills.find(el => {el === skill});
+                  if (!spec) {
+                    toAddSkills.push(skill);
+                  }
+                }
+              });
+
+              char.skillsToChooseFrom.push({
+                numberOfChoices: 1,
+                skills: toAddSkills
+              });
             }
           },
         ]
