@@ -84,6 +84,9 @@ export class StatsPanelComponent implements OnInit, OnDestroy {
       this.edge.intellect.minimum = character.intEdge;
       this.edge.might.minimum = character.mightEdge;
       this.edge.speed.minimum = character.speedEdge;
+
+      this.checkIfPointsLeft();
+      this.checkIfEdgePointsLeft();
     });
   }
 
