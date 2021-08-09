@@ -65,6 +65,7 @@ export class StatsPanelComponent implements OnInit, OnDestroy {
         return;
       }
 
+      this.pool.pointsLeft = 6;
       this.edge.pointsLeft = character.edgePointsToAdd;
 
       //FIXME update logic is not working!
