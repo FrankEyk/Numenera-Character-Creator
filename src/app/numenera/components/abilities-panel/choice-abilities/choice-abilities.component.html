@@ -5,8 +5,8 @@
 
 <mat-divider></mat-divider>
 
-<mat-form-field>
-  <mat-chip-list *ngIf="amountToChoseFrom>0" aria-label="abilities selection">
+<mat-form-field *ngIf="amountToChoseFrom>0">
+  <mat-chip-list aria-label="abilities selection">
     <mat-chip *ngFor="let ability of abilities" 
       [selectable]="amountToChoseFrom>0" 
       [removable]="amountToChoseFrom>0" 
