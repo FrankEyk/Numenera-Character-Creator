@@ -4,7 +4,7 @@ import { Subject } from 'rxjs';
 import { Descriptor } from '../model/Descriptor.model';
 import { Focus } from '../model/Focus.model';
 import { NumeneraCharacter } from '../model/NumeneraCharacter.model';
-import { Attribute, CharacterType } from '../model/Type.model';
+import { Attribute, CharacterType, Talent } from '../model/Type.model';
 
 @Injectable({
   providedIn: 'root',
@@ -71,6 +71,37 @@ export class NumeneraCharacterService {
 
   set name(name: string) {
     this.character.name = name;
+    this.character$.next(this.character);
+  }
+
+  setChosenAbilities(talents: Talent[]): void {
+    this.character.chosenAbilities = talents;
+    this.character$.next(this.character);
+  }
+
+  addChosenAbility(talent: Talent) {
+    this.character.chosenAbilities.push(talent);
+    this.character$.next(this.character);
+  }
+
+  removeChosenAbility(talent: Talent) {
+    const index = this.character.chosenAbilities.indexOf(talent);
+    if (index >= 0) {
+      this.character.chosenAbilities.splice(index, 1);
+    }
+    this.character$.next(this.character);
+  }
+
+  removeFixedAbility(talent: Talent) {
+    const index = this.character.abilities.indexOf(talent.name);
+    if (index >= 0) {
+      this.character.abilities.splice(index, 1);
+    }
+    this.character$.next(this.character);
+  }
+
+  addFixedAbility(talent: Talent): void {
+    this.character.abilities.push(talent.name);
     this.character$.next(this.character);
   }
 

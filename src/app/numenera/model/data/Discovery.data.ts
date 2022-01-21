@@ -2,7 +2,6 @@ import { ActionType } from '../Ability.model';
 import { Descriptor } from '../Descriptor.model';
 import { Focus } from '../Focus.model';
 import { SourceBook } from '../Origin.model';
-import { SkillsToChoose } from '../SkillsToChoose.model';
 import { Attribute, CharacterType } from '../Type.model';
 
 const TITLE = 'Discovery';
@@ -517,13 +516,18 @@ const TYPES: Array<CharacterType> = [
                   description: 'Standard clothing'
                 },
                 {
+                  name: `Light or medium armor`,
+                  description: `Light or medium armor.`
+                },
+                {
                   name: `Two weapons (or one weapon and a shield)`,
                   description: `Two weapons (or one weapon and a shield.) If you start with a ranged weapon that
                     requires ammunition (arrows, for example), you start with 12 of that type of ammunition.`
                 },
                 {
                   name: 'Explorer’s pack',
-                  description: 'An explorer’s pack'
+                  description: `Contains 50 feet (15 m) of rope, rations for three days, three spikes,
+                  hammer, warm clothes, sturdy boots, three torches, and two minor glowglobes.`
                 },
               );
             }
@@ -565,7 +569,7 @@ const TYPES: Array<CharacterType> = [
                   }
                 }
               });
-              
+
               char.skillsToChooseFrom.push({
                 numberOfChoices: 1,
                 skills: toAddSkills

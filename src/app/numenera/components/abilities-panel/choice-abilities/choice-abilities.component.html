@@ -1,13 +1,13 @@
-<h2>Choose your Abilities</h2>
+<h2>Choose your Abilities!</h2>
 <div *ngIf="amountToChoseFrom">
   choose {{amountToChoseFrom}}
 </div>
 
 <mat-divider></mat-divider>
 
-<mat-form-field *ngIf="amountToChoseFrom>0">
-  <mat-chip-list aria-label="abilities selection">
-    <mat-chip *ngFor="let ability of abilities" 
+<mat-form-field >
+  <mat-chip-list aria-label="abilities selection" *ngIf="amountToChoseFrom>0">
+    <mat-chip *ngFor="let ability of char?.chosenAbilities" 
       [selectable]="amountToChoseFrom>0" 
       [removable]="amountToChoseFrom>0" 
       (removed)="removeFromChoice(ability)"
@@ -31,5 +31,7 @@
       <mat-icon matChipRemove>cancel</mat-icon>
     </mat-chip>
   </mat-chip-list>
+
+  <mat-divider></mat-divider>
 
 </mat-form-field>
